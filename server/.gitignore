@@ -1,0 +1,8 @@
+
+# ENVIRONMENT
+.env
+
+# DEPRECATED
+file-ctrl.js
+files-model.js
+files-router.js
