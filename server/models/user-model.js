@@ -3,10 +3,10 @@ const Schema = mongoose.Schema
 
 const User = new Schema(
 	{
-		token: { type: String, required: true},
-		username: { type: String, required: true},
-		password: { type: String, required: true},
-		progress: { type: Array, required: true}
+		// token: { type: String, required: true},
+		username: { type: String, required: true },
+		password: { type: String, required: true },
+		progress: { type: Array }
 	},
 	{ 
 		timestamps: true,
