@@ -18,7 +18,7 @@ const createUser = async (req, res) =>
 		.save()
 	// saved!
 
-	let ret = {error:error}
+	let ret = {error: error}
 	res.status(200).json(ret)
 }
 
