@@ -3,7 +3,6 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose  = require('mongoose')
 const userRouter = require('./routes/user-router')
-const filesRouter = require('./routes/files-router')
 const app = express()
 require('dotenv').config()
 const uri = process.env.MONGO_URI
@@ -19,6 +18,7 @@ const client = new MongoClient(uri)
 client.connect()
 
 mongoose.connect(uri, { useNewUrlParser: true, useFindAndModify: false });
+
 mongoose.connection.once('open', function() {
 	console.log('Connected to the Database.')
 })
@@ -31,6 +31,5 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api', userRouter)
-app.use('/api', filesRouter)
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
