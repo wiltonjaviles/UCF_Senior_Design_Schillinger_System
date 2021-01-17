@@ -1,14 +1,26 @@
 .App {
   text-align: center;
+  background: #f2f2f2;
 }
 
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 10vh;
-  background: rgb(21, 112, 74);
+  min-height: 12vh;
+  background-image: linear-gradient(#1daa5c, #00de7c);
+  /* background: #1daa5c; */
   color: white;
+}
+
+.nav-link-item {
+  color: white;
+}
+
+.nav-link-item:hover {
+  text-decoration: none;
+  color: #f2f2f2bb;
+  /* background-color: #00dd7d57; */
 }
 
 .nav-links{
@@ -18,4 +30,5 @@ nav {
   align-items: center;
   list-style: none;
   text-decoration: none;
+  color: white;
 }

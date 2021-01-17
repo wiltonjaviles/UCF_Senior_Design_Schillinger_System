@@ -3,30 +3,26 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 function Nav() {
-  const navStyle = {
-    color: 'white',
-    textDecoration: 'none'
-  };
-
+  
   return (
     <nav>
-        <Link style={navStyle} to="/">
+        <Link to="/" className="nav-link-item">
           <h5>Schillinger System of Musical Composition</h5>
         </Link>
         <ul className="nav-links">
-          <Link style={navStyle} to="/">
+          <Link to="/" className="nav-link-item">
             <li>Home</li>
           </Link>
-          <Link style={navStyle} to="/about">
+          <Link to="/about" className="nav-link-item">
             <li>About</li>
           </Link>
-          <Link style={navStyle} to="/contents">
+          <Link to="/contents" className="nav-link-item">
             <li>Contents</li>
           </Link>
-          <Link style={navStyle} to="/recordings">
+          <Link to="/recordings" className="nav-link-item">
             <li>Recordings</li>
           </Link>
-          <Link style={navStyle} to="/account">
+          <Link to="/account" className="nav-link-item">
             <li>Account</li>
           </Link>
         </ul>
