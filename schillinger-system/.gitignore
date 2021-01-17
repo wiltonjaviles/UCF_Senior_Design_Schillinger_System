@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+debug.log
+schillinger-system/.eslintcache
+
 # testing
 /coverage
 
