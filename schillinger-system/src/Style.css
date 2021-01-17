@@ -6,6 +6,7 @@
 nav {
   display: flex;
   justify-content: space-around;
+  overflow: hidden;
   align-items: center;
   min-height: 12vh;
   background-image: linear-gradient(#1daa5c, #00de7c);
@@ -19,13 +20,15 @@ nav {
 
 .nav-link-item:hover {
   text-decoration: none;
-  color: #f2f2f2bb;
+  color: white;
+  background-color: #ffffff3f;
   /* background-color: #00dd7d57; */
 }
 
 .nav-links{
   width: 50%;
   display: flex;
+  margin: 0;
   justify-content: space-around;
   align-items: center;
   list-style: none;

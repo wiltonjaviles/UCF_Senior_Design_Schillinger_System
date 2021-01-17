@@ -1,5 +1,5 @@
 import './Style.css';
-import Nav from './components/Nav';
+import Navigation from './components/Navigation';
 import About from './components/About';
 import Contents from './components/Contents';
 import Recordings from './components/Recordings';
@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Navigation />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
