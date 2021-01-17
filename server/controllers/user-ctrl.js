@@ -13,12 +13,13 @@ const User = require('../models/user-model')
 
 const createUser = async (req, res) => 
 {
-	var err = ""
-	const { username, password }  = req.body;
-
-	// create the 2-D empty progress array
+	var err = "";
 	let progress = new Array(14).fill(new Array);
 	progress[0][0] = 1;
+	let interaction = new Array(20);
+	let dateInteracted = new Array(20);
+
+	const { username, password }  = req.body;
 	
 	var userCheck = await User.findOne({ username: username });
 
@@ -28,7 +29,13 @@ const createUser = async (req, res) =>
 		return res.status(400).json({error: err});
 	}
 
-	const user = new User({ username: username, password: password,  progress: progress });
+	const user = new User({ 
+		username: username, 
+		password: password,  
+		progress: progress, 
+		interaction: interaction,
+		dateInteracted: dateInteracted
+	});
 
 	await user
 		.save()
