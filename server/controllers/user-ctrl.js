@@ -40,7 +40,6 @@ const createUser = async (req, res) =>
 		{
 			return res.status(400).json({ error: error });
 		})
-	// saved!
 }
 
 const updateProgress = async (req, res) => 
