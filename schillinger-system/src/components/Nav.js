@@ -11,7 +11,7 @@ function Nav() {
   return (
     <nav>
         <Link style={navStyle} to="/">
-          <h3>Schillinger System of Musical Composition</h3>
+          <h5>Schillinger System of Musical Composition</h5>
         </Link>
         <ul className="nav-links">
           <Link style={navStyle} to="/">
