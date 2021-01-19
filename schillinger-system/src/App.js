@@ -1,10 +1,11 @@
 import './Style.css';
 import Navigation from './components/Navigation';
+import Home from './components/Home';
 import About from './components/About';
 import Contents from './components/Contents';
 import Recordings from './components/Recordings';
 import Account from './components/Account';
-import Home from './components/Home';
+import BookOneRhythm from './components/BookOneRhythm';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/contents" component={Contents} />
           <Route path="/recordings" component={Recordings} />
           <Route path="/account" component={Account} />
+          <Route path="/book1" components={BookOneRhythm} />
         </Switch>
       </div>
     </Router> 

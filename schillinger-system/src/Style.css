@@ -35,3 +35,14 @@ nav {
   text-decoration: none;
   color: white;
 }
+
+.content-links {
+  color: black;
+  text-decoration: none;
+}
+
+.content-links:hover {
+  color: #1daa5c;
+  background-color: #00de7c;
+  text-decoration: none;
+}
