@@ -19,7 +19,7 @@ function App() {
           <Route path="/contents" component={Contents} />
           <Route path="/recordings" component={Recordings} />
           <Route path="/account" component={Account} />
-          <Route path="/book1rhythm" components={BookOneRhythm} />
+          <Route path="/book1" components={BookOneRhythm} />
         </Switch>
       </div>
     </Router> 
