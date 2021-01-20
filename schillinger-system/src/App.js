@@ -5,7 +5,15 @@ import About from './components/About';
 import Contents from './components/Contents';
 import Recordings from './components/Recordings';
 import Account from './components/Account';
-import BookOneRhythm from './components/BookOne';
+import Overture from './components/Overture';
+import Introduction from './components/Introduction';
+import BookOne from './components/BookOne';
+import BookTwo from './components/BookTwo';
+import BookThree from './components/BookThree';
+import BookFour from './components/BookFour';
+import BookFive from './components/BookFive';
+import BookSix from './components/BookSix';
+import BookSeven from './components/BookSeven';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
@@ -19,7 +27,15 @@ function App() {
           <Route path="/contents" component={Contents} />
           <Route path="/recordings" component={Recordings} />
           <Route path="/account" component={Account} />
-          <Route path="/book1" components={BookOneRhythm} />
+          <Route path="/overture" component={Overture} />
+          <Route path="/intro" component={Introduction} />
+          <Route path="/book1" component={BookOne} />
+          <Route path="/book2" component={BookTwo} />
+          <Route path="/book3" component={BookThree} />
+          <Route path="/book4" component={BookFour} />
+          <Route path="/book5" component={BookFive} />
+          <Route path="/book6" component={BookSix} />
+          <Route path="/book7" component={BookSeven} />
         </Switch>
       </div>
     </Router> 
