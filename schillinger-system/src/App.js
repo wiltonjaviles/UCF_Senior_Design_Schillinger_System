@@ -5,7 +5,7 @@ import About from './components/About';
 import Contents from './components/Contents';
 import Recordings from './components/Recordings';
 import Account from './components/Account';
-import BookOneRhythm from './components/BookOneRhythm';
+import BookOneRhythm from './components/BookOne';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <Route path="/contents" component={Contents} />
           <Route path="/recordings" component={Recordings} />
           <Route path="/account" component={Account} />
-          <Route path="/book1" components={BookOneRhythm} />
+          <Route path="/book1rhythm" components={BookOneRhythm} />
         </Switch>
       </div>
     </Router> 

@@ -5,7 +5,7 @@ function Contents() {
   return (
     <div>
       <h1>Table of Contents</h1>
-      <Link to="/book1" className="content-links"><h3>Book One: Theory of Rhythm</h3></Link>
+      <Link to="/book1rhythm" className="content-links"><h3>Book One: Theory of Rhythm</h3></Link>
     </div>
   );
 }
