@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+  background: #f2f2f2;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  align-items: center;
+  min-height: 12vh;
+  background-image: linear-gradient(#1daa5c, #00de7c);
+  /* background: #1daa5c; */
+  color: white;
+}
+
+.nav-link-item {
+  color: white;
+}
+
+.nav-link-item:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #ffffff3f;
+  /* background-color: #00dd7d57; */
+}
+
+.nav-links{
+  width: 50%;
+  display: flex;
+  margin: 0;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+.content-links {
+  color: black;
+  text-decoration: none;
+}
+
+.content-links:hover {
+  color: #1daa5c;
+  background-color: #00de7c;
+  text-decoration: none;
+}

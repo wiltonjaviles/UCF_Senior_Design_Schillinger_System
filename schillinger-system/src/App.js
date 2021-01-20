@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './Style.css';
+import Navigation from './components/Navigation';
+import Home from './components/Home';
+import About from './components/About';
+import Contents from './components/Contents';
+import Recordings from './components/Recordings';
+import Account from './components/Account';
+import BookOneRhythm from './components/BookOne';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navigation />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contents" component={Contents} />
+          <Route path="/recordings" component={Recordings} />
+          <Route path="/account" component={Account} />
+          <Route path="/book1" components={BookOneRhythm} />
+        </Switch>
+      </div>
+    </Router> 
   );
 }
 
