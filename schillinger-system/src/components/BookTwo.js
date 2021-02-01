@@ -1,10 +1,12 @@
+import { Container } from 'react-bootstrap';
 import '.././Style.css';
 
 function BookTwo() {
   return (
     <div>
-      <h1>Book Two (Coming Soon!)</h1>
-      
+      <Container>
+        <h1>Book Two (Coming Soon!)</h1>
+      </Container>      
     </div>
   );
 }

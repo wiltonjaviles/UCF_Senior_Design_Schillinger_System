@@ -22,7 +22,7 @@ function About() {
         <br />
         <h3>Meet the Team:</h3>
         <Row>
-          <Col><p>Richar Leinecker</p></Col>
+          <Col><p>Richard Leinecker</p></Col>
           <Col><p>Michael Alaniz</p></Col>
           <Col><p>Wilton Aviles</p></Col>
           <Col><p>Michael Duke</p></Col>

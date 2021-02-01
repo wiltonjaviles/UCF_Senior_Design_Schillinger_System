@@ -1,10 +1,12 @@
+import { Container } from 'react-bootstrap';
 import '.././Style.css';
 
 function Introduction() {
   return (
     <div>
-      <h1>Introduction</h1>
-      
+      <Container>
+        <h1>Introduction</h1>
+      </Container>
     </div>
   );
 }

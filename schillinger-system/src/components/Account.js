@@ -6,7 +6,6 @@ function Account() {
     
     <Container fluid>
       <h1>Account Page</h1>
-      
         <Row>
             <Col>
               <Form>
@@ -36,7 +35,6 @@ function Account() {
               </Form>
             </Col>
           </Row>
-        
       </Container> 
     
   );
