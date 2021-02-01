@@ -1,5 +1,7 @@
-import '.././Style.css';
 import {Container, Row, Col, Form, Button} from 'react-bootstrap' 
+import LogIn from '.././components/LogIn'
+import MakeAccount from '.././components/MakeAccount'
+import '.././Style.css';
 
 function Account() {
   return (
@@ -8,31 +10,10 @@ function Account() {
       <h1>Account Page</h1>
         <Row>
             <Col>
-              <Form>
-                <Form.Group controlId="formUsername">
-                  <Form.Label>Log in. </Form.Label>
-                  <Form.Control type="username" placeholder="username" />
-                </Form.Group>
-                <Form.Group controlId="formPassword">
-                  <Form.Control type="password" placeholder="password" />
-                </Form.Group>
-                <Button variant="secondary" type="submit" className="float-right">Log in</Button>
-              </Form>
+              <MakeAccount />
             </Col>
             <Col>
-              <Form>
-                <Form.Group controlId="formUsername">
-                  <Form.Label>Make an account. </Form.Label>
-                  <Form.Control type="username" placeholder="username" />
-                </Form.Group>
-                <Form.Group controlId="formUsername">
-                  <Form.Control type="username" placeholder="confirm username" />
-                </Form.Group>
-                <Form.Group controlId="formPassword">
-                  <Form.Control type="password" placeholder="password" />
-                </Form.Group>
-                <Button variant="secondary" type="submit" className="float-right">Create Account</Button>
-              </Form>
+              <LogIn />
             </Col>
           </Row>
       </Container> 
