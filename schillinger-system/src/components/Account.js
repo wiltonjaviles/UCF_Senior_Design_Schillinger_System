@@ -10,7 +10,7 @@ function Account() {
             <Col>
               <Form>
                 <Form.Group controlId="formUsername">
-                  <Form.Label>Log In </Form.Label>
+                  <Form.Label>Log in. </Form.Label>
                   <Form.Control type="username" placeholder="username" />
                 </Form.Group>
                 <Form.Group controlId="formPassword">
@@ -22,7 +22,7 @@ function Account() {
             <Col>
               <Form>
                 <Form.Group controlId="formUsername">
-                  <Form.Label>Make an account </Form.Label>
+                  <Form.Label>Make an account. </Form.Label>
                   <Form.Control type="username" placeholder="username" />
                 </Form.Group>
                 <Form.Group controlId="formUsername">
