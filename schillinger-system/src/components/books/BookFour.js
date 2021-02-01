@@ -1,14 +1,14 @@
 import { Container } from 'react-bootstrap';
-import '.././Style.css';
+import '../.././Style.css';
 
-function BookSix() {
+function BookFour() {
   return (
     <div>
       <Container>
-        <h1>Book Six (Coming Soon!)</h1>
+        <h1>Book Four (Coming Soon!)</h1>
       </Container>      
     </div>
   );
 }
 
-export default BookSix;
+export default BookFour;

@@ -5,15 +5,15 @@ import About from './components/About';
 import Contents from './components/Contents';
 import Recordings from './components/Recordings';
 import Account from './components/Account';
-import Overture from './components/Overture';
-import Introduction from './components/Introduction';
-import BookOne from './components/BookOne';
-import BookTwo from './components/BookTwo';
-import BookThree from './components/BookThree';
-import BookFour from './components/BookFour';
-import BookFive from './components/BookFive';
-import BookSix from './components/BookSix';
-import BookSeven from './components/BookSeven';
+import Overture from './components/books/Overture';
+import Introduction from './components/books/Introduction';
+import BookOne from './components/books/BookOne';
+import BookTwo from './components/books/BookTwo';
+import BookThree from './components/books/BookThree';
+import BookFour from './components/books/BookFour';
+import BookFive from './components/books/BookFive';
+import BookSix from './components/books/BookSix';
+import BookSeven from './components/books/BookSeven';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {

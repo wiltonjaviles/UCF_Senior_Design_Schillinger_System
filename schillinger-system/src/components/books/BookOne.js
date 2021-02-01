@@ -1,5 +1,5 @@
 import { Container } from 'react-bootstrap';
-import '.././Style.css';
+import '../.././Style.css';
 
 function BookOne() {
   return (
