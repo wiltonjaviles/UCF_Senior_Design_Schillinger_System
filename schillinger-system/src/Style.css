@@ -46,3 +46,13 @@ nav {
   background-color: #00de7c;
   text-decoration: none;
 }
+
+.chapter-section-link {
+  color: black;
+  text-decoration: none;
+}
+
+.chapter-section-link:hover {
+  color: black;
+  text-decoration: none
+}

@@ -1,4 +1,4 @@
-import {Container, Row, Col, Form, Button} from 'react-bootstrap' 
+import {Container, Row, Col} from 'react-bootstrap' 
 import LogIn from '.././components/LogIn'
 import MakeAccount from '.././components/MakeAccount'
 import '.././Style.css';
