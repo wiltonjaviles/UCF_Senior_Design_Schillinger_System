@@ -4,7 +4,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Contents from './components/Contents';
 import Recordings from './components/Recordings';
-import Account from './components/Account';
+// import Account from './components/Account';
 import Overture from './components/Overture';
 import Introduction from './components/Introduction';
 import BookOne from './components/BookOne';
@@ -16,6 +16,9 @@ import BookSix from './components/BookSix';
 import BookSeven from './components/BookSeven';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
+//Pages
+import AccountPage from './pages/AccountPage';
+
 function App() {
   return (
     <Router>
@@ -26,7 +29,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/contents" component={Contents} />
           <Route path="/recordings" component={Recordings} />
-          <Route path="/account" component={Account} />
+          <Route path="/account" component={AccountPage} />
           <Route path="/overture" component={Overture} />
           <Route path="/intro" component={Introduction} />
           <Route path="/book1" component={BookOne} />
