@@ -7,12 +7,15 @@
 
 */
 
-const UserCtrl = require('../controllers/user-ctrl')
-const express = require('express')
-const router = express.Router()
+const UserCtrl = require('../controllers/user-ctrl');
+const express = require('express');
+const router = express.Router();
 
-router.post('/createUser', UserCtrl.createUser)
-router.put('/updateProgress', UserCtrl.updateProgress)
-router.post('/getProgress', UserCtrl.getProgress)
+router.post('/createUser', UserCtrl.createUser);
+router.put('/updateProgress', UserCtrl.updateProgress);
+router.post('/getProgress', UserCtrl.getProgress);
+router.post('/login', UserCtrl.login);
+router.post('/logout', UserCtrl.logout);
+router.post('/validation', UserCtrl.validation);
 
-module.exports = router
+module.exports = router;
