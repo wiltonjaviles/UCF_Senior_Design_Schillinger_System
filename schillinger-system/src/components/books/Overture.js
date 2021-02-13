@@ -1,4 +1,5 @@
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import '../.././Style.css';
 
 function Overture() {
@@ -21,6 +22,10 @@ function Overture() {
           reducing composition to mathematics and for lacking creativity and subjective 
           views.
         </p>
+        <Row>
+          <Col><Link to="/" className="content-links"><h5>Back to Home</h5></Link></Col>
+          <Col><Link to="/intro" className="content-links"><h5>Next Book</h5></Link></Col>
+        </Row>
       </Container>
       
     </div>

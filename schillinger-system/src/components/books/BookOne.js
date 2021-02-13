@@ -1,4 +1,5 @@
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import TableOfContentsBar from '../TableOfContentsBar';
 import GeneratorForm from '../applets/GeneratorForm';
 import '../.././Style.css';
@@ -44,6 +45,11 @@ function BookOne() {
         <a className="chapter-section-link" href="/book1#1.14.b" id="1.14.b"><h5>B. Acceleration in Non-uniform Groups</h5></a>
         <a className="chapter-section-link" href="/book1#1.14.c" id="1.14.c"><h5>C. Rubato</h5></a>
         <a className="chapter-section-link" href="/book1#1.14.d" id="1.14.d"><h5>D. Fermata</h5></a>
+        <br />
+        <Row>
+          <Col><Link to="/intro" className="content-links"><h5>Previous Book</h5></Link></Col>
+          <Col><Link to="/book2" className="content-links"><h5>Next Book</h5></Link></Col>
+        </Row>
       </Container>
     </div>
   );

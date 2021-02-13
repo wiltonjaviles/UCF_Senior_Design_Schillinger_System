@@ -1,4 +1,5 @@
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import '../.././Style.css';
 
 function Introduction() {
@@ -23,6 +24,10 @@ function Introduction() {
         tonal system”. The use of mathematics allows the task to be practical 
         since it is of a great enough scope, unlike any other methodologies.
         </p>
+        <Row>
+          <Col><Link to="/overture" className="content-links"><h5>Previous Book</h5></Link></Col>
+          <Col><Link to="/book1" className="content-links"><h5>Next Book</h5></Link></Col>
+        </Row>
       </Container>
     </div>
   );
