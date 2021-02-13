@@ -8,12 +8,11 @@ function GeneratorForm() {
       <Card>
         <Card.Body>
           <Form>
+            
             <Row className="mr-auto">
-              <Col className="mr-auto">
+              <Col>
                 <Form.Check type="checkbox" label="Underline" />
               </Col>
-            </Row>
-            <Row className="mr-auto">
               <Col>
                 <Form.Check type="checkbox" label="Balance" />
               </Col>

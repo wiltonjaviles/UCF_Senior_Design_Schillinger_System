@@ -9,7 +9,7 @@ function BookSeven() {
         <h1>Book Seven (Coming Soon!)</h1>
         <br />
         <Row>
-          <Col><Link to="/book1" className="content-links"><h5>Previous Book</h5></Link></Col>
+          <Col><Link to="/book6" className="content-links"><h5>Previous Book</h5></Link></Col>
           <Col><Link to="/" className="content-links"><h5>Return to Home</h5></Link></Col>
         </Row>
       </Container>      
