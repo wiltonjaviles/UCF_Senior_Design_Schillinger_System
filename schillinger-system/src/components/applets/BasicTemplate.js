@@ -1,5 +1,5 @@
 import {Container, Row, Col} from 'react-bootstrap' 
-import '.././Style.css';
+import '../.././Style.css';
 
 function BasicTemplate() {
   
