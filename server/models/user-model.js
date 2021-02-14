@@ -6,7 +6,8 @@ const User = new Schema(
 		// token: { type: String, required: true},
 		username: { type: String, required: true },
 		password: { type: String, required: true },
-		progress: { type: Array },
+		salt: { type: String, required: true },
+		progress: { type: Array, required: true },
 		interaction: { type: Array, required: true},
 		dateInteracted: { type: Array, required: true }
 	},
