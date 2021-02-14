@@ -11,7 +11,10 @@ function BookOne() {
         < TableOfContentsBar />
         <h1>Book One: Theory of Rhythm</h1>
         <a className="chapter-section-link" href="/book1#1.1" id="1.1"><h3>Chapter 1. Notation System</h3></a>
-        <GeneratorForm />
+        <Row>
+          <Col></Col>
+          <Col><GeneratorForm /></Col>
+        </Row>
         <a className="chapter-section-link" href="/book1#1.1.a" id="1.1.a"><h5>A. Graphing Music</h5></a>
         <a className="chapter-section-link" href="/book1#1.1.b" id="1.1.b"><h5>B. Forms of Periodicity</h5></a>
         <a className="chapter-section-link" href="/book1#1.2" id="1.2"><h3>Chapter 2. Interferences of Periodicities</h3></a>
