@@ -18,8 +18,8 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      <Router>
         <Navigation />
         <Switch>
           <Route path="/" exact component={Home} />
@@ -37,8 +37,8 @@ function App() {
           <Route path="/book6" component={BookSix} />
           <Route path="/book7" component={BookSeven} />
         </Switch>
-      </div>
-    </Router> 
+      </Router>
+    </div>
   );
 }
 
