@@ -21,8 +21,6 @@ nav {
 .nav-link-item:hover {
   text-decoration: none;
   color: white;
-  background-color: #ffffff3f;
-  /* background-color: #00dd7d57; */
 }
 
 .nav-links{
@@ -55,4 +53,11 @@ nav {
 .chapter-section-link:hover {
   color: black;
   text-decoration: none
+}
+
+.generator-dropdown-menu {
+  min-width: 0px !important;
+}
+
+#variable-toggle {
 }

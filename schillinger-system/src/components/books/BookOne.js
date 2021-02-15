@@ -12,7 +12,6 @@ function BookOne() {
         <h1>Book One: Theory of Rhythm</h1>
         <a className="chapter-section-link" href="/book1#1.1" id="1.1"><h3>Chapter 1. Notation System</h3></a>
         <Row>
-          <Col></Col>
           <Col><GeneratorForm /></Col>
         </Row>
         <a className="chapter-section-link" href="/book1#1.1.a" id="1.1.a"><h5>A. Graphing Music</h5></a>
