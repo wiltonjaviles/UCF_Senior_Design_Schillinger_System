@@ -1,15 +1,6 @@
 import {Container, Row, Col, Form, Dropdown, Card, Button} from 'react-bootstrap'
 import '../.././Style.css';
 
-function toggleThirdVariable() {
-  var x = document.getElementById("variable-toggle");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
 function GeneratorForm() {
   
   return (
@@ -59,10 +50,10 @@ function GeneratorForm() {
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>
-              <Col className="col-1 toggle-add-variable">
-                <h1  id="variable-toggle">÷</h1>
+              <Col className="col-1">
+                <h1>÷</h1>
               </Col>
-              <Col className="col-2 toggle-add-variable">
+              <Col className="col-2">
               <Dropdown>
                 <Dropdown.Toggle variant="secondary">c</Dropdown.Toggle>
                   <Dropdown.Menu className="generator-dropdown-menu">
@@ -79,7 +70,7 @@ function GeneratorForm() {
                 </Dropdown>
               </Col>
               <Col className="col-4">
-                <Button variant="dark" onClick="toggleThirdVariable()">Add Variable</Button>
+                <Button variant="dark">Add Variable</Button>
               </Col>
             </Row>
             <Row>
