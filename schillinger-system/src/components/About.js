@@ -1,7 +1,9 @@
 import '.././Style.css';
 import {Container, Row, Col} from 'react-bootstrap'
+import isAuthenticated from '.././components/authUser';
 
 function About() {
+  isAuthenticated();
   return (
     <div>
       <Container>

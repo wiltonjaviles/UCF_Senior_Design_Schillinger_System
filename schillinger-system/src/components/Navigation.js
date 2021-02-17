@@ -2,9 +2,10 @@ import '.././Style.css';
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap';
+import isAuthenticated from '.././components/authUser';
 
 function Navigation() {
-  
+  isAuthenticated();
   return (
     <Navbar collapseOnSelect expand="lg">
         <Navbar.Brand>

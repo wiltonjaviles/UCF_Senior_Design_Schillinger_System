@@ -1,6 +1,8 @@
 import '.././Style.css';
+import isAuthenticated from '.././components/authUser';
 
 function Home() {
+  isAuthenticated();
   return (
     <div>
       <br />
