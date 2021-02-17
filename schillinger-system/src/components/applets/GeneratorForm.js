@@ -17,7 +17,7 @@ function GeneratorForm() {
             <Row className="align-items-center">
               <Col className="col-2">
                 <Dropdown>
-                  <Dropdown.Toggle variant="secondary">a</Dropdown.Toggle>
+                  <Dropdown.Toggle variant="light">a</Dropdown.Toggle>
                   <Dropdown.Menu className="generator-dropdown-menu">
                     <Dropdown.Item>1</Dropdown.Item>
                     <Dropdown.Item>2</Dropdown.Item>
@@ -36,7 +36,7 @@ function GeneratorForm() {
               </Col>
               <Col className="col-2">
                 <Dropdown>
-                  <Dropdown.Toggle variant="secondary">b</Dropdown.Toggle>
+                  <Dropdown.Toggle variant="light">b</Dropdown.Toggle>
                   <Dropdown.Menu className="generator-dropdown-menu">
                     <Dropdown.Item>1</Dropdown.Item>
                     <Dropdown.Item>2</Dropdown.Item>
@@ -50,12 +50,12 @@ function GeneratorForm() {
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>
-              <Col className="col-1">
-                <h1>÷</h1>
+              {/* <Col className="col-1">
+                <h1 className="third-variable-divide">÷</h1>
               </Col>
               <Col className="col-2">
-              <Dropdown>
-                <Dropdown.Toggle variant="secondary">c</Dropdown.Toggle>
+              <Dropdown className="third-variable-toggle">
+                <Dropdown.Toggle variant="light">c</Dropdown.Toggle>
                   <Dropdown.Menu className="generator-dropdown-menu">
                     <Dropdown.Item>1</Dropdown.Item>
                     <Dropdown.Item>2</Dropdown.Item>
@@ -70,21 +70,21 @@ function GeneratorForm() {
                 </Dropdown>
               </Col>
               <Col className="col-4">
-                <Button variant="dark">Add Variable</Button>
-              </Col>
+                <Button variant="secondary" id="add-variable-button" onClick={AddVariableButton}>Add Variable</Button>
+              </Col> */}
             </Row>
             <Row>
               <Col>
-                <Form.Check type="checkbox" label="Underline" />
+                <Form.Check type="checkbox" id="underline-checkbox" label="Underline" />
               </Col>
               <Col>
-                <Form.Check type="checkbox" label="Balance" />
+                <Form.Check type="checkbox" id="balance-checkbox" label="Balance" />
               </Col>
               <Col>
-                <Form.Check type="checkbox" label="Contract" />
+                <Form.Check type="checkbox" id="contract-checkbox" label="Contract" />
               </Col>
               <Col>
-                <Form.Check type="checkbox" label="Synchronize" />
+                <Form.Check type="checkbox" id="synchronize-checkbox" label="Synchronize" />
               </Col>
             </Row>
           </Form>

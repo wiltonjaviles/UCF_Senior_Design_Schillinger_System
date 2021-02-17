@@ -59,5 +59,6 @@ nav {
   min-width: 0px !important;
 }
 
-#variable-toggle {
+.third-variable-toggle {
+  display: none;
 }
