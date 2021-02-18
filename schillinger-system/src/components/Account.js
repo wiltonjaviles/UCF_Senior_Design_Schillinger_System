@@ -10,10 +10,10 @@ function Account() {
       <h1>Account Page</h1>
         <Row>
             <Col>
-              <MakeAccount />
+              <LogIn />
             </Col>
             <Col>
-              <LogIn />
+              <MakeAccount />
             </Col>
           </Row>
       </Container> 

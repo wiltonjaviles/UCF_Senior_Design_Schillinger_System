@@ -78,7 +78,7 @@ export default function LogIn() {
     <Container fluid>
       <Form>
         <Form.Group controlId="loginUsername">
-          <Form.Label>Log in. </Form.Label>
+          <Form.Label>Sign in.</Form.Label>
           <Form.Control type="username" placeholder="username" value={state.loginUsername} onChange={handleChange}/>
         </Form.Group>
         <Form.Group controlId="loginPassword">
