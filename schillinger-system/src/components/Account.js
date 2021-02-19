@@ -5,10 +5,10 @@ import '.././Style.css';
 
 function Account() {
   return (
-    
-    <Container fluid>
-      <h1>Account Page</h1>
-        <Row>
+    <div>
+      <Container fluid>
+        <h1>Account Page</h1>
+          <Row>
             <Col>
               <LogIn />
             </Col>
@@ -17,7 +17,7 @@ function Account() {
             </Col>
           </Row>
       </Container> 
-    
+    </div>
   );
 }
 
