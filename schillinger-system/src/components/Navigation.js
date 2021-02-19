@@ -14,7 +14,7 @@ function Navigation() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav  className="ml-auto">
+          <Nav  className="ml-auto mr-5 px-3">
             <Nav.Link>
               <Link to="/" className="nav-link-item">Home</Link>
             </Nav.Link>
@@ -27,9 +27,6 @@ function Navigation() {
             <Nav.Link>
               <Link to="/recordings" className="nav-link-item">Recordings</Link>
             </Nav.Link>
-            {/* <Nav.Link>
-              <Link to="/account" className="nav-link-item">Account</Link>
-            </Nav.Link> */}
             <NavDropdown title="Account" id="nav-dropdown">
               <NavDropdown.Item href="/account" >Sign in / Sign up</NavDropdown.Item>
               <NavDropdown.Item id="nav-dropdown-logout">Log out</NavDropdown.Item>
