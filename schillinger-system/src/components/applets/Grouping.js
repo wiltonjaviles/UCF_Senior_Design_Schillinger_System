@@ -1,10 +1,35 @@
-import {Container, Row, Col, Card, Form, Button} from 'react-bootstrap' 
+import {Container, Row, Col, Card, Form, Button} from 'react-bootstrap';
+import React, { useState } from 'react';
 import '../.././Style.css';
 
 function Grouping() {
   
+  const [state , setState] = useState({
+    groupingFormA : -1,
+    groupingFormB : -1
+  })
+
+  const handleSelect = (e) => {
+    const {id , value} = e.target   
+    setState(prevState => ({
+        ...prevState,
+        [id] : value
+    }))
+  }
+
   const doGrouping = async event => {
     event.preventDefault();
+    if ( state.groupingFormA === -1 || state.groupingFormB === -1 ){
+      alert('Please fill out all fields!');
+    } else if ( isNaN(state.groupingFormA) || isNaN(state.groupingFormB) ) {
+      alert('Please fill out all fields!');
+    } else {
+      const a = Number(state.groupingFormA);
+      const b = Number(state.groupingFormB);
+      const ab = a*b;
+      const T = String(ab)+"/"+String(ab);
+      alert(T);
+    }
   }
 
   return (
@@ -17,8 +42,8 @@ function Grouping() {
               <br></br>
               <Row className="align-items-bottom justify-content-md-center">
                 <Col className="col-2">
-                  <Form.Group controlId="grouping-form-a">
-                    <Form.Control as="select">
+                  <Form.Group controlId="groupingFormA">
+                    <Form.Control as="select" defaultValue="-1" value={state.groupingFormA} onChange={handleSelect}>
                       <option>a</option>
                       <option>3</option>
                       <option>4</option>
@@ -34,8 +59,8 @@ function Grouping() {
                   <h1>÷</h1>
                 </Col>
                 <Col className="col-2">              
-                  <Form.Group controlId="grouping-form-b">
-                    <Form.Control as="select">
+                  <Form.Group controlId="groupingFormB">
+                    <Form.Control as="select" defaultValue="-1" value={state.groupingFormB} onChange={handleSelect}>
                       <option>b</option>
                       <option>2</option>
                       <option>3</option>
@@ -47,8 +72,8 @@ function Grouping() {
                     </Form.Control>
                   </Form.Group>
                 </Col>
-                <Col className="col-2">
-                  <Button variant="secondary" type="submit" className="float-right">Calculate Grouping</Button>
+                <Col className="col-3">
+                  <Button variant="secondary" type="submit" className="float-right" onClick={doGrouping}>Calculate Grouping</Button>
                 </Col>
               </Row>
             </Form>
@@ -58,6 +83,16 @@ function Grouping() {
             <Row>
               <Col>
                 <h4>Grouped by ab: </h4>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <h4>Grouped by a: </h4>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <h4>Grouped by b: </h4>
               </Col>
             </Row>
           </Card.Body>
