@@ -1,5 +1,6 @@
 import '.././Style.css';
-import Pendulum from './applets/Pendulum';
+import GeneratorForm from './applets/GeneratorForm';
+import Grouping from './applets/Grouping';
 
 function Home() {
   return (
@@ -8,7 +9,7 @@ function Home() {
       <h1>Welcome to the Schillinger System of Musical Composition!</h1>
       <br />
       <p>Welcome to the Schillinger System of Musical Composition!</p>
-      <Pendulum />
+      <Grouping />
     </div>
   );
 }
