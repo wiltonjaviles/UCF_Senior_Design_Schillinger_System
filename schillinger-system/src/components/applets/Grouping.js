@@ -3,6 +3,10 @@ import '../.././Style.css';
 
 function Grouping() {
   
+  const doGrouping = async event => {
+    event.preventDefault();
+  }
+
   return (
     <div>
       <Container>
@@ -44,7 +48,7 @@ function Grouping() {
                   </Form.Group>
                 </Col>
                 <Col className="col-2">
-                  <Button variant="secondary" type="submit" className="float-right">Find Groupings</Button>
+                  <Button variant="secondary" type="submit" className="float-right">Calculate Grouping</Button>
                 </Col>
               </Row>
             </Form>
