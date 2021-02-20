@@ -6,12 +6,13 @@
 nav {
   display: flex;
   justify-content: space-around;
-  overflow: hidden;
+  /* overflow: hidden; */
   align-items: center;
   min-height: 12vh;
   background-image: linear-gradient(#1daa5c, #00de7c);
   /* background: #1daa5c; */
   color: white;
+  z-index: 9999;
 }
 
 .nav-link-item {
@@ -21,8 +22,6 @@ nav {
 .nav-link-item:hover {
   text-decoration: none;
   color: white;
-  background-color: #ffffff3f;
-  /* background-color: #00dd7d57; */
 }
 
 .nav-links{
@@ -55,4 +54,16 @@ nav {
 .chapter-section-link:hover {
   color: black;
   text-decoration: none
+}
+
+.generator-dropdown-menu {
+  min-width: 0px !important;
+}
+
+.third-variable-toggle {
+  display: none;
+}
+
+#nav-dropdown {
+  color: white;
 }

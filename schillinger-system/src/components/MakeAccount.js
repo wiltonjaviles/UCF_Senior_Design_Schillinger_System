@@ -73,7 +73,7 @@ export default function MakeAccount() {
     <Container fluid>
       <Form>
         <Form.Group controlId="formUsername">
-          <Form.Label>Make an account </Form.Label>
+          <Form.Label>Sign up.</Form.Label>
           <Form.Control type="username" placeholder="username" value={state.formUsername} onChange={handleChange} />
         </Form.Group>
         <Form.Group controlId="formPassword">

@@ -7,18 +7,19 @@ import isAuthenticated from '.././components/authUser';
 function Account() {
   isAuthenticated();
   return (
-    <Container fluid>
-      <h1>Account Page</h1>
-        <Row>
-            <Col>
-              <MakeAccount />
-            </Col>
+    <div>
+      <Container fluid>
+        <h1>Account Page</h1>
+          <Row>
             <Col>
               <LogIn />
             </Col>
+            <Col>
+              <MakeAccount />
+            </Col>
           </Row>
       </Container> 
-    
+    </div>
   );
 }
 
