@@ -1,7 +1,7 @@
 import '.././Style.css';
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Navbar, Nav, NavDropdown, Button} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 
 function Navigation() {
 
@@ -33,8 +33,8 @@ function Navigation() {
               <Link to="/recordings" className="nav-link-item">Recordings</Link>
             </Nav.Link>
             <NavDropdown title="Account" id="nav-dropdown">
-              <NavDropdown.Item href="/account" >Sign in / Sign up</NavDropdown.Item>
-              <NavDropdown.Item><Button variant="light" type="submit" onClick={doLogout}>Log out</Button></NavDropdown.Item>
+              <NavDropdown.Item href="/account" className="nav-dropdown">Sign in / Sign up</NavDropdown.Item>
+              <NavDropdown.Item onClick={doLogout}>Log out</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
