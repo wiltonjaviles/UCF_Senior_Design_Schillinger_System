@@ -1,9 +1,14 @@
 import '.././Style.css';
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown, Button} from 'react-bootstrap';
 
 function Navigation() {
+
+  const doLogout = event => {
+    event.preventDefault();
+    alert("logged out!");
+  }
   
   return (
     <Navbar collapseOnSelect expand="lg">
@@ -29,7 +34,7 @@ function Navigation() {
             </Nav.Link>
             <NavDropdown title="Account" id="nav-dropdown">
               <NavDropdown.Item href="/account" >Sign in / Sign up</NavDropdown.Item>
-              <NavDropdown.Item id="nav-dropdown-logout">Log out</NavDropdown.Item>
+              <NavDropdown.Item><Button variant="light" type="submit" onClick={doLogout}>Log out</Button></NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
