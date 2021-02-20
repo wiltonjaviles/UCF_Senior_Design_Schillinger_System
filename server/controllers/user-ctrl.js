@@ -194,14 +194,14 @@ const logout = async (req, res) => {
 	jwt.verify(token, process.env.SECRET, function(err, decoded)
 	{
 	  // if error, save error to send back to front end.
-	  if (!isNull(err))
+	  if (err !== null)
 	  {
 		if (err.message === "jwt expired")
 		  error = "You are already logged out."
 		else
 		  error = err.message;
 	  }
-	  else if (isNull(err))
+	  else if (err === null)
 	  {
 		uId = decoded.id;
 		newToken = jwt.sign({id:uId}, process.env.SECRET, { expiresIn: '1s' });
