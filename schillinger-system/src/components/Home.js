@@ -1,5 +1,5 @@
 import '.././Style.css';
-import GroupingPeriodicities from './applets/GroupingPeriodicities';
+import Generator from './applets/Generator';
 
 function Home() {
   return (
@@ -8,6 +8,7 @@ function Home() {
       <h1>Welcome to the Schillinger System of Musical Composition!</h1>
       <br />
       <p>Welcome to the Schillinger System of Musical Composition!</p>
+      <Generator />
     </div>
   );
 }
