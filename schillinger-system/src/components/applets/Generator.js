@@ -7,12 +7,6 @@ function GeneratorForm() {
     <Container>
       <Card>
         <Card.Body>
-          <Card>
-            <Card.Body>
-              <p>generator will be displayed here</p>
-              
-            </Card.Body>
-          </Card>
           <Form>
             <Row className="align-items-center">
               <Col className="col-2">
