@@ -67,3 +67,31 @@ nav {
 #nav-dropdown {
   color: white;
 }
+
+.nav-link-button {
+  background: none;
+}
+
+.nav-dropdown:active {
+  background: none;
+  border: none;
+}
+
+.nav-link-button {
+  display: flex;
+}
+
+.nav-link-button:hover {
+  background: none;
+  border: none;
+}
+
+.nav-link-button:active {
+  background: none;
+  border: none;
+}
+
+.nav-link-button:after {
+  background: none;
+  border: none;
+}
