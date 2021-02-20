@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import '../.././Style.css';
 
 function Grouping() {
-  
+  var strValue = "";
   const [state , setState] = useState({
     groupingFormA : -1,
     groupingFormB : -1
@@ -28,7 +28,8 @@ function Grouping() {
       const b = Number(state.groupingFormB);
       const ab = a*b;
       const T = String(ab)+"/"+String(ab);
-      alert(T);
+      strValue = T;
+      alert(strValue);
     }
   }
 
@@ -83,6 +84,9 @@ function Grouping() {
             <Row>
               <Col>
                 <h4>Grouped by ab: </h4>
+              </Col>
+              <Col>
+                <p>{strValue}</p>
               </Col>
             </Row>
             <Row>
