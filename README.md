@@ -68,10 +68,12 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://learnschillinger.com)
 
+This project, once completed, will provide a comprehensive Schillinger System learning tool for musicians and software developers that can be used to create computer-assisted musical composition software. Since Schillinger never finished refining his ideas for the System it fell into obscurity after his death. This project aims bring his system back to the forefront of musical composition. It could also provide substantial guidance for composers and software developers to implement Schillinger’s ideas, which has never been done before. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac lobortis augue. Morbi tincidunt ultrices est, at condimentum ipsum rutrum at. Aliquam lobortis, risus in consectetur interdum, nulla purus euismod nisl, vitae sagittis libero enim id lacus. Duis mollis est non mi pharetra molestie ut in nunc. Ut quis feugiat ligula. Sed lobortis mi sapien, ac sodales tellus convallis euismod. Vestibulum urna velit, vestibulum non metus eu, mollis semper tellus. Nam commodo imperdiet ex nec egestas.
+In addition to the applications in composition software, this project will provide easy access to Schillinger’s system for people who simply want to learn music theory. Since it is more math-based than the traditional system, Schillinger’s System may be easier for some people to understand.
 
-Quisque eleifend nibh quis ex consectetur iaculis. Sed eu tortor a elit mattis fermentum. Sed tincidunt metus sit amet tellus molestie euismod. Quisque sed consequat risus, sit amet vehicula tortor. Curabitur metus tortor, mollis eu vehicula vel, sollicitudin et tortor. In laoreet dui velit, interdum congue lorem fringilla nec. Cras molestie sapien sit amet nisl ultrices tincidunt. Morbi finibus, est vel vehicula posuere, orci velit rutrum neque, at vehicula urna justo malesuada magna. Curabitur eu ligula nisl. In ut neque sit amet orci accumsan sollicitudin nec et elit. 
+There is also a small chance that because our project revives interest in Schillinger’s System of Musical Composition, in time it could replace the existing system of composing music.  A clear understanding of his ideas could result in a shift in how music is written to his system.
+
 
 ### Built With
 
