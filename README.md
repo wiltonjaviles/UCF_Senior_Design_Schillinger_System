@@ -13,7 +13,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -127,8 +127,6 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   ctrl + c
   ```
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
