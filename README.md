@@ -106,8 +106,8 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-3. Contact the previous Team or Leinecker about .env files.
-4. Contact the previous Team or Leinecker about DigitalOcean & MongoDB Atlas Access.
+3. Contact the previous <a href="#contact">Team</a> or Leinecker about .env files.
+4. Contact the previous <a href="#contact">Team</a> or Leinecker about DigitalOcean & MongoDB Atlas Access.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -153,6 +153,8 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- CONTACT -->
 ## Contact
+
+**Team 1**
 
 Michael Alaniz - [@mikey_alaniz](https://twitter.com/mikey_alaniz) - michael.yeah@pm.me
 
