@@ -1,0 +1,26 @@
+{
+  "name": "ucf_senior_design_schillinger_system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js",
+    "server": "nodemon server/index.js",
+    "client": "cd schillinger-system && npm run start",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wiltonjaviles/UCF_Senior_Design_Schillinger_System.git"
+  },
+  "author": "Michael Alaniz <michael.yeah@pm.me>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wiltonjaviles/UCF_Senior_Design_Schillinger_System/issues"
+  },
+  "homepage": "https://github.com/wiltonjaviles/UCF_Senior_Design_Schillinger_System#readme",
+  "dependencies": {
+    "concurrently": "^6.0.0"
+  }
+}

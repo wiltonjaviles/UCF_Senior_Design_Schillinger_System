@@ -1,5 +1,3 @@
-import react from 'react';
-
 export default function isAuthenticated()
 {
     const BASE_URL = 'http://localhost:5000/';
