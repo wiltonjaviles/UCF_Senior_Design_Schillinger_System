@@ -1,5 +1,6 @@
 import '.././Style.css';
-import Generator from './applets/Generator';
+import Pendulum from './applets/Pendulum';
+import React, { useState } from 'react';
 
 function Home() {
   return (
@@ -8,7 +9,7 @@ function Home() {
       <h1>Welcome to the Schillinger System of Musical Composition!</h1>
       <br />
       <p>Welcome to the Schillinger System of Musical Composition!</p>
-      <Generator />
+      <Pendulum />
     </div>
   );
 }
