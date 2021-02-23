@@ -35,6 +35,10 @@ nav {
   color: white;
 }
 
+.bookText{
+  text-align: justify;
+}
+
 .content-links {
   color: black;
   text-decoration: none;
