@@ -129,4 +129,7 @@ nav {
 
 .jxboard {
   margin: auto;
+  height: 300;
+  width: 600;
+  outline: black;
 }
