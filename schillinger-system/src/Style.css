@@ -130,3 +130,10 @@ nav {
   border-radius: 50%;
   background-color: black;
 }
+
+.jxboard {
+  margin: auto;
+  height: 300;
+  width: 600;
+  outline: black;
+}
