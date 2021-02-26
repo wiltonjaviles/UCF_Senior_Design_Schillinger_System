@@ -1,43 +1,35 @@
 import {Container, Row, Col, Card, Form} from 'react-bootstrap'
-import React, { useState } from 'react';
+import React from 'react';
 import '../.././Style.css';
 import JXGBoard from 'jsxgraph-react-js'
 
 function Waveform() {
-  var amplitude = 1;
-  var period = 2*Math.PI;
-  var hPhase = 0;
-  var vPhase = 0;
+  
+  // const [state , setState] = useState({
+  //   amplitude : 1,
+  //   frequency : 1,
+  //   phase: 0,
+  //   vertical: 0
+  // })
 
-  const [state , setState] = useState({
-    amplitude : 1,
-    period : 2*Math.PI,
-    hPhase: 0,
-    vPhase: 0
-  })
+  // const handleChange = (e) => {
+  //   const {id , value} = e.target   
+  //   setState(prevState => ({
+  //       ...prevState,
+  //       [id] : value
+  //   }))
+  // }
 
-  const handleChange = (e) => {
-    const {id , value} = e.target   
-    setState(prevState => ({
-        ...prevState,
-        [id] : value
-    }))
-  }
-
-  var p = state.period/(2*Math.PI);
-  var A = String(state.amplitude);
-  var B = String(p);
-  var C = String(-state.hPhase);
-  var D = String(state.vPhase);
-
-  //y = Asin(B(x+C))+D
-  var f = A+"*sin("+B+"*(x+"+C+"))+"+D;
-  let logicJS = (brd) => {
+  var logicJS = (brd) => {
     brd.suspendUpdate();
-    var graph = brd.create('functiongraph', [f], {strokeColor: "black", strokeWidth: 2});
+    var a = brd.create('slider', [[-5.5, 5], [-3.5, 5], [0, 1, 10]], { name: 'amplitude' });
+    var f = brd.create('slider', [[-5.5, 4], [-3.5, 4], [0, 1, 10]], { name: 'frequency' });
+    var p = brd.create('slider', [[-5.5, 3], [-3.5, 3], [-10, 0, 10]], { name: 'phase shift' });
+    var v = brd.create('slider', [[-5.5, 2], [-3.5, 2], [-10, 0, 10]], { name: 'vertical shift' });
+    var c = brd.create('functionGraph', [function (x) {return a.Value()*Math.sin(f.Value()*(x+p.Value()))+v.Value()}], {needsRegularUpdate:true});
     brd.unsuspendUpdate();
   }
-  
+
   return (
     <div>
       <Container>
@@ -48,49 +40,55 @@ function Waveform() {
             <Row>
               <Col>
                 <JXGBoard
-                className="jxboard"
-                boardAttributes={{ axis: true, boundingbox: [-1, 4.5, 8, -4.5] }}
-                logic={logicJS}
+                  logic={logicJS}
+                  boardAttributes={{ axis: true, boundingbox: [-6, 6, 6, -6], needsRegularUpdate: true}}
+                  style={{
+                    border: "3px solid black"
+                  }}
                 />
               </Col>
               <Col>
-                <h3>Controls</h3>
-                <Form>
-                  <Form.Group controlId="amplitude">
-                    <Form.Label>Amplitude</Form.Label>
-                    <Form.Control 
-                      type="range"
-                      min="0.1" max="4" step="0.1"
-                      className="rangeSlider" onInput={handleChange}
-                    />
-                  </Form.Group>
-                  <Form.Group controlId="period">
-                    <Form.Label>Frequency</Form.Label>
-                    <Form.Control 
-                      type="range"
-                      min="0.1" max="8" step="0.1"
-                      className="rangeSlider" onInput={handleChange}
-                    />
-                  </Form.Group>
-                  <Form.Group controlId="hPhase">
-                    <Form.Label>Horizontal Phase</Form.Label>
-                    <Form.Control 
-                      type="range"
-                      min="0.1" max="8" step="0.1"
-                      className="rangeSlider" onInput={handleChange}
-                    /> 
-                  </Form.Group>
-                  <Form.Group controlId="vPhase">
-                    <Form.Label>Vertical Phase</Form.Label>
-                    <Form.Control 
-                      type="range"
-                      min="0.1" max="8" step="0.1"
-                      className="rangeSlider" onInput={handleChange}
-                    />
-                  </Form.Group>
-                </Form>
+                  <h3>Instructions</h3>
+                  <p>
+                    Use the sliders on the left to manipulate the appearance of the wave. How does the amplitude, 
+                    frequency, phase shift, and vertical shift affect the wave?
+                  </p>
               </Col>
+              {/* <Col>
+                  <h3>Controls</h3>
+                  <Form>
+                    <Form.Group controlId="amplitude">
+                      <Form.Label>Amplitude</Form.Label>
+                      <Form.Control 
+                        type="range" onInput={handleChange}
+                        min="0" max="10" step="0.1" defaultValue="1"
+                      />
+                    </Form.Group>
+                    <Form.Group controlId="frequency">
+                      <Form.Label>Frequency</Form.Label>
+                      <Form.Control 
+                        type="range" onInput={handleChange}
+                        min="0" max="10" step="0.1" defaultValue="1"
+                      />
+                    </Form.Group>
+                    <Form.Group controlId="phase">
+                      <Form.Label>Phase Shift</Form.Label>
+                      <Form.Control 
+                        type="range" onInput={handleChange}
+                        min="-5" max="5" step="0.1" defaultValue="0"
+                      />
+                    </Form.Group>
+                    <Form.Group controlId="vertical">
+                      <Form.Label>Vertical Shift</Form.Label>
+                      <Form.Control 
+                        type="range" onInput={handleChange}
+                        min="-5" max="5" step="0.1" defaultValue="0"
+                      />
+                    </Form.Group>
+                  </Form>
+              </Col> */}
             </Row>
+            
           </Card.Body>
         </Card>
       </Container>
