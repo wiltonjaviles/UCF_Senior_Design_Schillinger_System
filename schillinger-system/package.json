@@ -12,6 +12,8 @@
     "bootstrap": "^4.5.3",
     "framer-motion": "^3.6.2",
     "jquery": "^1.9.1",
+    "jsxgraph": "^1.2.1",
+    "jsxgraph-react-js": "^1.0.4",
     "p5": "^1.2.0",
     "react": "^17.0.1",
     "react-abcjs": "^0.1.3",
