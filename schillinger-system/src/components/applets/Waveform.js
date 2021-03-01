@@ -27,6 +27,8 @@ function Waveform() {
     var p = brd.create('slider', [[-5.5, 3], [-3.5, 3], [-10, 0, 10]], { name: 'phase shift' });
     var v = brd.create('slider', [[-5.5, 2], [-3.5, 2], [-10, 0, 10]], { name: 'vertical shift' });
     var c = brd.create('functionGraph', [function (x) {return a.Value()*Math.sin(f.Value()*(x+p.Value()))+v.Value()}], {needsRegularUpdate:true});
+    var p1 = brd.create('point', [0, 0], {slideObject: c, name: ""});
+
     brd.unsuspendUpdate();
   }
 
@@ -53,6 +55,7 @@ function Waveform() {
                     Use the sliders on the left to manipulate the appearance of the wave. How does the amplitude, 
                     frequency, phase shift, and vertical shift affect the wave?
                   </p>
+                  <p>Drag the point along the wave to see the exact coordinates of the point. </p>
               </Col>
               {/* <Col>
                   <h3>Controls</h3>
