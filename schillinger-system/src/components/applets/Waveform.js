@@ -4,21 +4,6 @@ import '../.././Style.css';
 import JXGBoard from 'jsxgraph-react-js'
 
 function Waveform() {
-  
-  // const [state , setState] = useState({
-  //   amplitude : 1,
-  //   frequency : 1,
-  //   phase: 0,
-  //   vertical: 0
-  // })
-
-  // const handleChange = (e) => {
-  //   const {id , value} = e.target   
-  //   setState(prevState => ({
-  //       ...prevState,
-  //       [id] : value
-  //   }))
-  // }
 
   var logicJS = (brd) => {
     brd.suspendUpdate();
@@ -57,41 +42,7 @@ function Waveform() {
                   </p>
                   <p>Drag the point along the wave to see the exact coordinates of the point. </p>
               </Col>
-              {/* <Col>
-                  <h3>Controls</h3>
-                  <Form>
-                    <Form.Group controlId="amplitude">
-                      <Form.Label>Amplitude</Form.Label>
-                      <Form.Control 
-                        type="range" onInput={handleChange}
-                        min="0" max="10" step="0.1" defaultValue="1"
-                      />
-                    </Form.Group>
-                    <Form.Group controlId="frequency">
-                      <Form.Label>Frequency</Form.Label>
-                      <Form.Control 
-                        type="range" onInput={handleChange}
-                        min="0" max="10" step="0.1" defaultValue="1"
-                      />
-                    </Form.Group>
-                    <Form.Group controlId="phase">
-                      <Form.Label>Phase Shift</Form.Label>
-                      <Form.Control 
-                        type="range" onInput={handleChange}
-                        min="-5" max="5" step="0.1" defaultValue="0"
-                      />
-                    </Form.Group>
-                    <Form.Group controlId="vertical">
-                      <Form.Label>Vertical Shift</Form.Label>
-                      <Form.Control 
-                        type="range" onInput={handleChange}
-                        min="-5" max="5" step="0.1" defaultValue="0"
-                      />
-                    </Form.Group>
-                  </Form>
-              </Col> */}
             </Row>
-            
           </Card.Body>
         </Card>
       </Container>
