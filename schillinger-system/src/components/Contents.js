@@ -1,8 +1,10 @@
 import {Link} from 'react-router-dom';
 import {Container} from 'react-bootstrap';
 import '.././Style.css';
+import isAuthenticated from '.././components/authUser';
 
 function Contents() {
+  isAuthenticated();
   return (
     <div>
       <Container>

@@ -10,12 +10,13 @@ function Navigation() {
 
   var _session = localStorage.getItem('session_token');
   var session = JSON.parse(_session);
+  var logoutToken;
 
   if (session != null){
-    var logoutToken = session.token;
+    logoutToken = session.token;
   }
   else {
-    var logoutToken = '';
+    logoutToken = '';
   }
 
   const [message,setMessage] = useState('');
@@ -43,16 +44,16 @@ function Navigation() {
 
         var res = JSON.parse(await response.text());
 
-        if (res.error != '') {
+        if (res.error !== '') {
           alert(res.error);
           window.location.href = '/';
         }
         else {
-          var session = {token:res.jwt}
+          session = {token:res.jwt}
           localStorage.removeItem('user_data');
           localStorage.removeItem('session_token');
           localStorage.setItem('session_token', JSON.stringify(session));
-
+          setMessage('Logout Successful!');
           window.location.href = '/';
         }
       }

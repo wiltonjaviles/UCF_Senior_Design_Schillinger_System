@@ -1,15 +1,18 @@
 import '.././Style.css';
-import Pendulum from './applets/Pendulum';
+import isAuthenticated from '.././components/authUser';
 import React, { useState } from 'react';
+import Ch12Generator from './applets/Ch12Generator';
 
 function Home() {
+  isAuthenticated();
   return (
     <div>
       <br />
       <h1>Welcome to the Schillinger System of Musical Composition!</h1>
       <br />
       <p>Welcome to the Schillinger System of Musical Composition!</p>
-      <Pendulum />
+      <Ch12Generator />
+      <br />
     </div>
   );
 }

@@ -11,7 +11,6 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user-model');
 const path = require('path');
 const crypto = require('crypto');
-const { isNull } = require('util')
 
 env.config({path: path.resolve(__dirname, '../.env')});
 
@@ -63,8 +62,6 @@ const createUser = async (req, res) =>
 	}
 
 	var {passwordHash, salt} = saltHashPassword(password);
-
-	console.log(salt);
 	
 	const user = new User({ 
 		username: username, 
@@ -167,11 +164,11 @@ const validation = async (req, res) => {
 	jwt.verify(token, process.env.SECRET, function(err, decoded)
 	{
 	  // if error, save error to send back to front end.
-	  if (!isNull(err))
+	  if (err !== null)
 	  {
 		error = err.message;
 	  }
-	  else if (isNull(err))
+	  else
 	  {
 		uId = decoded.id;
 		newToken = jwt.sign({id:uId}, process.env.SECRET, { expiresIn: '3d' });
