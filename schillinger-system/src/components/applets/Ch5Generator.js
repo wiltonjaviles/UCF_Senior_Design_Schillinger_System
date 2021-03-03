@@ -6,13 +6,8 @@ function Ch5Generator() {
   const [state , setState] = useState({
     variableA : 2,
     variableB : 1,
-    groupBy : 'a',
-    variant : 'B',
-    OutputC1 : '',
-    OutputC2 : '',
-    OuputA : '',
-    OutputB : '',
-    OutputR : ''
+    variant : 'Balance',
+    Output : ''
   })
 
   const handleSelect = (e) => {
@@ -27,16 +22,27 @@ function Ch5Generator() {
     event.preventDefault();    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
-    let outArr = simpleToABC(sMakeR(vA,vB),vA);
+    const V = String(state.variant);
+
+    let outArr = new Array();
     
+    switch(V) {
+      case 'Balance':
+        outArr = balance(vA,vB);
+        break;
+      case 'Contract':
+        outArr = contract(vA,vB);
+        break;
+      case 'Expand':
+        outArr = expand(vA,vB);
+        break;
+    }
+    
+    outArr = simpleToABC(outArr);
 
     setState(prevState => ({
         ...prevState,
-        OutputC1 : outArr[0].toString(),
-        OutputC2 : outArr[1].toString(),
-        OuputA : outArr[2].toString(),
-        OutputB : outArr[3].toString(),
-        OutputR : outArr[4].toString()
+        Output : outArr[0].toString()
       }))
   }
 
@@ -84,18 +90,10 @@ function Ch5Generator() {
                     </Form.Control>
                   </Form.Group>
                 </Col>
-                <Col className="col-2">              
-                  <Form.Group controlId="groupBy">
-                    <Form.Control as="select" defaultValue="-1" value={state.groupBy} onChange={handleSelect}>
-                      <option>a</option>
-                      <option>b</option>
-                      <option>ab</option>
-                    </Form.Control>
-                  </Form.Group>
-                </Col>
+                
                 <Col className="col-2">              
                   <Form.Group controlId="variant">
-                    <Form.Control as="select" defaultValue="-1" value={state.variant} onChange={handleSelect}>
+                    <Form.Control as="select" defaultValue="Balance" value={state.variant} onChange={handleSelect}>
                       <option>Balance</option>
                       <option>Expand</option>
                       <option>Contract</option>
@@ -122,60 +120,13 @@ function Ch5Generator() {
                         <h4>{state.variableB}</h4>
                     </Col>
                 </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>C1: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputC1}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>C2: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputC2}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>A: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OuputA}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>B: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputB}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>R: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputR}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>R_: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputR}</h4>
-                    </Col>
-                </Row>
+                
                 <Row className="justify-content-md-center">
                     <Col className="col-3">
                         <h4>Result: </h4>
                     </Col>
                     <Col className="col-2">
-                        <h4>{state.OutputR}</h4>
+                        <h4>{state.Output}</h4>
                     </Col>
                 </Row>
             </Form>
@@ -194,8 +145,7 @@ function balance(a, b) {
   let arr1 = sMakeR(a,b);
   let arr2 = sMakeR_(a,b);
   let arrOut = new Array();
-  arrOut[0] = arr2[5]+arr1[4];
-
+  arrOut[0] = arr2[5]+arr1[4]+a*(a-b);
   return arrOut;
 }
 
