@@ -120,7 +120,11 @@ function Ch12Generator() {
               <h1>Chapter 12 Generator</h1>
               <h3>Instructions</h3>
               <p>
+<<<<<<< HEAD
                 Enter some polynomial input of the form (a+b+c+...+m)^n.
+=======
+                Enter some polynomial formula of the form (a+b+c+...+m)<sup>n</sup>.
+>>>>>>> 3dc1fc7c6ac2e1fde4145a353f5732024d2ad123
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">
