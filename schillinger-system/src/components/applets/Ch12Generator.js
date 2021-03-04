@@ -60,7 +60,7 @@ function Ch12Generator() {
               <h1>Chapter 12 Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Enter some polynomial formula of the form (a+b+c+...+m)<sup>n</sup>.
+                Enter some polynomial formula of the form (a+b+c+...+m)^n.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">
