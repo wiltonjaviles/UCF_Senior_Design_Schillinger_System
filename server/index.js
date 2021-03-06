@@ -7,6 +7,7 @@ const userRouter = require('./routes/user-router');
 const app = express();
 const http = require('http');
 const https = require('https');
+const uri = process.env.MONGO_URI
 require('dotenv').config();
 
 app.use(express.urlencoded());
