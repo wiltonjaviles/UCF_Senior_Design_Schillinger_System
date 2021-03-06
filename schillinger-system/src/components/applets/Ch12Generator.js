@@ -3,6 +3,16 @@ import React, { useState } from 'react';
 import '../.././Style.css';
 
 function Ch12Generator() {
+
+  var  factF = "";
+  var  factP = "";
+  var sFactF = "";
+  var sFactP = "";
+  var  fracF = "";
+  var  fracP = "";
+  var sFracF = "";
+  var sFracP = "";
+  var sumF = 0;
   
   const [state , setState] = useState({
     warning: "",
@@ -19,11 +29,13 @@ function Ch12Generator() {
 
   const DistributivePower = async (n, f) => {
     n = Number(n);
+    
     if(n < 2) {
       setState(prevState => ({
         ...prevState,
         warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
       }))
+      clearResults();
       return;
     } else if(n == 2) {
       var sumNums = "";
@@ -35,6 +47,7 @@ function Ch12Generator() {
         factorialFormula = factorialFormula.concat(String(element)+"+");
         sumNums += String(element)+"+";
       });
+      sumF = sum;
       factorialFormula = factorialFormula.slice(0, -1);
       sumNums = sumNums.slice(0, -1);
       factorialFormula = factorialFormula.concat(")^"+String(n)+" = ");
@@ -42,7 +55,7 @@ function Ch12Generator() {
         factorialFormula = factorialFormula.concat("(");
         f.forEach(element2 => {
           if(element == element2) {
-            var square = String(element)+"^"+String(n)+"+"
+            var square = String(element)+"^2+"
             factorialFormula = factorialFormula.concat(square);
           } else {
             var mult = String(Number(element)*Number(element2))+"+";
@@ -53,6 +66,7 @@ function Ch12Generator() {
         factorialFormula = factorialFormula.concat(")+");
       });
       factorialFormula = factorialFormula.slice(0, -1);
+      factF = factorialFormula;
       var factorialPlugIn = " = "
       f.forEach(element => {
         f.forEach(element2 => {
@@ -61,7 +75,7 @@ function Ch12Generator() {
         });
       });
       factorialPlugIn = factorialPlugIn.slice(0, -1);
-
+      factP = factorialPlugIn;
       // synchronized factorial
       var synchronizedFactorialFormula = "S = ";
       f.forEach(element => {
@@ -75,6 +89,7 @@ function Ch12Generator() {
         synchronizedFactorialFormula = synchronizedFactorialFormula.concat(")+");
       });
       synchronizedFactorialFormula = synchronizedFactorialFormula.slice(0, -1);
+      sFactF = synchronizedFactorialFormula;
       var synchronizedFactorialPlugIn = " = "
       f.forEach(element => {
         var sum = 0;
@@ -85,7 +100,7 @@ function Ch12Generator() {
         synchronizedFactorialPlugIn = synchronizedFactorialPlugIn.concat(String(mult)+"+");
       });
       synchronizedFactorialPlugIn = synchronizedFactorialPlugIn.slice(0, -1);
-
+      sFactP = synchronizedFactorialPlugIn;
       // fractional formula
       var fractionalFormula = "(";
       var denomSum = sumNums;
@@ -116,7 +131,7 @@ function Ch12Generator() {
         });
       });
       fractionalFormula = fractionalFormula.slice(0, -1);
-
+      fracF = fractionalFormula;
       var fractionalPlugIn = " = ";
       f.forEach(element => {
         f.forEach(element2 => {
@@ -126,7 +141,7 @@ function Ch12Generator() {
         });
       });
       fractionalPlugIn = fractionalPlugIn.slice(0, -1);
-
+      fracP = fractionalPlugIn;
       // synchronized fractional sumNums
       var synchronizedFractionalFormula = "S = ";
       f.forEach(element => {
@@ -134,7 +149,7 @@ function Ch12Generator() {
           "("+String(element)+"/("+sumNums+"))*"+"(("+sumNums+")/("+sumNums+"))+");
       });
       synchronizedFractionalFormula = synchronizedFractionalFormula.slice(0, -1);
-
+      sFracF = synchronizedFractionalFormula;
       var synchronizedFractionalPlugIn = " = ";
       f.forEach(element => {
         var num = Number(element);
@@ -143,6 +158,8 @@ function Ch12Generator() {
         synchronizedFractionalPlugIn = synchronizedFractionalPlugIn.concat(String(product)+"/"+String(denomProduct)+"+");
       });
       synchronizedFractionalPlugIn = synchronizedFractionalPlugIn.slice(0, -1);
+      sFracP = synchronizedFractionalPlugIn;
+
       setState(prevState => ({
         ...prevState,
         factorialFormula: factorialFormula,
@@ -154,42 +171,88 @@ function Ch12Generator() {
         synchronizedFractionalFormula: synchronizedFractionalFormula,
         synchronizedFractionalPlugIn: synchronizedFractionalPlugIn
       }))
+
     } else if (n > 2) {
       var group = state.input.split("^")[0];
       var sum = 0;
       f.forEach(element => {
         sum += Number(element);
       });
-      // alert(sum);
-      var sync = await DistributivePower(Number(n)-1, f);
-      // alert(state.synchronizedFactorialFormula);
-      // alert(state.factorialFormula);
-      var splitFactorial = state.factorialFormula.split(" = ");
-      // alert(splitFactorial);
-      // alert(group);
-      var factorialFormula2 = state.input + " = ";
-      factorialFormula2 = factorialFormula2.concat(group+"("+splitFactorial[0]+") = "+group+"("+splitFactorial[1]+")");
-      // alert(factorialFormula2);
-      // alert(state.factorialPlugIn);
-      var factorialPlugIn2 = state.factorialPlugIn.replace(" = ", "");
+      var sync = DistributivePower(Number(n)-1, f);
+      var splitFactorial = factF.split(" = ");
+
+      var factorialFormula2 = "(";
+      f.forEach(element => {
+        factorialFormula2 = factorialFormula2.concat(String(element)+"+");
+      });
+      factorialFormula2 = factorialFormula2.slice(0, -1);
+      factorialFormula2 = factorialFormula2.concat(")^"+String(n)+" = ");
+      splitFactorial.forEach(element => {
+        factorialFormula2 = factorialFormula2.concat(group+"("+element+") = ");
+      });
+      factorialFormula2 = factorialFormula2.slice(0, -3);
+      var factorialPlugIn2 = factP.replace(" = ", "");
       var arrFactPlugIn2 = factorialPlugIn2.split("+");
-      // alert(arrFactPlugIn2);
       factorialPlugIn2 = String(sum)+"("+factorialPlugIn2+")";
-      // alert(factorialPlugIn2);
       factorialPlugIn2 = " = ";
       arrFactPlugIn2.forEach(element => {
         element = String(Number(sum)*Number(element));
         factorialPlugIn2 = factorialPlugIn2.concat(element+"+");
       });
       factorialPlugIn2 = factorialPlugIn2.slice(0, -1);
-      // alert(factorialPlugIn2);   
+
+      var synchronizedFactorialFormula2 = sFactF;
+      synchronizedFactorialFormula2 = synchronizedFactorialFormula2.split(" = ")[1];
+      for(var i = n; i>2; i--) {
+        synchronizedFactorialFormula2 = group+"("+synchronizedFactorialFormula2+")";
+      }
+
+      var synchronizedFactorialPlugIn2 = sFactP.replace(" = ", "");
+      var arrsynchronizedFactorialPlugIn2 = synchronizedFactorialPlugIn2.split("+");
+      synchronizedFactorialPlugIn2 = " = "
+      arrsynchronizedFactorialPlugIn2.forEach(element => {
+        element = String(Number(sum)*Number(element));
+        synchronizedFactorialPlugIn2 = synchronizedFactorialPlugIn2.concat(element+"+");
+      });
+      synchronizedFactorialPlugIn2 = synchronizedFactorialPlugIn2.slice(0, -1);
+
+      var fractionalFormula2 = fracF;
+      var fracGroup = fractionalFormula2.split("^")[0];
+      var fracSumNum = Number(sumF);
+      var fracSumDemon = Number(sumF);
+
+      var arrFrac = fractionalFormula2.split(" = ");
+      fractionalFormula2 = fracGroup+"^"+String(n);
+      fractionalFormula2 = fractionalFormula2+" = "+fracGroup+"("+arrFrac[1]+")";
+
+      var fractionalPlugIn2 = fracP;
+      fractionalPlugIn2 = fractionalPlugIn2.replace(" = ", "");
+      var arrFractionalPlugIn2 = fractionalPlugIn2.split("+");
+      arrFractionalPlugIn2.forEach(element => {
+        var elementArr = element.split("/");
+        elementArr.forEach(element2 => {
+          element2 = Number(element2)*fracSumNum;
+          alert(element2);
+        });
+        // alert(elementArr);
+      });
+
       setState(prevState => ({
         ...prevState,
         factorialFormula: factorialFormula2,
-        factorialPlugIn: factorialPlugIn2
-    }))
+        factorialPlugIn: factorialPlugIn2,
+        synchronizedFactorialFormula: synchronizedFactorialFormula2,
+        synchronizedFactorialPlugIn: synchronizedFactorialPlugIn2,
+        fractionalFormula: fractionalFormula2,
+        fractionalPlugIn: fractionalPlugIn2
+      }))
+
+      factF = factorialFormula2;
+      factP = factorialPlugIn2;
+      sFactP = synchronizedFactorialPlugIn2;
+      fracF = fractionalFormula2;
+      fracP = fractionalPlugIn2;
     }
-    alert(n);
     return true;
   }
 
@@ -224,30 +287,35 @@ function Ch12Generator() {
         ...prevState,
         warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
       }))
+      clearResults();
       return;
     } else if (!f.includes("(")) {
       setState(prevState => ({
         ...prevState,
         warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
       }))
+      clearResults();
       return;
     } else if (!f.includes(")")) {
       setState(prevState => ({
         ...prevState,
         warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
       }))
+      clearResults();
       return;
     } else if (!f.includes("+")) {
       setState(prevState => ({
         ...prevState,
         warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
       }))
+      clearResults();
       return;
     } else if (f.includes("/")) {
       setState(prevState => ({
         ...prevState,
         warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
       }))
+      clearResults();
       return;
     } else {
       setState(prevState => ({
@@ -261,7 +329,6 @@ function Ch12Generator() {
     var f3 = f2.replace("(", "").replace(")", "");
     var f4 = f3.split("+");
     DistributivePower(n, f4);
-
   }
 
   return (
@@ -289,15 +356,15 @@ function Ch12Generator() {
                 </Col>
               </Row>
             </Form>
-            {/* <Row className="justify-content-md-center">
+            <Row className="justify-content-md-center">
               <h3>Results:</h3>
-            </Row> */}
+            </Row>
             <Row className="justify-content-md-center">
               <Col>
                 <p>{state.warning}</p>
               </Col>
             </Row>
-            <Row className="justify-content-md-center">
+            {/* <Row className="justify-content-md-center">
               <Col>
                 <p>{"Factorial: "+state.factorialFormula+state.factorialPlugIn}</p>
               </Col>
@@ -306,17 +373,17 @@ function Ch12Generator() {
               <Col>
                 <p>{"Synchronized Factorial: "+state.synchronizedFactorialFormula+state.synchronizedFactorialPlugIn}</p>
               </Col>
-            </Row>
+            </Row> */}
             <Row className="justify-content-md-center">
               <Col>
                 <p>{"Fractional: "+state.fractionalFormula+state.fractionalPlugIn}</p>
               </Col>
             </Row>
-            <Row className="justify-content-md-center">
+            {/* <Row className="justify-content-md-center">
               <Col>
                 <p>{"Synchronized Fractional: "+state.synchronizedFractionalFormula+state.synchronizedFractionalPlugIn}</p>
               </Col>
-            </Row>
+            </Row> */}
             <Row className="justify-content-md-center">
               <Button variant="secondary" onClick={clearResults}>Clear</Button>
             </Row>
