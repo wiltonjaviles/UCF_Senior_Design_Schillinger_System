@@ -26,16 +26,62 @@ function Ch12Generator() {
     synchronizedFractionalFormula: "",
     synchronizedFractionalPlugIn: ""
   })
-
+  const errorMsg = (code) => {
+    switch(code) {
+      case "NaN":
+        setState(prevState => ({
+          ...prevState,
+          warning: "a, b, ..., m and n must all be numbers."
+        }))
+        clearResults();
+        break;
+      case "tooBig":
+        setState(prevState => ({
+          ...prevState,
+          warning: "Seriously that's just too big for this calculator to handle! Please try again with a smaller exponent."
+        }))
+        clearResults();
+        break;
+      case "wrongSyntax":
+        setState(prevState => ({
+          ...prevState,
+          warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
+        }))
+        clearResults();
+        break;
+      default:
+        setState(prevState => ({
+          ...prevState,
+          warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
+        }))
+        clearResults();
+        // code block
+    }
+  }
   const DistributivePower = async (n, f) => {
-    n = Number(n);
+    if(isNaN(n)) {
+      errorMsg("NaN");
+      return;
+    }
     
-    if(n < 2) {
-      setState(prevState => ({
-        ...prevState,
-        warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
-      }))
-      clearResults();
+    n = Number(n);
+
+    f.forEach(element => {
+      if(isNaN(element)) {
+        errorMsg("NaN");
+        clearResults();
+        return;
+      }
+    });
+    
+    if (n > 24) {
+      errorMsg("tooBig");
+      return;
+    } else if (f.includes("")) {
+      errorMsg("wrongSyntax");
+      return;
+    } else if(n < 2) {
+      errorMsg("wrongSyntax");
       return;
     } else if(n === 2) {
       var sumNums = "";
@@ -307,38 +353,23 @@ function Ch12Generator() {
     var f = String(state.input);
     var n = 1;
     if (!f.includes("^")) {
-      setState(prevState => ({
-        ...prevState,
-        warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
-      }))
+      errorMsg("wrongSyntax");
       clearResults();
       return;
     } else if (!f.includes("(")) {
-      setState(prevState => ({
-        ...prevState,
-        warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
-      }))
+      errorMsg("wrongSyntax");
       clearResults();
       return;
     } else if (!f.includes(")")) {
-      setState(prevState => ({
-        ...prevState,
-        warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
-      }))
+      errorMsg("wrongSyntax");
       clearResults();
       return;
     } else if (!f.includes("+")) {
-      setState(prevState => ({
-        ...prevState,
-        warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
-      }))
+      errorMsg("wrongSyntax");
       clearResults();
       return;
     } else if (f.includes("/")) {
-      setState(prevState => ({
-        ...prevState,
-        warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
-      }))
+      errorMsg("wrongSyntax");
       clearResults();
       return;
     } else {
@@ -347,11 +378,19 @@ function Ch12Generator() {
         warning: ""
       }))
     }
-
+    var regExp = /[a-zA-Z]/g;
+                
+    if(regExp.test(f)){
+      alert("test");
+      errorMsg("NaN");
+      return;
+    } 
+    
     n = Number(f.split("^")[1]);
     var f2 = f.split("^")[0];
     var f3 = f2.replace("(", "").replace(")", "");
     var f4 = f3.split("+");
+    
     DistributivePower(n, f4);
   }
 
