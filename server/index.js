@@ -38,7 +38,7 @@ app.use('/api', userRouter);
 if (process.env.NODE_ENV === "production") {
 	const privKey = fs.readFileSync('/etc/letsencrypt/live/learnschillinger.com/privkey.pem', 'utf8');
 	const certificate = fs.readFileSync('/etc/letsencrypt/live/learnschillinger.com/cert.pem', 'utf8');
-	const ca = fs.readFileSync('/etc/letsencrypt/live/learnschillingercom/chain.pem', 'utf8');
+	const ca = fs.readFileSync('/etc/letsencrypt/live/learnschillinger.com/chain.pem', 'utf8');
 	const credentials = {
 		key: privKey,
 		cert: certificate,
