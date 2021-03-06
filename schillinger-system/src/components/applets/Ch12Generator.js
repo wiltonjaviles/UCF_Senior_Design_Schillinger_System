@@ -206,7 +206,7 @@ function Ch12Generator() {
       for(var i = n; i>2; i--) {
         synchronizedFactorialFormula2 = group+"("+synchronizedFactorialFormula2+")";
       }
-
+      synchronizedFactorialFormula2 = "S = "+synchronizedFactorialFormula2;
       var synchronizedFactorialPlugIn2 = sFactP.replace(" = ", "");
       var arrsynchronizedFactorialPlugIn2 = synchronizedFactorialPlugIn2.split("+");
       synchronizedFactorialPlugIn2 = " = "
@@ -228,14 +228,17 @@ function Ch12Generator() {
       var fractionalPlugIn2 = fracP;
       fractionalPlugIn2 = fractionalPlugIn2.replace(" = ", "");
       var arrFractionalPlugIn2 = fractionalPlugIn2.split("+");
+      fractionalPlugIn2 = " = ";
       arrFractionalPlugIn2.forEach(element => {
         var elementArr = element.split("/");
         elementArr.forEach(element2 => {
           element2 = Number(element2)*fracSumNum;
-          alert(element2);
+          fractionalPlugIn2 = fractionalPlugIn2.concat(element2+"/");
         });
-        // alert(elementArr);
+        fractionalPlugIn2 = fractionalPlugIn2.slice(0, -1);
+        fractionalPlugIn2 = fractionalPlugIn2.concat("+");
       });
+      fractionalPlugIn2 = fractionalPlugIn2.slice(0, -1);
 
       setState(prevState => ({
         ...prevState,
@@ -364,7 +367,7 @@ function Ch12Generator() {
                 <p>{state.warning}</p>
               </Col>
             </Row>
-            {/* <Row className="justify-content-md-center">
+            <Row className="justify-content-md-center">
               <Col>
                 <p>{"Factorial: "+state.factorialFormula+state.factorialPlugIn}</p>
               </Col>
@@ -373,17 +376,17 @@ function Ch12Generator() {
               <Col>
                 <p>{"Synchronized Factorial: "+state.synchronizedFactorialFormula+state.synchronizedFactorialPlugIn}</p>
               </Col>
-            </Row> */}
+            </Row>
             <Row className="justify-content-md-center">
               <Col>
                 <p>{"Fractional: "+state.fractionalFormula+state.fractionalPlugIn}</p>
               </Col>
             </Row>
-            {/* <Row className="justify-content-md-center">
+            <Row className="justify-content-md-center">
               <Col>
                 <p>{"Synchronized Fractional: "+state.synchronizedFractionalFormula+state.synchronizedFractionalPlugIn}</p>
               </Col>
-            </Row> */}
+            </Row>
             <Row className="justify-content-md-center">
               <Button variant="secondary" onClick={clearResults}>Clear</Button>
             </Row>
