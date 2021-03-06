@@ -5,6 +5,7 @@ function Recordings() {
   isAuthenticated();
   return (
     <div>
+      <br />
       <h1>Recordings Page</h1>
     </div>
   );
