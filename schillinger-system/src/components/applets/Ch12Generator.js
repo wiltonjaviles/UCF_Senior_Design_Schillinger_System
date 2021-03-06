@@ -37,7 +37,7 @@ function Ch12Generator() {
       }))
       clearResults();
       return;
-    } else if(n == 2) {
+    } else if(n === 2) {
       var sumNums = "";
       var sum = 0;
       // factorial formula
@@ -54,7 +54,7 @@ function Ch12Generator() {
       f.forEach(element => {
         factorialFormula = factorialFormula.concat("(");
         f.forEach(element2 => {
-          if(element == element2) {
+          if(element === element2) {
             var square = String(element)+"^2+"
             factorialFormula = factorialFormula.concat(square);
           } else {
@@ -115,11 +115,11 @@ function Ch12Generator() {
       fractionalFormula = fractionalFormula.slice(0, -1);
       fractionalFormula = fractionalFormula.concat(")^"+String(n));
 
-      var fractionalFormula = fractionalFormula.concat(" = ");
+      fractionalFormula = fractionalFormula.concat(" = ");
       f.forEach(element => {
         f.forEach(element2 => {
           fractionalFormula = fractionalFormula.concat("(");
-          if(element == element2) {
+          if(element === element2) {
             fractionalFormula = fractionalFormula.concat(String(element)+"^2/(");
             fractionalFormula = fractionalFormula.concat(denomSum+")^"+String(n)+")+");
 
@@ -145,8 +145,7 @@ function Ch12Generator() {
       // synchronized fractional sumNums
       var synchronizedFractionalFormula = "S = ";
       f.forEach(element => {
-        synchronizedFractionalFormula = synchronizedFractionalFormula.concat(
-          "("+String(element)+"/("+sumNums+"))*"+"(("+sumNums+")/("+sumNums+"))+");
+        synchronizedFractionalFormula = synchronizedFractionalFormula+"("+String(element)+"/("+sumNums+"))*"+"(("+sumNums+")/("+sumNums+"))+";
       });
       synchronizedFractionalFormula = synchronizedFractionalFormula.slice(0, -1);
       sFracF = synchronizedFractionalFormula;
@@ -240,6 +239,24 @@ function Ch12Generator() {
       });
       fractionalPlugIn2 = fractionalPlugIn2.slice(0, -1);
 
+      var synchronizedFractionalFormula2 = sFracF;
+      synchronizedFractionalFormula2 = synchronizedFractionalFormula2.replace("S = ", "");
+      synchronizedFractionalFormula2 = "S = "+fracGroup+"("+synchronizedFractionalFormula2+")";
+      var synchronizedFractionalPlugIn2 = sFracP;
+      synchronizedFractionalPlugIn2 = synchronizedFractionalPlugIn2.replace(" = ", "");
+      var arrFractionalPlugIn2 = synchronizedFractionalPlugIn2.split("+");
+      synchronizedFractionalPlugIn2 = " = ";
+      arrFractionalPlugIn2.forEach(element => {
+        var elementArr = element.split("/");
+        elementArr.forEach(element2 => {
+          element2 = Number(element2)*fracSumNum;
+          synchronizedFractionalPlugIn2 = synchronizedFractionalPlugIn2.concat(element2+"/");
+        });
+        synchronizedFractionalPlugIn2 = synchronizedFractionalPlugIn2.slice(0, -1);
+        synchronizedFractionalPlugIn2 = synchronizedFractionalPlugIn2.concat("+");
+      });
+      synchronizedFractionalPlugIn2 = synchronizedFractionalPlugIn2.slice(0, -1);
+
       setState(prevState => ({
         ...prevState,
         factorialFormula: factorialFormula2,
@@ -247,7 +264,9 @@ function Ch12Generator() {
         synchronizedFactorialFormula: synchronizedFactorialFormula2,
         synchronizedFactorialPlugIn: synchronizedFactorialPlugIn2,
         fractionalFormula: fractionalFormula2,
-        fractionalPlugIn: fractionalPlugIn2
+        fractionalPlugIn: fractionalPlugIn2,
+        synchronizedFractionalFormula: synchronizedFractionalFormula2,
+        synchronizedFractionalPlugIn: synchronizedFractionalPlugIn2
       }))
 
       factF = factorialFormula2;
@@ -255,6 +274,8 @@ function Ch12Generator() {
       sFactP = synchronizedFactorialPlugIn2;
       fracF = fractionalFormula2;
       fracP = fractionalPlugIn2;
+      sFracF = synchronizedFractionalFormula2;
+      sFracP = synchronizedFractionalPlugIn2;
     }
     return true;
   }
