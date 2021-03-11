@@ -10,6 +10,7 @@ function Book1Ch2() {
         <br /> 
         <h1>Book One: Theory of Rhythm</h1>
         <a className="chapter-section-link" href="/book1ch2#1.2" id="1.2"><h3>Chapter 2. Interferences of Periodicities</h3></a>
+        <a className="content-links" href="/book1ch2schillinger"><h5>View the source text.</h5></a>
           <p class="bookText">Now we shall discuss combining one periodicity (say, 3, 3, 3, 3) with another (say, 4, 4, 4, 4), called interference.</p>
           <p class="bookText">The periodicity with larger numbers (in our case, 4) will be called the “major generator”; the smaller will be called the “minor generator”. The way we will express two synchronized generators producing one interference group is a ÷ b *. The resultant of interference is r<sub>a ÷ b</sub>.</p>
         <a className="chapter-section-link" href="/book1ch2#1.2.a" id="1.2.a"><h5>A. Binary Synchronization</h5></a>

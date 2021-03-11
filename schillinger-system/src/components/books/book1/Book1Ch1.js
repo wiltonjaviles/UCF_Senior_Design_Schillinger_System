@@ -11,6 +11,7 @@ function Book1Ch1() {
         <br /> 
         <h1>Book One: Theory of Rhythm</h1>
         <a className="chapter-section-link" href="/book1ch1#1.1" id="1.1"><h3>Chapter 1. Notation System</h3></a>
+        <a className="content-links" href="/book1ch1schillinger"><h5>View the source text.</h5></a>
           <p class="bookText">The customary method of musical notation is inadequate for the analysis and study of rhythmic patterns bc it offers no basis for computations. It is limiting even for the greatest composers.</p>
           <p class="bookText">Time durations can be broken into 3 parallel systems: numbers, graphs, and musical notes. Understanding these groups is key to learning composition.</p>
           <p class="bookText">Understanding these groups is key to learning composition.</p>

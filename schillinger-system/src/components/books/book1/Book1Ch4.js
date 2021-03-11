@@ -10,6 +10,7 @@ function Book1Ch4() {
         <br /> 
         <h1>Book One: Theory of Rhythm</h1>
         <a className="chapter-section-link" href="/book1#1.4" id="1.4"><h3>Chapter 4. The Techniques of Fractioning</h3></a>
+        <a className="content-links" href="/book1ch4schillinger"><p>View the source text.</p></a>
           <p class="bookText">The first process to generate rhythmic resultants is not going to work for all musical purposes as it is too “rich” in its variety for all uses. The following second process helps this issue by providing a higher degree of uniformity.</p>
           <p class="bookText">The groups derived from the second process are referred to as “rhythmic resultants with fractioning around the axis of symmetry.”</p>
           <p class="bookText">Symbols:   <u>a ÷ b</u> and r<sub><u>a ÷ b</u></sub> note the underline</p>

@@ -11,7 +11,6 @@ function Home() {
       <h1>Welcome to the Schillinger System of Musical Composition!</h1>
       <br />
       <p>Welcome to the Schillinger System of Musical Composition!</p>
-      <Ch12Generator />
       <br />
     </div>
   );

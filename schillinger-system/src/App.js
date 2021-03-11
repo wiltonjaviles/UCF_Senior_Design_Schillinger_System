@@ -22,6 +22,20 @@ import Book1Ch11 from './components/books/book1/Book1Ch11';
 import Book1Ch12 from './components/books/book1/Book1Ch12';
 import Book1Ch13 from './components/books/book1/Book1Ch13';
 import Book1Ch14 from './components/books/book1/Book1Ch14';
+import Book1Ch1Schillinger from './components/books/book1/Book1Ch1Schillinger';
+import Book1Ch2Schillinger from './components/books/book1/Book1Ch2Schillinger';
+import Book1Ch3Schillinger from './components/books/book1/Book1Ch3Schillinger';
+import Book1Ch4Schillinger from './components/books/book1/Book1Ch4Schillinger';
+import Book1Ch5Schillinger from './components/books/book1/Book1Ch5Schillinger';
+import Book1Ch6Schillinger from './components/books/book1/Book1Ch6Schillinger';
+import Book1Ch7Schillinger from './components/books/book1/Book1Ch7Schillinger';
+import Book1Ch8Schillinger from './components/books/book1/Book1Ch8Schillinger';
+import Book1Ch9Schillinger from './components/books/book1/Book1Ch9Schillinger';
+import Book1Ch10Schillinger from './components/books/book1/Book1Ch10Schillinger';
+import Book1Ch11Schillinger from './components/books/book1/Book1Ch11Schillinger';
+import Book1Ch12Schillinger from './components/books/book1/Book1Ch12Schillinger';
+import Book1Ch13Schillinger from './components/books/book1/Book1Ch13Schillinger';
+import Book1Ch14Schillinger from './components/books/book1/Book1Ch14Schillinger';
 import Book2 from './components/books/book2/Book2';
 import BookThree from './components/books/book3/BookThree';
 import BookFour from './components/books/book4/BookFour';
@@ -60,6 +74,20 @@ function App() {
           <Route path="/book1ch12" component={Book1Ch12} />
           <Route path="/book1ch13" component={Book1Ch13} />
           <Route path="/book1ch14" component={Book1Ch14} />
+          <Route path="/book1ch1Schillinger"  component={Book1Ch1Schillinger} />
+          <Route path="/book1ch2Schillinger"  component={Book1Ch2Schillinger} />
+          <Route path="/book1ch3Schillinger"  component={Book1Ch3Schillinger} />
+          <Route path="/book1ch4Schillinger"  component={Book1Ch4Schillinger} />
+          <Route path="/book1ch5Schillinger"  component={Book1Ch5Schillinger} />
+          <Route path="/book1ch6Schillinger"  component={Book1Ch6Schillinger} />
+          <Route path="/book1ch7Schillinger"  component={Book1Ch7Schillinger} />
+          <Route path="/book1ch8Schillinger"  component={Book1Ch8Schillinger} />
+          <Route path="/book1ch9Schillinger"  component={Book1Ch9Schillinger} />
+          <Route path="/book1ch10Schillinger" component={Book1Ch10Schillinger} />
+          <Route path="/book1ch11Schillinger" component={Book1Ch11Schillinger} />
+          <Route path="/book1ch12Schillinger" component={Book1Ch12Schillinger} />
+          <Route path="/book1ch13Schillinger" component={Book1Ch13Schillinger} />
+          <Route path="/book1ch14Schillinger" component={Book1Ch14Schillinger} />
           <Route path="/book2" component={Book2} />
           <Route path="/book3" component={BookThree} />
           <Route path="/book4" component={BookFour} />

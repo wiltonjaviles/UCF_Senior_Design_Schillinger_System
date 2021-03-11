@@ -9,6 +9,7 @@ function Book1Ch11() {
         <br />
         <h1>Book One: Theory of Rhythm</h1>
         <a className="chapter-section-link" href="/book1#1.11" id="1.11"><h3>Chapter 11. Composition of Homogeneous Rhythmic Continuity</h3></a>
+        <a className="content-links" href="/book1ch11schillinger"><h5>View the source text.</h5></a>
         <br /> 
         <Row>
           <Col><Link to="/book1ch10" className="content-links"><h5>Previous Chapter</h5></Link></Col>

@@ -10,6 +10,7 @@ function Book1Ch3() {
         <br /> 
         <h1>Book One: Theory of Rhythm</h1>
         <a className="chapter-section-link" href="/book1#1.3" id="1.3"><h3>Chapter 3. The Techniques of Grouping</h3></a>
+        <a className="content-links" href="/book1ch3schillinger"><h5>View the source text.</h5></a>
           <p class="bookText">Now we will look at how the patterns may be grouped.</p>
           <p class="bookText">There’s three fundamental forms of group of a ÷ b:</p>
           <ol>
