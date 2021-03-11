@@ -1,5 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import Waveform from '../../applets/Waveform';
+import Pendulum from '../../applets/Pendulum';
 import '../../.././Style.css';
 
 function Book1Ch1() {
@@ -15,7 +17,10 @@ function Book1Ch1() {
           <p class="bookText">Numbers will be used in their normal operations (addition, subtraction, multiplication, division, raising to powers, extracting roots, permutations, etc)</p>
         <a className="chapter-section-link" href="/book1ch1#1.1.a" id="1.1.a"><h5>A. Graphing Music</h5></a>
           <p class="bookText">Graphs in this system are similar to the general use of graphs (to record changes in variables over time). The horizontal coordinate will be read from left to right and express time. The vertical coordinate will express the recurrence of a phase (the change in direction which is called an attack)</p>
-          <p class="bookText">A wave motion records itself automatically, and look like this (depending on the speed): </p>
+          <p class="bookText">Let a pendulum of a clock swing uniformly over a period of time to see the wave motion.</p>
+          <p class="bookText">A wave motion records itself automatically, and look like this (depending on the frequency): </p>
+          <Pendulum />
+          <Waveform />
           <h3>*image*</h3>
           <p class="bookText">If you already know how graphs work, then you will understand that music can be graphed by allowing the lengths of horizontal lines be the durations of tones and vertical distance represent the pitch levels of tones.</p>
           <p class="bookText">When graphing duration only (not pitch), the end of one duration and the beginning of the next is indicated by a “turn” in the line.</p>

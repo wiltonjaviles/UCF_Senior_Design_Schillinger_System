@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
+import Ch5Generator from '../../applets/Ch5Generator';
 
 function Book1Ch5() {
   return (
@@ -27,6 +28,7 @@ function Book1Ch5() {
           <h3>*image*</h3>
           <p class="bookText">C = contraction</p>
           <h3>*image*</h3>
+          <Ch5Generator />
         <br /> 
         <Row>
           <Col><Link to="/book1ch4" className="content-links"><h5>Previous Chapter</h5></Link></Col>

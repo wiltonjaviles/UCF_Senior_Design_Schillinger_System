@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
+import Ch3Generator from '../../applets/Ch3Generator';
 
 function Book1Ch3() {
   return (
@@ -37,6 +38,7 @@ function Book1Ch3() {
           <p class="bookText">It’s possible to score all the 19 cases of binary synchronization by ab, by a, and by b, unless ab is too great to be used as one T.</p>
           <p class="bookText">This table includes all the necessary scores. Some forms of T are not in common use due to the lack of adequate rhythmic patterns for their representation. ( <sup>10</sup>/<sub>8</sub> , <sup>14</sup>/<sub>8</sub> )</p>
           <h3>*image*</h3>
+          <Ch3Generator />
         <br /> 
         <Row>
           <Col><Link to="/book1ch2" className="content-links"><h5>Previous Chapter</h5></Link></Col>

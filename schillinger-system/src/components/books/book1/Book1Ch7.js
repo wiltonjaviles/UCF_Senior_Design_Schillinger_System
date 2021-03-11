@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
+import Ch7Generator from '../../applets/Ch7Generator';
 
 function Book1Ch7() {
   return (
@@ -41,6 +42,7 @@ function Book1Ch7() {
           <p class="bookText">In the following example, the melody is generated from the resultant of 5%2, the resultant is in 5/4 time, but the accompaniment is in common time.</p>
           <h3>*image*</h3>
           <p class="bookText">For now this result is more of a curiosity, but techniques like this will be used later to develop rich textures in a full score.</p>
+        <Ch7Generator />
         <br /> 
         <Row>
           <Col><Link to="/book1ch6" className="content-links"><h5>Previous Chapter</h5></Link></Col>

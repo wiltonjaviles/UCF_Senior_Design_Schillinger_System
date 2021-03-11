@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
+import Ch6Generator from '../../applets/Ch6Generator';
 
 function Book1Ch6() {
   return (
@@ -31,6 +32,7 @@ function Book1Ch6() {
           <p class="bookText">The rule of grouping is: <em>group by any generator of any of the complementary factors</em>. In 2÷3÷5, grouping is available through 2, 3, 5, 6, 10, 15 (i.e., 2 / 4, 3 / 4, 5 / 4, 6 / 8, 10 / 8, 15 / 8).</p>
           <h3>*image*</h3>
           <p class="bookText">In figure 48, no more rhythmically suitable counterthemes can be devised. The theme makes three recurrences while the countertheme makes continuous changes in longer values. This allows the listener to hear both themes together. All resultants from three or more generators are characterized by these recurrences and variations.</p>
+        <Ch6Generator />
         <br /> 
         <Row>
           <Col><Link to="/book1ch5" className="content-links"><h5>Previous Chapter</h5></Link></Col>
