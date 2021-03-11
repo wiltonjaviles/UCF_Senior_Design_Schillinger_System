@@ -73,6 +73,7 @@ function Introduction() {
           <Col><Link to="/overture" className="content-links"><h5>Previous Book</h5></Link></Col>
           <Col><Link to="/book1" className="content-links"><h5>Next Book</h5></Link></Col>
         </Row>
+        <br />
       </Container>
     </div>
   );

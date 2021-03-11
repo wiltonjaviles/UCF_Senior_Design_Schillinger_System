@@ -26,6 +26,7 @@ function Overture() {
           <Col><Link to="/" className="content-links"><h5>Back to Home</h5></Link></Col>
           <Col><Link to="/intro" className="content-links"><h5>Next Book</h5></Link></Col>
         </Row>
+        <br />
       </Container>
       
     </div>
