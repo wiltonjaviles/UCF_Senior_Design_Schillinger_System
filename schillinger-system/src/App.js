@@ -6,7 +6,9 @@ import Contents from './components/Contents';
 import Recordings from './components/Recordings';
 import Account from './components/Account';
 import Overture from './components/books/Overture';
+import OvertureSchillinger from './components/books/OvertureSchillinger';
 import Introduction from './components/books/Introduction';
+import IntroductionSchillinger from './components/books/IntroductionSchillinger';
 import Book1 from './components/books/book1/Book1';
 import Book1Ch1 from './components/books/book1/Book1Ch1';
 import Book1Ch2 from './components/books/book1/Book1Ch2';
@@ -58,7 +60,9 @@ function App() {
           <Route path="/recordings" component={Recordings} />
           <Route path="/account" component={Account} />
           <Route path="/overture" component={Overture} />
+          <Route path="/overtureschillinger" component={OvertureSchillinger} />
           <Route path="/intro" component={Introduction} />
+          <Route path="/introSchillinger" component={IntroductionSchillinger} />
           <Route path="/book1" component={Book1} />
           <Route path="/book1ch1" component={Book1Ch1} />
           <Route path="/book1ch2" component={Book1Ch2} />
