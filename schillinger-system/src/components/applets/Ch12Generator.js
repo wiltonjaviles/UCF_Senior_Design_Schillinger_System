@@ -26,18 +26,64 @@ function Ch12Generator() {
     synchronizedFractionalFormula: "",
     synchronizedFractionalPlugIn: ""
   })
-
+  const errorMsg = (code) => {
+    switch(code) {
+      case "NaN":
+        setState(prevState => ({
+          ...prevState,
+          warning: "a, b, ..., m and n must all be numbers."
+        }))
+        clearResults();
+        break;
+      case "tooBig":
+        setState(prevState => ({
+          ...prevState,
+          warning: "Seriously that's just too big for this calculator to handle! Please try again with a smaller exponent."
+        }))
+        clearResults();
+        break;
+      case "wrongSyntax":
+        setState(prevState => ({
+          ...prevState,
+          warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
+        }))
+        clearResults();
+        break;
+      default:
+        setState(prevState => ({
+          ...prevState,
+          warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
+        }))
+        clearResults();
+        // code block
+    }
+  }
   const DistributivePower = async (n, f) => {
-    n = Number(n);
-    
-    if(n < 2) {
-      setState(prevState => ({
-        ...prevState,
-        warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
-      }))
-      clearResults();
+    if(isNaN(n)) {
+      errorMsg("NaN");
       return;
-    } else if(n == 2) {
+    }
+    
+    n = Number(n);
+
+    f.forEach(element => {
+      if(isNaN(element)) {
+        errorMsg("NaN");
+        clearResults();
+        return;
+      }
+    });
+    
+    if (n > 24) {
+      errorMsg("tooBig");
+      return;
+    } else if (f.includes("")) {
+      errorMsg("wrongSyntax");
+      return;
+    } else if(n < 2) {
+      errorMsg("wrongSyntax");
+      return;
+    } else if(n === 2) {
       var sumNums = "";
       var sum = 0;
       // factorial formula
@@ -54,7 +100,7 @@ function Ch12Generator() {
       f.forEach(element => {
         factorialFormula = factorialFormula.concat("(");
         f.forEach(element2 => {
-          if(element == element2) {
+          if(element === element2) {
             var square = String(element)+"^2+"
             factorialFormula = factorialFormula.concat(square);
           } else {
@@ -115,11 +161,11 @@ function Ch12Generator() {
       fractionalFormula = fractionalFormula.slice(0, -1);
       fractionalFormula = fractionalFormula.concat(")^"+String(n));
 
-      var fractionalFormula = fractionalFormula.concat(" = ");
+      fractionalFormula = fractionalFormula.concat(" = ");
       f.forEach(element => {
         f.forEach(element2 => {
           fractionalFormula = fractionalFormula.concat("(");
-          if(element == element2) {
+          if(element === element2) {
             fractionalFormula = fractionalFormula.concat(String(element)+"^2/(");
             fractionalFormula = fractionalFormula.concat(denomSum+")^"+String(n)+")+");
 
@@ -145,8 +191,7 @@ function Ch12Generator() {
       // synchronized fractional sumNums
       var synchronizedFractionalFormula = "S = ";
       f.forEach(element => {
-        synchronizedFractionalFormula = synchronizedFractionalFormula.concat(
-          "("+String(element)+"/("+sumNums+"))*"+"(("+sumNums+")/("+sumNums+"))+");
+        synchronizedFractionalFormula = synchronizedFractionalFormula+"("+String(element)+"/("+sumNums+"))*"+"(("+sumNums+")/("+sumNums+"))+";
       });
       synchronizedFractionalFormula = synchronizedFractionalFormula.slice(0, -1);
       sFracF = synchronizedFractionalFormula;
@@ -240,6 +285,24 @@ function Ch12Generator() {
       });
       fractionalPlugIn2 = fractionalPlugIn2.slice(0, -1);
 
+      var synchronizedFractionalFormula2 = sFracF;
+      synchronizedFractionalFormula2 = synchronizedFractionalFormula2.replace("S = ", "");
+      synchronizedFractionalFormula2 = "S = "+fracGroup+"("+synchronizedFractionalFormula2+")";
+      var synchronizedFractionalPlugIn2 = sFracP;
+      synchronizedFractionalPlugIn2 = synchronizedFractionalPlugIn2.replace(" = ", "");
+      var arrFractionalPlugIn2 = synchronizedFractionalPlugIn2.split("+");
+      synchronizedFractionalPlugIn2 = " = ";
+      arrFractionalPlugIn2.forEach(element => {
+        var elementArr = element.split("/");
+        elementArr.forEach(element2 => {
+          element2 = Number(element2)*fracSumNum;
+          synchronizedFractionalPlugIn2 = synchronizedFractionalPlugIn2.concat(element2+"/");
+        });
+        synchronizedFractionalPlugIn2 = synchronizedFractionalPlugIn2.slice(0, -1);
+        synchronizedFractionalPlugIn2 = synchronizedFractionalPlugIn2.concat("+");
+      });
+      synchronizedFractionalPlugIn2 = synchronizedFractionalPlugIn2.slice(0, -1);
+
       setState(prevState => ({
         ...prevState,
         factorialFormula: factorialFormula2,
@@ -247,7 +310,9 @@ function Ch12Generator() {
         synchronizedFactorialFormula: synchronizedFactorialFormula2,
         synchronizedFactorialPlugIn: synchronizedFactorialPlugIn2,
         fractionalFormula: fractionalFormula2,
-        fractionalPlugIn: fractionalPlugIn2
+        fractionalPlugIn: fractionalPlugIn2,
+        synchronizedFractionalFormula: synchronizedFractionalFormula2,
+        synchronizedFractionalPlugIn: synchronizedFractionalPlugIn2
       }))
 
       factF = factorialFormula2;
@@ -255,6 +320,8 @@ function Ch12Generator() {
       sFactP = synchronizedFactorialPlugIn2;
       fracF = fractionalFormula2;
       fracP = fractionalPlugIn2;
+      sFracF = synchronizedFractionalFormula2;
+      sFracP = synchronizedFractionalPlugIn2;
     }
     return true;
   }
@@ -286,38 +353,23 @@ function Ch12Generator() {
     var f = String(state.input);
     var n = 1;
     if (!f.includes("^")) {
-      setState(prevState => ({
-        ...prevState,
-        warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
-      }))
+      errorMsg("wrongSyntax");
       clearResults();
       return;
     } else if (!f.includes("(")) {
-      setState(prevState => ({
-        ...prevState,
-        warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
-      }))
+      errorMsg("wrongSyntax");
       clearResults();
       return;
     } else if (!f.includes(")")) {
-      setState(prevState => ({
-        ...prevState,
-        warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
-      }))
+      errorMsg("wrongSyntax");
       clearResults();
       return;
     } else if (!f.includes("+")) {
-      setState(prevState => ({
-        ...prevState,
-        warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
-      }))
+      errorMsg("wrongSyntax");
       clearResults();
       return;
     } else if (f.includes("/")) {
-      setState(prevState => ({
-        ...prevState,
-        warning: "You entry must be of the form (a+b+...+m)^n with at least two terms and n > 1. Do not use fractions."
-      }))
+      errorMsg("wrongSyntax");
       clearResults();
       return;
     } else {
@@ -326,11 +378,19 @@ function Ch12Generator() {
         warning: ""
       }))
     }
-
+    var regExp = /[a-zA-Z]/g;
+                
+    if(regExp.test(f)){
+      alert("test");
+      errorMsg("NaN");
+      return;
+    } 
+    
     n = Number(f.split("^")[1]);
     var f2 = f.split("^")[0];
     var f3 = f2.replace("(", "").replace(")", "");
     var f4 = f3.split("+");
+    
     DistributivePower(n, f4);
   }
 

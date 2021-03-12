@@ -2,7 +2,7 @@ import {Container, Row, Col, Card, Form, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 
-function GroupingPeriodicities() {
+function Ch3Generator() {
   const [state , setState] = useState({
     groupingFormA : -1,
     groupingFormB : -1,
@@ -33,7 +33,7 @@ function GroupingPeriodicities() {
       if (b >= a) {
         alert('Invalid Grouping. Please try again!');
         return;
-      } else if ( a%b == 0 ) {
+      } else if ( a%b === 0 ) {
         alert('Invalid Grouping. Please try again!');
         return;
       }
@@ -165,4 +165,4 @@ function GroupingPeriodicities() {
   );
 }
 
-export default GroupingPeriodicities;
+export default Ch3Generator;
