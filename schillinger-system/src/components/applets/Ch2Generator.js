@@ -1,6 +1,7 @@
 import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
+import abcjs from "abcjs";
 
 function Ch2Generator() {
   const [state , setState] = useState({
@@ -14,6 +15,9 @@ function Ch2Generator() {
     OutputR : ''
   })
 
+  var synthControl = new abcjs.synth.SynthController();
+  var visualR;
+
   const handleSelect = (e) => {
     const {id , value} = e.target   
     setState(prevState => ({
@@ -26,17 +30,47 @@ function Ch2Generator() {
     event.preventDefault();    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
-    let outArr = simpleToABC(sMakeR(vA,vB),vA);
+    let vG = Number(state.variableA);
+    switch(state.groupBy) {
+      case 'a':
+        break;
+      case 'b':
+        vG = state.variableB;
+        break;
+      case 'ab':
+        vG = state.variableA * state.variableB;
+        break
+    }
+    let outArr = simpleToABC(sMakeR(vA,vB),vG);
     
+    abcjs.renderAbc("outputC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
+    abcjs.renderAbc("outputC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
+    abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
+    abcjs.renderAbc("outputB", "X:1\nK:C\n"+outArr[3].join("")+"\n");
+    visualR = abcjs.renderAbc("outputR", "X:1\nK:C\n"+outArr[4].join("")+"\n")[0];
+
+    if (abcjs.synth.supportsAudio()) {
+			synthControl.load("#audio", null, {displayRestart: false, displayPlay: true, displayProgress: false});
+			synthControl.setTune(visualR, true);
+		} else {
+			document.querySelector("#audio").innerHTML = "<div class='audio-error'>Audio is not supported in this browser.</div>";
+		}
 
     setState(prevState => ({
-        ...prevState,
-        OutputC1 : outArr[0].toString(),
-        OutputC2 : outArr[1].toString(),
-        OuputA : outArr[2].toString(),
-        OutputB : outArr[3].toString(),
-        OutputR : outArr[4].toString()
-      }))
+      ...prevState
+    }))
+    
+  }
+
+    
+  const playBack = event => {
+    event.preventDefault();
+    synthControl.play();
+  }
+
+  const downloadMidi = event => {
+    event.preventDefault();
+    synthControl.download('r'+state.variableA+'%'+state.variableB);
   }
 
   return (
@@ -83,6 +117,11 @@ function Ch2Generator() {
                     </Form.Control>
                   </Form.Group>
                 </Col>
+              </Row>
+              <Row className="align-items-bottom justify-content-md-center">
+                <Col className="col-2">
+                  <h5>Group By:</h5>
+                </Col>
                 <Col className="col-2">              
                   <Form.Group controlId="groupBy">
                     <Form.Control as="select" defaultValue="-1" value={state.groupBy} onChange={handleSelect}>
@@ -96,62 +135,52 @@ function Ch2Generator() {
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                 </Col>
               </Row>
+                
                 <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>First Entry: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.variableA}</h4>
-                    </Col>
+                    
+                      <div id="outputC1"></div>
+                      
+                    
                 </Row>
                 <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>Second Entry: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.variableB}</h4>
-                    </Col>
+                    
+                      <div id="outputC2"></div>
+                      
+                    
                 </Row>
                 <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>C1: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputC1}</h4>
-                    </Col>
+                    
+                      <div id="outputA"></div>
+                      
+                    
                 </Row>
                 <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>C2: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputC2}</h4>
-                    </Col>
+                    
+                      <div id="outputB"></div>
+                      
+                    
                 </Row>
                 <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>A: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OuputA}</h4>
-                    </Col>
+                  
+                    <div id="outputR"></div>
+                    
                 </Row>
+                
                 <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>B: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputB}</h4>
-                    </Col>
+                  <h5>Play R -</h5>
+                  <div id="audio"></div>
                 </Row>
+
                 <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>R: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputR}</h4>
-                    </Col>
+                  <Button variant="secondary" type="submit" className="float-right" onClick={playBack}>Play R</Button>
+                  
                 </Row>
+
+                <Row className="justify-content-md-center">
+                  <Button variant="secondary" type="submit" className="float-right" onClick={downloadMidi}>Download R</Button>
+                  
+                </Row>
+                
             </Form>
           </Card.Body>
         </Card>
@@ -159,6 +188,7 @@ function Ch2Generator() {
       </Container>
     </div>
   );
+  
 }
 
 export default Ch2Generator;
@@ -201,6 +231,8 @@ function sMakeR(a,b) {
 }
 
 function simpleToABC(arrIn, measureLength) {
+  let measure = Number(0);
+  let longNote = Number(0);
     
     
     let arrOut = new Array();
@@ -209,12 +241,58 @@ function simpleToABC(arrIn, measureLength) {
     }
 
     for(let i=0; i<arrIn.length; i++) {
-        
+        measure = measureLength;
         for(let j=0; j<arrIn[i].length; j++) {
-            if(arrIn[i][j] !== ''){
-                arrOut[i].push('a'+arrIn[i][j].toString());
+          
+          if(arrIn[i][j] !== ''){
+            if(arrIn[i][j] <= measure) {
+              arrOut[i].push(pushNote(arrIn[i][j]));
+              measure = measure - arrIn[i][j];
+            } else if(arrIn[i][j] > measure) {
+                if(arrIn[i][j] >= measureLength) {
+                  
+                  arrOut[i].push(pushNote(measure)+'-|');
+                  longNote = arrIn[i][j] - measure;
+                  for(longNote; longNote > 0; longNote=longNote-measureLength) {
+                    arrOut[i].push(pushNote(measureLength)+'-|');
+                  }
+                  if(longNote > 0) {
+                    arrOut[i].push(pushNote(longNote));
+                  } else {
+                    arrOut[i].pop();
+                    arrOut[i].push(pushNote(measureLength)+'|');
+                  }
+                  measure = measureLength - longNote;
+                } else {
+                  arrOut[i].push(pushNote(measure)+'-|'+pushNote(arrIn[i][j]-measure));
+                  measure = measureLength - (arrIn[i][j]-measure);
+                }
             }
+            
+            if(measure === 0) {
+              arrOut[i].push('|');
+              measure = measureLength;
+            }
+
+          }
         }
     }
     return arrOut;
 }
+
+function pushNote(a) {
+  if(a === 5) {
+    return 'A4-A1';
+  } else if(a > 8) {
+    let output = new Array(['A8-']);
+    let count = a-8;
+    while(count > 8) {
+      output.push('A8-');
+      count = count-8;
+    }
+    output.push('A'+count);
+    return output.toString();
+  } else {return 'A'+a;}
+}
+
+//<Button variant="secondary" type="submit" className="float-right" onClick={playBack}>Play R</Button>
