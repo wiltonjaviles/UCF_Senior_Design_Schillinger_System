@@ -6,6 +6,7 @@ function About() {
   isAuthenticated();
   return (
     <div>
+      <br />
       <Container>
         <h1>About this project</h1>
         <Row>

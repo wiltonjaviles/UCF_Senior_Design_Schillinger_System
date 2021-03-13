@@ -8,6 +8,7 @@ function Contents() {
   return (
     <div>
       <Container>
+        <br />
         <h1>Table of Contents</h1>
         <br />
         <Link to="/overture" className="content-links"><h3>Overture</h3></Link>
