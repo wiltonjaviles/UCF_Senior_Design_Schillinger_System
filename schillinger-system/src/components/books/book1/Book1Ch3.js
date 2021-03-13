@@ -16,7 +16,6 @@ function Book1Ch3() {
           textAsButton={true}
           displayText="Listen to this text" 
           text="
-
           Chapter 3. The Techniques of Grouping
 
           Now we will look at how the patterns may be grouped.
