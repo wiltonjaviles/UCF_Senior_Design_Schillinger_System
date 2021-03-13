@@ -1,6 +1,7 @@
 import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
+import abcjs from "abcjs";
 
 function Ch6Generator() {
   const [state , setState] = useState({
@@ -20,6 +21,12 @@ function Ch6Generator() {
     OutputR1 : ''
   })
 
+  var visualR;
+  var visualR1;
+
+  var synthControlR = new abcjs.synth.SynthController();
+  var synthControlR1 = new abcjs.synth.SynthController();
+
   const handleSelect = (e) => {
     const {id , value} = e.target   
     setState(prevState => ({
@@ -33,20 +40,48 @@ function Ch6Generator() {
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
     const vC = Number(state.variableC);
-    let outArr = simpleToABC(sMakeTrinomialR(vA,vB,vC),vA);
+    let vG = Number(state.variableA)
+    
+    switch(state.groupBy) {
+      case 'a':
+        break;
+      case 'b':
+        vG = state.variableB;
+        break;
+      case 'c':
+        vG = state.variableC;
+        break;
+      case 'ab':
+        vG = state.variableA * state.variableB;
+        break;
+      case 'ac':
+        vG = state.variableA * state.variableC;
+        break;
+      case 'bc':
+        vG = state.variableB * state.variableC;
+        break;
+      case 'abc':
+        vG = state.variableA * state.variableB * state.variableC;
+        break;
+    }
+
+    let outArr = simpleToABC(sMakeTrinomialR(vA,vB,vC),vG);
+
+    abcjs.renderAbc("outputABC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
+    abcjs.renderAbc("outputABC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
+    abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
+    abcjs.renderAbc("outputB", "X:1\nK:C\n"+outArr[3].join("")+"\n");
+    abcjs.renderAbc("outputC", "X:1\nK:C\n"+outArr[4].join("")+"\n");
+    visualR = abcjs.renderAbc("outputR", "X:1\nK:C\n"+outArr[5].join("")+"\n")[0];
+    abcjs.renderAbc("outputComplementA", "X:1\nK:C\n"+outArr[6].join("")+"\n");
+    abcjs.renderAbc("outputComplementB", "X:1\nK:C\n"+outArr[7].join("")+"\n");
+    abcjs.renderAbc("outputComplementC", "X:1\nK:C\n"+outArr[8].join("")+"\n");
+    visualR1 = abcjs.renderAbc("outputR1", "X:1\nK:C\n"+outArr[9].join("")+"\n")[0];
     
 
     setState(prevState => ({
         ...prevState,
-        OutputABC1 : outArr[0].toString(),
-        OutputABC2 : outArr[1].toString(),
-        OuputA : outArr[2].toString(),
-        OutputB : outArr[3].toString(),
-        OutputC : outArr[4].toString(),
         OutputR : outArr[5].toString(),
-        OutputComplementA : outArr[6].toString(),
-        OutputComplementB : outArr[7].toString(),
-        OutputComplementC : outArr[8].toString(),
         OutputR1 : outArr[9].toString()
       }))
   }
@@ -129,85 +164,83 @@ function Ch6Generator() {
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                 </Col>
               </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>ABC1: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputABC1}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>ABC2: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputABC2}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>A: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OuputA}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>B: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputB}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>C: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputC}</h4>
-                    </Col>
-                </Row>
+                
                 <Row className="justify-content-md-center">
                     <Col className="col-3">
                         <h4>R: </h4>
                     </Col>
-                    <Col className="col-2">
+                    <Col className="col-8">
                         <h4>{state.OutputR}</h4>
                     </Col>
                 </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>A': </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputComplementA}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>B': </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputComplementB}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>C': </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputComplementC}</h4>
-                    </Col>
-                </Row>
+                
                 <Row className="justify-content-md-center">
                     <Col className="col-3">
                         <h4>R': </h4>
                     </Col>
-                    <Col className="col-2">
+                    <Col className="col-8">
                         <h4>{state.OutputR1}</h4>
                     </Col>
+                </Row>
+                <Row className="justify-content-md-center">
+                    
+                      <div id="outputABC1"></div>
+                      
+                    
+                </Row>
+                <Row className="justify-content-md-center">
+                    
+                      <div id="outputABC2"></div>
+                      
+                    
+                </Row>
+                <Row className="justify-content-md-center">
+                    
+                      <div id="outputA"></div>
+                      
+                    
+                </Row>
+                <Row className="justify-content-md-center">
+                    
+                      <div id="outputB"></div>
+                      
+                    
+                </Row>
+                <Row className="justify-content-md-center">
+                    
+                      <div id="outputC"></div>
+                      
+                    
+                </Row>
+                <Row className="justify-content-md-center">
+                    
+                      <div id="outputR"></div>
+                      
+                    
+                </Row>
+                <Row className="justify-content-md-center">
+                    
+                      <div id="outputComplementA"></div>
+                      
+                    
+                </Row>
+                <Row className="justify-content-md-center">
+                    
+                      <div id="outputComplementB"></div>
+                      
+                    
+                </Row>
+                <Row className="justify-content-md-center">
+                    
+                      <div id="outputComplementC"></div>
+                      
+                    
+                </Row>
+                <Row className="justify-content-md-center">
+                    
+                      <div id="outputR1"></div>
+                      
+                    
                 </Row>
             </Form>
           </Card.Body>
@@ -301,6 +334,72 @@ function sMakeTrinomialR(a,b,c) {
 }
 
 function simpleToABC(arrIn, measureLength) {
+  let measure = Number(0);
+  let longNote = Number(0);
+    
+    
+    let arrOut = new Array();
+    for(let i=0; i<arrIn.length; i++) {
+        arrOut[i] = new Array();
+    }
+
+    for(let i=0; i<arrIn.length; i++) {
+        measure = measureLength;
+        for(let j=0; j<arrIn[i].length; j++) {
+          
+          if(arrIn[i][j] !== ''){
+            if(arrIn[i][j] <= measure) {
+              arrOut[i].push(pushNote(arrIn[i][j]));
+              measure = measure - arrIn[i][j];
+            } else if(arrIn[i][j] > measure) {
+                if(arrIn[i][j] >= measureLength) {
+                  
+                  arrOut[i].push(pushNote(measure)+'-|');
+                  longNote = arrIn[i][j] - measure;
+                  for(longNote; longNote > 0; longNote=longNote-measureLength) {
+                    arrOut[i].push(pushNote(measureLength)+'-|');
+                  }
+                  if(longNote > 0) {
+                    arrOut[i].push(pushNote(longNote));
+                  } else {
+                    arrOut[i].pop();
+                    arrOut[i].push(pushNote(measureLength)+'|');
+                  }
+                  measure = measureLength - longNote;
+                } else {
+                  arrOut[i].push(pushNote(measure)+'-|'+pushNote(arrIn[i][j]-measure));
+                  measure = measureLength - (arrIn[i][j]-measure);
+                }
+            }
+            
+            if(measure === 0) {
+              arrOut[i].push('|');
+              measure = measureLength;
+            }
+
+          }
+        }
+    }
+    return arrOut;
+}
+
+function pushNote(a) {
+  if(a === 5) {
+    return 'A4-A1';
+  } else if(a > 8) {
+    let output = new Array(['A8-']);
+    let count = a-8;
+    while(count > 8) {
+      output.push('A8-');
+      count = count-8;
+    }
+    output.push('A'+count);
+    return output.toString();
+  } else {return 'A'+a;}
+}
+
+/*
+function simpleToABC(arrIn, measureLength) {
   
   
   let arrOut = new Array();
@@ -317,4 +416,4 @@ function simpleToABC(arrIn, measureLength) {
       }
   }
   return arrOut;
-}
+}*/

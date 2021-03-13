@@ -1,19 +1,18 @@
 import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
+import abcjs from "abcjs";
 
 function Ch4Generator() {
   const [state , setState] = useState({
-    variableA : 2,
-    variableB : 1,
+    variableA : 3,
+    variableB : 2,
     groupBy : 'a',
-    OutputC1 : '',
-    OutputC2 : '',
-    OuputA : '',
-    OutputB1 : '',
-    OutputB2 : '',
-    OutputR_ : ''
+    testOutput : ""
   })
+
+  var synthControlR_ = new abcjs.synth.SynthController();
+  var visualR_;
 
   const handleSelect = (e) => {
     const {id , value} = e.target   
@@ -23,22 +22,52 @@ function Ch4Generator() {
     }))
   }
 
-  const generateR = event => {
+  const generateR_ = event => {
     event.preventDefault();    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
     let outArr = simpleToABC(sMakeR_(vA,vB),vA);
+
+
     
+    outArr[4].reverse();
+
+    for(let i=0; i<vA-vB; i++) {
+      outArr[3].push('z4|');
+      outArr[4].push('z4|');
+    }
+    
+    outArr[4].reverse();
+    
+    
+    abcjs.renderAbc("outputC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
+    abcjs.renderAbc("outputC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
+    abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
+    abcjs.renderAbc("outputB1", "X:1\nK:C\n"+outArr[3].join("")+"\n");
+    abcjs.renderAbc("outputB2", "X:1\nK:C\n"+outArr[4].join("")+"\n");
+    visualR_ = abcjs.renderAbc("outputR_", "X:1\nK:C\n"+outArr[5].join("")+"\n");
+
+    if (abcjs.synth.supportsAudio()) {
+			synthControlR_.load("#audio", null, {displayRestart: false, displayPlay: true, displayProgress: false});
+			//synthControlR_.setTune(visualR_, true);
+		} else {
+			document.querySelector("#audio").innerHTML = "<div class='audio-error'>Audio is not supported in this browser.</div>";
+		}
 
     setState(prevState => ({
         ...prevState,
-        OutputC1 : outArr[0].toString(),
-        OutputC2 : outArr[1].toString(),
-        OuputA : outArr[2].toString(),
-        OutputB1 : outArr[3].toString(),
-        OutputB2 : outArr[4].toString(),
-        OutputR_ : outArr[5].toString()
+        testOutput : outArr[2].join("")
       }))
+  }
+
+  const playBack = event => {
+    event.preventDefault();
+    //synthControlR_.play();
+  }
+
+  const downloadMidi = event => {
+    event.preventDefault();
+    //synthControlR_.download('r_'+state.variableA+'%'+state.variableB);
   }
 
   return (
@@ -85,83 +114,56 @@ function Ch4Generator() {
                     </Form.Control>
                   </Form.Group>
                 </Col>
-                <Col className="col-2">              
-                  <Form.Group controlId="groupBy">
-                    <Form.Control as="select" defaultValue="-1" value={state.groupBy} onChange={handleSelect}>
-                      <option>a</option>
-                      <option>b</option>
-                      <option>ab</option>
-                    </Form.Control>
-                  </Form.Group>
-                </Col>
+                
                 <Col className="col-3">
-                  <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
+                  <Button variant="secondary" type="submit" className="float-right" onClick={generateR_}>Generate</Button>
                 </Col>
               </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>First Entry: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.variableA}</h4>
-                    </Col>
+
+              <Row className="justify-content-md-center">
+                <h4>Result: </h4>
+                <h4>{state.testOutput}</h4>
+              </Row>
+
+              <Row className="justify-content-md-center">
+                <div id="outputC1"></div>
+              </Row>
+              
+              <Row className="justify-content-md-center">
+                <div id="outputC2"></div>
+              </Row>
+
+              <Row className="justify-content-md-center">
+                <div id="outputA"></div>
+              </Row>
+
+              <Row className="justify-content-md-center">
+                <div id="outputB1"></div>
+              </Row>
+
+              <Row className="justify-content-md-center">
+                <div id="outputB2"></div>
+              </Row>
+              
+              <Row className="justify-content-md-center">
+                <div id="outputR_"></div>
+              </Row>
+
+              <Row className="justify-content-md-center">
+                <h5>Play R underlined -</h5>
+                <div id="audio"></div>
+              </Row>
+
+              <Row className="justify-content-md-center">
+                  <Button variant="secondary" type="submit" className="float-right" onClick={playBack}>Play R</Button>
+                  
                 </Row>
+
                 <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>Second Entry: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.variableB}</h4>
-                    </Col>
+                  <Button variant="secondary" type="submit" className="float-right" onClick={downloadMidi}>Download R</Button>
+                  
                 </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>C1: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputC1}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>C2: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputC2}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>A: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OuputA}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>B1: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputB1}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>B2: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputB2}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>R_: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.OutputR_}</h4>
-                    </Col>
-                </Row>
+
             </Form>
           </Card.Body>
         </Card>
@@ -224,7 +226,7 @@ function sMakeR_(a,b) {
   return arr;
 }
 
-function simpleToABC(arrIn, measureLength) {
+/*function simpleToABC(arrIn, measureLength) {
   
   
   let arrOut = new Array();
@@ -236,9 +238,78 @@ function simpleToABC(arrIn, measureLength) {
       
       for(let j=0; j<arrIn[i].length; j++) {
           if(arrIn[i][j] !== ''){
-              arrOut[i].push('a'+arrIn[i][j].toString());
+              arrOut[i].push('A'+arrIn[i][j].toString());
           }
       }
   }
   return arrOut;
+}*/
+
+function simpleToABC(arrIn, measureLength) {
+  let measure = Number(0);
+  let longNote = Number(0);
+    
+  
+    
+    let arrOut = new Array();
+    for(let i=0; i<arrIn.length; i++) {
+        arrOut[i] = new Array();
+    }
+
+    for(let i=0; i<arrIn.length; i++) {
+        measure = measureLength;
+        for(let j=0; j<arrIn[i].length; j++) {
+          
+          if(arrIn[i][j] !== ''){
+            if(arrIn[i][j] <= measure) {
+              arrOut[i].push(pushNote(arrIn[i][j]));
+              measure = measure - arrIn[i][j];
+            } else if(arrIn[i][j] > measure) {
+                if(arrIn[i][j] >= measureLength) {
+                  
+                  arrOut[i].push(pushNote(measure)+'-|');
+                  longNote = arrIn[i][j] - measure;
+                  for(longNote; longNote > 0; longNote=longNote-measureLength) {
+                    arrOut[i].push(pushNote(measureLength)+'-|');
+                  }
+                  if(longNote > 0) {
+                    arrOut[i].push(pushNote(longNote));
+                  } else {
+                    arrOut[i].pop();
+                    arrOut[i].push(pushNote(measureLength)+'|');
+                  }
+                  measure = measureLength - longNote;
+                } else {
+                  arrOut[i].push(pushNote(measure)+'-|'+pushNote(arrIn[i][j]-measure));
+                  measure = measureLength - (arrIn[i][j]-measure);
+                }
+            }
+            
+            if(measure === 0) {
+              arrOut[i].push('|');
+              measure = measureLength;
+            }
+
+          }
+        }
+    }
+
+    
+
+    return arrOut;
+}
+
+function pushNote(a) {
+  if(a === 5) {
+    return 'A4-A1';
+  } else if(a > 8) {
+    let output = new Array(['A8-']);
+    let count = a-8;
+    while(count > 8) {
+      output.push('A8-');
+      count = count-8;
+    }
+    output.push('A'+count);
+    return output.toString();
+  } else {return 'A'+a;}
 }

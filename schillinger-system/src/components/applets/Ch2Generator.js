@@ -5,8 +5,8 @@ import abcjs from "abcjs";
 
 function Ch2Generator() {
   const [state , setState] = useState({
-    variableA : 2,
-    variableB : 1,
+    variableA : 3,
+    variableB : 2,
     groupBy : 'a',
     OutputC1 : '',
     OutputC2 : '',
@@ -15,7 +15,7 @@ function Ch2Generator() {
     OutputR : ''
   })
 
-  var synthControl = new abcjs.synth.SynthController();
+  var synthControlR = new abcjs.synth.SynthController();
   var visualR;
 
   const handleSelect = (e) => {
@@ -39,7 +39,7 @@ function Ch2Generator() {
         break;
       case 'ab':
         vG = state.variableA * state.variableB;
-        break
+        break;
     }
     let outArr = simpleToABC(sMakeR(vA,vB),vG);
     
@@ -50,8 +50,8 @@ function Ch2Generator() {
     visualR = abcjs.renderAbc("outputR", "X:1\nK:C\n"+outArr[4].join("")+"\n")[0];
 
     if (abcjs.synth.supportsAudio()) {
-			synthControl.load("#audio", null, {displayRestart: false, displayPlay: true, displayProgress: false});
-			synthControl.setTune(visualR, true);
+			synthControlR.load("#audio", null, {displayRestart: false, displayPlay: true, displayProgress: false})
+      synthControlR.setTune(visualR, true);
 		} else {
 			document.querySelector("#audio").innerHTML = "<div class='audio-error'>Audio is not supported in this browser.</div>";
 		}
@@ -65,12 +65,12 @@ function Ch2Generator() {
     
   const playBack = event => {
     event.preventDefault();
-    synthControl.play();
+    //synthControlR.play();
   }
 
   const downloadMidi = event => {
     event.preventDefault();
-    synthControl.download('r'+state.variableA+'%'+state.variableB);
+    //synthControlR.download('r'+state.variableA+'%'+state.variableB);
   }
 
   return (
@@ -88,7 +88,7 @@ function Ch2Generator() {
               <Row className="align-items-bottom justify-content-md-center">
                 <Col className="col-2">
                   <Form.Group controlId="variableA">
-                    <Form.Control as="select" defaultValue="2" value={state.variableA} onChange={handleSelect}>
+                    <Form.Control as="select" defaultValue="3" value={state.variableA} onChange={handleSelect}>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
@@ -105,7 +105,7 @@ function Ch2Generator() {
                 </Col>
                 <Col className="col-2">              
                   <Form.Group controlId="variableB">
-                    <Form.Control as="select" defaultValue="1" value={state.variableB} onChange={handleSelect}>
+                    <Form.Control as="select" defaultValue="2" value={state.variableB} onChange={handleSelect}>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>

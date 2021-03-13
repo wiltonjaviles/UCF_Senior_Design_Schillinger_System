@@ -1,6 +1,7 @@
 import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
+import abcjs from 'abcjs';
 
 function Ch5Generator() {
   const [state , setState] = useState({
@@ -9,6 +10,9 @@ function Ch5Generator() {
     variant : 'Balance',
     Output : ''
   })
+
+  var synthControlV = new abcjs.synth.SynthController();
+  var visualV;
 
   const handleSelect = (e) => {
     const {id , value} = e.target   
@@ -22,11 +26,11 @@ function Ch5Generator() {
     event.preventDefault();    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
-    const V = String(state.variant);
+    const vV = String(state.variant);
 
     let outArr = new Array();
     
-    switch(V) {
+    switch(vV) {
       case 'Balance':
         outArr = balance(vA,vB);
         break;
@@ -38,12 +42,31 @@ function Ch5Generator() {
         break;
     }
     
-    outArr = simpleToABC(outArr);
+    outArr = simpleToABC(outArr,vA);
+
+    visualV = abcjs.renderAbc("output", "X:1\nK:C\n"+outArr[0].join("")+"\n");
+
+    if (abcjs.synth.supportsAudio()) {
+			synthControlV.load("#audio", null, {displayRestart: false, displayPlay: true, displayProgress: false})
+      //synthControlV.setTune(visualV, true);
+		} else {
+			document.querySelector("#audio").innerHTML = "<div class='audio-error'>Audio is not supported in this browser.</div>";
+		}
 
     setState(prevState => ({
         ...prevState,
-        Output : outArr[0].toString()
+        Output : outArr[0].join("")
       }))
+  }
+
+  const playBack = event => {
+    event.preventDefault();
+    //synthControlR.play();
+  }
+
+  const downloadMidi = event => {
+    event.preventDefault();
+    //synthControlR.download('r'+state.variableA+'%'+state.variableB);
   }
 
   return (
@@ -129,6 +152,25 @@ function Ch5Generator() {
                         <h4>{state.Output}</h4>
                     </Col>
                 </Row>
+                <Row className="justify-content-md-center">
+                  <div id="output"></div>
+                </Row>
+
+                <Row className="justify-content-md-center">
+                  <h5>Play Variation -</h5>
+                  <div id="audio"></div>
+                </Row>
+
+                <Row className="justify-content-md-center">
+                  <Button variant="secondary" type="submit" className="float-right" onClick={playBack}>Play Variation</Button>
+                  
+                </Row>
+
+                <Row className="justify-content-md-center">
+                  <Button variant="secondary" type="submit" className="float-right" onClick={downloadMidi}>Download Variation</Button>
+                  
+                </Row>
+
             </Form>
           </Card.Body>
         </Card>
@@ -169,7 +211,7 @@ function contract(a, b) {
   return arrOut;
 }
 
-function simpleToABC(arrIn, measureLength) {
+/*function simpleToABC(arrIn, measureLength) {
   
   
   let arrOut = new Array();
@@ -181,13 +223,81 @@ function simpleToABC(arrIn, measureLength) {
       
       for(let j=0; j<arrIn[i].length; j++) {
           if(arrIn[i][j] !== ''){
-              arrOut[i].push('a'+arrIn[i][j].toString());
+              arrOut[i].push('C'+arrIn[i][j].toString()+' ');
           }
       }
   }
   return arrOut;
+}*/
+
+function simpleToABC(arrIn, measureLength) {
+  let measure = Number(0);
+  let longNote = Number(0);
+    
+  
+    
+    let arrOut = new Array();
+    for(let i=0; i<arrIn.length; i++) {
+        arrOut[i] = new Array();
+    }
+
+    for(let i=0; i<arrIn.length; i++) {
+        measure = measureLength;
+        for(let j=0; j<arrIn[i].length; j++) {
+          
+          if(arrIn[i][j] !== ''){
+            if(arrIn[i][j] <= measure) {
+              arrOut[i].push(pushNote(arrIn[i][j]));
+              measure = measure - arrIn[i][j];
+            } else if(arrIn[i][j] > measure) {
+                if(arrIn[i][j] >= measureLength) {
+                  
+                  arrOut[i].push(pushNote(measure)+'-|');
+                  longNote = arrIn[i][j] - measure;
+                  for(longNote; longNote > 0; longNote=longNote-measureLength) {
+                    arrOut[i].push(pushNote(measureLength)+'-|');
+                  }
+                  if(longNote > 0) {
+                    arrOut[i].push(pushNote(longNote));
+                  } else {
+                    arrOut[i].pop();
+                    arrOut[i].push(pushNote(measureLength)+'|');
+                  }
+                  measure = measureLength - longNote;
+                } else {
+                  arrOut[i].push(pushNote(measure)+'-|'+pushNote(arrIn[i][j]-measure));
+                  measure = measureLength - (arrIn[i][j]-measure);
+                }
+            }
+            
+            if(measure === 0) {
+              arrOut[i].push('|');
+              measure = measureLength;
+            }
+
+          }
+        }
+    }
+
+    
+
+    return arrOut;
 }
 
+function pushNote(a) {
+  if(a === 5) {
+    return 'A4-A1';
+  } else if(a > 8) {
+    let output = new Array(['A8-']);
+    let count = a-8;
+    while(count > 8) {
+      output.push('A8-');
+      count = count-8;
+    }
+    output.push('A'+count);
+    return output.toString();
+  } else {return 'A'+a;}
+}
 
 function sMakeR(a,b) {
   let arr = new Array();
