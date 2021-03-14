@@ -4,7 +4,7 @@ import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 
-const BASE_URL = 'http://localhost:5000/'
+const BASE_URL = 'https://learnschillinger.com/'
 
 function Navigation() {
 
