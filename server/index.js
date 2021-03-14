@@ -14,7 +14,7 @@ app.use(express.urlencoded());
 app.use(cors());
 app.use(express.json());
 
-const PORT = process.env.PORT || 443;
+const PORT = 443;
 const MongoClient = require('mongodb').MongoClient;
 const client = new MongoClient(uri);
 
