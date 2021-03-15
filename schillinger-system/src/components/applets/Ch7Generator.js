@@ -4,10 +4,10 @@ import '../.././Style.css';
 
 function Ch7Generator() {
   const [state , setState] = useState({
-    variableA : '',
-    variableB : '',
-    attacks : '',
-    base : '',
+    variableA : '2',
+    variableB : '1',
+    attacks : '2',
+    base : '1/8',
     output : ''
   })
 
@@ -21,11 +21,12 @@ function Ch7Generator() {
 
   const generateR = event => {
     event.preventDefault();    
-    
+    var A = String(state.variableA);
+    var B = String(state.variableB);
 
     setState(prevState => ({
         ...prevState,
-        output : 'booped'
+        output : A+"÷"+B
       }))
   }
 
@@ -41,7 +42,7 @@ function Ch7Generator() {
                 Enter generator a and b, select number of attacks and the base.
               </p>
               <br />
-                <Row className="justify-content-md-center">
+                <Row className="form-row justify-content-md-center">
                 <Col className="col-2">
                   <Form.Group controlId="variableA">
                     <Form.Control as="select" defaultValue="2" value={state.variableA} onChange={handleSelect}>
@@ -75,7 +76,7 @@ function Ch7Generator() {
                 </Col>
                 </Row>
                   
-                <Row className="justify-content-md-center">
+                <Row className="form-row justify-content-md-center">
                     <Col className="col-3">
                         <h1>Attacks: </h1>
                     </Col>
@@ -90,7 +91,7 @@ function Ch7Generator() {
                     </Col>
                 </Row>
                 
-                <Row className="justify-content-md-center">
+                <Row className="form-row justify-content-md-center">
                     <Col className="col-3">
                         <h1>Base: </h1>
                     </Col>
@@ -105,13 +106,13 @@ function Ch7Generator() {
                     </Col>
                 </Row>
 
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
+                <Row className="form-row justify-content-md-center">
+                    <Col className="col-3 text-center ml-4">
                         <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                     </Col>
                 </Row>
-
-                <Row className="justify-content-md-center">
+                <br />
+                <Row className="form-row justify-content-md-center">
                     <Col className="col-3">
                         <h4>Ouput: </h4>
                     </Col>
