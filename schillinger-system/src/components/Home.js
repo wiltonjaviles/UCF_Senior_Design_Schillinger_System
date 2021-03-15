@@ -1,6 +1,6 @@
 import '.././Style.css';
 import isAuthenticated from '.././components/authUser';
-import React, { useState } from 'react';
+import React from 'react';
 import Speech from 'react-speech';
 
 function Home() {
