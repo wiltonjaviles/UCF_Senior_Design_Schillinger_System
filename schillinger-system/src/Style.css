@@ -60,6 +60,10 @@ nav {
   text-decoration: none
 }
 
+.equation{
+  text-align: justify;
+}
+
 .generator-dropdown-menu {
   min-width: 0px !important;
 }

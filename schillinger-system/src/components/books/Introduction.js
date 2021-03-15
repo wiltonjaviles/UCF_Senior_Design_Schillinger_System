@@ -3,6 +3,9 @@ import {Link} from 'react-router-dom';
 import '../.././Style.css';
 import Speech from 'react-speech';
 
+//import intro1 from '../../images/intro_image1.png';
+//import intro2 from '../../images/intro_image2.png';
+
 function Introduction() {
   
   return (
@@ -75,7 +78,7 @@ function Introduction() {
           <p class="bookText">The tools of analysis employed by Schillinger were employed by earlier musical theorists before he used them. For example, the graphing method, as used in daily stock reports, was nearly 300 years old at the time of use.</p>
         <h5>Theory of Rhythm:</h5>
           <p class="bookText">“Viewed simply from the standpoint of problems of duration, meter, and accent, this theory provides the means for evolving all conceivable rhythms of past, present, and future…” The theory is based on interference as revealed in physics of wave motion. “<em>Non-uniform</em> durations may be produced by combining or causing interference between <em>two uniform series</em> of durations.”</p>
-          <img src="../.././images/intro_image1.png"></img>
+          <img src="images/intro/img1.png" alt="image1"></img>
           <p class="bookText">This can then be modified by using a duration of value 4 to interfere with durations of value 3. Example: Beat one series with one hand and the other with your other hand- listen to the result. [43,32, 21, etc]. There are a plethora combinations and permutations that can be applied to discover thousands of variant patterns. The process of producing rhythmic resultants is based on numbers and the resultants are a series of numbers. The number values of the two musical illustrations above are as follows: 3+1+2+2+1+3. As this moves from rhythm to other aspects the series, or patterns, become coefficients of recurrence which are then applied to pitch-unis, pitch-scales, harmonic cycles, correlated melodies, densities, etc. When applied to scales, the coefficients of recurrence yield melodies; applied to two or more melodies, they produce counterpoint; applied to tonal cycles, they produce harmonic patterns; applied to harmonic patterns, they produce different styles, etc. Essentially, there are plenty of ways to apply these series, or patterns, to different facets of musical theory and composition in order to yield many different results.</p>
         <h5>Patterns of Music and Nature</h5>
           <p class="bookText">Schillinger argues that his theory of rhythm, also called <em><b>theory of regularity and coordination</b></em> is the basis of all pattern-making in the universe. Before we, as humans, realized it, we were abstracting quantities, forms, and structures to repurpose them in order to excite sensations. Psychology tells us, through plenty of research, that similar configurations, in nature, through music, on a canvas, all excite similar sensations. “Schillinger became interested in discovering the basic patterns of growth, motion, and evolution in the universe.” (23) This is what his theory of regularity and coordination represents (Rhythm).</p>
@@ -83,7 +86,7 @@ function Introduction() {
         <h5>Aristotle, Einstein, and Geometry:</h5>
           <p class="bookText">Schillinger infers the Aristotelian idea that “Art imitates nature” by stating that great music and all great art reproduce laws of development of the universe. Schillinger aimed “to transform musical qualities into time-space structures, i.e., into the geometric relations of their components.” This was done via graphing.</p>
           <p class="bookText">Example:</p>
-        <img src="../.././images/intro_image1.png"></img>
+        <img src="images/intro/img2.png" alt="image1"></img>
           <h6>Each horizontal square represents an eighth-note and each vertical square represents a semitone</h6>
           <p class="bookText">Schillinger proposes that musical motion, when projected into spatial configuration, possesses characteristics similar to motion, action, growth, or other eventual processes. “Music is capable of expressing everything which can be translated into a form of motion.” (25) This graph “vivifies one aspect of the relationship between music and motion.”</p>
           <p class="bookText">The problems of musical components are presented by three general aspects:</p>
