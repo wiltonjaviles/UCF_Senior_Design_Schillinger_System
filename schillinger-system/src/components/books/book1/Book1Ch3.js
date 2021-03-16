@@ -13,6 +13,7 @@ function Book1Ch3() {
         <a className="chapter-section-link" href="/book1#1.3" id="1.3"><h3>Chapter 3. The Techniques of Grouping</h3></a>
         <a className="content-links" href="/book1ch3schillinger"><h5>View the source text.</h5></a>
         <Speech 
+          stop={true}
           textAsButton={true}
           displayText="Listen to this text" 
           text="

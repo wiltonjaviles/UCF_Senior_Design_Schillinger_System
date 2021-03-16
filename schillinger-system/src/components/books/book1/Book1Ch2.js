@@ -13,6 +13,7 @@ function Book1Ch2() {
         <a className="chapter-section-link" href="/book1ch2#1.2" id="1.2"><h3>Chapter 2. Interferences of Periodicities</h3></a>
         <a className="content-links" href="/book1ch2schillinger"><h5>View the source text.</h5></a>
         <Speech 
+          stop={true}
           textAsButton={true}
           displayText="Listen to this text" 
           text="
