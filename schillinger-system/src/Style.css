@@ -141,3 +141,7 @@ nav {
   width: 600;
   outline: black;
 }
+
+.srcText{
+  text-align: justify;
+}
