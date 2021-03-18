@@ -141,3 +141,9 @@ nav {
   width: 600;
   outline: black;
 }
+
+.sideways-scroll > svg {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}

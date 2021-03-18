@@ -40,13 +40,13 @@ function Ch7Generator() {
         break;
     }
 
-    var measureLength = 4;
+    var measureLength = 8;
     var r = makeR(a,b);
     var rLength = Number(r.length);
     var totalLength = Number(lcm(attacks, rLength));
     var out = toABC(r, measureLength, totalLength, notes);
-    abcjs.renderAbc("outputC1", "X:1\nK:C clef=treble\n"+out[0].join("")+"\n");
-    abcjs.renderAbc("outputC2", "X:1\nK:C clef=bass octave=-8\n"+out[1].join("")+"\n");
+    abcjs.renderAbc("outputC1", "X:1\nK:C clef=treble\n"+out[0].join("")+"\n", { responsive: 'resize' });
+    abcjs.renderAbc("outputC2", "X:1\nK:C clef=bass octave=-8\n"+out[1].join("")+"\n", { responsive: 'resize' });
 
     setState(prevState => ({
         ...prevState,
@@ -125,12 +125,14 @@ function Ch7Generator() {
                     </Col>
                 </Row>
             </Form>
-            <Row className="justify-content-md-center">
-                      <div id="outputC1"></div>
-            </Row>
-            <Row className="justify-content-md-center">
-                      <div id="outputC2"></div>
-            </Row>
+            <div className="sideways-scroll">
+              <Row className="justify-content-md-center item">
+                        <div id="outputC1"></div>
+              </Row>
+              <Row className="justify-content-md-center item">
+                        <div id="outputC2"></div>
+              </Row>
+            </div>
           </Card.Body>
         </Card>
         <br />
@@ -184,26 +186,27 @@ function makeR(a,b) {
   return arr[4];
 }
 
-// very slightly modified version of duke's simpleToABC function
+// modified version of duke's simpleToABC function
 function toABC(arrIn, measureLength, totalLength, notes) {
   let measure = Number(0);
   let longNote = Number(0);
   var notesLength = notes.length;
   var rLength = arrIn.length;
+  var numMeasures = 0;
   var note = "A";
   let arrOut = [];
   arrOut[0] = [];
   arrOut[1] = [];
-  for(let u=0;u<2;u++) {
+  for(let u=0;u<arrOut.length;u++) {
     measure = measureLength;
     for(let i=0; i<totalLength; i++) {
       note = notes[i%notesLength];
-      if(u == 0) {
-        if(i%2===0) {
+      if(u%2 === 0) {
+        if(i%2 === 0) {
           note = "z";
         }
-      } else if(u == 1) {
-        if(i%2===1) {
+      } else if(u%2 === 1) {
+        if(i%2 === 1) {
           note = "z";
         }
       }
@@ -235,7 +238,10 @@ function toABC(arrIn, measureLength, totalLength, notes) {
         if(measure <= 0) {
           arrOut[u].push('|');
           measure = measureLength;
+          numMeasures++;
+          
         }
+        
       }   
     }
   }
@@ -245,6 +251,8 @@ function toABC(arrIn, measureLength, totalLength, notes) {
 function pushNote(a, note) {
   if(a === 5) {
     return note+"4-"+note+"1";
+  } else if(a === 7) {
+    return note+"6-"+note+"1";
   } else if(a > 8) {
     let output = new Array([note+"8-"]);
     let count = a-8;
