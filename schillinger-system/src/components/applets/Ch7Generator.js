@@ -5,11 +5,10 @@ import abcjs from "abcjs";
 
 function Ch7Generator() {
   const [state , setState] = useState({
-    variableA : '2',
-    variableB : '1',
+    variableA : '3',
+    variableB : '2',
     attacks : '2',
-    base : '1/8',
-    output : ''
+    r: ""
   })
 
   const handleSelect = (e) => {
@@ -22,13 +21,36 @@ function Ch7Generator() {
 
   const generateR = event => {
     event.preventDefault();    
-    var A = Number(state.variableA);
-    var B = Number(state.variableB);
+    var a = Number(state.variableA);
+    var b = Number(state.variableB);
+    var attacks = Number(state.attacks);
+    var twoAttacks = ["C,", "[EGc]"];
+    var fourAttacks = ["C,", "[EGc]", "G,", "[EGc]"];
+    var sixAttacks = ["C,", "[EGc]", "G,", "[EGc]", "C", "[EGc]"];
+    var notes;
+    switch (attacks) {
+      case 2: 
+        notes = twoAttacks;
+        break;
+      case 4: 
+        notes = fourAttacks;
+        break;
+      case 6: 
+        notes = sixAttacks;
+        break;
+    }
 
+    var measureLength = 4;
+    var r = makeR(a,b);
+    var rLength = Number(r.length);
+    var totalLength = Number(lcm(attacks, rLength));
+    var out = toABC(r, measureLength, totalLength, notes);
+    abcjs.renderAbc("outputC1", "X:1\nK:C clef=treble\n"+out[0].join("")+"\n");
+    abcjs.renderAbc("outputC2", "X:1\nK:C clef=bass octave=-8\n"+out[1].join("")+"\n");
 
     setState(prevState => ({
         ...prevState,
-        output : A+"÷"+B+"="
+        r: r
       }))
   }
 
@@ -92,21 +114,6 @@ function Ch7Generator() {
                 </Row>
                 
                 <Row className="form-row justify-content-md-center">
-                    <Col className="col-3">
-                        <h1>Base: </h1>
-                    </Col>
-                    <Col className="col-2">              
-                        <Form.Group controlId="base">
-                            <Form.Control as="select" defaultValue="1" value={state.base} onChange={handleSelect}>
-                            <option>1/8</option>
-                            <option>1/4</option>
-                            <option>1/2</option>
-                            </Form.Control>
-                        </Form.Group>
-                    </Col>
-                </Row>
-
-                <Row className="form-row justify-content-md-center">
                     <Col className="col-3 text-center ml-4">
                         <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                     </Col>
@@ -116,11 +123,14 @@ function Ch7Generator() {
                     <Col className="col-3">
                         <h4>Ouput: </h4>
                     </Col>
-                    <Col className="col-2">
-                        <h4>{state.output}</h4>
-                    </Col>
                 </Row>
             </Form>
+            <Row className="justify-content-md-center">
+                      <div id="outputC1"></div>
+            </Row>
+            <Row className="justify-content-md-center">
+                      <div id="outputC2"></div>
+            </Row>
           </Card.Body>
         </Card>
         <br />
@@ -131,10 +141,11 @@ function Ch7Generator() {
 
 export default Ch7Generator;
 
-function sMakeR(a,b) {
-  let arr = new Array();
+// very slightly modified version of duke's sMakeR function
+function makeR(a,b) {
+  let arr = [];
   for(let i=0; i<5; i++) {
-      arr[i] = new Array();
+      arr[i] = [];
     }
 
   for(let i=0; i<a*b; i++) {
@@ -164,73 +175,86 @@ function sMakeR(a,b) {
           j=1;
       } else {j++; arr[4][i]='';}
   }
-
-  return arr;
+  for( var i = 0; i < arr[4].length; i++) {                    
+    if ( arr[4][i] === '') { 
+      arr[4].splice(i, 1); 
+        i--; 
+    }
+  }
+  return arr[4];
 }
 
-function simpleToABC(arrIn, measureLength) {
+// very slightly modified version of duke's simpleToABC function
+function toABC(arrIn, measureLength, totalLength, notes) {
   let measure = Number(0);
   let longNote = Number(0);
-    
-    
-    let arrOut = new Array();
-    for(let i=0; i<arrIn.length; i++) {
-        arrOut[i] = new Array();
-    }
-
-    for(let i=0; i<arrIn.length; i++) {
-        measure = measureLength;
-        for(let j=0; j<arrIn[i].length; j++) {
-          
-          if(arrIn[i][j] !== ''){
-            if(arrIn[i][j] <= measure) {
-              arrOut[i].push(pushNote(arrIn[i][j]));
-              measure = measure - arrIn[i][j];
-            } else if(arrIn[i][j] > measure) {
-                if(arrIn[i][j] >= measureLength) {
-                  
-                  arrOut[i].push(pushNote(measure)+'-|');
-                  longNote = arrIn[i][j] - measure;
-                  for(longNote; longNote > 0; longNote=longNote-measureLength) {
-                    arrOut[i].push(pushNote(measureLength)+'-|');
-                  }
-                  if(longNote > 0) {
-                    arrOut[i].push(pushNote(longNote));
-                  } else {
-                    arrOut[i].pop();
-                    arrOut[i].push(pushNote(measureLength)+'|');
-                  }
-                  measure = measureLength - longNote;
-                } else {
-                  arrOut[i].push(pushNote(measure)+'-|'+pushNote(arrIn[i][j]-measure));
-                  measure = measureLength - (arrIn[i][j]-measure);
-                }
-            }
-            
-            if(measure === 0) {
-              arrOut[i].push('|');
-              measure = measureLength;
-            }
-
-          }
+  var notesLength = notes.length;
+  var rLength = arrIn.length;
+  var note = "A";
+  let arrOut = [];
+  arrOut[0] = [];
+  arrOut[1] = [];
+  for(let u=0;u<2;u++) {
+    measure = measureLength;
+    for(let i=0; i<totalLength; i++) {
+      note = notes[i%notesLength];
+      if(u == 0) {
+        if(i%2===0) {
+          note = "z";
         }
+      } else if(u == 1) {
+        if(i%2===1) {
+          note = "z";
+        }
+      }
+      if(arrIn[i%rLength] !== ''){
+        if(arrIn[i%rLength] <= measure) {
+          arrOut[u].push(pushNote(arrIn[i%rLength], note));
+          measure = measure - arrIn[i%rLength];
+        } else if(arrIn[i%rLength] > measure) {
+            if(arrIn[i%rLength] >= measureLength) {
+              
+              arrOut[u].push(pushNote(measure, note)+'-|');
+              longNote = arrIn[i%rLength] - measure;
+              for(longNote; longNote > 0; longNote=longNote-measureLength) {
+                arrOut[u].push(pushNote(measureLength, note)+'-|');
+              }
+              if(longNote > 0) {
+                arrOut[u].push(pushNote(longNote, note));
+              } else {
+                arrOut[u].pop();
+                arrOut[u].push(pushNote(measureLength, note)+'|');
+              }
+              measure = measureLength - longNote;
+            } else {
+              arrOut[u].push(pushNote(measure, note)+'-|'+pushNote(arrIn[i%rLength]-measure, note));
+              measure = measureLength - (arrIn[i%rLength]-measure);
+            }
+        }
+        
+        if(measure <= 0) {
+          arrOut[u].push('|');
+          measure = measureLength;
+        }
+      }   
     }
-    return arrOut;
+  }
+  return arrOut;
 }
 
-function pushNote(a) {
+function pushNote(a, note) {
   if(a === 5) {
-    return 'A4-A1';
+    return note+"4-"+note+"1";
   } else if(a > 8) {
-    let output = new Array(['A8-']);
+    let output = new Array([note+"8-"]);
     let count = a-8;
     while(count > 8) {
-      output.push('A8-');
+      output.push(note+"8-");
       count = count-8;
     }
-    output.push('A'+count);
+    output.push(note+count);
     return output.toString();
-  } else {return 'A'+a;}
+  } else {return note+a;}
 }
 
 function lcm(x, y) {
