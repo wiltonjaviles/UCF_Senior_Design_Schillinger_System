@@ -45,8 +45,9 @@ function Ch7Generator() {
     var rLength = Number(r.length);
     var totalLength = Number(lcm(attacks, rLength));
     var out = toABC(r, measureLength, totalLength, notes);
-    abcjs.renderAbc("outputC1", "X:1\nK:C clef=treble\n"+out[0].join("")+"\n", { responsive: 'resize' });
-    abcjs.renderAbc("outputC2", "X:1\nK:C clef=bass octave=-8\n"+out[1].join("")+"\n", { responsive: 'resize' });
+    
+    var abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=bass\n[V: V1]"+out[0].join("")+"\n[V: V2]"+out[1].join("")+"\n";
+    abcjs.renderAbc("outputC1", abc, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 } );
 
     setState(prevState => ({
         ...prevState,
@@ -192,7 +193,6 @@ function toABC(arrIn, measureLength, totalLength, notes) {
   let longNote = Number(0);
   var notesLength = notes.length;
   var rLength = arrIn.length;
-  var numMeasures = 0;
   var note = "A";
   let arrOut = [];
   arrOut[0] = [];
@@ -216,35 +216,42 @@ function toABC(arrIn, measureLength, totalLength, notes) {
           measure = measure - arrIn[i%rLength];
         } else if(arrIn[i%rLength] > measure) {
             if(arrIn[i%rLength] >= measureLength) {
-              
-              arrOut[u].push(pushNote(measure, note)+'-|');
+              arrOut[u].push(pushNote(measure, note));
+              arrOut[u].push('-|');
               longNote = arrIn[i%rLength] - measure;
               for(longNote; longNote > 0; longNote=longNote-measureLength) {
-                arrOut[u].push(pushNote(measureLength, note)+'-|');
+                arrOut[u].push(pushNote(measureLength, note));
+                arrOut[u].push('-|');
               }
               if(longNote > 0) {
                 arrOut[u].push(pushNote(longNote, note));
               } else {
                 arrOut[u].pop();
-                arrOut[u].push(pushNote(measureLength, note)+'|');
+                arrOut[u].push(pushNote(measureLength, note));
+                arrOut[u].push('|');
               }
               measure = measureLength - longNote;
-            } else {
-              arrOut[u].push(pushNote(measure, note)+'-|'+pushNote(arrIn[i%rLength]-measure, note));
-              measure = measureLength - (arrIn[i%rLength]-measure);
-            }
+          } else {
+            arrOut[u].push(pushNote(measure, note));
+            arrOut[u].push('-|');
+            arrOut[u].push(pushNote(arrIn[i%rLength]-measure, note));
+            measure = measureLength - (arrIn[i%rLength]-measure);
+          }
         }
-        
         if(measure <= 0) {
           arrOut[u].push('|');
-          measure = measureLength;
-          numMeasures++;
-          
+          measure = measureLength;          
         }
-        
       }   
     }
+    if(measure != 0 && measure != 8) {
+        arrOut[u].push(pushNote(measure, "z"));
+        arrOut[u].push("|");
+        measure = 0;
+    }
+
   }
+  
   return arrOut;
 }
 
