@@ -126,14 +126,12 @@ function Ch7Generator() {
                     </Col>
                 </Row>
             </Form>
-            <div className="sideways-scroll">
-              <Row className="justify-content-md-center item">
-                        <div id="outputC1"></div>
-              </Row>
-              <Row className="justify-content-md-center item">
-                        <div id="outputC2"></div>
-              </Row>
-            </div>
+            <Row className="justify-content-md-center item">
+                      <div id="outputC1"></div>
+            </Row>
+            <Row className="justify-content-md-center item">
+                      <div id="outputC2"></div>
+            </Row>
           </Card.Body>
         </Card>
         <br />
