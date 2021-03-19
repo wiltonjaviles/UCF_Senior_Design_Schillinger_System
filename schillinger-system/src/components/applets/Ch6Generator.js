@@ -2,6 +2,7 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
+import Playback from '../applets/PlaybackTemplate';
 
 function Ch6Generator() {
   const [state , setState] = useState({
@@ -18,14 +19,9 @@ function Ch6Generator() {
     OutputComplementA : '',
     OutputComplementB : '',
     OutputComplementC : '',
-    OutputR1 : ''
+    OutputR1 : '',
+    abcString: ""
   })
-
-  var visualR;
-  var visualR1;
-
-  var synthControlR = new abcjs.synth.SynthController();
-  var synthControlR1 = new abcjs.synth.SynthController();
 
   const handleSelect = (e) => {
     const {id , value} = e.target   
@@ -66,23 +62,26 @@ function Ch6Generator() {
     }
 
     let outArr = simpleToABC(sMakeTrinomialR(vA,vB,vC),vG);
+    let abcOutR = "X:1\nK:C\n"+outArr[5].join("")+"\n";
+    let abcOutR1 = "X:1\nK:C\n"+outArr[9].join("")+"\n";
 
     abcjs.renderAbc("outputABC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
     abcjs.renderAbc("outputABC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
     abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
     abcjs.renderAbc("outputB", "X:1\nK:C\n"+outArr[3].join("")+"\n");
     abcjs.renderAbc("outputC", "X:1\nK:C\n"+outArr[4].join("")+"\n");
-    visualR = abcjs.renderAbc("outputR", "X:1\nK:C\n"+outArr[5].join("")+"\n")[0];
+    abcjs.renderAbc("outputR", "X:1\nK:C\n"+outArr[5].join("")+"\n");
     abcjs.renderAbc("outputComplementA", "X:1\nK:C\n"+outArr[6].join("")+"\n");
     abcjs.renderAbc("outputComplementB", "X:1\nK:C\n"+outArr[7].join("")+"\n");
     abcjs.renderAbc("outputComplementC", "X:1\nK:C\n"+outArr[8].join("")+"\n");
-    visualR1 = abcjs.renderAbc("outputR1", "X:1\nK:C\n"+outArr[9].join("")+"\n")[0];
+    abcjs.renderAbc("outputR1", "X:1\nK:C\n"+outArr[9].join("")+"\n");
     
 
     setState(prevState => ({
         ...prevState,
         OutputR : outArr[5].toString(),
-        OutputR1 : outArr[9].toString()
+        OutputR1 : outArr[9].toString(),
+        abcString : abcOutR
       }))
   }
 
@@ -242,6 +241,7 @@ function Ch6Generator() {
                       
                     
                 </Row>
+                <Playback abc = {state.abcString}/>
             </Form>
           </Card.Body>
         </Card>

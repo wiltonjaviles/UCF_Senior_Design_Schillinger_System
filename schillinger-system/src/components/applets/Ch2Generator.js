@@ -2,6 +2,7 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
+import Playback from '../applets/PlaybackTemplate';
 
 function Ch2Generator() {
   const [state , setState] = useState({
@@ -12,11 +13,9 @@ function Ch2Generator() {
     OutputC2 : '',
     OuputA : '',
     OutputB : '',
-    OutputR : ''
+    OutputR : '',
+    abcString: ""
   })
-
-  var synthControlR = new abcjs.synth.SynthController();
-  var visualR;
 
   const handleSelect = (e) => {
     const {id , value} = e.target   
@@ -42,36 +41,21 @@ function Ch2Generator() {
         break;
     }
     let outArr = simpleToABC(sMakeR(vA,vB),vG);
+    let abcOut = "X:1\nK:C\n"+outArr[4].join("")+"\n"
     
     abcjs.renderAbc("outputC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
     abcjs.renderAbc("outputC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
     abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
     abcjs.renderAbc("outputB", "X:1\nK:C\n"+outArr[3].join("")+"\n");
-    visualR = abcjs.renderAbc("outputR", "X:1\nK:C\n"+outArr[4].join("")+"\n")[0];
-
-    if (abcjs.synth.supportsAudio()) {
-			synthControlR.load("#audio", null, {displayRestart: false, displayPlay: true, displayProgress: false})
-      synthControlR.setTune(visualR, true);
-		} else {
-			document.querySelector("#audio").innerHTML = "<div class='audio-error'>Audio is not supported in this browser.</div>";
-		}
+    abcjs.renderAbc("outputR", abcOut);
 
     setState(prevState => ({
-      ...prevState
+      ...prevState,
+        abcString: abcOut
     }))
     
   }
 
-    
-  const playBack = event => {
-    event.preventDefault();
-    //synthControlR.play();
-  }
-
-  const downloadMidi = event => {
-    event.preventDefault();
-    //synthControlR.download('r'+state.variableA+'%'+state.variableB);
-  }
 
   return (
     <div>
@@ -166,21 +150,7 @@ function Ch2Generator() {
                     
                 </Row>
                 
-                <Row className="justify-content-md-center">
-                  <h5>Play R -</h5>
-                  <div id="audio"></div>
-                </Row>
-
-                <Row className="justify-content-md-center">
-                  <Button variant="secondary" type="submit" className="float-right" onClick={playBack}>Play R</Button>
-                  
-                </Row>
-
-                <Row className="justify-content-md-center">
-                  <Button variant="secondary" type="submit" className="float-right" onClick={downloadMidi}>Download R</Button>
-                  
-                </Row>
-                
+                <Playback abc = {state.abcString}/>
             </Form>
           </Card.Body>
         </Card>
