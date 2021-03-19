@@ -3,6 +3,7 @@ import isAuthenticated from '.././components/authUser';
 import React from 'react';
 import Speech from 'react-speech';
 import { Container } from 'react-bootstrap';
+import Ch2Generator from './applets/Ch2Generator';
 
 function Home() {
   isAuthenticated();
@@ -14,6 +15,7 @@ function Home() {
         <br />
         <p>Welcome to the Schillinger System of Musical Composition!</p>
         <br />
+        <Ch2Generator />
         <Speech 
           textAsButton={true}
           displayText="Listen to this text" 

@@ -38,6 +38,7 @@ function Ch7Generator() {
       case 6: 
         notes = sixAttacks;
         break;
+      default: break;
     }
 
     var measureLength = 8;
@@ -244,7 +245,7 @@ function toABC(arrIn, measureLength, totalLength, notes) {
         }
       }   
     }
-    if(measure != 0 && measure != 8) {
+    if(measure !== 0 && measure !== 8) {
         arrOut[u].push(pushNote(measure, "z"));
         arrOut[u].push("|");
         measure = 0;

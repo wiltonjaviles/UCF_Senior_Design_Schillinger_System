@@ -142,8 +142,9 @@ nav {
   outline: black;
 }
 
-.sideways-scroll > svg {
-  display: block;
-  overflow-x: auto;
-  white-space: nowrap;
+.activate-audio {
+  display: none
+}
+.stop-audio {
+  display: none
 }
