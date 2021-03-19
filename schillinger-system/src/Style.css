@@ -143,8 +143,23 @@ nav {
 }
 
 .activate-audio {
-  display: none
+  display: inline;
 }
 .stop-audio {
-  display: none
+  display: none;
+}
+
+.abc-warning {
+  font-size: 12px;
+  color:red;
+  border: 1px solid red;
+  text-align: center;
+  width: 300px;
+  margin-top: 4px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.progress-indicator {
+  left: 0px;
 }

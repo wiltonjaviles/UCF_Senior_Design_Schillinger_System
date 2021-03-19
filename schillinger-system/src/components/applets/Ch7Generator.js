@@ -2,13 +2,15 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
+import Playback from '../applets/PlaybackTemplate';
 
 function Ch7Generator() {
   const [state , setState] = useState({
     variableA : '3',
     variableB : '2',
     attacks : '2',
-    r: ""
+    r: "",
+    abcString: ""
   })
 
   const handleSelect = (e) => {
@@ -52,7 +54,8 @@ function Ch7Generator() {
 
     setState(prevState => ({
         ...prevState,
-        r: r
+        r: r,
+        abcString: abc
       }))
   }
 
@@ -133,6 +136,7 @@ function Ch7Generator() {
             <Row className="justify-content-md-center item">
                       <div id="outputC2"></div>
             </Row>
+            <Playback abc = {state.abcString}/>
           </Card.Body>
         </Card>
         <br />
