@@ -2,17 +2,16 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
+import Playback from '../applets/PlaybackTemplate';
 
 function Ch4Generator() {
   const [state , setState] = useState({
     variableA : 3,
     variableB : 2,
     groupBy : 'a',
-    testOutput : ""
+    testOutput : "",
+    abcString: ""
   })
-
-  var synthControlR_ = new abcjs.synth.SynthController();
-  var visualR_;
 
   const handleSelect = (e) => {
     const {id , value} = e.target   
@@ -38,36 +37,20 @@ function Ch4Generator() {
     }
     
     outArr[4].reverse();
-    
+    let outAbc = "X:1\nK:C\n"+outArr[5].join("")+"\n";
     
     abcjs.renderAbc("outputC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
     abcjs.renderAbc("outputC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
     abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
     abcjs.renderAbc("outputB1", "X:1\nK:C\n"+outArr[3].join("")+"\n");
     abcjs.renderAbc("outputB2", "X:1\nK:C\n"+outArr[4].join("")+"\n");
-    visualR_ = abcjs.renderAbc("outputR_", "X:1\nK:C\n"+outArr[5].join("")+"\n");
-
-    if (abcjs.synth.supportsAudio()) {
-			synthControlR_.load("#audio", null, {displayRestart: false, displayPlay: true, displayProgress: false});
-			//synthControlR_.setTune(visualR_, true);
-		} else {
-			document.querySelector("#audio").innerHTML = "<div class='audio-error'>Audio is not supported in this browser.</div>";
-		}
+    abcjs.renderAbc("outputR_", outAbc);
 
     setState(prevState => ({
         ...prevState,
-        testOutput : outArr[2].join("")
+        testOutput : outArr[2].join(""),
+        abcString : outAbc
       }))
-  }
-
-  const playBack = event => {
-    event.preventDefault();
-    //synthControlR_.play();
-  }
-
-  const downloadMidi = event => {
-    event.preventDefault();
-    //synthControlR_.download('r_'+state.variableA+'%'+state.variableB);
   }
 
   return (
@@ -149,21 +132,7 @@ function Ch4Generator() {
                 <div id="outputR_"></div>
               </Row>
 
-              <Row className="justify-content-md-center">
-                <h5>Play R underlined -</h5>
-                <div id="audio"></div>
-              </Row>
-
-              <Row className="justify-content-md-center">
-                  <Button variant="secondary" type="submit" className="float-right" onClick={playBack}>Play R</Button>
-                  
-                </Row>
-
-                <Row className="justify-content-md-center">
-                  <Button variant="secondary" type="submit" className="float-right" onClick={downloadMidi}>Download R</Button>
-                  
-                </Row>
-
+                <Playback abc = {state.abcString}/>
             </Form>
           </Card.Body>
         </Card>
@@ -226,24 +195,7 @@ function sMakeR_(a,b) {
   return arr;
 }
 
-/*function simpleToABC(arrIn, measureLength) {
-  
-  
-  let arrOut = new Array();
-  for(let i=0; i<arrIn.length; i++) {
-    arrOut[i] = new Array();
-  }
 
-  for(let i=0; i<arrIn.length; i++) {
-      
-      for(let j=0; j<arrIn[i].length; j++) {
-          if(arrIn[i][j] !== ''){
-              arrOut[i].push('A'+arrIn[i][j].toString());
-          }
-      }
-  }
-  return arrOut;
-}*/
 
 function simpleToABC(arrIn, measureLength) {
   let measure = Number(0);
