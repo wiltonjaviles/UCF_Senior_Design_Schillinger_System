@@ -13,6 +13,7 @@ function Book1Ch4() {
         <a className="chapter-section-link" href="/book1#1.4" id="1.4"><h3>Chapter 4. The Techniques of Fractioning</h3></a>
         <a className="content-links" href="/book1ch4schillinger"><p>View the source text.</p></a>
         <Speech 
+          stop={true}
           textAsButton={true}
           displayText="Listen to this text" 
           text="

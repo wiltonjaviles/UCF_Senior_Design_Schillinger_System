@@ -14,6 +14,7 @@ function Book1Ch1() {
         <a className="chapter-section-link" href="/book1ch1#1.1" id="1.1"><h3>Chapter 1. Notation System</h3></a>
         <a className="content-links" href="/book1ch1schillinger"><h5>View the source text.</h5></a>
         <Speech 
+          stop={true}
           textAsButton={true}
           displayText="Listen to this text" 
           text="
