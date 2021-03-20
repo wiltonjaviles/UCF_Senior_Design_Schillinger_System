@@ -131,12 +131,12 @@ function Ch7Generator() {
                 </Row>
             </Form>
             <Row className="justify-content-md-center item">
-                      <div id="outputC1"></div>
+              <div id="outputC1"></div>
             </Row>
             <Row className="justify-content-md-center item">
-                      <div id="outputC2"></div>
+              <div id="outputC2"></div>
             </Row>
-            <Playback abc = {state.abcString}/>
+            <Playback abc={state.abcString}/>
           </Card.Body>
         </Card>
         <br />
