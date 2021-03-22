@@ -2,7 +2,7 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import abcjs from "abcjs";
 import '../.././Style.css';
-import Playback from './PlaybackTemplate';
+import Playback from './Playback';
 
 function Ch14Generator() {
   const [state , setState] = useState({
@@ -208,7 +208,17 @@ function Ch14Generator() {
 }
 
 // another modified version of Duke's simpleToABC
-function toABC(arrIn, measureLength) {
+function toABC (arrIn, measureLength) {
+  var note = "A";
+  var arrOut = [];
+  arrIn.forEach(element => {
+    arrOut.push(note+String(element));
+  });
+  arrOut.push("|");
+  return arrOut;
+}
+
+function toABC1(arrIn, measureLength) {
   let measure = Number(0);
   let longNote = Number(0);
   var rLength = arrIn.length;

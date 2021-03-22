@@ -2,7 +2,7 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
-import Playback from '../applets/PlaybackTemplate';
+import Playback from '../applets/Playback';
 
 function Ch7Generator() {
   const [state , setState] = useState({
