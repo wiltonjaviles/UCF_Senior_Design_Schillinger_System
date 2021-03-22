@@ -2,17 +2,17 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from 'abcjs';
+import Playback from '../applets/PlaybackTemplate';
 
 function Ch5Generator() {
   const [state , setState] = useState({
     variableA : 2,
     variableB : 1,
     variant : 'Balance',
-    Output : ''
+    Output : '',
+    abcString: ""
   })
 
-  var synthControlV = new abcjs.synth.SynthController();
-  var visualV;
 
   const handleSelect = (e) => {
     const {id , value} = e.target   
@@ -43,30 +43,15 @@ function Ch5Generator() {
     }
     
     outArr = simpleToABC(outArr,vA);
+    let abcOut = "X:1\nK:C\n"+outArr[0].join("")+"\n";
 
-    visualV = abcjs.renderAbc("output", "X:1\nK:C\n"+outArr[0].join("")+"\n");
-
-    if (abcjs.synth.supportsAudio()) {
-			synthControlV.load("#audio", null, {displayRestart: false, displayPlay: true, displayProgress: false})
-      //synthControlV.setTune(visualV, true);
-		} else {
-			document.querySelector("#audio").innerHTML = "<div class='audio-error'>Audio is not supported in this browser.</div>";
-		}
+    abcjs.renderAbc("output", abcOut);
 
     setState(prevState => ({
         ...prevState,
-        Output : outArr[0].join("")
+        Output : outArr[0].join(""),
+        abcString : abcOut
       }))
-  }
-
-  const playBack = event => {
-    event.preventDefault();
-    //synthControlR.play();
-  }
-
-  const downloadMidi = event => {
-    event.preventDefault();
-    //synthControlR.download('r'+state.variableA+'%'+state.variableB);
   }
 
   return (
@@ -156,21 +141,8 @@ function Ch5Generator() {
                   <div id="output"></div>
                 </Row>
 
-                <Row className="justify-content-md-center">
-                  <h5>Play Variation -</h5>
-                  <div id="audio"></div>
-                </Row>
-
-                <Row className="justify-content-md-center">
-                  <Button variant="secondary" type="submit" className="float-right" onClick={playBack}>Play Variation</Button>
-                  
-                </Row>
-
-                <Row className="justify-content-md-center">
-                  <Button variant="secondary" type="submit" className="float-right" onClick={downloadMidi}>Download Variation</Button>
-                  
-                </Row>
-
+                
+                <Playback abc = {state.abcString}/>
             </Form>
           </Card.Body>
         </Card>
