@@ -11,7 +11,8 @@ function Ch11Generator() {
     groupBy : 'a',
     clock : 'clockwise',
     OutputR : '',
-    abcString: ""
+    abcString : "",
+    testOutput : ""
   })
 
   const handleSelect = (e) => {
@@ -29,33 +30,40 @@ function Ch11Generator() {
     let vG = Number(state.variableA);
     let direction = Boolean(state.clock === "clockwise");
     let outArr = [];
+    let outStr = new String();
     let abcOut = [];
 
     switch(state.groupBy) {
       case 'a':
         outArr = simpleToABC(sMakeR(vA,vB),vG);
-        abcOut = "X:1\nK:C\n"+outArr[4].join("")+"\n";
+        outStr = outArr[4].join("");
         break;
       case 'b':
         vG = state.variableB;
         outArr = simpleToABC(sMakeR(vA,vB),vG);
-        abcOut = "X:1\nK:C\n"+outArr[4].join("")+"\n";
+        outStr = outArr[4].join("");
         break;
       case 'underline':
         outArr = simpleToABC(sMakeR_(vA,vB),vG);
-        abcOut = "X:1\nK:C\n"+outArr[5].join("")+"\n";
+        outStr = outArr[5].join("");
         break;
     }
     
     //TODO do stuff with abcOut.
     
     
+    let test = new String(outStr);
+    test = test.split('|');
     
+    test = rotateOnMeasures(test,vA*vB/vG,direction);
+    
+    abcOut = "X:1\nK:C\n"+test.join("")+"\n"
     abcjs.renderAbc("outputR", abcOut);
 
     setState(prevState => ({
       ...prevState,
-        abcString: abcOut
+        abcString : abcOut,
+        testOutput : test
     }))
     
   }
@@ -67,7 +75,7 @@ function Ch11Generator() {
         <Card>
           <Card.Body>
             <Form>
-              <h1>R Generator</h1>
+              <h1>Rotate Generator</h1>
               <h3>Instructions</h3>
               <p>
                 Select two integers a and b, then select a measure lenght equal to a, b, or a times b.  Click Generate to view output.
@@ -139,6 +147,11 @@ function Ch11Generator() {
                         <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                     </Col>
                 </Row>
+
+                <Row className="justify-content-md-center">
+                <h4>Result: </h4>
+                <h4>{state.testOutput}</h4>
+              </Row>
                 
                 <Row className="justify-content-md-center">
                   
@@ -310,4 +323,53 @@ function pushNote(a) {
     output.push('A'+count);
     return output.toString();
   } else {return 'A'+a;}
+}
+
+/*
+    takes in a 1-D array and breaks it by measures into a 2-D array
+    going down by measures.
+ */
+function splitOnMeasures(arrIn) {
+    let arrOut = new Array();
+    let m = 0;
+    let j = 0;
+
+    for(let i=0; i<arrIn.length; i++)
+    {   
+        arrOut[m][j] = arrIn[i];
+        if(arrIn[i] === '|') {
+            j=0;
+            m++;
+        } else {
+            j++;
+        }
+    }
+
+    return arrOut;
+}
+
+/*
+    takes output from splitOnMeasures and rotates them
+    Outputs a 1-d array.
+ */
+function rotateOnMeasures(arrIn, measures, clockwise) {
+    let arrOut = new Array();
+
+    if(clockwise) {
+        for(let i=0; i<measures; i++) {
+            for(let j=0; j<measures; j++) {
+                arrOut.push(arrIn[(i+j)%measures]);
+                arrOut.push("|");
+            }
+        }
+    } else {
+        for(let i=0; i<measures; i++) {
+            for(let j=measures-1; j>-1; j--) {
+                arrOut.push(arrIn[(i+j+1)%measures]);
+                arrOut.push("|");
+            }
+        }
+    }
+
+    return arrOut;
 }
