@@ -11,6 +11,8 @@ function Ch14Generator() {
     vSeries : "",
     resultArray: "",
     reverseResultArray: "",
+    ABC: "",
+    reverseABC: "",
     abcString: ""
   })
 
@@ -29,6 +31,8 @@ function Ch14Generator() {
       vMeasure: "",
       resultArray: "",
       reverseResultArray: "",
+      ABC: "",
+      reverseABC: "",
       abcString: ""
     }))
   }
@@ -56,8 +60,8 @@ function Ch14Generator() {
       case "Arithmetical Progression":
         seriesArray = [1,2,5,7,9,11];
         reverseSeriesArray = [11,9,7,5,2,1];
-        seriesSum = 36;
-        seriesMeasureLength = 6;
+        seriesSum = 35;
+        seriesMeasureLength = 5;
         break;
       case "Geometrical Progression":
         seriesArray = [3,6,12,24];
@@ -95,16 +99,18 @@ function Ch14Generator() {
         return;
     }
     
-    var seriesOut = toABC(seriesArray, seriesMeasureLength).join("");
-    var reverseSeriesOut = toABC(reverseSeriesArray, seriesMeasureLength).join("");
+    var seriesOut = toABC(seriesArray, seriesMeasureLength, seriesSum).join("");
+    var reverseSeriesOut = toABC(reverseSeriesArray, seriesMeasureLength, seriesSum).join("");
     var abcString = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\n[V: V1]"+seriesOut+"\n[V: V2]"+reverseSeriesOut+"\n";
     abcjs.renderAbc("outputC1", abcString);
 
     setState(prevState => ({
       ...prevState,
-      resultArray: seriesOut,
-      reverseResultArray: reverseSeriesOut,
-      abcString: abcString
+      resultArray: seriesArray.join(", "),
+      reverseResultArray: reverseSeriesArray.join(", "),
+      abcString: abcString,
+      ABC: seriesOut,
+      reverseABC: reverseSeriesOut
     }))
 
   }
@@ -188,12 +194,28 @@ function Ch14Generator() {
               <h3>Results:</h3>
             </Row>
             <Row className="justify-content-md-center">
-              <Col className="col-2"><p>Series: </p></Col>
-              <Col className="col-2"><p>{state.resultArray}</p></Col>
+              <Col></Col>
+              <Col>array: </Col>
+              <Col>{state.resultArray}</Col>
+              <Col></Col>
             </Row>
             <Row className="justify-content-md-center">
-              <Col className="col-2"><p>Reverse: </p></Col>
-              <Col className="col-2"><p>{state.reverseResultArray}</p></Col>
+              <Col></Col>
+              <Col>reverse array: </Col>
+              <Col>{state.reverseResultArray}</Col>
+              <Col></Col>
+            </Row>
+            <Row className="justify-content-md-center">
+              <Col></Col>
+              <Col>abc: </Col>
+              <Col>{state.ABC}</Col>
+              <Col></Col>
+            </Row>
+            <Row className="justify-content-md-center">
+              <Col></Col>
+              <Col>reverse abc: </Col>
+              <Col>{state.reverseABC}</Col>
+              <Col></Col>
             </Row>
             <Row className="justify-content-md-center">
               <div id="outputC1"></div>
@@ -207,79 +229,63 @@ function Ch14Generator() {
   );
 }
 
-// another modified version of Duke's simpleToABC
-function toABC (arrIn, measureLength) {
-  var note = "A";
+// another extremely modified version of Duke's simpleToABC
+// this one ends up being a little more generic assuming you can get the total length of the music (sum up the elements of arrIn for example)
+function toABC (arrIn, measureLength, totalLength) {
+  var note = "G";
   var arrOut = [];
-  arrIn.forEach(element => {
-    arrOut.push(note+String(element));
-  });
-  arrOut.push("|");
-  return arrOut;
-}
-
-function toABC1(arrIn, measureLength) {
-  let measure = Number(0);
-  let longNote = Number(0);
-  var rLength = arrIn.length;
-  var note = "A";
-  let arrOut = [];
-  
-  measure = measureLength;
-  for(let i=0; i<arrIn.length; i++) {
-    if(arrIn[i%rLength] !== ''){
-      if(arrIn[i%rLength] <= measure) {
-        arrOut.push(pushNote(arrIn[i%rLength], note, measureLength));
-        measure = measure - arrIn[i%rLength];
-      } else if(arrIn[i%rLength] > measure) {
-          if(arrIn[i%rLength] >= measureLength) {
-            arrOut.push(pushNote(measure, note, measureLength));
-            arrOut.push('-|');
-            longNote = arrIn[i%rLength] - measure;
-            for(longNote; longNote > 0; longNote=longNote-measureLength) {
-              arrOut.push(pushNote(measureLength, note, measureLength));
-              arrOut.push('-|');
-            }
-            if(longNote > 0) {
-              arrOut.push(pushNote(longNote, note, measureLength));
-            } else {
-              arrOut.pop();
-              arrOut.push(pushNote(measureLength, note, measureLength));
-              arrOut.push('|');
-            }
-            measure = measureLength - longNote;
+  var curMeasure = 1;
+  var index = 0;
+  var curNote = arrIn[index];
+  for(var i=1;i<totalLength+1;i++) {
+    if(curNote === 1) {
+    }
+    if(Number(curMeasure) === Number(curNote)) {
+      if(curNote == 5) {
+        arrOut.push(note+"4-"+note+"1");
+      } else if (curNote == 7) {
+        arrOut.push(note+"6-"+note+"1");
+      } else if (curNote == 9) {
+        arrOut.push(note+"8-"+note+"1");
+      } else {
+        arrOut.push(note+String(curNote));
+      }
+      curMeasure = 0;
+      index++;
+      if(index >= arrIn.length) {
+      } else {
+        curNote = arrIn[index];
+      }
+      
+    } 
+    if(i%measureLength === 0) {
+      if(i === 0) {
+        continue;
+      } else {
+        if(curMeasure === 0) {
+          arrOut.push("|");
         } else {
-          arrOut.push(pushNote(measure, note, measureLength));
-          arrOut.push('-|');
-          arrOut.push(pushNote(arrIn[i%rLength]-measure, note, measureLength));
-          measure = measureLength - (arrIn[i%rLength]-measure);
+          if(curMeasure === 5) {
+            arrOut.push(note+"4-"+note+"1-|");
+          } else if (curMeasure === 7) {
+            arrOut.push(note+"6-"+note+"1-|"); 
+          } else if (curMeasure === 9) {
+            arrOut.push(note+"8-"+note+"1-|");
+          } else {
+            arrOut.push(note+curMeasure+"-|");
+          }
+          curNote = curNote-curMeasure;
+          curMeasure = 0;
+
         }
       }
-      if(measure <= 0) {
-        arrOut.push('|');
-        measure = measureLength;          
-      }
-    }   
+    }
+    curMeasure++;
   }
-  if(arrOut[arrOut.length-1] !== "|") {
-    arrOut.push("|");
-  }
+  
   return arrOut;
 }
 
-function pushNote(a, note, measureLength) {
-  if(a === 5) {
-    return note+"4-"+note+"1";
-  } else if(a > measureLength) {
-    let output = new Array([note+measureLength+"-"]);
-    let count = a-measureLength;
-    while(count > measureLength) {
-      output.push(note+measureLength+"-");
-      count = count-measureLength;
-    }
-    output.push(note+count);
-    return output.toString();
-  } else {return note+a;}
-}
+
 
 export default Ch14Generator;
