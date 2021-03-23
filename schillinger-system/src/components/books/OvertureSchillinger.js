@@ -8,7 +8,8 @@ function OvertureSchillinger() {
       <Container>
         <br /> 
         <h1>Schillinger Source Text for the Overture</h1>
-        <p></p>
+        <img class="screenshot" src="images/overture/overture01.png" alt="overtureImg1"></img>
+        <img class="screenshot" src="images/overture/overture02.png" alt="overtureImg2" width="auto"></img>
         <Row>
           <Col><Link to="/overture" className="content-links"><h5>Back to the Overture</h5></Link></Col>
         </Row>
