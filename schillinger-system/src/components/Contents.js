@@ -8,6 +8,7 @@ function Contents() {
   return (
     <div>
       <Container>
+        <br />
         <Row>
           <Col className="col-3"></Col>
           <Col className="col-6">

@@ -9,8 +9,8 @@ function Book1Ch4() {
     <div>
       <Container>
         <br /> 
-        <h1>Book One: Theory of Rhythm</h1>
-        <a className="chapter-section-link" href="/book1#1.4" id="1.4"><h3>Chapter 4. The Techniques of Fractioning</h3></a>
+        <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
+        <a className="chapter-section-link" href="/book1ch4#1.4" id="1.4"><h3>Chapter 4. The Techniques of Fractioning</h3></a>
         <a className="content-links" href="/book1ch4schillinger"><p>View the source text.</p></a>
         <Speech 
           stop={true}

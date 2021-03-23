@@ -7,7 +7,7 @@ function Book1() {
     <div>
       <Container>
         <br /> 
-        <h1>Book One: Theory of Rhythm</h1>
+        <Link to="/contents" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
         <p>This book is about blah blah blah</p>
         <Row>
           <Col className="col-3"></Col>

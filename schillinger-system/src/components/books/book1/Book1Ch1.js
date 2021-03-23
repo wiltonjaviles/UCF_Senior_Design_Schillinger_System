@@ -10,7 +10,7 @@ function Book1Ch1() {
     <div>
       <Container>
         <br /> 
-        <h1>Book One: Theory of Rhythm</h1>
+        <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
         <a className="chapter-section-link" href="/book1ch1#1.1" id="1.1"><h3>Chapter 1. Notation System</h3></a>
         <a className="content-links" href="/book1ch1schillinger"><h5>View the source text.</h5></a>
         <Speech 

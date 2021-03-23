@@ -9,8 +9,8 @@ function Book1Ch3() {
     <div>
       <Container>
         <br /> 
-        <h1>Book One: Theory of Rhythm</h1>
-        <a className="chapter-section-link" href="/book1#1.3" id="1.3"><h3>Chapter 3. The Techniques of Grouping</h3></a>
+        <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
+        <a className="chapter-section-link" href="/book1ch3#1.3" id="1.3"><h3>Chapter 3. The Techniques of Grouping</h3></a>
         <a className="content-links" href="/book1ch3schillinger"><h5>View the source text.</h5></a>
         <Speech 
           stop={true}

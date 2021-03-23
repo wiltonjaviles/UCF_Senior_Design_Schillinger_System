@@ -9,7 +9,7 @@ function Book1Ch2() {
     <div>
       <Container>
         <br /> 
-        <h1>Book One: Theory of Rhythm</h1>
+        <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
         <a className="chapter-section-link" href="/book1ch2#1.2" id="1.2"><h3>Chapter 2. Interferences of Periodicities</h3></a>
         <a className="content-links" href="/book1ch2schillinger"><h5>View the source text.</h5></a>
         <Speech 

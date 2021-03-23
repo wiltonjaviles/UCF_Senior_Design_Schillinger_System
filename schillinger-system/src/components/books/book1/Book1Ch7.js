@@ -8,11 +8,11 @@ function Book1Ch7() {
     <div>
       <Container>
         <br /> 
-        <h1>Book One: Theory of Rhythm</h1>
-        <a className="chapter-section-link" href="/book1#1.7" id="1.7"><h3>Chapter 7. Resultants Applied to Instrumental Forms</h3></a>
+        <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
+        <a className="chapter-section-link" href="/book1ch7#1.7" id="1.7"><h3>Chapter 7. Resultants Applied to Instrumental Forms</h3></a>
         <a className="content-links" href="/book1ch7schillinger"><h5>View the source text.</h5></a>
           <p class="bookText">Time rhythm refers to the periodicity of attacks, or the intervals of time at which the attacks occur.</p>
-        <a className="chapter-section-link" href="/book1#1.7.a" id="1.7.a"><h5>A. Instrumental Rhythm</h5></a>
+        <a className="chapter-section-link" href="/book1ch7#1.7.a" id="1.7.a"><h5>A. Instrumental Rhythm</h5></a>
           <p class="bookText">Instrumental rhythm is made up of the number of <em>places</em> of attack. For example, beating two kettle drums of different pitches in sequence results in two places of attack. Synchronizations of time rhythm and instrumental rhythm are subject to the same laws of synchronization and interference as time periodicity. When the number of places in an instrumental group does not coincide with the number of terms in a time group, then a common denominator will define the number of time groups and the number of instrumental groups until their recurrence. For example, if we use two differently pitched kettle drums on , the entire figure <em>r</em><sub>3÷2</sub> will close after the first group is over because the number of places in the group is 2 (2 drums) and the number of terms in the time group is four (4 ÷ 2 = 2). In essence, the instrumental group appears twice, while the rhythmic resultant appears once.</p>
           <img src="images/book1/ch7/img1.png" alt="book1image4"></img>
           <p class="bookText">Taking the same case of the two kettle drums for <em>r</em><sub><u>3÷2</u></sub>, we get a totally different result. The number of attacks in the instrumental groups is still 2, while the number of terms in the rhythmic result is 7, (2+1+1+1+1+1+2). 7*2=14. Seven has a complementary factor 2, and vice versa. The kettle drum 2 attack figure will appear 7 times, while the rhythmic resultant appears twice.</p>
@@ -22,7 +22,7 @@ function Book1Ch7() {
           <img src="images/book1/ch7/img3.png" alt="book1image4"></img>
           <p class="bookText">Utilizing this technique makes it possible to run a very simple motif almost infinitely. The duration of continuous variability depends on a common denominator. Rhythmic continuity through instrumental interference may be found in many arrangements of fox-trots. 6 uniform attacks (2 false triplets) placed in a common time measure (= 8/8) produces and interference of 8 ÷ 6. 8 ÷ 6 reduces to 4 ÷ 3. Six gets the complementary factor 4, and eight gets the complementary factor of 3.</p>
           <img src="images/book1/ch7/img4.png" alt="book1image4"></img>
-        <a className="chapter-section-link" href="/book1#1.7.b" id="1.7.b"><h5>B. Applying the Principles of Interference to Harmony</h5></a>
+        <a className="chapter-section-link" href="/book1ch7#1.7.b" id="1.7.b"><h5>B. Applying the Principles of Interference to Harmony</h5></a>
           <p class="bookText">The most effective forms of accompaniment are produced when the principles of interference of rhythmic and instrumental groups are applied to harmony. Applying the principles makes it possible to correlate a number of accompaniments simultaneously. The illustrations of harmony are restricted to three of the simplest instrumental forms:</p>
           <ol>
             <li class="bookText">The two-attack instrumental figure. The first attack is the lower bass. The second attack is the remaining upper parts of the chord. Ex. Polka</li>

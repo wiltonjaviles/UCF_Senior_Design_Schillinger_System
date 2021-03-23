@@ -7,7 +7,7 @@ function BookFour() {
     <div>
       <Container>
         <br />
-        <h1>Book Four (Coming Soon!)</h1>
+        <Link to="/contents" className="content-links"><h1>Book Four (Coming Soon!)</h1></Link>
         <br />
         <Row>
           <Col><Link to="/book3" className="content-links"><h5>Previous Book</h5></Link></Col>
