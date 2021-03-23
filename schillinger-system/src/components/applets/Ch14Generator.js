@@ -13,6 +13,7 @@ function Ch14Generator() {
     reverseResultArray: "",
     ABC: "",
     reverseABC: "",
+    resultantABC: "",
     abcString: ""
   })
 
@@ -33,6 +34,7 @@ function Ch14Generator() {
       reverseResultArray: "",
       ABC: "",
       reverseABC: "",
+      resultantABC: "",
       abcString: ""
     }))
   }
@@ -101,7 +103,8 @@ function Ch14Generator() {
     
     var seriesOut = toABC(seriesArray, seriesMeasureLength, seriesSum).join("");
     var reverseSeriesOut = toABC(reverseSeriesArray, seriesMeasureLength, seriesSum).join("");
-    var abcString = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\n[V: V1]"+seriesOut+"\n[V: V2]"+reverseSeriesOut+"\n";
+    var rOut = toABC(resultant(seriesArray, reverseSeriesArray, seriesSum), seriesMeasureLength, seriesSum).join("");
+    var abcString = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\n[V: V1]"+seriesOut+"\n[V: V2]"+reverseSeriesOut+"\n[V: V3]"+rOut+"\n";
     abcjs.renderAbc("outputC1", abcString);
 
     setState(prevState => ({
@@ -110,7 +113,8 @@ function Ch14Generator() {
       reverseResultArray: reverseSeriesArray.join(", "),
       abcString: abcString,
       ABC: seriesOut,
-      reverseABC: reverseSeriesOut
+      reverseABC: reverseSeriesOut,
+      resultantABC: rOut
     }))
 
   }
@@ -193,7 +197,7 @@ function Ch14Generator() {
             <Row className="justify-content-md-center">
               <h3>Results:</h3>
             </Row>
-            <Row className="justify-content-md-center">
+            {/* <Row className="justify-content-md-center">
               <Col></Col>
               <Col>array: </Col>
               <Col>{state.resultArray}</Col>
@@ -218,6 +222,12 @@ function Ch14Generator() {
               <Col></Col>
             </Row>
             <Row className="justify-content-md-center">
+              <Col></Col>
+              <Col>resultant abc: </Col>
+              <Col>{state.resultantABC}</Col>
+              <Col></Col>
+            </Row> */}
+            <Row className="justify-content-md-center">
               <div id="outputC1"></div>
             </Row>
             <Playback abc={state.abcString} />
@@ -229,9 +239,58 @@ function Ch14Generator() {
   );
 }
 
+function resultant (arr1, arr2, totalLength) {
+  var freqArr1 = [];
+  var freqArr2 = [];
+  arr1.forEach(element => {
+    for(var i=0;i<element;i++) {
+      if(i===0) {
+        freqArr1.push(1);
+      } else {
+        freqArr1.push(0);
+      }
+    }
+  });
+  arr2.forEach(element => {
+    for(var i=0;i<element;i++) {
+      if(i===0) {
+        freqArr2.push(1);
+      } else {
+        freqArr2.push(0);
+      }
+    }
+  });
+  
+  var rString = [];
+  for(var i=0;i<freqArr1.length;i++) {
+    if((freqArr1[i] == 1) || (freqArr2[i] == 1)) {
+      rString.push(1);
+    } else {
+      rString.push(0);
+    }
+  }
+
+  var curLength = 1;
+  var outR = [];
+
+  rString.reverse().forEach(element => {
+    if(element == 1) {
+      outR.push(curLength);
+      curLength = 1;
+    } else {
+      curLength++
+    }
+  });
+  return outR;
+}
+
 // another extremely modified version of Duke's simpleToABC
 // this one ends up being a little more generic assuming you can get the total length of the music (sum up the elements of arrIn for example)
 function toABC (arrIn, measureLength, totalLength) {
+  if(arrIn === []) {
+    var defaultArr = [totalLength];
+    return toABC(defaultArr, measureLength, totalLength);
+  }
   var note = "G";
   var arrOut = [];
   var curMeasure = 1;
@@ -276,16 +335,17 @@ function toABC (arrIn, measureLength, totalLength) {
           }
           curNote = curNote-curMeasure;
           curMeasure = 0;
-
         }
       }
     }
     curMeasure++;
   }
-  
+  var split = arrOut[arrOut.length-1].split("");
+  if(split[split.length-2] == "-") {
+    split.splice(split.length-2, 1);
+    arrOut[arrOut.length-1] = split.join("");
+  }
   return arrOut;
 }
-
-
 
 export default Ch14Generator;
