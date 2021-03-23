@@ -2,7 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
 
-function BookFour() {
+function Book4() {
   return (
     <div>
       <Container>
@@ -19,4 +19,4 @@ function BookFour() {
   );
 }
 
-export default BookFour;
+export default Book4;
