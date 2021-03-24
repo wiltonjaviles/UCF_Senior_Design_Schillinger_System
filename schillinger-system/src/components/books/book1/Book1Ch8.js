@@ -20,8 +20,8 @@ function Book1Ch8() {
             <li class="bookText">Overlaying the result on measures</li>
           </ol>
           <p class="bookText">The exact nature of the parts is only relevant insofar as a particular style is desired; the principles remain the same across mediums.</p>
-          <img src="images/book1/ch8/img1.png" alt="book1image4"></img>
-          <img src="images/book1/ch8/img2.png" alt="book1image4"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img1.png" alt="book1image4"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img2.png" alt="book1image4"></img>
         <a className="chapter-section-link" href="/book1ch8#1.8.a" id="1.8.a"><h5>A. Distribution of a Duration-Group</h5></a>
           <h3>Notation</h3>
             <p class="bookText">pli&emsp;number of places in the instrumental group</p>
@@ -66,7 +66,7 @@ function Book1Ch8() {
           <p class="bookText">Example: a<sub>a</sub> = 4a; T = r<sub>3&#247;2</sub> = 6t; a<sub>T</sub> = 4a</p>
           <p class="equation">A = 4a</p>
           <p class="equation">T' = 6t</p>
-          <img src="images/book1/ch8/img3.png" alt="book1image4"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img3.png" alt="book1image4"></img>
           <p class="equation"><em>Second Case:</em> <sup>a<sub>a</sub></sup>/<sub>a<sub>T</sub></sub> &#8800; 1</p>
           <p class="equation">A = a<sub>T</sub>&#183;a<sub>a</sub></p>
           <p class="equation">T' = T&#183;a<sub>a</sub></p>
@@ -74,7 +74,7 @@ function Book1Ch8() {
           <p class="bookText"><sup>5</sup>/<sub>4</sub></p>
           <p class="equation">A = 5a&#183;4 = 20a</p>
           <p class="equation">T' = 6t&#183;5 = 30t</p>
-          <img src="images/book1/ch8/img4.png" alt="book1image4"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img4.png" alt="book1image4"></img>
           <p class="equation"><em>Third Case:</em> <sup>a<sub>a</sub></sup>/<sub>a<sub>T</sub></sub> = <sup>a<sub>a'</sub></sup>/<sub>a<sub>T'</sub></sub>&emsp;i.e., a reducible fraction</p>
           <p class="equation">A = a<sub>T</sub>&#183;a<sub>a</sub></p>
           <p class="equation">T' = T&#183;a<sub>a'</sub></p>
@@ -82,32 +82,32 @@ function Book1Ch8() {
           <p class="equation"><sup>6</sup>/<sub>4</sub> = <sup>3</sup>/<sub>2</sub></p>
           <p class="equation">A = 4a&#183;a3 = 12a</p>
           <p class="equation">T' = 6t&#183;3 = 18t</p>
-          <img src="images/book1/ch8/img4.png" alt="book1image4"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img4.png" alt="book1image4"></img>
         <a className="chapter-section-link" href="/book1ch8#1.8.c" id="1.8.c"><h5>C. Distribution of a Synchronized Duration-Group</h5></a>
           <p class="equation"><em>First Case:</em> <sup>T'</sup>/<sub>T''</sub> = 1</p>
           <p class="equation">T'' = T'</p>
           <p class="bookText">Example: T' = 6t;&emsp;T'' = 6t</p>
-          <img src="images/book1/ch8/img5.png" alt="book1image4"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img5.png" alt="book1image4"></img>
           <p class="equation"><em>Second Case:</em> <sup>T'</sup>/<sub>T''</sub> &#8800; 1</p>
           <p class="equation">N<sub>T''</sub> = T'</p>
           <p class="bookText">Example: T' = 6t;&emsp;T'' = 5t</p>
           <p class="equation">N5t = 6</p>
-          <img src="images/book1/ch8/img6.png" alt="book1image4"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img6.png" alt="book1image4"></img>
           <p class="equation"><em>Third Case:</em> <sup>T'</sup>/<sub>T''</sub> = <sup>T<sub>'</sub></sup>/<sub>T<sub>''</sub></sub></p>
           <p class="equation">N<sub>T''</sub> = T<sub>'</sub></p>
           <p class="bookText">Example: T' = 6t;&emsp;T'' = 4t</p>
           <p class="equation"><sup>6</sup>/<sub>4</sub> = <sup>3</sup>/<sub>2</sub></p>
           <p class="equation">N<sub>4t</sub> = 3</p>
-          <img src="images/book1/ch8/img7.png" alt="book1image4"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img7.png" alt="book1image4"></img>
           <p class="bookText">Example: a<sub>a</sub> = 5a&emsp;t = r<sub>5&#247;2</sub> = 10t;&emsp;a<sub>T</sub> = 6a</p>
-          <img src="images/book1/ch8/img8.png" alt="book1image4"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img8.png" alt="book1image4"></img>
           <ol>
             <li><sup>6</sup>/<sub>5</sub>    <sup>5 (6)</sup> <sub>6 (5)</sub></li>
             <li>10t is equivalent to 6 attacks; 10t X 5 = 50t</li>
             <li>When T'' = <sup>8</sup>/<sub>8</sub>, <sup>50t</sup>/<sub>8</sub> = <sup>25&#183;4</sup>/<sub>4</sub> = 25T''</li>
           </ol>
-          <img src="images/book1/ch8/img9.png" alt="book1image4"></img>
-          <img src="images/book1/ch8/img10.png" alt="book1image4"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img9.png" alt="book1image4"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img10.png" alt="book1image4"></img>
         <a className="chapter-section-link" href="/book1ch8#1.8.d" id="1.8.d"><h5>D. Synchronization of an Instrumental Group</h5></a> 
           <p class="bookText">Example: pli = 4;&emsp:pla = 3;&emsp;a<sub>a</sub> = 3+2+3 = 8;&emsp;T = r<sub>5&#247;2</sub> = 10t;&emsp;6a</p>
           <ol>
