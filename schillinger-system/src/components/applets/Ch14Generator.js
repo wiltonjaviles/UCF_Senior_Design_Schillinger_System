@@ -153,80 +153,10 @@ function Ch14Generator() {
                   <Button variant="secondary" type="submit" className="float-right" onClick={createAcceleration}>Submit</Button>
                 </Col>
               </Form.Row>
-              <Form.Row className="justify-content-center align-items-bottom text-center">
-                {/* <Col className="col-2">
-                  <h3>Members:</h3>
-                </Col>
-                <Col className="col-1">
-                  <Form.Group controlId="vElement">
-                    <Form.Control as="select" defaultValue="" value={state.vElement} onChange={handleSelect}>
-                      <option>a</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                    </Form.Control>
-                  </Form.Group>
-                </Col>
-                <Col className="col-2">
-                  <h3 className="">or Measure:</h3>
-                </Col>
-                <Col className="col-1">              
-                  <Form.Group controlId="vMeasure">
-                    <Form.Control as="select" defaultValue="" value={state.vMeasure} onChange={handleSelect}>
-                      <option>b</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                    </Form.Control>
-                  </Form.Group>
-                </Col> */}
-                
-              </Form.Row>
             </Form>
-            {/* <Row className="justify-content-md-center">
-              <Button variant="secondary" onClick={clearResults}>Clear</Button>
-            </Row> */}
             <Row className="justify-content-md-center">
               <h3>Results:</h3>
             </Row>
-            {/* <Row className="justify-content-md-center">
-              <Col></Col>
-              <Col>array: </Col>
-              <Col>{state.resultArray}</Col>
-              <Col></Col>
-            </Row>
-            <Row className="justify-content-md-center">
-              <Col></Col>
-              <Col>reverse array: </Col>
-              <Col>{state.reverseResultArray}</Col>
-              <Col></Col>
-            </Row>
-            <Row className="justify-content-md-center">
-              <Col></Col>
-              <Col>abc: </Col>
-              <Col>{state.ABC}</Col>
-              <Col></Col>
-            </Row>
-            <Row className="justify-content-md-center">
-              <Col></Col>
-              <Col>reverse abc: </Col>
-              <Col>{state.reverseABC}</Col>
-              <Col></Col>
-            </Row>
-            <Row className="justify-content-md-center">
-              <Col></Col>
-              <Col>resultant abc: </Col>
-              <Col>{state.resultantABC}</Col>
-              <Col></Col>
-            </Row> */}
             <Row className="justify-content-md-center">
               <div id="outputC1"></div>
             </Row>
