@@ -33,8 +33,14 @@ function Book1Ch7() {
           <p class="bookText">The following illustrate the continuous run of these instrumental forms of harmony with various simpler rhythmic resultants, all used one chord:</p>
           <p class="bookText">3 ÷ 2</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch7/img6.png" alt="book1image4"></img>
+          <br />
+          <br />
           <img className="img-fluid img-thumbnail" src="images/book1/ch7/img7.png" alt="book1image4"></img>
+          <br />
+          <br />
           <img className="img-fluid img-thumbnail" src="images/book1/ch7/img8.png" alt="book1image4"></img>
+          <br />
+          <br />
           <p class="bookText">One can compose other instrumental forms of harmony with as many as 16 attacks - such as an alternation of the four different notes in the bass, with the upper part of the chord doubled in two octaves:</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch7/img9.png" alt="book1image4"></img>
           <p class="bookText">A greater number of attacks in an instrumental figure can be produced using the arpeggio technique.</p>

@@ -74,6 +74,8 @@ function Book1Ch3() {
           <p class="bookText">It’s possible to score all the 19 cases of binary synchronization by ab, by a, and by b, unless ab is too great to be used as one T.</p>
           <p class="bookText">This table includes all the necessary scores. Some forms of T are not in common use due to the lack of adequate rhythmic patterns for their representation. ( <sup>10</sup>/<sub>8</sub> , <sup>14</sup>/<sub>8</sub> )</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch3/img4.png" alt="book1image4"></img>
+          <br />
+          <br />
           <Ch3Generator />
         <br /> 
         <Row>

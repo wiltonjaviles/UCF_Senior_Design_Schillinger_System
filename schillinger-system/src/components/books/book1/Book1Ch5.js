@@ -29,6 +29,8 @@ function Book1Ch5() {
           <img className="img-fluid img-thumbnail" src="images/book1/ch5/img7.png" alt="book1image4"></img>
           <p class="bookText">C = contraction</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch5/img8.png" alt="book1image4"></img>
+          <br />
+          <br />
           <Ch5Generator />
         <br /> 
         <Row>

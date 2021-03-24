@@ -21,6 +21,8 @@ function Book1Ch8() {
           </ol>
           <p class="bookText">The exact nature of the parts is only relevant insofar as a particular style is desired; the principles remain the same across mediums.</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch8/img1.png" alt="book1image4"></img>
+          <br />
+          <br />
           <img className="img-fluid img-thumbnail" src="images/book1/ch8/img2.png" alt="book1image4"></img>
         <a className="chapter-section-link" href="/book1ch8#1.8.a" id="1.8.a"><h5>A. Distribution of a Duration-Group</h5></a>
           <h3>Notation</h3>
@@ -107,6 +109,8 @@ function Book1Ch8() {
             <li>When T'' = <sup>8</sup>/<sub>8</sub>, <sup>50t</sup>/<sub>8</sub> = <sup>25&#183;4</sup>/<sub>4</sub> = 25T''</li>
           </ol>
           <img className="img-fluid img-thumbnail" src="images/book1/ch8/img9.png" alt="book1image4"></img>
+          <br />
+          <br />
           <img className="img-fluid img-thumbnail" src="images/book1/ch8/img10.png" alt="book1image4"></img>
         <a className="chapter-section-link" href="/book1ch8#1.8.d" id="1.8.d"><h5>D. Synchronization of an Instrumental Group</h5></a> 
           <p class="bookText">Example: pli = 4;&emsp:pla = 3;&emsp;a<sub>a</sub> = 3+2+3 = 8;&emsp;T = r<sub>5&#247;2</sub> = 10t;&emsp;6a</p>

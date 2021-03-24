@@ -63,9 +63,6 @@ function Book1Ch2() {
           
           Another Example:
           
-          
-          
-          
           These show the natural nucleus of a musical score, in which c.d. Units are arpeggio or obligato figures, a and b are chords, r rhythms of the theme, and c.p. Sustained tones (“pedla point”).
           Resultants have the following characteristics:
           Recurrence
@@ -112,25 +109,31 @@ function Book1Ch2() {
           <p class="bookText">Non-uniform rhythmic resultants occur when b ≠ 1. With the procedure we described above, you can find all rhythmic patterns used in the past, present, and future.</p>
           <p class="bookText">Example:</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch2/img6.png" alt="book1image11"></img>
+          <br />
+          <br />
         <a className="chapter-section-link" href="/book1ch2#1.2.b" id="1.2.b"><h5>B. Grouping</h5></a>
           <p class="bookText">There are three forms of grouping:</p>
           <ol>
             <li class="bookText">
               <b>Grouping by c.p.</b> In this case, c.p. = 6
-              <img className="img-fluid img-thumbnail" src="images/book1/ch2/img7.png" alt="book1image12"></img>
             </li>
+            <img className="img-fluid img-thumbnail ml-0 pl-0" src="images/book1/ch2/img7.png" alt="book1image12"></img>
             <li class="bookText">
               <b>Superimposition of a</b> a = 3. In this case, c.p. is excluded and b becomes merely an optional component.
-              <img className="img-fluid img-thumbnail" src="images/book1/ch2/img8.png" alt="book1image13"></img>
             </li>
+            <img className="img-fluid img-thumbnail" src="images/book1/ch2/img8.png" alt="book1image13"></img>
             <li class="bookText">
               <b>Superimposition of b.</b> b = 2. c.p. is excluded; a becomes optional
-              <img className="img-fluid img-thumbnail" src="images/book1/ch2/img9.png" alt="book1image14"></img>
-              Another Example:
-              <img className="img-fluid img-thumbnail" src="images/book1/ch2/img10.png" alt="book1image15"></img>
-              <img className="img-fluid img-thumbnail" src="images/book1/ch2/img11.png" alt="book1image16"></img>
             </li>
           </ol>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img9.png" alt="book1image14"></img>
+          <p>Another Example:</p>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img10.png" alt="book1image15"></img>
+          <br />
+          <br />
+          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img11.png" alt="book1image16"></img>
+          <br />
+          <br />
           <img className="img-fluid img-thumbnail" src="images/book1/ch2/img12.png" alt="book1image17"></img>
           <p class="bookText">These show the natural nucleus of a musical score, in which c.d. Units are arpeggio or obligato figures, a and b are chords, r rhythms of the theme, and c.p. Sustained tones (“pedla point”).</p>
           <p class="bookText">Resultants have the following characteristics:</p>
