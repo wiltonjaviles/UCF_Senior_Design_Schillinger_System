@@ -3,7 +3,7 @@ import isAuthenticated from '.././components/authUser';
 import React from 'react';
 import Speech from 'react-speech';
 import { Container } from 'react-bootstrap';
-import PlaybackTemplate from './applets/PlaybackTemplate';
+import Ch10Generator from './applets/Ch10Generator';
 
 function Home() {
   isAuthenticated();
@@ -15,7 +15,8 @@ function Home() {
         <br />
         <p>Welcome to the Schillinger System of Musical Composition!</p>
         <br />
-        <PlaybackTemplate abc={"X:1\nK:D\nD4d4|c2A1B1c2d2|\n"} />
+        <Ch10Generator />
+        <br />
         <Speech 
           textAsButton={true}
           stop={true}

@@ -7,7 +7,7 @@ function Overture() {
   return (
     <div>
       <Container>
-        <h1>Overture</h1>
+        <Link to="/contents" className="content-links"><h1>Overture</h1></Link>
         <a className="content-links" href="/overtureschillinger"><h5>View the source text.</h5></a>
         <Speech 
         textAsButton={true}

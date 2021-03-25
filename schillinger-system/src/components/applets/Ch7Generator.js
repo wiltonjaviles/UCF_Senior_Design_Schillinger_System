@@ -2,7 +2,7 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
-import Playback from '../applets/PlaybackTemplate';
+import Playback from '../applets/Playback';
 
 function Ch7Generator() {
   const [state , setState] = useState({
@@ -131,12 +131,12 @@ function Ch7Generator() {
                 </Row>
             </Form>
             <Row className="justify-content-md-center item">
-                      <div id="outputC1"></div>
+              <div id="outputC1"></div>
             </Row>
             <Row className="justify-content-md-center item">
-                      <div id="outputC2"></div>
+              <div id="outputC2"></div>
             </Row>
-            <Playback abc = {state.abcString}/>
+            <Playback abc={state.abcString}/>
           </Card.Body>
         </Card>
         <br />

@@ -2,12 +2,12 @@ import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
 
-function BookSeven() {
+function Book7() {
   return (
     <div>
       <Container>
         <br />
-        <h1>Book Seven (Coming Soon!)</h1>
+        <Link to="/contents" className="content-links"><h1>Book Seven (Coming Soon!)</h1></Link>
         <br />
         <Row>
           <Col><Link to="/book6" className="content-links"><h5>Previous Book</h5></Link></Col>
@@ -19,4 +19,4 @@ function BookSeven() {
   );
 }
 
-export default BookSeven;
+export default Book7;

@@ -9,8 +9,8 @@ function Book1Ch3() {
     <div>
       <Container>
         <br /> 
-        <h1>Book One: Theory of Rhythm</h1>
-        <a className="chapter-section-link" href="/book1#1.3" id="1.3"><h3>Chapter 3. The Techniques of Grouping</h3></a>
+        <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
+        <a className="chapter-section-link" href="/book1ch3#1.3" id="1.3"><h3>Chapter 3. The Techniques of Grouping</h3></a>
         <a className="content-links" href="/book1ch3schillinger"><h5>View the source text.</h5></a>
         <Speech 
           stop={true}
@@ -60,20 +60,22 @@ function Book1Ch3() {
           <p class="bookText">Example:</p>
           <p class="bookText">3 ÷ 2              <sup>ab</sup>/<sub>ab</sub>=<sup>6</sup>/<sub>6</sub> T, one measure with 6t.</p>
           <p class="bookText">6t can be represented as any measure with 6 single units. For instance, <sup>3</sup>/<sub>4</sub> time where t = ♪, or <sup>6</sup>/<sub>4</sub> time where t = ♩, or <sup>6</sup>/<sub>8</sub> time where t = ♪</p>
-          <img src="images/book1/ch3/img1.png" alt="book1image19"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch3/img1.png" alt="book1image19"></img>
           <p class="bookText">Grouping by a:       <sup>ab</sup>/<sub>a</sub> = bT  (2)</p>
           <p class="bookText">3 ÷ 2      <sup>3*2</sup>/<sub>3</sub>=<sup>3*2</sup>/<sub>2</sub>=2T     ie two measures with 3t.</p>
           <p class="bookText">When grouping by a, ab must be excluded from the score or else it will sound like one T.</p>
           <p class="bookText">Also, b becomes an optional component, causing an effect known as syncopation.</p>
           <p class="bookText">     Syncopation - <em>a temporary displacement of the regular metrical accent in music caused typically by stressing the weak beat.</em> (Merriam-Webster)</p>
-          <img src="images/book1/ch3/img2.png" alt="book1image20"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch3/img2.png" alt="book1image20"></img>
           <p class="bookText">Grouping by b:       <sup>ab</sup>/<sub>b</sub> = aT  (3)</p>
           <p class="bookText">3 ÷ 2      <sup>3*2</sup>/<sub>3</sub>=<sup>6</sup>/<sub>2</sub>=3T     ie three measures with 2t.</p>
           <p class="bookText">Again, exclude ab from the score and a is an optional component.</p>
-          <img src="images/book1/ch3/img3.png" alt="book1image21"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch3/img3.png" alt="book1image21"></img>
           <p class="bookText">It’s possible to score all the 19 cases of binary synchronization by ab, by a, and by b, unless ab is too great to be used as one T.</p>
           <p class="bookText">This table includes all the necessary scores. Some forms of T are not in common use due to the lack of adequate rhythmic patterns for their representation. ( <sup>10</sup>/<sub>8</sub> , <sup>14</sup>/<sub>8</sub> )</p>
-          <img src="images/book1/ch3/img4.png" alt="book1image4"></img>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch3/img4.png" alt="book1image4"></img>
+          <br />
+          <br />
           <Ch3Generator />
         <br /> 
         <Row>

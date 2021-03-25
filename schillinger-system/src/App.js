@@ -39,11 +39,11 @@ import Book1Ch12Schillinger from './components/books/book1/Book1Ch12Schillinger'
 import Book1Ch13Schillinger from './components/books/book1/Book1Ch13Schillinger';
 import Book1Ch14Schillinger from './components/books/book1/Book1Ch14Schillinger';
 import Book2 from './components/books/book2/Book2';
-import BookThree from './components/books/book3/BookThree';
-import BookFour from './components/books/book4/BookFour';
-import BookFive from './components/books/book5/BookFive';
-import BookSix from './components/books/book6/BookSix';
-import BookSeven from './components/books/book7/BookSeven';
+import Book3 from './components/books/book3/Book3';
+import Book4 from './components/books/book4/Book4';
+import Book5 from './components/books/book5/Book5';
+import Book6 from './components/books/book6/Book6';
+import Book7 from './components/books/book7/Book7';
 import ScrollToTop from './components/ScrollToTop';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -93,11 +93,11 @@ function App() {
           <Route path="/book1ch13Schillinger" component={Book1Ch13Schillinger} />
           <Route path="/book1ch14Schillinger" component={Book1Ch14Schillinger} />
           <Route path="/book2" component={Book2} />
-          <Route path="/book3" component={BookThree} />
-          <Route path="/book4" component={BookFour} />
-          <Route path="/book5" component={BookFive} />
-          <Route path="/book6" component={BookSix} />
-          <Route path="/book7" component={BookSeven} />
+          <Route path="/book3" component={Book3} />
+          <Route path="/book4" component={Book4} />
+          <Route path="/book5" component={Book5} />
+          <Route path="/book6" component={Book6} />
+          <Route path="/book7" component={Book7} />
         </Switch>
       </Router>
     </div>

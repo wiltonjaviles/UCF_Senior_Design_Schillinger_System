@@ -6,11 +6,11 @@ function Book2() {
   return (
     <div>
       <Container>
-        <br /> 
-        <h1>Book Two (Coming Soon!)</h1>
+        <br />
+        <Link to="/contents" className="content-links"><h1>Book Two (Coming Soon!)</h1></Link>
         <br />
         <Row>
-          <Col><Link to="/book1" className="content-links"><h5>Previous Book</h5></Link></Col>
+          <Col><Link to="/book1ch14" className="content-links"><h5>Previous Book</h5></Link></Col>
           <Col><Link to="/book3" className="content-links"><h5>Next Book</h5></Link></Col>
         </Row>
         <br /> 
