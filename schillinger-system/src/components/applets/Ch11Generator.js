@@ -37,33 +37,49 @@ function Ch11Generator() {
       case 'a':
         outArr = simpleToABC(sMakeR(vA,vB),vG);
         outStr = outArr[4].join("");
+        outStr = rotateOnMeasures(outStr.split('|'),vA*vB/vG,direction);
+        abcOut = "X:1\nK:C\n"+outStr.join("")+"\n";
         break;
       case 'b':
         vG = state.variableB;
         outArr = simpleToABC(sMakeR(vA,vB),vG);
         outStr = outArr[4].join("");
+        outStr = rotateOnMeasures(outStr.split('|'),vA*vB/vG,direction);
+        abcOut = "X:1\nK:C\n"+outStr.join("")+"\n";
         break;
       case 'underline':
         outArr = simpleToABC(sMakeR_(vA,vB),vG);
         outStr = outArr[5].join("");
+        outStr = rotateOnMeasures(outStr.split('|'),vA*vB/vG,direction);
+        abcOut = "X:1\nK:C\n"+outStr.join("")+"\n";
+        break;
+      case 'least common factor':
+        
+        break;
+      case 'least common factor underlined':
+        
+        break;
+      case 'all notes':
+        outArr = simpleToABC(rotateAll(sMakeR(vA,vB)[4]),vG);
+        for(let i=0; i<outArr.length; i<0) {
+          outStr = outStr + outArr[i].join("");
+        }
+        break;
+      case 'all notes underlined':
+        outArr = simpleToABC(rotateAll(sMakeR_(vA,vB)[5]),vG);
+        for(let i=0; i<outArr.length; i<0) {
+          outStr = outStr + outArr[i].join("");
+        }
         break;
     }
     
-    //TODO do stuff with abcOut.
     
-    
-    let test = new String(outStr);
-    test = test.split('|');
-    
-    test = rotateOnMeasures(test,vA*vB/vG,direction);
-    
-    abcOut = "X:1\nK:C\n"+test.join("")+"\n"
     abcjs.renderAbc("outputR", abcOut);
 
     setState(prevState => ({
       ...prevState,
         abcString : abcOut,
-        testOutput : test
+        testOutput : abcOut
     }))
     
   }
@@ -121,9 +137,13 @@ function Ch11Generator() {
                     <Col className="col-2">              
                     <Form.Group controlId="groupBy">
                         <Form.Control as="select" defaultValue="-1" value={state.groupBy} onChange={handleSelect}>
+                        <option>least common factor</option>
+                        <option>least common factor underlined</option>
                         <option>a</option>
                         <option>b</option>
                         <option>underline</option>
+                        <option>all notes</option>
+                        <option>all notes underlined</option>
                         </Form.Control>
                     </Form.Group>
                     </Col>
@@ -325,31 +345,10 @@ function pushNote(a) {
   } else {return 'A'+a;}
 }
 
-/*
-    takes in a 1-D array and breaks it by measures into a 2-D array
-    going down by measures.
- */
-function splitOnMeasures(arrIn) {
-    let arrOut = new Array();
-    let m = 0;
-    let j = 0;
 
-    for(let i=0; i<arrIn.length; i++)
-    {   
-        arrOut[m][j] = arrIn[i];
-        if(arrIn[i] === '|') {
-            j=0;
-            m++;
-        } else {
-            j++;
-        }
-    }
-
-    return arrOut;
-}
 
 /*
-    takes output from splitOnMeasures and rotates them
+    takes array of measures and rotates.
     Outputs a 1-d array.
  */
 function rotateOnMeasures(arrIn, measures, clockwise) {
@@ -372,4 +371,25 @@ function rotateOnMeasures(arrIn, measures, clockwise) {
     }
 
     return arrOut;
+}
+
+/*
+  arrIn should be [4] or [5] from sMakeR or sMakeR_
+  But it can, if you like, be any line from one of the simple out generators
+  Makes one line per permutation, which will be equal to the number of elements.
+  Note that this only goes clockwise, once. Yes, more permutations *could* be made.
+  But my god do we actually want to hit the user with this?
+ */
+function rotateAll(arrIn) {
+  let arrOut = new Array();
+
+  for(let i=0; i<arrIn.length; i++) {
+    for(let j=0; j<arrIn.length; j++) {
+      if(arrIn[(i+j)%arrIn.length] != '') {
+        arrOut[i].push(arrIn[(i+j)%arrIn.length]);
+      }
+    }
+  }
+
+  return arrOut;
 }
