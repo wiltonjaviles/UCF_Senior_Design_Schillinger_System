@@ -38,6 +38,12 @@ function Ch10Generator() {
       case "𝅘𝅥𝅮𝅘𝅥𝅮":
         a1 = "A2A2";
         break;
+      case "𝅘𝅥𝅯𝅘𝅥𝅮.":
+        a1 = "A1A3";
+        break;
+      case "𝅘𝅥𝅮.𝅘𝅥𝅯":
+        a1 = "A3A1";
+        break;
       case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯":
         a1 = "A1A1A1A1";
         break;
@@ -51,6 +57,12 @@ function Ch10Generator() {
       case "𝅘𝅥𝅮𝅘𝅥𝅮":
         b1 = "A2A2";
         break;
+      case "𝅘𝅥𝅯𝅘𝅥𝅮.":
+        b1 = "A1A3";
+        break;
+      case "𝅘𝅥𝅮.𝅘𝅥𝅯":
+        b1 = "A3A1";
+        break;
       case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯":
         b1 = "A1A1A1A1";
         break;
@@ -62,6 +74,12 @@ function Ch10Generator() {
         break;
       case "𝅘𝅥𝅮𝅘𝅥𝅮":
         c1 = "A2A2";
+        break;
+      case "𝅘𝅥𝅯𝅘𝅥𝅮.":
+        c1 = "A1A3";
+        break;
+      case "𝅘𝅥𝅮.𝅘𝅥𝅯":
+        c1 = "A3A1";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯":
         c1 = "A1A1A1A1";
@@ -116,6 +134,8 @@ function Ch10Generator() {
                     <Form.Control as="select" defaultValue="𝅘𝅥" value={state.variableA} onChange={handleSelect}>
                       <option>𝅘𝅥</option>
                       <option>𝅘𝅥𝅮𝅘𝅥𝅮</option>
+                      <option>𝅘𝅥𝅯𝅘𝅥𝅮.</option>
+                      <option>𝅘𝅥𝅮.𝅘𝅥𝅯</option>
                       <option>𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯</option>
                     </Form.Control>
                   </Form.Group>
@@ -128,6 +148,8 @@ function Ch10Generator() {
                     <Form.Control as="select" defaultValue="𝅘𝅥" value={state.variableB} onChange={handleSelect}>
                       <option>𝅘𝅥</option>
                       <option>𝅘𝅥𝅮𝅘𝅥𝅮</option>
+                      <option>𝅘𝅥𝅯𝅘𝅥𝅮.</option>
+                      <option>𝅘𝅥𝅮.𝅘𝅥𝅯</option>
                       <option>𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯</option>
                     </Form.Control>
                   </Form.Group>
@@ -140,6 +162,8 @@ function Ch10Generator() {
                     <Form.Control as="select" defaultValue="𝅘𝅥" value={state.variableC} onChange={handleSelect}>
                       <option>𝅘𝅥</option>
                       <option>𝅘𝅥𝅮𝅘𝅥𝅮</option>
+                      <option>𝅘𝅥𝅯𝅘𝅥𝅮.</option>
+                      <option>𝅘𝅥𝅮.𝅘𝅥𝅯</option>
                       <option>𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯</option>
                     </Form.Control>
                   </Form.Group>
