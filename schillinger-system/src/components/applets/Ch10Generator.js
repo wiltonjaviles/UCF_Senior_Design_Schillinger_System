@@ -11,7 +11,7 @@ function Ch10Generator() {
     variableC: "𝅘𝅥",
     numP: 1,
     outputSteps: "",
-    outputStepsA2: "",
+    outputStepsG2: "",
     outputStepsB2: "",
     outputStepsC2: "",
     outputStepsD2: "",
@@ -42,90 +42,90 @@ function Ch10Generator() {
     var numP = Number(state.numP);
     switch (a1) {
       case "𝅘𝅥":
-        a1 = "A4";
+        a1 = "G4";
         break;
       case "𝅘𝅥𝅮𝅘𝅥𝅮":
-        a1 = "A2A2";
+        a1 = "G2G2";
         break;
       case "𝅘𝅥𝅮𝅘𝅥𝅯𝅘𝅥𝅯":
-        a1 = "A2A1A1";
+        a1 = "G2G1G1";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅮𝅘𝅥𝅯":
-        a1 = "A1A2A1";
+        a1 = "G1G2G1";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅮":
-        a1 = "A1A1A2";
+        a1 = "G1G1G2";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅮.":
-        a1 = "A1A3";
+        a1 = "G1G3";
         break;
       case "𝅘𝅥𝅮.𝅘𝅥𝅯":
-        a1 = "A3A1";
+        a1 = "G3G1";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯":
-        a1 = "A1A1A1A1";
+        a1 = "G1G1G1G1";
         break;
       default: break;
     }
 
     switch (b1) {
       case "𝅘𝅥":
-        b1 = "A4";
+        b1 = "G4";
         break;
       case "𝅘𝅥𝅮𝅘𝅥𝅮":
-        b1 = "A2A2";
+        b1 = "G2G2";
         break;
       case "𝅘𝅥𝅮𝅘𝅥𝅯𝅘𝅥𝅯":
-        b1 = "A2A1A1";
+        b1 = "G2G1G1";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅮𝅘𝅥𝅯":
-        b1 = "A1A2A1";
+        b1 = "G1G2G1";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅮":
-        b1 = "A1A1A2";
+        b1 = "G1G1G2";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅮.":
-        b1 = "A1A3";
+        b1 = "G1G3";
         break;
       case "𝅘𝅥𝅮.𝅘𝅥𝅯":
-        b1 = "A3A1";
+        b1 = "G3G1";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯":
-        b1 = "A1A1A1A1";
+        b1 = "G1G1G1G1";
         break;
       default: break;
     }
     switch (c1) {
       case "𝅘𝅥":
-        c1 = "A4";
+        c1 = "G4";
         break;
       case "𝅘𝅥𝅮𝅘𝅥𝅮":
-        c1 = "A2A2";
+        c1 = "G2G2";
         break;
       case "𝅘𝅥𝅮𝅘𝅥𝅯𝅘𝅥𝅯":
-        c1 = "A2A1A1";
+        c1 = "G2G1G1";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅮𝅘𝅥𝅯":
-        c1 = "A1A2A1";
+        c1 = "G1G2G1";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅮":
-        c1 = "A1A1A2";
+        c1 = "G1G1G2";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅮.":
-        c1 = "A1A3";
+        c1 = "G1G3";
         break;
       case "𝅘𝅥𝅮.𝅘𝅥𝅯":
-        c1 = "A3A1";
+        c1 = "G3G1";
         break;
       case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯":
-        c1 = "A1A1A1A1";
+        c1 = "G1G1G1G1";
         break;
       default: break;
     }
     
     var abc1 = a1+"|"+b1+"|"+c1+"|";
     var a2 = a1+"|"+b1+"|"+c1+"|";
-    var outputStepsA2 = "a2 = a1+b1+c1\n";
+    var outputStepsG2 = "a2 = a1+b1+c1\n";
     var b2 = a1+"|"+c1+"|"+b1+"|";
     var outputStepsB2 = "b2 = a1+c1+b1\n";
     var c2 = b1+"|"+a1+"|"+c1+"|";
@@ -144,7 +144,7 @@ function Ch10Generator() {
       ...prevState,
       abc: abcString,
       outputSteps: outputSteps,
-      outputStepsA2: outputStepsA2,
+      outputStepsG2: outputStepsG2,
       outputStepsB2: outputStepsB2,
       outputStepsC2: outputStepsC2,
       outputStepsD2: outputStepsD2,
@@ -240,7 +240,7 @@ function Ch10Generator() {
               <p>{state.outputSteps}</p>
             </Row>
             <Row className="justify-content-md-center">
-              <Col className="col-2"><p>{state.outputStepsA2}</p></Col>
+              <Col className="col-2"><p>{state.outputStepsG2}</p></Col>
               <Col className="col-2"><p>{state.outputStepsB2}</p></Col>
             </Row>
             <Row className="justify-content-md-center">
