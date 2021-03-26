@@ -2,14 +2,15 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
-import Playback from '../applets/PlaybackTemplate';
+import Playback from '../applets/Playback';
 
 function Ch11Generator() {
   const [state , setState] = useState({
     variableA : 3,
     variableB : 2,
-    groupBy : 'a',
-    clock : 'clockwise',
+    rType : 'r by a',
+    permuteBy : 'least common',
+    clock : 'Clockwise',
     OutputR : '',
     abcString : "",
     testOutput : ""
@@ -27,49 +28,48 @@ function Ch11Generator() {
     event.preventDefault();    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
-    let vG = Number(state.variableA);
-    let direction = Boolean(state.clock === "clockwise");
+    let vM = 1;
+    let direction = Boolean(state.clock === "Clockwise");
     let outArr = [];
     let outStr = new String();
     let abcOut = [];
 
-    switch(state.groupBy) {
-      case 'a':
-        outArr = simpleToABC(sMakeR(vA,vB),vG);
-        outStr = outArr[4].join("");
-        outStr = rotateOnMeasures(outStr.split('|'),vA*vB/vG,direction);
-        abcOut = "X:1\nK:C\n"+outStr.join("")+"\n";
+    
+
+    switch(state.rType) {
+      case 'r by a':
+        vM = vA;
+        outArr = simpleToABC(sMakeR(vA,vB),vM)[4];
         break;
-      case 'b':
-        vG = state.variableB;
-        outArr = simpleToABC(sMakeR(vA,vB),vG);
-        outStr = outArr[4].join("");
-        outStr = rotateOnMeasures(outStr.split('|'),vA*vB/vG,direction);
-        abcOut = "X:1\nK:C\n"+outStr.join("")+"\n";
+      case 'r by b':
+        vM = vB;
+        outArr = simpleToABC(sMakeR(vA,vB),vM)[4];
+        break;
+      case 'r by ab':
+        vM = vA*vB;
+        outArr = simpleToABC(sMakeR(vA,vB),vM)[4];
         break;
       case 'underline':
-        outArr = simpleToABC(sMakeR_(vA,vB),vG);
-        outStr = outArr[5].join("");
-        outStr = rotateOnMeasures(outStr.split('|'),vA*vB/vG,direction);
-        abcOut = "X:1\nK:C\n"+outStr.join("")+"\n";
+        vM = vA;
+        outArr = simpleToABC(sMakeR_(vA,vB),vM)[5];
         break;
-      case 'least common factor':
-        
+    }
+
+    switch(state.permuteBy) {
+      case 'least common':
+        outStr = outArr.join("");
+        rotateLeast(outStr, vM);
+        abcOut = "X:1\nK:C\n"+outStr+"\n";
         break;
-      case 'least common factor underlined':
-        
+      case 'measures':
+        outStr = outArr.join("");
+        outStr = rotateOnMeasures(outStr.split('|'),vM,direction);
+        abcOut = "X:1\nK:C\n"+outStr.join("");
         break;
-      case 'all notes':
-        outArr = simpleToABC(rotateAll(sMakeR(vA,vB)[4]),vG);
-        for(let i=0; i<outArr.length; i<0) {
-          outStr = outStr + outArr[i].join("");
-        }
-        break;
-      case 'all notes underlined':
-        outArr = simpleToABC(rotateAll(sMakeR_(vA,vB)[5]),vG);
-        for(let i=0; i<outArr.length; i<0) {
-          outStr = outStr + outArr[i].join("");
-        }
+      case 'attacks':
+        outStr = outArr.join("");
+        rotateAll(outStr, vM);
+        abcOut = "X:1\nK:C\n"+outStr+"\n";
         break;
     }
     
@@ -132,18 +132,28 @@ function Ch11Generator() {
                 </Row>
                 <Row className="align-items-bottom justify-content-md-center">
                     <Col className="col-2">
-                    <h5>M: </h5>
+                    <h5>r Type: </h5>
                     </Col>
                     <Col className="col-2">              
-                    <Form.Group controlId="groupBy">
-                        <Form.Control as="select" defaultValue="-1" value={state.groupBy} onChange={handleSelect}>
-                        <option>least common factor</option>
-                        <option>least common factor underlined</option>
-                        <option>a</option>
-                        <option>b</option>
+                    <Form.Group controlId="rType">
+                        <Form.Control as="select" defaultValue="-1" value={state.rType} onChange={handleSelect}>
+                        <option>r by a</option>
+                        <option>r by b</option>
+                        <option>r by ab</option>
                         <option>underline</option>
-                        <option>all notes</option>
-                        <option>all notes underlined</option>
+                        </Form.Control>
+                    </Form.Group>
+                    </Col>
+
+                    <Col className="col-2">
+                    <h5>Permute By: </h5>
+                    </Col>
+                    <Col className="col-2">              
+                    <Form.Group controlId="permuteBy">
+                        <Form.Control as="select" defaultValue="-1" value={state.permuteBy} onChange={handleSelect}>
+                        <option>least common</option>
+                        <option>measures</option>
+                        <option>attacks</option>
                         </Form.Control>
                     </Form.Group>
                     </Col>
@@ -153,9 +163,9 @@ function Ch11Generator() {
                     </Col>
                     <Col className="col-2">              
                     <Form.Group controlId="clock">
-                        <Form.Control as="select" defaultValue="clockwise" value={state.clock} onChange={handleSelect}>
-                        <option>clockwise</option>
-                        <option>counterclockwise</option>
+                        <Form.Control as="select" defaultValue="Clockwise" value={state.clock} onChange={handleSelect}>
+                        <option>Clockwise</option>
+                        <option>Counterclockwise</option>
                         </Form.Control>
                     </Form.Group>
                     </Col>
@@ -380,16 +390,33 @@ function rotateOnMeasures(arrIn, measures, clockwise) {
   Note that this only goes clockwise, once. Yes, more permutations *could* be made.
   But my god do we actually want to hit the user with this?
  */
-function rotateAll(arrIn) {
+function rotateAll(arrIn, m) {
+  let arrOut = new Array();
+  
+  
+  return arrOut;
+}
+
+/*
+  arrIn should be [4] or [5] from sMakeR or sMakeR_
+  a and b are the vA and vB, u is boolean asks "am I underlined"
+  m is measure length
+ */
+function rotateLeast(arrIn, a, b, u, m) {
+  //Do work with a, b, u to determine the splitby,
+  //and find out how long a measure is.
+  let splitBy = 2;
+  
+  let arrOut = new Array();
+  arrOut = splitOnLeast(arrIn, splitBy);
+
+  return arrOut;
+}
+
+function splitOnLeast(arrIn, splitBy) {
   let arrOut = new Array();
 
-  for(let i=0; i<arrIn.length; i++) {
-    for(let j=0; j<arrIn.length; j++) {
-      if(arrIn[(i+j)%arrIn.length] != '') {
-        arrOut[i].push(arrIn[(i+j)%arrIn.length]);
-      }
-    }
-  }
+  
 
   return arrOut;
 }
