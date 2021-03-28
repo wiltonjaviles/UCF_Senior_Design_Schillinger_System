@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
+import Ch11Generator from '../../applets/Ch11Generator';
 
 function Book1Ch11() {
   return (
@@ -15,6 +16,8 @@ function Book1Ch11() {
           <Col><Link to="/book1ch10" className="content-links"><h5>Previous Chapter</h5></Link></Col>
           <Col><Link to="/book1ch12" className="content-links"><h5>Next Chapter</h5></Link></Col>
         </Row>
+        <br />
+        <Ch11Generator />
         <br />
       </Container>
     </div>

@@ -9,7 +9,6 @@ function Ch10Generator() {
     variableA : "𝅘𝅥",
     variableB : "𝅘𝅥",
     variableC: "𝅘𝅥",
-    numP: 1,
     outputSteps: "",
     outputStepsG2: "",
     outputStepsB2: "",
@@ -39,7 +38,6 @@ function Ch10Generator() {
     var b1 = state.variableB;
     var c1 = state.variableC;
     var outputSteps = "a1: "+a1+", b1: "+b1+", c1: "+c1+"\n";
-    var numP = Number(state.numP);
     switch (a1) {
       case "𝅘𝅥":
         a1 = "G4";
@@ -123,7 +121,7 @@ function Ch10Generator() {
       default: break;
     }
     
-    var abc1 = a1+"|"+b1+"|"+c1+"|";
+    // var abc1 = a1+"|"+b1+"|"+c1+"|";
     var a2 = a1+"|"+b1+"|"+c1+"|";
     var outputStepsG2 = "a2 = a1+b1+c1\n";
     var b2 = a1+"|"+c1+"|"+b1+"|";
@@ -154,14 +152,6 @@ function Ch10Generator() {
     }))
 
     return;
-  }
-
-  const clearResults = () => {
-    setState(prevState => ({
-      ...prevState,
-      variableA: -1,
-      variableB: -1
-    }))
   }
 
   return (

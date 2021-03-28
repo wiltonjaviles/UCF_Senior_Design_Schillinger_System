@@ -39,6 +39,7 @@ function Ch2Generator() {
       case 'ab':
         vG = state.variableA * state.variableB;
         break;
+      default: break;
     }
     let outArr = simpleToABC(sMakeR(vA,vB),vG);
     let abcOut = "X:1\nK:C\n"+outArr[4].join("")+"\n"
@@ -147,9 +148,9 @@ function Ch2Generator() {
 export default Ch2Generator;
 
 function sMakeR(a,b) {
-    let arr = new Array();
+    let arr = [];
     for(let i=0; i<5; i++) {
-        arr[i] = new Array();
+        arr[i] = [];
       }
 
     for(let i=0; i<a*b; i++) {
@@ -188,9 +189,9 @@ function simpleToABC(arrIn, measureLength) {
   let longNote = Number(0);
     
     
-    let arrOut = new Array();
+    let arrOut = [];
     for(let i=0; i<arrIn.length; i++) {
-        arrOut[i] = new Array();
+        arrOut[i] = [];
     }
 
     for(let i=0; i<arrIn.length; i++) {
