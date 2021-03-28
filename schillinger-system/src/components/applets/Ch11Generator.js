@@ -31,7 +31,7 @@ function Ch11Generator() {
     let vM = 1;
     let direction = Boolean(state.clock === "Clockwise");
     let outArr = [];
-    let outStr = new String();
+    let outStr = "";
     let abcOut = [];
 
     
@@ -53,6 +53,7 @@ function Ch11Generator() {
         vM = vA;
         outArr = simpleToABC(sMakeR_(vA,vB),vM)[5];
         break;
+      default: break;
     }
 
     switch(state.permuteBy) {
@@ -71,6 +72,7 @@ function Ch11Generator() {
         rotateAll(outStr, vM);
         abcOut = "X:1\nK:C\n"+outStr+"\n";
         break;
+      default: break;
     }
     
     
@@ -97,99 +99,90 @@ function Ch11Generator() {
                 Select two integers a and b, then select a measure lenght equal to a, b, or a times b.  Click Generate to view output.
               </p>
               <br />
-                <Row className="align-items-bottom justify-content-md-center">
-                    <Col className="col-2">
-                    <Form.Group controlId="variableA">
-                        <Form.Control as="select" defaultValue="3" value={state.variableA} onChange={handleSelect}>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        </Form.Control>
-                    </Form.Group>
-                    </Col>
-                    <Col className="col-1">
-                    <h2>÷</h2>
-                    </Col>
-                    <Col className="col-2">              
-                    <Form.Group controlId="variableB">
-                        <Form.Control as="select" defaultValue="2" value={state.variableB} onChange={handleSelect}>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        </Form.Control>
-                    </Form.Group>
-                    </Col>
-                </Row>
-                <Row className="align-items-bottom justify-content-md-center">
-                    <Col className="col-2">
-                    <h5>r Type: </h5>
-                    </Col>
-                    <Col className="col-2">              
-                    <Form.Group controlId="rType">
-                        <Form.Control as="select" defaultValue="-1" value={state.rType} onChange={handleSelect}>
-                        <option>r by a</option>
-                        <option>r by b</option>
-                        <option>r by ab</option>
-                        <option>underline</option>
-                        </Form.Control>
-                    </Form.Group>
-                    </Col>
-
-                    <Col className="col-2">
-                    <h5>Permute By: </h5>
-                    </Col>
-                    <Col className="col-2">              
-                    <Form.Group controlId="permuteBy">
-                        <Form.Control as="select" defaultValue="-1" value={state.permuteBy} onChange={handleSelect}>
-                        <option>least common</option>
-                        <option>measures</option>
-                        <option>attacks</option>
-                        </Form.Control>
-                    </Form.Group>
-                    </Col>
-                    
-                    <Col className="col-2">
-                    <h5>Direction: </h5>
-                    </Col>
-                    <Col className="col-2">              
-                    <Form.Group controlId="clock">
-                        <Form.Control as="select" defaultValue="Clockwise" value={state.clock} onChange={handleSelect}>
-                        <option>Clockwise</option>
-                        <option>Counterclockwise</option>
-                        </Form.Control>
-                    </Form.Group>
-                    </Col>
-                    
-                </Row>
-                
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
-                    </Col>
-                </Row>
-
-                <Row className="justify-content-md-center">
+              <Row className="align-items-bottom justify-content-md-center">
+                <Col className="col-2">
+                  <Form.Group controlId="variableA">
+                    <Form.Control as="select" defaultValue="3" value={state.variableA} onChange={handleSelect}>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                    </Form.Control>
+                  </Form.Group>
+                </Col>
+                <Col className="col-1">
+                  <h2>÷</h2>
+                </Col>
+                <Col className="col-2">              
+                  <Form.Group controlId="variableB">
+                    <Form.Control as="select" defaultValue="2" value={state.variableB} onChange={handleSelect}>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                    </Form.Control>
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row className="align-items-bottom justify-content-md-center">
+                <Col className="col-2">
+                  <h5>r Type: </h5>
+                </Col>
+                <Col className="col-2">              
+                  <Form.Group controlId="rType">
+                    <Form.Control as="select" defaultValue="-1" value={state.rType} onChange={handleSelect}>
+                      <option>r by a</option>
+                      <option>r by b</option>
+                      <option>r by ab</option>
+                      <option>underline</option>
+                    </Form.Control>
+                  </Form.Group>
+                </Col>
+                <Col className="col-2">
+                  <h5>Permute By: </h5>
+                </Col>
+                <Col className="col-2">              
+                  <Form.Group controlId="permuteBy">
+                    <Form.Control as="select" defaultValue="-1" value={state.permuteBy} onChange={handleSelect}>
+                      <option>least common</option>
+                      <option>measures</option>
+                      <option>attacks</option>
+                    </Form.Control>
+                  </Form.Group>
+                </Col>
+                <Col className="col-2">
+                  <h5>Direction: </h5>
+                </Col>
+                <Col className="col-2">              
+                  <Form.Group controlId="clock">
+                    <Form.Control as="select" defaultValue="Clockwise" value={state.clock} onChange={handleSelect}>
+                      <option>Clockwise</option>
+                      <option>Counterclockwise</option>
+                    </Form.Control>
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row className="justify-content-md-center">
+                <Col className="col-3">
+                  <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
+                </Col>
+              </Row>
+              <Row className="justify-content-md-center">
                 <h4>Result: </h4>
                 <h4>{state.testOutput}</h4>
               </Row>
-                
-                <Row className="justify-content-md-center">
-                  
-                    <div id="outputR"></div>
-                    
-                </Row>
-                
-                <Playback abc = {state.abcString}/>
+              <Row className="justify-content-md-center">
+                <div id="outputR"></div>
+              </Row>  
+              <Playback abc = {state.abcString}/>
             </Form>
           </Card.Body>
         </Card>
@@ -203,9 +196,9 @@ function Ch11Generator() {
 export default Ch11Generator;
 
 function sMakeR(a,b) {
-    let arr = new Array();
+    let arr = [];
     for(let i=0; i<5; i++) {
-        arr[i] = new Array();
+        arr[i] = [];
       }
 
     for(let i=0; i<a*b; i++) {
@@ -240,9 +233,9 @@ function sMakeR(a,b) {
 }
 
 function sMakeR_(a,b) {
-    let arr = new Array();
+    let arr = [];
     for(let i=0; i<6; i++) {
-      arr[i] = new Array();
+      arr[i] = [];
     }
   
     for(let i=0; i<a*a; i++) {
@@ -295,9 +288,9 @@ function simpleToABC(arrIn, measureLength) {
   let longNote = Number(0);
     
     
-    let arrOut = new Array();
+    let arrOut = [];
     for(let i=0; i<arrIn.length; i++) {
-        arrOut[i] = new Array();
+        arrOut[i] = [];
     }
 
     for(let i=0; i<arrIn.length; i++) {
@@ -362,7 +355,7 @@ function pushNote(a) {
     Outputs a 1-d array.
  */
 function rotateOnMeasures(arrIn, measures, clockwise) {
-    let arrOut = new Array();
+    let arrOut = [];
 
     if(clockwise) {
         for(let i=0; i<measures; i++) {
@@ -391,7 +384,7 @@ function rotateOnMeasures(arrIn, measures, clockwise) {
   But my god do we actually want to hit the user with this?
  */
 function rotateAll(arrIn, m) {
-  let arrOut = new Array();
+  let arrOut = [];
   
   
   return arrOut;
@@ -407,14 +400,14 @@ function rotateLeast(arrIn, a, b, u, m) {
   //and find out how long a measure is.
   let splitBy = 2;
   
-  let arrOut = new Array();
+  let arrOut = [];
   arrOut = splitOnLeast(arrIn, splitBy);
 
   return arrOut;
 }
 
 function splitOnLeast(arrIn, splitBy) {
-  let arrOut = new Array();
+  let arrOut = [];
 
   
 
