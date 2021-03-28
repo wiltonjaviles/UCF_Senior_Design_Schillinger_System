@@ -56,7 +56,6 @@ function Ch2Generator() {
     
   }
 
-
   return (
     <div>
       <Container>
@@ -119,38 +118,22 @@ function Ch2Generator() {
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                 </Col>
               </Row>
-                
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputC1"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputC2"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputA"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputB"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                  
-                    <div id="outputR"></div>
-                    
-                </Row>
-                
-                <Playback abc = {state.abcString}/>
+              <Row className="justify-content-md-center">
+                <div id="outputC1"></div>
+              </Row>
+              <Row className="justify-content-md-center">
+                <div id="outputC2"></div>
+              </Row>
+              <Row className="justify-content-md-center">
+                <div id="outputA"></div>
+              </Row>
+              <Row className="justify-content-md-center">
+                <div id="outputB"></div>
+              </Row>
+              <Row className="justify-content-md-center">
+                <div id="outputR"></div>
+              </Row>
+              <Playback abc = {state.abcString}/>
             </Form>
           </Card.Body>
         </Card>
