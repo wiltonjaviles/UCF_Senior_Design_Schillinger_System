@@ -49,7 +49,8 @@ export default function MakeAccount() {
               body:js,
               headers:
               {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'https://learnschillinger.com'
               }
             }
             );
