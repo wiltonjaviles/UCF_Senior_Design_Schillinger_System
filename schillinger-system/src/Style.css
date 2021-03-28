@@ -60,6 +60,10 @@ nav {
   text-decoration: none
 }
 
+.equation{
+  text-align: justify;
+}
+
 .generator-dropdown-menu {
   min-width: 0px !important;
 }
@@ -136,4 +140,26 @@ nav {
   height: 300;
   width: 600;
   outline: black;
+}
+
+.activate-audio {
+  display: inline;
+}
+.stop-audio {
+  display: none;
+}
+
+.abc-warning {
+  font-size: 12px;
+  color:red;
+  border: 1px solid red;
+  text-align: center;
+  width: 300px;
+  margin-top: 4px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.progress-indicator {
+  left: 0px;
 }

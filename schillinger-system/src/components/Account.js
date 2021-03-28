@@ -9,6 +9,7 @@ function Account() {
   return (
     <div>
       <Container fluid>
+        <br />
         <h1>Account Page</h1>
           <Row>
             <Col>

@@ -1,4 +1,4 @@
-import {Container, Row, Col, Card, Form} from 'react-bootstrap'
+import {Container, Row, Col, Card} from 'react-bootstrap'
 import React from 'react';
 import '../.././Style.css';
 import JXGBoard from 'jsxgraph-react-js'

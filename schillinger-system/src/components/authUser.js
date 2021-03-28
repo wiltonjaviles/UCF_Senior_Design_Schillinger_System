@@ -1,6 +1,6 @@
 export default function isAuthenticated()
 {
-    const BASE_URL = 'http://localhost:5000/';
+    const BASE_URL = 'https://learnschillinger.com/api/';
     var _session = localStorage.getItem('session_token');
     var session = JSON.parse(_session);
     if(session !== null)
