@@ -193,7 +193,7 @@ function resultant (arr1, arr2, totalLength) {
   
   var rString = [];
   for(var i=0;i<freqArr1.length;i++) {
-    if((freqArr1[i] == 1) || (freqArr2[i] == 1)) {
+    if((freqArr1[i] === 1) || (freqArr2[i] === 1)) {
       rString.push(1);
     } else {
       rString.push(0);
@@ -204,7 +204,7 @@ function resultant (arr1, arr2, totalLength) {
   var outR = [];
 
   rString.reverse().forEach(element => {
-    if(element == 1) {
+    if(element === 1) {
       outR.push(curLength);
       curLength = 1;
     } else {
@@ -230,11 +230,11 @@ function toABC (arrIn, measureLength, totalLength) {
     if(curNote === 1) {
     }
     if(Number(curMeasure) === Number(curNote)) {
-      if(curNote == 5) {
+      if(curNote === 5) {
         arrOut.push(note+"4-"+note+"1");
-      } else if (curNote == 7) {
+      } else if (curNote === 7) {
         arrOut.push(note+"6-"+note+"1");
-      } else if (curNote == 9) {
+      } else if (curNote === 9) {
         arrOut.push(note+"8-"+note+"1");
       } else {
         arrOut.push(note+String(curNote));
@@ -271,7 +271,7 @@ function toABC (arrIn, measureLength, totalLength) {
     curMeasure++;
   }
   var split = arrOut[arrOut.length-1].split("");
-  if(split[split.length-2] == "-") {
+  if(split[split.length-2] === "-") {
     split.splice(split.length-2, 1);
     arrOut[arrOut.length-1] = split.join("");
   }

@@ -59,11 +59,12 @@ function Ch6Generator() {
       case 'abc':
         vG = state.variableA * state.variableB * state.variableC;
         break;
+      default: break;
     }
 
     let outArr = simpleToABC(sMakeTrinomialR(vA,vB,vC),vG);
     let abcOutR = "X:1\nK:C\n"+outArr[5].join("")+"\n";
-    let abcOutR1 = "X:1\nK:C\n"+outArr[9].join("")+"\n";
+    // let abcOutR1 = "X:1\nK:C\n"+outArr[9].join("")+"\n";
 
     abcjs.renderAbc("outputABC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
     abcjs.renderAbc("outputABC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
@@ -254,9 +255,9 @@ function Ch6Generator() {
 export default Ch6Generator;
 
 function sMakeTrinomialR(a,b,c) {
-  let arr = new Array();
+  let arr = [];
   for(let i=0; i<10; i++) {
-    arr[i] = new Array();
+    arr[i] = [];
   } 
 
   arr[0].push(a*b*c);
@@ -338,9 +339,9 @@ function simpleToABC(arrIn, measureLength) {
   let longNote = Number(0);
     
     
-    let arrOut = new Array();
+    let arrOut = [];
     for(let i=0; i<arrIn.length; i++) {
-        arrOut[i] = new Array();
+        arrOut[i] = [];
     }
 
     for(let i=0; i<arrIn.length; i++) {
@@ -402,9 +403,9 @@ function pushNote(a) {
 function simpleToABC(arrIn, measureLength) {
   
   
-  let arrOut = new Array();
+  let arrOut = [];
   for(let i=0; i<arrIn.length; i++) {
-    arrOut[i] = new Array();
+    arrOut[i] = [];
   }
 
   for(let i=0; i<arrIn.length; i++) {

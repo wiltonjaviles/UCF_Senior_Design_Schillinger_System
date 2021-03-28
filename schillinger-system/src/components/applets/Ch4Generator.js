@@ -145,9 +145,9 @@ function Ch4Generator() {
 export default Ch4Generator;
 
 function sMakeR_(a,b) {
-  let arr = new Array();
+  let arr = [];
   for(let i=0; i<6; i++) {
-    arr[i] = new Array();
+    arr[i] = [];
   }
 
   for(let i=0; i<a*a; i++) {
@@ -203,9 +203,9 @@ function simpleToABC(arrIn, measureLength) {
     
   
     
-    let arrOut = new Array();
+    let arrOut = [];
     for(let i=0; i<arrIn.length; i++) {
-        arrOut[i] = new Array();
+        arrOut[i] = [];
     }
 
     for(let i=0; i<arrIn.length; i++) {

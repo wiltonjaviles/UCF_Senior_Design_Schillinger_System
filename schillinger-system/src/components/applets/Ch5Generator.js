@@ -28,7 +28,7 @@ function Ch5Generator() {
     const vB = Number(state.variableB);
     const vV = String(state.variant);
 
-    let outArr = new Array();
+    let outArr = [];
     
     switch(vV) {
       case 'Balance':
@@ -40,6 +40,7 @@ function Ch5Generator() {
       case 'Expand':
         outArr = expand(vA,vB);
         break;
+      default: break;
     }
     
     outArr = simpleToABC(outArr,vA);
@@ -158,7 +159,7 @@ export default Ch5Generator;
 function balance(a, b) {
   let arr1 = sMakeR(a,b);
   let arr2 = sMakeR_(a,b);
-  let arrOut = new Array();
+  let arrOut = [];
   arrOut[0] = arr2[5]+arr1[4]+a*(a-b);
   return arrOut;
 }
@@ -167,7 +168,7 @@ function balance(a, b) {
 function expand(a, b) {
   let arr1 = sMakeR(a,b);
   let arr2 = sMakeR_(a,b);
-  let arrOut = new Array();
+  let arrOut = [];
   arrOut[0] = arr1[4]+arr2[5];
 
   return arrOut;
@@ -177,7 +178,7 @@ function expand(a, b) {
 function contract(a, b) {
   let arr1 = sMakeR(a,b);
   let arr2 = sMakeR_(a,b);
-  let arrOut = new Array();
+  let arrOut = [];
   arrOut[0] = arr2[5]+arr1[4];
 
   return arrOut;
@@ -186,9 +187,9 @@ function contract(a, b) {
 /*function simpleToABC(arrIn, measureLength) {
   
   
-  let arrOut = new Array();
+  let arrOut = [];
   for(let i=0; i<arrIn.length; i++) {
-    arrOut[i] = new Array();
+    arrOut[i] = [];
   }
 
   for(let i=0; i<arrIn.length; i++) {
@@ -208,9 +209,9 @@ function simpleToABC(arrIn, measureLength) {
     
   
     
-    let arrOut = new Array();
+    let arrOut = [];
     for(let i=0; i<arrIn.length; i++) {
-        arrOut[i] = new Array();
+        arrOut[i] = [];
     }
 
     for(let i=0; i<arrIn.length; i++) {
@@ -272,9 +273,9 @@ function pushNote(a) {
 }
 
 function sMakeR(a,b) {
-  let arr = new Array();
+  let arr = [];
   for(let i=0; i<5; i++) {
-      arr[i] = new Array();
+      arr[i] = [];
     }
 
   for(let i=0; i<a*b; i++) {
@@ -309,9 +310,9 @@ function sMakeR(a,b) {
 }
 
 function sMakeR_(a,b) {
-  let arr = new Array();
+  let arr = [];
   for(let i=0; i<6; i++) {
-    arr[i] = new Array();
+    arr[i] = [];
   }
 
   for(let i=0; i<a*a; i++) {

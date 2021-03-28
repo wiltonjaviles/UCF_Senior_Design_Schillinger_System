@@ -39,6 +39,7 @@ function Ch2Generator() {
       case 'ab':
         vG = state.variableA * state.variableB;
         break;
+      default: break;
     }
     let outArr = simpleToABC(sMakeR(vA,vB),vG);
     let abcOut = "X:1\nK:C\n"+outArr[4].join("")+"\n"
@@ -55,7 +56,6 @@ function Ch2Generator() {
     }))
     
   }
-
 
   return (
     <div>
@@ -119,38 +119,22 @@ function Ch2Generator() {
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                 </Col>
               </Row>
-                
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputC1"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputC2"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputA"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputB"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                  
-                    <div id="outputR"></div>
-                    
-                </Row>
-                
-                <Playback abc = {state.abcString}/>
+              <Row className="justify-content-md-center">
+                <div id="outputC1"></div>
+              </Row>
+              <Row className="justify-content-md-center">
+                <div id="outputC2"></div>
+              </Row>
+              <Row className="justify-content-md-center">
+                <div id="outputA"></div>
+              </Row>
+              <Row className="justify-content-md-center">
+                <div id="outputB"></div>
+              </Row>
+              <Row className="justify-content-md-center">
+                <div id="outputR"></div>
+              </Row>
+              <Playback abc = {state.abcString}/>
             </Form>
           </Card.Body>
         </Card>
@@ -164,9 +148,9 @@ function Ch2Generator() {
 export default Ch2Generator;
 
 function sMakeR(a,b) {
-    let arr = new Array();
+    let arr = [];
     for(let i=0; i<5; i++) {
-        arr[i] = new Array();
+        arr[i] = [];
       }
 
     for(let i=0; i<a*b; i++) {
@@ -205,9 +189,9 @@ function simpleToABC(arrIn, measureLength) {
   let longNote = Number(0);
     
     
-    let arrOut = new Array();
+    let arrOut = [];
     for(let i=0; i<arrIn.length; i++) {
-        arrOut[i] = new Array();
+        arrOut[i] = [];
     }
 
     for(let i=0; i<arrIn.length; i++) {
