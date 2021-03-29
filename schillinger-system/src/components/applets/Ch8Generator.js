@@ -12,16 +12,66 @@ function Ch8Generator() {
         v_pli : 1,
         v_pla : 1,
         v_a_a : 1,
-        v_a_T : 4,
-        v_T : 6,
         v_PL : '',
         v_A : '',
         v_A1 : '',
+        v_a_T : '',
+        v_T : '',
         v_T1 : '',
         v_T2 : 4,
         v_N_T2 :'',
         abcString: "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=bass\n"
       })
+
+        //v_r1 by v_r2
+        let rAttacksArray = [
+            [0,0,0, 0, 0, 0, 0, 0,  0],
+            [0,0,0, 0, 0, 0, 0, 0,  0],
+            [0,0,0, 0, 0, 0, 0, 0,  0],
+            [0,0,4, 3, 6, 7, 6, 9, 10],
+            [0,0,4, 6, 4, 8, 8, 10, 8],
+            [0,0,6, 7, 8, 5, 10,11,12],
+            [0,0,6, 6, 8, 10,6, 12,12],
+            [0,0,8, 9, 10,11,12,7, 14],
+            [0,0,8, 10,8, 12,12,14, 8],
+            [0,0,10,9, 12,13,12,15,16]
+        ];
+        //a_a
+        let melodiesArray = [
+            ['A'],
+            ['F'],
+            ['c','F'],
+            ['c','E','F'],
+            ['c','d','E','F'],
+            ['c','A','d','E','F'],
+            ['c','A','d','C','E','F']
+        ];
+        //a_T by a_a
+        //This gives you the number of times you repeat r based on 
+        //the relationship between a_T and a_a
+        let ratiosArray = [
+            [-1,-1,-1,-1,-1,-1],
+            [],
+            [],
+            [0,1,2,1,4,5,2],
+            [0,1,1,3,1,5,3],
+            [0,1,2,3,4,1,6],
+            [0,1,1,1,2,5,1],
+            [0,1,2,3,4,5,6],
+            [0,1,1,3,1,5,3],
+            [0,1,2,1,4,5,2],
+            [0,1,1,3,2,1,3],
+            [0,1,2,3,4,5,6],
+            [0,1,1,1,1,60,1],
+            [0,1,2,3,4,5,6],
+            [0,1,1,3,2,5,3],
+            [0,1,2,1,4,1,2],
+            [0,1,1,3,1,5,3]
+        ];
+
+        let a_T = 4;
+        let T = 6;
+        
     
       const handleSelect = (e) => {
         const {id , value} = e.target   
@@ -34,21 +84,33 @@ function Ch8Generator() {
       const generateR = event => {
         event.preventDefault();    
 
-        //need to derive a_T (num elements in r)
-        //need to derive T (length of r)
+        a_T = rAttacksArray[state.v_r1][state.v_r2];
+        T = state.v_r1 * state.v_r2;
         //is T2 user defined?
 
         let PL = state.v_pli / state.v_pla;
         let A = state.v_a_a / state.v_pli;
-        let A1 = A / state.v_a_T;
-        let T1 = A1 * state.v_T;
+        let A1 = A / a_T;
+        let T1 = A1 * T;
         let NT2 = T1 / state.v_T2;
+
+        
+
+        let outArr = simpleToABC(sMakeR(state.v_r1,state.v_r2),state.v_r1);
+        let abcOut = outArr[4];
+        abcOut = embedMelody(abcOut, melodiesArray[state.v_a_a], ratiosArray[a_T][state.v_a_a]);
+        
+
+        abcjs.renderAbc("outputMusic", "X:1\nK:C\n"+abcOut.join("")+"\n");
+        
     
         setState(prevState => ({
             ...prevState,
             v_PL : PL,
             v_A : A,
             v_A1 : A1,
+            v_a_T : a_T,
+            v_T : T,
             v_T1 : T1,
             v_N_T2 : NT2
           }))
@@ -99,13 +161,8 @@ function Ch8Generator() {
                             </Form.Control>
                             </Form.Group>
                         </Col>
-
-                        <Col className="col-3">
-                            <h2>a_T: </h2>
-                        </Col>
-                        <Col className="col-8">
-                            <h4>{state.v_a_T}</h4>
-                        </Col>
+                        
+                        
                     </Row>
                       
                     <Row className="form-row justify-content-md-center">
@@ -155,6 +212,13 @@ function Ch8Generator() {
                                 <option>6</option>
                                 </Form.Control>
                             </Form.Group>
+                        </Col>
+                        <Col className="col-3">
+                            <h4>a_T: </h4>
+                            <h4>{state.v_a_T}</h4>
+                        </Col>
+                        <Col className="col-8">
+                            
                         </Col>
                         
                     </Row>
@@ -211,6 +275,9 @@ function Ch8Generator() {
                         <Col className="col-3 text-center ml-4">
                             <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                         </Col>
+                    </Row>
+                    <Row className="form-row justify-content-md-center">
+                        <div id="outputMusic"></div>
                     </Row>
 
 
@@ -328,4 +395,33 @@ function pushNote(a) {
     output.push('A'+count);
     return output.toString();
   } else {return 'A'+a;}
+}
+
+/*
+    take in array that has the r output.
+    ratio of r output to melody, repeat r 
+    as needed to embed the melody into r.
+ */
+
+function embedMelody(arrIn, melodyArray, repeatR) {
+    let arrOut = [];
+    
+    let n=0;
+    for(let i=0; i<repeatR; i++) {
+        for(let j in arrIn) {
+            
+            if(arrIn[j].includes("A")) {
+                arrOut.push(arrIn[j].replace('A',melodyArray[n%melodyArray.length]));
+                n++
+            } else {
+                arrOut.push(arrIn[j]);
+            }
+        }
+    }
+
+    return arrOut;
+}
+
+function feed(melodyArray, n) {
+    return melodyArray[n%melodyArray.length];
 }
