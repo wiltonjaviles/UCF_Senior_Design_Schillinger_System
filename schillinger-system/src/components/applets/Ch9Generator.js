@@ -280,19 +280,19 @@ function defineVariable(a,b) {
   }
 
   if(b==='rest') {
-    let output = new String('('+a+')');
+    let output = String('('+a+')');
     return output;
   } else if(b==='accent') {
-    let output = new String(a+'!');
+    let output = String(a+'!');
     return output;
   } else {
-    let output = new String(a+b);
+    let output = String(a+b);
     return output;
   }
 }
 
 function definePolynomial(a,b,c,d,p1,p2,p3,p4) {
-  let output = new String();
+  let output = "";
   if(true) {
     switch(p1) {
       case 'a':
@@ -307,6 +307,7 @@ function definePolynomial(a,b,c,d,p1,p2,p3,p4) {
       case 'd':
         output = output + addUpVariable(d);
         break;
+      default: break;
     }
     
   }
@@ -325,6 +326,7 @@ function definePolynomial(a,b,c,d,p1,p2,p3,p4) {
       case 'd':
         output = output + addUpVariable(d);
         break;
+      default: break;
     }
   }
   if(p3!=='') {
@@ -342,6 +344,7 @@ function definePolynomial(a,b,c,d,p1,p2,p3,p4) {
       case 'd':
         output = output + addUpVariable(d);
         break;
+      default: break;
     }
   }
   if(p4!=='') {
@@ -359,6 +362,7 @@ function definePolynomial(a,b,c,d,p1,p2,p3,p4) {
       case 'd':
         output = output + addUpVariable(d);
         break;
+      default: break;
     }
   }
 
@@ -366,7 +370,7 @@ function definePolynomial(a,b,c,d,p1,p2,p3,p4) {
 }
 
 function addUpVariable(a) {
-  let output = new String(a);
+  let output = String(a);
 
   if(output.length === 1) {
     return output;

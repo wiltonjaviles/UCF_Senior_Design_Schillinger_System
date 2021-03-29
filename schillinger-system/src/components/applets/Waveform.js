@@ -13,6 +13,9 @@ function Waveform() {
     var v = brd.create('slider', [[-5.5, 2], [-3.5, 2], [-10, 0, 10]], { name: 'vertical shift' });
     var c = brd.create('functionGraph', [function (x) {return a.Value()*Math.sin(f.Value()*(x+p.Value()))+v.Value()}], {needsRegularUpdate:true});
     var p1 = brd.create('point', [0, 0], {slideObject: c, name: ""});
+    var rip = p1;
+    rip = "jsx";
+    console.log(rip);
 
     brd.unsuspendUpdate();
   }

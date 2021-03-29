@@ -1,7 +1,7 @@
 import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
-import abcjs from 'abcjs';
+// import abcjs from 'abcjs';
 import Playback from '../applets/Playback';
 
 function Ch8Generator() {
@@ -296,9 +296,9 @@ function Ch8Generator() {
 export default Ch8Generator;
 
 function sMakeR(a,b) {
-    let arr = new Array();
+    let arr = [];
     for(let i=0; i<5; i++) {
-        arr[i] = new Array();
+        arr[i] = [];
       }
 
     for(let i=0; i<a*b; i++) {
@@ -337,9 +337,9 @@ function simpleToABC(arrIn, measureLength) {
   let longNote = Number(0);
     
     
-    let arrOut = new Array();
+    let arrOut = [];
     for(let i=0; i<arrIn.length; i++) {
-        arrOut[i] = new Array();
+        arrOut[i] = [];
     }
 
     for(let i=0; i<arrIn.length; i++) {
