@@ -1,7 +1,7 @@
 import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
-// import abcjs from 'abcjs';
+import abcjs from 'abcjs';
 import Playback from '../applets/Playback';
 
 function Ch8Generator() {

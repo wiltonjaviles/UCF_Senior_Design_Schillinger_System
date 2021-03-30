@@ -10,7 +10,6 @@ function Ch11Generator() {
     variableB : 2,
     rType : 'r by a',
     permuteBy : 'least common',
-    clock : 'Clockwise',
     OutputR : '',
     abcString : "",
     testOutput : ""
@@ -28,59 +27,36 @@ function Ch11Generator() {
     event.preventDefault();    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
-    let vM = 1;
-    let direction = Boolean(state.clock === "Clockwise");
-    let outArr = [];
+    let direction = "Clockwise";
     let outStr = "";
     let abcOut = [];    
-
-    switch(state.rType) {
-      case 'r by a':
-        vM = vA;
-        outArr = simpleToABC(sMakeR(vA,vB),vM)[4];
-        break;
-      case 'r by b':
-        vM = vB;
-        outArr = simpleToABC(sMakeR(vA,vB),vM)[4];
-        break;
-      case 'r by ab':
-        vM = vA*vB;
-        outArr = simpleToABC(sMakeR(vA,vB),vM)[4];
-        break;
-      case 'underline':
-        vM = vA;
-        outArr = simpleToABC(sMakeR_(vA,vB),vM)[5];
-        break;
-      default: break;
-    }
-    alert(outArr);
-    switch(state.permuteBy) {
-      case 'least common':
-        outStr = outArr.join("");
-        rotateLeast(outStr, vM);
-        abcOut = "X:1\nK:C\n"+outStr+"\n";
-        break;
-      case 'measures':
-        outStr = outArr.join("");
-        outStr = rotateOnMeasures(outStr.split('|'),vM,direction);
-        abcOut = "X:1\nK:C\n"+outStr.join("");
-        break;
-      case 'attacks':
-        outStr = outArr.join("");
-        rotateAll(outStr, vM);
-        abcOut = "X:1\nK:C\n"+outStr+"\n";
-        break;
-      default: break;
-    }
     
-    abcjs.renderAbc("outputR", abcOut);
+    var outArrA = simpleToABC(sMakeR(vA,vB),vA)[4];
+    var outArrB = simpleToABC(sMakeR(vA,vB),vB)[4];
+    var outArrAB = simpleToABC(sMakeR(vA,vB),(vA*vB))[4];
+    var outArrU = simpleToABC(sMakeRU(vA,vB),vA)[5];
+
+    // alert(outArrA+"\n"+outArrB+"\n"+outArrAB+"\n"+outArrU);
+    
+    var outStrLC = outArrA.join("");
+    rotateLeast(outStrLC.split("|"), vA);
+    var abcOutLC = "X:1\nK:C\n"+outStr+"\n";
+    
+    var outStrM = outArrA.join("");
+    outStrM = rotateOnMeasures(outStrM.split('|'),vA,direction);
+    var abcOutM = "X:1\nK:C\n"+outStr.join("");
+    
+    var outStrA = outArrA.join("");
+    rotateAll(outStrA, vA);
+    var abcOutA = "X:1\nK:C\n"+outStr+"\n";
+    
+    abcjs.renderAbc("outputR", abcOutM);
 
     setState(prevState => ({
       ...prevState,
         abcString : abcOut,
         testOutput : abcOut
     }))
-    
   }
 
   return (
@@ -154,17 +130,6 @@ function Ch11Generator() {
                     </Form.Control>
                   </Form.Group>
                 </Col>
-                <Col className="col-2">
-                  <h5>Direction: </h5>
-                </Col>
-                <Col className="col-2">              
-                  <Form.Group controlId="clock">
-                    <Form.Control as="select" defaultValue="Clockwise" value={state.clock} onChange={handleSelect}>
-                      <option>Clockwise</option>
-                      <option>Counterclockwise</option>
-                    </Form.Control>
-                  </Form.Group>
-                </Col>
               </Row>
               <Row className="justify-content-md-center">
                 <Col className="col-3">
@@ -228,7 +193,7 @@ function sMakeR(a,b) {
     return arr;
 }
 
-function sMakeR_(a,b) {
+function sMakeRU(a,b) {
     let arr = [];
     for(let i=0; i<6; i++) {
       arr[i] = [];
@@ -373,7 +338,7 @@ function rotateOnMeasures(arrIn, measures, clockwise) {
 }
 
 /*
-  arrIn should be [4] or [5] from sMakeR or sMakeR_
+  arrIn should be [4] or [5] from sMakeR or sMakeRU
   But it can, if you like, be any line from one of the simple out generators
   Makes one line per permutation, which will be equal to the number of elements.
   Note that this only goes clockwise, once. Yes, more permutations *could* be made.
@@ -387,7 +352,7 @@ function rotateAll(arrIn, m) {
 }
 
 /*
-  arrIn should be [4] or [5] from sMakeR or sMakeR_
+  arrIn should be [4] or [5] from sMakeR or sMakeRU
   a and b are the vA and vB, u is boolean asks "am I underlined"
   m is measure length
  */
