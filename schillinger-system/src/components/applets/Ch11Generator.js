@@ -32,9 +32,7 @@ function Ch11Generator() {
     let direction = Boolean(state.clock === "Clockwise");
     let outArr = [];
     let outStr = "";
-    let abcOut = [];
-
-    
+    let abcOut = [];    
 
     switch(state.rType) {
       case 'r by a':
@@ -55,7 +53,7 @@ function Ch11Generator() {
         break;
       default: break;
     }
-
+    alert(outArr);
     switch(state.permuteBy) {
       case 'least common':
         outStr = outArr.join("");
@@ -75,7 +73,6 @@ function Ch11Generator() {
       default: break;
     }
     
-    
     abcjs.renderAbc("outputR", abcOut);
 
     setState(prevState => ({
@@ -85,7 +82,6 @@ function Ch11Generator() {
     }))
     
   }
-
 
   return (
     <div>
