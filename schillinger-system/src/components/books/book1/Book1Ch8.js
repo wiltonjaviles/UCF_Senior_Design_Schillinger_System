@@ -122,6 +122,8 @@ function Book1Ch8() {
             <li></li>
             <li></li>
           </ol>
+          <br />
+        <br />
         <Ch8Generator />
         <br /> 
         <Row>

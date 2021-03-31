@@ -13,6 +13,8 @@ function Book1Ch12() {
         <a className="content-links" href="/book12ch1schillinger"><h5>View the source text.</h5></a>
         <a className="chapter-section-link" href="/book1ch12#1.12.a" id="1.12.a"><h5>A. Continuity of Harmonic Contrasts</h5></a>
         <a className="chapter-section-link" href="/book1ch12#1.12.b" id="1.12.b"><h5>B. Composition of Rhythmic Counterthemes</h5></a>
+        <br />
+        <br />
         <Ch12Generator />
         <br />
         <Row>
