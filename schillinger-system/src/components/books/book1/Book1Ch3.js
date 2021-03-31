@@ -76,7 +76,7 @@ function Book1Ch3() {
           <img className="img-fluid img-thumbnail" src="images/book1/ch3/img4.png" alt="book1image4"></img>
           <br />
           <br />
-          <Ch3Generator />
+        <Ch3Generator />
         <br /> 
         <Row>
           <Col><Link to="/book1ch2" className="content-links"><h5>Previous Chapter</h5></Link></Col>

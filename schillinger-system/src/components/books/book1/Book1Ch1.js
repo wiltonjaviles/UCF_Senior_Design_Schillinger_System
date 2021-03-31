@@ -62,6 +62,7 @@ function Book1Ch1() {
           <p class="bookText">Let a pendulum of a clock swing uniformly over a period of time to see the wave motion.</p>
           <p class="bookText">A wave motion records itself automatically, and look like this (depending on the frequency): </p>
           <Pendulum />
+          <br />
           <Waveform />
           <img className="img-fluid img-thumbnail" src="images/book1/ch1/img1.png" alt="book1ch1img1"></img>
           <p class="bookText">If you already know how graphs work, then you will understand that music can be graphed by allowing the lengths of horizontal lines be the durations of tones and vertical distance represent the pitch levels of tones.</p>

@@ -33,6 +33,8 @@ function Book1Ch6() {
           <p class="bookText">The rule of grouping is: <em>group by any generator of any of the complementary factors</em>. In 2÷3÷5, grouping is available through 2, 3, 5, 6, 10, 15 (i.e., 2 / 4, 3 / 4, 5 / 4, 6 / 8, 10 / 8, 15 / 8).</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch6/img2.png" alt="book1image4"></img>
           <p class="bookText">In figure 48, no more rhythmically suitable counterthemes can be devised. The theme makes three recurrences while the countertheme makes continuous changes in longer values. This allows the listener to hear both themes together. All resultants from three or more generators are characterized by these recurrences and variations.</p>
+        <br />
+        <br />
         <Ch6Generator />
         <br /> 
         <Row>

@@ -151,6 +151,8 @@ function Book1Ch2() {
           <p class="bookText">When c.p. is greater than 15, use a or b superimposition only.</p>
           <p class="bookText">When the numbers get large, a musical eight note (♪) is the best denominator. All reducible fractions have been excluded from the above chart.</p>
           <p class="bookText">The a and b components show how ‘cross-rhythms’ should be performed. Beating a and be with both hands, listen to the resultant.</p>
+        <br />
+        <br />
         <Ch2Generator />
         <br />
         <Row>

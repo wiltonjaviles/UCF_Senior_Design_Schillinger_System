@@ -49,6 +49,8 @@ function Book1Ch7() {
           <p class="bookText">In the following example, the melody is generated from the resultant of 5%2, the resultant is in 5/4 time, but the accompaniment is in common time.</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch7/img11.png" alt="book1image4"></img>
           <p class="bookText">For now this result is more of a curiosity, but techniques like this will be used later to develop rich textures in a full score.</p>
+          <br />
+        <br />
         <Ch7Generator />
         <br /> 
         <Row>
