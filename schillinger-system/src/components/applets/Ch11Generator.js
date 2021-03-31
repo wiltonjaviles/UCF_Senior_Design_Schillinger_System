@@ -11,7 +11,9 @@ function Ch11Generator() {
     rType : 'r by a',
     permuteBy : 'least common',
     OutputR : '',
-    abcString : "",
+    abcStringLC : "",
+    abcStringM : "",
+    abcStringA : "",
     testOutput : ""
   })
 
@@ -27,35 +29,77 @@ function Ch11Generator() {
     event.preventDefault();    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
-    let direction = "Clockwise";
-    let outStr = "";
-    let abcOut = [];    
+    var v = -1;
+    var LCTooBig = false;
+    var MTooBig = false;
+    var ATooBig = false;
     
     var outArrA = simpleToABC(sMakeR(vA,vB),vA)[4];
     var outArrB = simpleToABC(sMakeR(vA,vB),vB)[4];
-    var outArrAB = simpleToABC(sMakeR(vA,vB),(vA*vB))[4];
     var outArrU = simpleToABC(sMakeRU(vA,vB),vA)[5];
 
-    // alert(outArrA+"\n"+outArrB+"\n"+outArrAB+"\n"+outArrU);
+    var fA = smallestFactor(outArrA);
+    var fB = smallestFactor(outArrB);
     
-    var outStrLC = outArrA.join("");
-    rotateLeast(outStrLC.split("|"), vA);
-    var abcOutLC = "X:1\nK:C\n"+outStr+"\n";
+    var outStr = outArrA.join("");
+    if(fA < fB) {
+      outStr = outArrA.join("");
+      v = fA;
+    } else {
+      outStr = outArrB.join("");
+      v = fB;
+    }
     
-    var outStrM = outArrA.join("");
-    outStrM = rotateOnMeasures(outStrM.split('|'),vA,direction);
-    var abcOutM = "X:1\nK:C\n"+outStr.join("");
+    if(outStr[outStr.length - 1] === "|") {
+      outStr = outStr.slice(0, -1);
+    }
+
+    var outStrLC = rotateLeast(outStr.split("|"), v);
+    var abcOutLC = "X:1\nK:C\n"+outStrLC+"\n";
+    if(abcOutLC.length > 50) {
+      LCTooBig = true;
+      MTooBig = true;
+      ATooBig = true;
+    }
     
-    var outStrA = outArrA.join("");
-    rotateAll(outStrA, vA);
-    var abcOutA = "X:1\nK:C\n"+outStr+"\n";
+    var outStrM = rotateOnMeasures(outStr.split('|'));
+    var abcOutM = "X:1\nK:C\n"+outStrM+"\n";
+    if(outStrM.length > 50) {
+      MTooBig = true;
+      ATooBig = true;
+    }
     
-    abcjs.renderAbc("outputR", abcOutM);
+    var outStrA = rotateAll(outStr.split('|'), v);
+    var abcOutA = "X:1\nK:C\n"+outStrA+"|\n";
+    // alert("Least Common: "+outStrLC.length+"\nMeasures: "+outStrM.length+"\nAttacks: "+outStrA.length);
+    if(outStrA.length > 50) {
+      ATooBig = true;
+    }
+    
+    
+    abcjs.renderAbc("outputLC", abcOutLC, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 } );
+    abcjs.renderAbc("outputM", abcOutM, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 } );
+    abcjs.renderAbc("outputA", abcOutA, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 } );
 
     setState(prevState => ({
       ...prevState,
-        abcString : abcOut,
-        testOutput : abcOut
+        abcStringLC : abcOutLC,
+        abcStringM : abcOutM,
+        abcStringA : abcOutA,
+    }))
+  }
+
+  const clearResults = () => {
+    setState(prevState => ({
+      ...prevState,
+      vElement: "",
+      vMeasure: "",
+      resultArray: "",
+      reverseResultArray: "",
+      ABC: "",
+      reverseABC: "",
+      resultantABC: "",
+      abcString: ""
     }))
   }
 
@@ -68,10 +112,11 @@ function Ch11Generator() {
               <h1>Rotate Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Select two integers a and b, then select a measure lenght equal to a, b, or a times b.  Click Generate to view output.
+                Select a and b, and the type of resultant to make, then press submit to see one rotation of each method of rotation in this
+                chapter.
               </p>
               <br />
-              <Row className="align-items-bottom justify-content-md-center">
+              <Form.Row className="align-items-bottom justify-content-md-center">
                 <Col className="col-2">
                   <Form.Group controlId="variableA">
                     <Form.Control as="select" defaultValue="3" value={state.variableA} onChange={handleSelect}>
@@ -103,47 +148,41 @@ function Ch11Generator() {
                     </Form.Control>
                   </Form.Group>
                 </Col>
-              </Row>
-              <Row className="align-items-bottom justify-content-md-center">
-                <Col className="col-2">
+              </Form.Row>
+              <Form.Row className="align-items-bottom justify-content-md-center">
+                <Col className="col-3">
                   <h5>r Type: </h5>
                 </Col>
                 <Col className="col-2">              
                   <Form.Group controlId="rType">
                     <Form.Control as="select" defaultValue="-1" value={state.rType} onChange={handleSelect}>
-                      <option>r by a</option>
-                      <option>r by b</option>
-                      <option>r by ab</option>
-                      <option>underline</option>
+                      <option>r</option>
+                      <option>r_</option>
                     </Form.Control>
                   </Form.Group>
                 </Col>
-                <Col className="col-2">
-                  <h5>Permute By: </h5>
-                </Col>
-                <Col className="col-2">              
-                  <Form.Group controlId="permuteBy">
-                    <Form.Control as="select" defaultValue="-1" value={state.permuteBy} onChange={handleSelect}>
-                      <option>least common</option>
-                      <option>measures</option>
-                      <option>attacks</option>
-                    </Form.Control>
-                  </Form.Group>
-                </Col>
-              </Row>
-              <Row className="justify-content-md-center">
+              </Form.Row>
+              <Form.Row className="justify-content-md-center">
                 <Col className="col-3">
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                 </Col>
-              </Row>
+              </Form.Row>
+              <br />
               <Row className="justify-content-md-center">
                 <h4>Result: </h4>
-                <h4>{state.testOutput}</h4>
               </Row>
               <Row className="justify-content-md-center">
-                <div id="outputR"></div>
-              </Row>  
-              <Playback abc = {state.abcString}/>
+                <div id="outputLC"></div>
+              </Row>
+              <Playback abc = {state.abcStringLC}/> 
+              <Row className="justify-content-md-center">
+                <div id="outputM"></div>
+              </Row>
+              <Playback abc = {state.abcStringM}/> 
+              <Row className="justify-content-md-center">
+                <div id="outputA"></div>
+              </Row>
+              <Playback abc = {state.abcStringA}/>
             </Form>
           </Card.Body>
         </Card>
@@ -155,6 +194,23 @@ function Ch11Generator() {
 }
 
 export default Ch11Generator;
+
+function smallestFactor(arrIn1) {
+  arrIn1 = arrIn1.join("").slice(0, -1).split("|");
+  var l = arrIn1.length;
+  if(l%2 === 0) {
+    l = 2;
+  } else if (l%3 === 0) {
+    l = 3;
+  } else if (l%5 === 0) {
+    l = 5;
+  } else if (l%7 === 0) {
+    l = 7;
+  } else if (l%11 === 0) {
+    l = 11;
+  }
+  return l;
+}
 
 function sMakeR(a,b) {
     let arr = [];
@@ -189,7 +245,6 @@ function sMakeR(a,b) {
             j=1;
         } else {j++; arr[4][i]='';}
     }
-
     return arr;
 }
 
@@ -309,32 +364,45 @@ function pushNote(a) {
   } else {return 'A'+a;}
 }
 
-
+/*
+  arrIn should be [4] or [5] from sMakeR or sMakeRU
+  a and b are the vA and vB, u is boolean asks "am I underlined"
+  m is measure length
+ */
+  function rotateLeast(arrIn, numGroups) {
+    var arr = arrIn.join("");
+    // alert(numGroups+"\n"+arrIn);
+    var incr = arr.length / numGroups;
+    // alert(incr/2);
+    var arrGroups = [];
+    var index = incr
+    for(var i = 0;i<arr.length;i+=incr) {
+      arrGroups.push(arr.slice(i, i+incr));
+    }
+    // alert(arrGroups);
+    var outArr = arrGroups.join("|")+"|";
+    return outArr;
+  }
 
 /*
     takes array of measures and rotates.
     Outputs a 1-d array.
  */
-function rotateOnMeasures(arrIn, measures, clockwise) {
-    let arrOut = [];
-
-    if(clockwise) {
-        for(let i=0; i<measures; i++) {
-            for(let j=0; j<measures; j++) {
-                arrOut.push(arrIn[(i+j)%measures]);
-                arrOut.push("|");
-            }
+function rotateOnMeasures(arrIn) {
+    var arrOut = [];
+    var measures = arrIn.length;
+    
+    for(let i=0; i<measures; i++) {
+      for(let j=0; j<measures; j++) {
+        if(arrIn[(i+j)%measures] === "") {
+          continue;
+        } else {
+          arrOut.push(arrIn[(i+j)%measures]+"|");
         }
-    } else {
-        for(let i=0; i<measures; i++) {
-            for(let j=measures-1; j>-1; j--) {
-                arrOut.push(arrIn[(i+j+1)%measures]);
-                arrOut.push("|");
-            }
-        }
+      }
     }
 
-    return arrOut;
+    return arrOut.join("");
 }
 
 /*
@@ -344,33 +412,8 @@ function rotateOnMeasures(arrIn, measures, clockwise) {
   Note that this only goes clockwise, once. Yes, more permutations *could* be made.
   But my god do we actually want to hit the user with this?
  */
-function rotateAll(arrIn, m) {
-  let arrOut = [];
+function rotateAll(arrIn) {
+  let arrOut = arrIn;
   
-  
-  return arrOut;
-}
-
-/*
-  arrIn should be [4] or [5] from sMakeR or sMakeRU
-  a and b are the vA and vB, u is boolean asks "am I underlined"
-  m is measure length
- */
-function rotateLeast(arrIn, a, b, u, m) {
-  //Do work with a, b, u to determine the splitby,
-  //and find out how long a measure is.
-  let splitBy = 2;
-  
-  let arrOut = [];
-  arrOut = splitOnLeast(arrIn, splitBy);
-
-  return arrOut;
-}
-
-function splitOnLeast(arrIn, splitBy) {
-  let arrOut = [];
-
-  
-
   return arrOut;
 }

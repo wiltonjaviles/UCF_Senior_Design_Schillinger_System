@@ -25,7 +25,7 @@ function Ch14Generator() {
     }))
   }
 
-  const clearResults = event => {
+  const clearResults = () => {
     setState(prevState => ({
       ...prevState,
       vElement: "",
