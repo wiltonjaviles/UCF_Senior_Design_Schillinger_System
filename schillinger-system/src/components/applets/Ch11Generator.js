@@ -14,7 +14,9 @@ function Ch11Generator() {
     abcStringLC : "",
     abcStringM : "",
     abcStringA : "",
-    testOutput : ""
+    LCTooBig : "",
+    MTooBig : "",
+    ATooBig : "",
   })
 
   const handleSelect = (e) => {
@@ -30,6 +32,7 @@ function Ch11Generator() {
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
     var v = -1;
+    var v2 = -1;
     var LCTooBig = false;
     var MTooBig = false;
     var ATooBig = false;
@@ -45,9 +48,11 @@ function Ch11Generator() {
     if(fA < fB) {
       outStr = outArrA.join("");
       v = fA;
+      v2 = vA;
     } else {
       outStr = outArrB.join("");
       v = fB;
+      v2 = vB;
     }
     
     if(outStr[outStr.length - 1] === "|") {
@@ -56,7 +61,10 @@ function Ch11Generator() {
 
     var outStrLC = rotateLeast(outStr.split("|"), v);
     var abcOutLC = "X:1\nK:C\n"+outStrLC+"\n";
-    if(abcOutLC.length > 50) {
+    
+    var threshold = 200;
+    
+    if(abcOutLC.length > threshold) {
       LCTooBig = true;
       MTooBig = true;
       ATooBig = true;
@@ -64,28 +72,53 @@ function Ch11Generator() {
     
     var outStrM = rotateOnMeasures(outStr.split('|'));
     var abcOutM = "X:1\nK:C\n"+outStrM+"\n";
-    if(outStrM.length > 50) {
+    if(outStrM.length > threshold) {
       MTooBig = true;
       ATooBig = true;
     }
     
-    var outStrA = rotateAll(outStr.split('|'), v);
-    var abcOutA = "X:1\nK:C\n"+outStrA+"|\n";
-    // alert("Least Common: "+outStrLC.length+"\nMeasures: "+outStrM.length+"\nAttacks: "+outStrA.length);
-    if(outStrA.length > 50) {
+    var outStrA = rotateAll(outStr, v2);
+    var abcOutA = "X:1\nK:C\n"+outStrA+"\n";
+    if(outStrA.length > threshold) {
       ATooBig = true;
     }
     
-    
-    abcjs.renderAbc("outputLC", abcOutLC, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 } );
-    abcjs.renderAbc("outputM", abcOutM, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 } );
-    abcjs.renderAbc("outputA", abcOutA, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 } );
+    var LCTooBigMsg = "";
+    var MTooBigMsg = "";
+    var ATooBigMsg = "";
+    if(!LCTooBig) {
+      abcjs.renderAbc("outputLC", abcOutLC, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 } );
+      LCTooBigMsg = "";
+    } else {
+      abcjs.renderAbc("outputLC", "");
+      LCTooBigMsg = "The result is too large to display.";
+      abcOutLC = "";
+    }
+    if(!MTooBig) {
+      abcjs.renderAbc("outputM", abcOutM, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 } );
+      MTooBigMsg = "";
+    } else {
+      abcjs.renderAbc("outputM", "");
+      MTooBigMsg = "The result is too large to display.";
+      abcOutM = "";
+    }
+    if(!ATooBig) {
+      abcjs.renderAbc("outputA", abcOutA, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 } );
+      ATooBigMsg = "";
+    } else {
+      abcjs.renderAbc("outputA", "");
+      ATooBigMsg = "The result is too large to display.";
+      abcOutA = "";
+    }
 
     setState(prevState => ({
       ...prevState,
         abcStringLC : abcOutLC,
         abcStringM : abcOutM,
         abcStringA : abcOutA,
+        LCTooBig: LCTooBigMsg,
+        MTooBig: MTooBigMsg,
+        ATooBig: ATooBigMsg
     }))
   }
 
@@ -174,14 +207,17 @@ function Ch11Generator() {
               <Row className="justify-content-md-center">
                 <div id="outputLC"></div>
               </Row>
+              <Row className="justify-content-center"><p>{state.LCTooBig}</p></Row>
               <Playback abc = {state.abcStringLC}/> 
               <Row className="justify-content-md-center">
                 <div id="outputM"></div>
               </Row>
+              <Row className="justify-content-center"><p>{state.MTooBig}</p></Row>
               <Playback abc = {state.abcStringM}/> 
               <Row className="justify-content-md-center">
                 <div id="outputA"></div>
               </Row>
+              <Row className="justify-content-center"><p>{state.ATooBig}</p></Row>
               <Playback abc = {state.abcStringA}/>
             </Form>
           </Card.Body>
@@ -370,18 +406,41 @@ function pushNote(a) {
   m is measure length
  */
   function rotateLeast(arrIn, numGroups) {
+    // alert(arrIn+"\n"+numGroups);
     var arr = arrIn.join("");
-    // alert(numGroups+"\n"+arrIn);
-    var incr = arr.length / numGroups;
-    // alert(incr/2);
-    var arrGroups = [];
-    var index = incr
-    for(var i = 0;i<arr.length;i+=incr) {
-      arrGroups.push(arr.slice(i, i+incr));
+    var n = numGroups;
+    var result = [];
+
+    for(let i=0; i<n;i++) {
+      result.push([]);
     }
-    // alert(arrGroups);
-    var outArr = arrGroups.join("|")+"|";
-    return outArr;
+
+    var wordsPerLine = Math.ceil(arrIn.length / n)
+
+    for (let line = 0; line < n; line++) {
+      for (let i = 0; i < wordsPerLine; i++) {
+        var value = arrIn[i + line * wordsPerLine]
+        if (!value) continue //avoid adding "undefined" values
+        result[line].push(value)
+      }
+    }
+    var resultArr = [];
+    result.forEach(element => {
+      resultArr.push(element.join("|"));
+    });
+    var arrOut = [];
+
+    for(let i=0; i<n; i++) {
+      for(let j=0; j<n; j++) {
+        if(resultArr[(i+j)%n] === "") {
+          continue;
+        } else {
+          arrOut.push(resultArr[(i+j)%n]+"|");
+        }
+      }
+    }
+
+    return arrOut.join("");
   }
 
 /*
@@ -412,8 +471,93 @@ function rotateOnMeasures(arrIn) {
   Note that this only goes clockwise, once. Yes, more permutations *could* be made.
   But my god do we actually want to hit the user with this?
  */
-function rotateAll(arrIn) {
-  let arrOut = arrIn;
+function rotateAll(arrIn, measureLength) {
+  var arrStr = arrIn;
+  arrStr = arrStr.replaceAll("|", "").replaceAll("A", "").replaceAll("-", "").split("");
+  var arr = [];
+  arrStr.forEach(element => {
+    arr.push("A"+element);
+  });
+  var arrOut = [];
+  var len = arr.length;
+  for(let i=0; i<len; i++) {
+    for(let j=0; j<len; j++) {
+      if(arr[(i+j)%len] === "") {
+        continue;
+      } else {
+        arrOut.push(arr[(i+j)%len]);
+        
+      }
+    }
+  }
   
+  var abcArr = arrOut.join("").replaceAll("A", "").split("");
+  var sum = 0;
+  abcArr.forEach(element => {
+    sum += Number(element);
+  });
+  var arrOutFinal = toABC(abcArr, measureLength, sum);
+  return arrOutFinal.join("");
+}
+
+// copied from ch14 modified toABC function
+function toABC (arrIn, measureLength, totalLength) {
+  if(arrIn === []) {
+    var defaultArr = [totalLength];
+    return toABC(defaultArr, measureLength, totalLength);
+  }
+  var note = "A";
+  var arrOut = [];
+  var curMeasure = 1;
+  var index = 0;
+  var curNote = arrIn[index];
+  for(var i=1;i<totalLength+1;i++) {
+    if(curNote === 1) {
+    }
+    if(Number(curMeasure) === Number(curNote)) {
+      if(curNote === 5) {
+        arrOut.push(note+"4-"+note+"1");
+      } else if (curNote === 7) {
+        arrOut.push(note+"6-"+note+"1");
+      } else if (curNote === 9) {
+        arrOut.push(note+"8-"+note+"1");
+      } else {
+        arrOut.push(note+String(curNote));
+      }
+      curMeasure = 0;
+      index++;
+      if(index >= arrIn.length) {
+      } else {
+        curNote = arrIn[index];
+      }
+    } 
+    if(i%measureLength === 0) {
+      if(i === 0) {
+        continue;
+      } else {
+        if(curMeasure === 0) {
+          arrOut.push("|");
+        } else {
+          if(curMeasure === 5) {
+            arrOut.push(note+"4-"+note+"1-|");
+          } else if (curMeasure === 7) {
+            arrOut.push(note+"6-"+note+"1-|"); 
+          } else if (curMeasure === 9) {
+            arrOut.push(note+"8-"+note+"1-|");
+          } else {
+            arrOut.push(note+curMeasure+"-|");
+          }
+          curNote = curNote-curMeasure;
+          curMeasure = 0;
+        }
+      }
+    }
+    curMeasure++;
+  }
+  var split = arrOut[arrOut.length-1].split("");
+  if(split[split.length-2] === "-") {
+    split.splice(split.length-2, 1);
+    arrOut[arrOut.length-1] = split.join("");
+  }
   return arrOut;
 }
