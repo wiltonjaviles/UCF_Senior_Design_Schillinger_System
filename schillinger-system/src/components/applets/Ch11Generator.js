@@ -181,22 +181,7 @@ function Ch11Generator() {
                     </Form.Control>
                   </Form.Group>
                 </Col>
-              </Form.Row>
-              <Form.Row className="align-items-bottom justify-content-md-center">
-                <Col className="col-3">
-                  <h5>r Type: </h5>
-                </Col>
-                <Col className="col-2">              
-                  <Form.Group controlId="rType">
-                    <Form.Control as="select" defaultValue="-1" value={state.rType} onChange={handleSelect}>
-                      <option>r</option>
-                      <option>r_</option>
-                    </Form.Control>
-                  </Form.Group>
-                </Col>
-              </Form.Row>
-              <Form.Row className="justify-content-md-center">
-                <Col className="col-3">
+                <Col className="col-1 ml-5">
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                 </Col>
               </Form.Row>
