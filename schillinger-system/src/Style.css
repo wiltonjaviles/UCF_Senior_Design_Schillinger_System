@@ -61,7 +61,7 @@ nav {
 }
 
 .equation{
-  text-align: justify;
+  text-align: center;
 }
 
 .generator-dropdown-menu {
@@ -142,14 +142,24 @@ nav {
   outline: black;
 }
 
-.srcText {
-  text-align: justify;
+.activate-audio {
+  display: inline;
+}
+.stop-audio {
+  display: none;
 }
 
-.screenshot {
-  width: 80%;
+.abc-warning {
+  font-size: 12px;
+  color:red;
+  border: 1px solid red;
+  text-align: center;
+  width: 300px;
+  margin-top: 4px;
+  font-weight: bold;
+  border-radius: 4px;
 }
 
-img {
-  width: 100%;
+.progress-indicator {
+  left: 0px;
 }
