@@ -4,6 +4,7 @@ import Waveform from '../../applets/Waveform';
 import Pendulum from '../../applets/Pendulum';
 import Speech from 'react-speech';
 import '../../.././Style.css';
+import TextToSpeech from '../../applets/TextToSpeech';
 
 function Book1Ch1() {
   return (
@@ -13,14 +14,14 @@ function Book1Ch1() {
         <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
         <a className="chapter-section-link" href="/book1ch1#1.1" id="1.1"><h3>Chapter 1. Notation System</h3></a>
         <a className="content-links" href="/book1ch1schillinger"><h5>View the source text.</h5></a>
-        <Speech 
+        {/* <Speech 
           stop={true}
           textAsButton={true}
           displayText="Listen to this text" 
           text="
           Chapter 1. Notation System
           
-          The customary method of musical notation is inadequate for the analysis and study of rhythmic patterns bc it offers no basis for computations. It is limiting even for the greatest composers.
+          The customary method of musical notation is inadequate for the analysis and study of rhythmic patterns because it offers no basis for computations. It is limiting even for the greatest composers.
           Time durations can be broken into 3 parallel systems: numbers, graphs, and musical notes. Understanding these groups is key to learning composition.
           Numbers will be used in their normal operations (addition, subtraction, multiplication, division, raising to powers, extracting roots, permutations, etc)
           
@@ -53,8 +54,44 @@ function Book1Ch1() {
           
           Musical notation will be the final form of number and graph expressions, where where 1 = quarter note, 2 = half note, 3 = dotted half note , 4 = whole note, etc.
           " 
-        />
-          <p class="bookText">The customary method of musical notation is inadequate for the analysis and study of rhythmic patterns bc it offers no basis for computations. It is limiting even for the greatest composers.</p>
+        /> */}
+        <TextToSpeech 
+        text="Chapter 1. Notation System.
+          
+          The customary method of musical notation is inadequate for the analysis and study of rhythmic patterns because it offers no basis for computations. It is limiting even for the greatest composers.
+          Time durations can be broken into 3 parallel systems: numbers, graphs, and musical notes. Understanding these groups is key to learning composition.
+          Numbers will be used in their normal operations (addition, subtraction, multiplication, division, raising to powers, extracting roots, permutations, etc)
+          
+          Graphing Music
+          
+          Graphs in this system are similar to the general use of graphs (to record changes in variables over time). The horizontal coordinate will be read from left to right and express time. The vertical coordinate will express the recurrence of a phase (the change in direction which is called an attack)
+          Let a pendulum of a clock swing uniformly over a period of time to see the wave motion.
+          A wave motion records itself automatically, and look like this (depending on the frequency):
+          
+          If you already know how graphs work, then you will understand that music can be graphed by allowing the lengths of horizontal lines be the durations of tones and vertical distance represent the pitch levels of tones.
+          When graphing duration only (not pitch), the end of one duration and the beginning of the next is indicated by a “turn” in the line.
+          Readers of this work are not assumed to be students of mathematics, so every mathematical operation shall be explained carefully.
+          The complexity of a wave depends on the number of components. The simplest wave is shown in figure 1. The general form of the analysis of wave-motion is the Fourier method developed in 1822. This method is very precise, but is very complicated for analyzing music. It takes several hours to analyze a wave with so many components, thus machines have been developed that can do the work of a mathematician in a fraction of the time.
+          A simple, 1 component wave for one period (recurrence) looks like this:
+          
+          The distance from a to ɑ to b and from b to ɑ’ to a’ are the same. The curves are phases of the wave, and two phases is called a period. We will use phases as units of measurement. The distances from ɑ to ꞵ and a’ to ꞵ’ are equal and called the amplitude. They express the intensity of the wave
+          We only care about intensity in reference to accents only.
+          By assuming that the arrangement of durations is not showing the amplitude, we shall use rhythm graphs that look like this:
+          
+          The horizontal lines are a simple general curve that show time. The vertical lines show attacks (i.e. the change in rhythm). In this section all forms of attack will be constant and the time durations will change.
+          Forms of Periodicity
+          Continuous recurrence of a group is periodicity. Periodicity where all groups are exactly the same is uniform periodicity. Different forms of uniform periodicity can be compared by the number of terms (places) in a recurrence.
+          Groups with 1 term are called monomial periodicity. For example:
+          a t1+a t2+...+a tn
+          a is the recurring term and tn are the times that a occurs. In music these values are integers, a may be 1, 2, 3, … , n.
+          When expressed using numbers, they look like this:
+          
+          Where each horizontal segment in the wave represents a time unit
+          When the unit is defined, the values of units in different periodicities will be:
+          
+          Musical notation will be the final form of number and graph expressions, where where 1 = quarter note, 2 = half note, 3 = dotted half note , 4 = whole note, etc.
+          " />
+          <p class="bookText">The customary method of musical notation is inadequate for the analysis and study of rhythmic patterns because it offers no basis for computations. It is limiting even for the greatest composers.</p>
           <p class="bookText">Time durations can be broken into 3 parallel systems: numbers, graphs, and musical notes. Understanding these groups is key to learning composition.</p>
           <p class="bookText">Numbers will be used in their normal operations (addition, subtraction, multiplication, division, raising to powers, extracting roots, permutations, etc)</p>
         <a className="chapter-section-link" href="/book1ch1#1.1.a" id="1.1.a"><h5>A. Graphing Music</h5></a>

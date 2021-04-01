@@ -14,6 +14,7 @@ function TextToSpeech(props) {
   const stopText = () => {
     if(isPlaying) {
       speechSynthesis.cancel();
+      isPlaying = false;
     }
   }
 
