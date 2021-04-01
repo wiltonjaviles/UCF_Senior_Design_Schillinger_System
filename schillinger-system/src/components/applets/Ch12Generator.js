@@ -138,7 +138,7 @@ function Ch12Generator() {
       sFactF = synchronizedFactorialFormula;
       var synchronizedFactorialPlugIn = " = "
       f.forEach(element => {
-        var sum = 0;
+        sum = 0;
         f.forEach(element2 => {
           sum += Number(element2);
         });
@@ -191,7 +191,7 @@ function Ch12Generator() {
       // synchronized fractional sumNums
       var synchronizedFractionalFormula = "S = ";
       f.forEach(element => {
-        synchronizedFractionalFormula = synchronizedFractionalFormula+"("+String(element)+"/("+sumNums+"))*"+"(("+sumNums+")/("+sumNums+"))+";
+        synchronizedFractionalFormula = synchronizedFractionalFormula+"("+String(element)+"/("+sumNums+"))*(("+sumNums+")/("+sumNums+"))+";
       });
       synchronizedFractionalFormula = synchronizedFractionalFormula.slice(0, -1);
       sFracF = synchronizedFractionalFormula;
@@ -219,11 +219,11 @@ function Ch12Generator() {
 
     } else if (n > 2) {
       var group = state.input.split("^")[0];
-      var sum = 0;
+      sum = 0;
       f.forEach(element => {
         sum += Number(element);
       });
-      var sync = DistributivePower(Number(n)-1, f);
+      DistributivePower(Number(n)-1, f);
       var splitFactorial = factF.split(" = ");
 
       var factorialFormula2 = "(";
@@ -264,7 +264,6 @@ function Ch12Generator() {
       var fractionalFormula2 = fracF;
       var fracGroup = fractionalFormula2.split("^")[0];
       var fracSumNum = Number(sumF);
-      var fracSumDemon = Number(sumF);
 
       var arrFrac = fractionalFormula2.split(" = ");
       fractionalFormula2 = fracGroup+"^"+String(n);
@@ -290,7 +289,7 @@ function Ch12Generator() {
       synchronizedFractionalFormula2 = "S = "+fracGroup+"("+synchronizedFractionalFormula2+")";
       var synchronizedFractionalPlugIn2 = sFracP;
       synchronizedFractionalPlugIn2 = synchronizedFractionalPlugIn2.replace(" = ", "");
-      var arrFractionalPlugIn2 = synchronizedFractionalPlugIn2.split("+");
+      arrFractionalPlugIn2 = synchronizedFractionalPlugIn2.split("+");
       synchronizedFractionalPlugIn2 = " = ";
       arrFractionalPlugIn2.forEach(element => {
         var elementArr = element.split("/");
