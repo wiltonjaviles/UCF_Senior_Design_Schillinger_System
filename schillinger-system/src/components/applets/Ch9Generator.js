@@ -1,19 +1,20 @@
 import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
+import abcjs from "abcjs";
 
 function Ch9Generator() {
   const [state , setState] = useState({
-    variableA : '',
+    variableA : '1',
     supplementA : '',
-    variableB : '',
+    variableB : '1',
     supplementB : '',
-    variableC : '',
+    variableC : '1',
     supplementC : '',
-    variableD : '',
+    variableD : '1',
     supplementD : '',
     poly1 : 'a',
-    poly2 : '',
+    poly2 : 'a',
     poly3 : '',
     poly4 : '',
     Polynomial : '',
@@ -21,6 +22,7 @@ function Ch9Generator() {
     DefineB : '',
     DefineC : '',
     DefineD : '',
+    direction : 'Clockwise',
     Result : ''
   })
 
@@ -38,16 +40,21 @@ function Ch9Generator() {
     let b = defineVariable(state.variableB,state.supplementB);
     let c = defineVariable(state.variableC,state.supplementC);
     let d = defineVariable(state.variableD,state.supplementD);
-    let p = definePolynomial(a,b,c,d,state.poly1,state.poly2,state.poly3,state.poly4);
+    let polynomial = definePolynomial(a,b,c,d,state.poly1,state.poly2,state.poly3,state.poly4);
+    
+
+    let rotatedPolynomial = rotate(polynomial, state.direction);
+    let abcOutArray = toAbc(rotatedPolynomial);
+    abcjs.renderAbc("abcoutput", "X:1\nK:C\n"+abcOutArray.join("")+"\n");
 
     setState(prevState => ({
         ...prevState,
-        Polynomial : p,
+        Polynomial : rotatedPolynomial,
         DefineA : a,
         DefineB : b,
         DefineC : c,
         DefineD : d,
-        Result : ''
+        Result : abcOutArray
       }))
   }
 
@@ -66,7 +73,7 @@ function Ch9Generator() {
               <Row className="align-items-bottom justify-content-md-center">
                   <Col className="col-2">
                     <Form.Group controlId="variableA">
-                      <Form.Control as="select" defaultValue="" value={state.variableA} onChange={handleSelect}>
+                      <Form.Control as="select" value={state.variableA} onChange={handleSelect}>
                         <option></option>
                         <option>1</option>
                         <option>2</option>
@@ -78,12 +85,12 @@ function Ch9Generator() {
                   </Col>
                   <Col className="col-2">              
                     <Form.Group controlId="supplementA">
-                      <Form.Control as="select" defaultValue="" value={state.supplementA} onChange={handleSelect}>
+                      <Form.Control as="select" value={state.supplementA} onChange={handleSelect}>
                         <option></option>
                         <option>+1</option>
                         <option>+2</option>
                         <option>+3</option>
-                        <option>5</option>
+                        <option>+4</option>
                         <option>rest</option>
                         <option>accent</option>
                       </Form.Control>
@@ -93,7 +100,7 @@ function Ch9Generator() {
                 <Row className="align-items-bottom justify-content-md-center">
                   <Col className="col-2">
                     <Form.Group controlId="variableB">
-                      <Form.Control as="select" defaultValue="" value={state.variableB} onChange={handleSelect}>
+                      <Form.Control as="select" value={state.variableB} onChange={handleSelect}>
                         <option></option>
                         <option>1</option>
                         <option>2</option>
@@ -105,7 +112,7 @@ function Ch9Generator() {
                   </Col>
                   <Col className="col-2">              
                     <Form.Group controlId="supplementB">
-                      <Form.Control as="select" defaultValue="" value={state.supplementB} onChange={handleSelect}>
+                      <Form.Control as="select" value={state.supplementB} onChange={handleSelect}>
                         <option></option>
                         <option>+1</option>
                         <option>+2</option>
@@ -120,7 +127,7 @@ function Ch9Generator() {
                 <Row className="align-items-bottom justify-content-md-center">
                   <Col className="col-2">
                     <Form.Group controlId="variableC">
-                      <Form.Control as="select" defaultValue="" value={state.variableC} onChange={handleSelect}>
+                      <Form.Control as="select" value={state.variableC} onChange={handleSelect}>
                         <option></option>
                         <option>1</option>
                         <option>2</option>
@@ -132,7 +139,7 @@ function Ch9Generator() {
                   </Col>
                   <Col className="col-2">              
                     <Form.Group controlId="supplementC">
-                      <Form.Control as="select" defaultValue="" value={state.supplementC} onChange={handleSelect}>
+                      <Form.Control as="select" value={state.supplementC} onChange={handleSelect}>
                         <option></option>
                         <option>+1</option>
                         <option>+2</option>
@@ -147,7 +154,7 @@ function Ch9Generator() {
                 <Row className="align-items-bottom justify-content-md-center">
                   <Col className="col-2">
                     <Form.Group controlId="variableD">
-                      <Form.Control as="select" defaultValue="" value={state.variableD} onChange={handleSelect}>
+                      <Form.Control as="select" value={state.variableD} onChange={handleSelect}>
                         <option></option>
                         <option>1</option>
                         <option>2</option>
@@ -159,7 +166,7 @@ function Ch9Generator() {
                   </Col>
                   <Col className="col-2">              
                     <Form.Group controlId="supplementD">
-                      <Form.Control as="select" defaultValue="" value={state.supplementD} onChange={handleSelect}>
+                      <Form.Control as="select" value={state.supplementD} onChange={handleSelect}>
                         <option></option>
                         <option>+1</option>
                         <option>+2</option>
@@ -174,7 +181,7 @@ function Ch9Generator() {
                 <Row className="align-items-bottom justify-content-md-center">
                   <Col className="col-2">
                     <Form.Group controlId="poly1">
-                      <Form.Control as="select" defaultValue="a" value={state.poly1} onChange={handleSelect}>
+                      <Form.Control as="select" value={state.poly1} onChange={handleSelect}>
                         <option>a</option>
                         <option>b</option>
                         <option>c</option>
@@ -184,7 +191,7 @@ function Ch9Generator() {
                   </Col>
                   <Col className="col-2">
                     <Form.Group controlId="poly2">
-                      <Form.Control as="select" defaultValue="a" value={state.poly2} onChange={handleSelect}>
+                      <Form.Control as="select" value={state.poly2} onChange={handleSelect}>
                         <option>a</option>
                         <option>b</option>
                         <option>c</option>
@@ -194,7 +201,7 @@ function Ch9Generator() {
                   </Col>
                   <Col className="col-2">
                     <Form.Group controlId="poly3">
-                      <Form.Control as="select" defaultValue="" value={state.poly3} onChange={handleSelect}>
+                      <Form.Control as="select" value={state.poly3} onChange={handleSelect}>
                         <option></option>
                         <option>a</option>
                         <option>b</option>
@@ -205,7 +212,7 @@ function Ch9Generator() {
                   </Col>
                   <Col className="col-2">
                     <Form.Group controlId="poly4">
-                      <Form.Control as="select" defaultValue="" value={state.poly4} onChange={handleSelect}>
+                      <Form.Control as="select" value={state.poly4} onChange={handleSelect}>
                         <option></option>
                         <option>a</option>
                         <option>b</option>
@@ -214,6 +221,14 @@ function Ch9Generator() {
                       </Form.Control>
                     </Form.Group>
                   </Col>
+                </Row>
+                <Row className="justify-content-md-center">
+                  <Form.Group controlId="direction">
+                    <Form.Control as="select" value={state.direction} onChange={handleSelect}>
+                      <option>Clockwise</option>
+                      <option>Counterclockwise</option>
+                    </Form.Control>
+                  </Form.Group>
                 </Row>
                 <Row className="justify-content-md-center">
                   <Col className="col-3">
@@ -263,6 +278,9 @@ function Ch9Generator() {
                         <h4>{state.Result}</h4>
                     </Col>
                 </Row>
+                <Row className="justify-content-md-center">
+                  <div id="abcoutput"></div>
+                </Row>
             </Form>
           </Card.Body>
         </Card>
@@ -279,88 +297,92 @@ function defineVariable(a,b) {
     return;
   }
 
+  if(b==='') {
+    return a;
+  }
+
   if(b==='rest') {
-    let output = String('('+a+')');
+    let output = String('z'+a);
     return output;
   } else if(b==='accent') {
-    let output = String(a+'!');
+    let output = String('LA'+a);
     return output;
   } else {
-    let output = String(a+b);
+    let output = String('('+a+b+')');
     return output;
   }
 }
 
 function definePolynomial(a,b,c,d,p1,p2,p3,p4) {
-  let output = "";
-  if(true) {
+  let output = [];
+  
     switch(p1) {
       case 'a':
-        output = output + addUpVariable(a);
+        output.push(a);
         break;
       case 'b':
-        output = output + addUpVariable(b);
+        output.push(b);
         break;
       case 'c':
-        output = output + addUpVariable(c);
+        output.push(c);
         break;
       case 'd':
-        output = output + addUpVariable(d);
+        output.push(d);
         break;
       default: break;
-    }
+  
     
   }
   if(p2!=='') {
-    output = output + ' + ';
+    
     switch(p2) {
       case 'a':
-        output = output + addUpVariable(a);
+        output.push(a);
         break;
       case 'b':
-        output = output + addUpVariable(b);
+        output.push(b);
         break;
       case 'c':
-        output = output + addUpVariable(c);
+        output.push(c);
         break;
       case 'd':
-        output = output + addUpVariable(d);
+        output.push(d);
         break;
       default: break;
     }
   }
   if(p3!=='') {
-    output = output + ' + ';
+    
     switch(p3) {
       case 'a':
-        output = output + addUpVariable(a);
+        output.push(a);
         break;
       case 'b':
-        output = output + addUpVariable(b);
+        output.push(b);
         break;
       case 'c':
-        output = output + addUpVariable(c);
+        output.push(c);
         break;
       case 'd':
-        output = output + addUpVariable(d);
+        output.push(d);
         break;
       default: break;
     }
   }
   if(p4!=='') {
-    output = output + ' + ';
-    switch(p3) {
+    
+    switch(p4) {
       case 'a':
-        output = output + addUpVariable(a);
+        output.push(a);
         break;
       case 'b':
-        output = output + addUpVariable(b);
+        output.push(b);
         break;
       case 'c':
-        output = output + addUpVariable(c);
+        output.push(c);
         break;
       case 'd':
-        output = output + addUpVariable(d);
+        output.push(d);
         break;
       default: break;
     }
@@ -369,12 +391,80 @@ function definePolynomial(a,b,c,d,p1,p2,p3,p4) {
   return output;
 }
 
-function addUpVariable(a) {
-  let output = String(a);
 
-  if(output.length === 1) {
-    return output;
+function measureNumbersInString(stringIn) {
+  let n=0;
+
+  for(let i in stringIn) {
+    if(stringIn[i] === '1') {
+      n+=1;
+    } else if(stringIn[i] === '2') {
+      n+=2;
+    } else if(stringIn[i] === '3') {
+      n+=3;
+    } else if(stringIn[i] === '4') {
+      n+=4;
+    } else if(stringIn[i] === '5') {
+      n+=5;
+    }
   }
 
-  return output;
+  return n;
 }
+
+function rotate(arrIn, direction) {
+  let arrOut = [];
+
+  if(direction === 'Clockwise') {
+    for(let i=0; i<arrIn.length; i++) {
+      for(let j=0; j<arrIn.length; j++) {
+        arrOut.push(arrIn[(i+j)%arrIn.length]);        
+      }
+      arrOut.push('|');
+    }
+  } else {
+    for(let i=0; i<arrIn.length; i++) {
+      for(let j=arrIn.length; j>0; j--) {
+        arrOut.push(arrIn[(arrIn.length+j-i)%arrIn.length]);
+      }
+      arrOut.push('|');
+    }
+  }
+
+  return arrOut;
+}
+
+//need to handle 5, split to half+eighth
+function toAbc(arrIn) {
+  let arrOut = [];
+
+  for(let s in arrIn) {
+    if(arrIn[s].includes('+')) {
+      arrOut.push('A'+arrIn[s][1]+'A'+arrIn[s][3]);
+    }
+    else if(arrIn[s].includes('z') || arrIn[s].includes('L') || arrIn[s].includes('|')) {
+      arrOut.push(arrIn[s]);
+    } else {
+      arrOut.push('A' + arrIn[s]);
+    }
+  }
+
+  return arrOut;
+}
+
+/*
+function isWorth(n) {
+  switch(n) {
+    case '1': return 1;
+    case '2': return 2;
+    case '3': return 3;
+    case '4': return 4;
+    case '+1': return 1;
+    case '+2': return 2;
+    case '+3': return 3;
+    case '+4': return 4;
+    default: return 0;
+  }
+}
+*/
+
