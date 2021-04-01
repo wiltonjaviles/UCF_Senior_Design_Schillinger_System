@@ -4,13 +4,6 @@ import '../.././Style.css';
 
 function Ch3Generator() {
 
-  // grab the current array sitting in local storage
-  var old_data = JSON.parse(localStorage.getItem('schillArr'));
-
-  if (old_data[0] === 'book1ch3') {
-    console.log("Yay!")
-  }
-
   const [state , setState] = useState({
     groupingFormA : -1,
     groupingFormB : -1,
@@ -45,12 +38,6 @@ function Ch3Generator() {
         alert('Invalid Grouping. Please try again!');
         return;
       }
-
-        // use unshift to push the new applet ID to the front of the array
-      old_data.unshift("book1ch3");
-
-      // update the schillinger applet array in localStorage
-      localStorage.setItem('schillArr', JSON.stringify(old_data));
 
       // grouping by ab
       const ab = a*b;

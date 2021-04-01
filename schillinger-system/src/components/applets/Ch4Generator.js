@@ -6,13 +6,6 @@ import Playback from '../applets/Playback';
 
 function Ch4Generator() {
 
-  // grab the current array sitting in local storage
-  var old_data = JSON.parse(localStorage.getItem('schillArr'));
-
-  if (old_data[0] === 'book1ch4') {
-    console.log("Yay!")
-  }
-
   const [state , setState] = useState({
     variableA : 3,
     variableB : 2,
@@ -30,12 +23,6 @@ function Ch4Generator() {
   }
 
   const generateR_ = event => {
-
-    // use unshift to push the new applet ID to the front of the array
-    old_data.unshift("book1ch4");
-
-    // update the schillinger applet array in localStorage
-    localStorage.setItem('schillArr', JSON.stringify(old_data));
 
     event.preventDefault();    
     const vA = Number(state.variableA);

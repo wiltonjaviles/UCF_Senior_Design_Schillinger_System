@@ -8,6 +8,7 @@ function Ch2Generator() {
 
   var tempA = 3;
   var tempB = 2;
+  var tempGroup = 'a'
   // grab the current array sitting in local storage
   var old_data = JSON.parse(localStorage.getItem('schillArr'));
 
@@ -17,6 +18,7 @@ function Ch2Generator() {
     if (old_data[i].id === "book1ch2" ) {
       tempA = old_data[i].a;
       tempB = old_data[i].b;
+      tempGroup = old_data[i].groupBy;
       console.log("TempA: " + tempA + " TempB: " + tempB);
       break;
     }
@@ -29,7 +31,7 @@ function Ch2Generator() {
   const [state , setState] = useState({
     variableA : tempA,
     variableB : tempB,
-    groupBy : 'a',
+    groupBy : tempGroup,
     OutputC1 : '',
     OutputC2 : '',
     OuputA : '',
@@ -49,7 +51,7 @@ function Ch2Generator() {
   const generateR = event => {
 
      // use unshift to push the new applet ID to the front of the array
-     var book1ch2 = {"id":"book1ch2", "a":state.variableA, "b":state.variableB}; 
+     var book1ch2 = {"id":"book1ch2", "a":state.variableA, "b":state.variableB, "groupBy":state.groupBy}; 
      old_data.unshift(book1ch2);
 
      // update the schillinger applet array in localStorage
