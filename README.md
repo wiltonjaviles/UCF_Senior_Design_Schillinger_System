@@ -115,39 +115,39 @@ This is an example of how to list things you need to use the software and how to
 ### Running Local Development
 
 1. Launch the Client && the Server - Front-End on port 3000 | Back-End on port 5000.
-  ```sh
+  ```
   npm run dev
   ```
 2. Launch the Client - Front-End on port 3000.
-  ```sh
+  ```
   npm run client
   ```
 3. Launch the Server - Back-End on port 5000.
-  ```sh
+  ```
   npm run server
   ```
 4. Kill all Processes
-  ```sh
+  ```
   ctrl + c
   ```
   
 ### Deploying Changes to the WebServer (Digital Ocean)
 
 1. Change to the production folder
-  ``` cd 
-  /var/www/learnschillinger/UCF_Senior_Design_Schillinger_System
+  ```  
+  cd /var/www/learnschillinger/UCF_Senior_Design_Schillinger_System
   ```
 2. Pull most recent changes.
-  ```git 
-  pull
+  ``` 
+  git pull
   ```
 3. Change to the front-end folder.
-  ```cd 
-  schillinger-system
+  ``` 
+  cd schillinger-system
   ```
 4. Build the most recent changes.
-  ```npm 
-  run build
+  ``` 
+  npm run build
   ```
 
 ### nginx web service commands (Digital Ocean):
