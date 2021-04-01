@@ -8,7 +8,9 @@ function Book1Ch6Schillinger() {
       <Container>
         <br /> 
         <h1>Schillinger Source Text for Book 1 Chapter 6</h1>
-        <p></p>
+        <img className="img-fluid img-thumbnail" src="images/book1/ch6/screenshots/book1ch6_01.png" alt="book1ch6img1"></img>
+        <img className="img-fluid img-thumbnail" src="images/book1/ch6/screenshots/book1ch6_02.png" alt="book1ch6img2"></img>
+        <img className="img-fluid img-thumbnail" src="images/book1/ch6/screenshots/book1ch6_03.png" alt="book1ch6img3"></img>
         <Row>
           <Col><Link to="/book1ch6" className="content-links"><h5>Back to Chapter 6</h5></Link></Col>
         </Row>
