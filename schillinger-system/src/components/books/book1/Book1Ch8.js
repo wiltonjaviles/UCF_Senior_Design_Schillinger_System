@@ -2,6 +2,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
 import Ch8Generator from '../../applets/Ch8Generator';
+import TextToSpeech from '../../applets/TextToSpeech';
+
 
 function Book1Ch8() {
   return (

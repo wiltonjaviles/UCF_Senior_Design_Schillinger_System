@@ -2,6 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
 import Ch12Generator from '../../applets/Ch12Generator';
+import TextToSpeech from '../../applets/TextToSpeech';
 
 function Book1Ch12() {
   return (
