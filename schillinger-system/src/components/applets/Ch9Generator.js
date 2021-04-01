@@ -418,22 +418,23 @@ function rotate(arrIn, direction) {
   if(direction === 'Clockwise') {
     for(let i=0; i<arrIn.length; i++) {
       for(let j=0; j<arrIn.length; j++) {
-        arrOut.push(arrIn[(i+j)%arrIn.length]);
-        if(j!=arrIn.length-1) {
-          //arrOut.push(' + ')
-        }
+        arrOut.push(arrIn[(i+j)%arrIn.length]);        
       }
       arrOut.push('|');
     }
   } else {
-    for(let i=arrIn.length; i>0; i--) {
-      ;
+    for(let i=0; i<arrIn.length; i++) {
+      for(let j=arrIn.length; j>0; j--) {
+        arrOut.push(arrIn[(arrIn.length+j-i)%arrIn.length]);
+      }
+      arrOut.push('|');
     }
   }
 
   return arrOut;
 }
 
+//need to handle 5, split to half+eighth
 function toAbc(arrIn) {
   let arrOut = [];
 
