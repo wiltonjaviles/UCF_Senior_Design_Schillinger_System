@@ -33,13 +33,13 @@ function Playback(props) {
 
   return (
     <Container>
-          <div id="paper"></div>
-          <Row>
-            <Col className="col-5"></Col>
-            <Col><Button className="btn-light" onClick={play}>Play</Button></Col>
-            <Col><Button className="btn-light" onClick={stop}>Stop</Button></Col>
-            <Col className="col-5"></Col>
-          </Row>
+      <div id="paper"></div>
+      <Row>
+        <Col className="col-5"></Col>
+        <Col><Button className="btn-light" onClick={play}>Play</Button></Col>
+        <Col><Button className="btn-light" onClick={stop}>Stop</Button></Col>
+        <Col className="col-5"></Col>
+      </Row>
     </Container>
   );
 }

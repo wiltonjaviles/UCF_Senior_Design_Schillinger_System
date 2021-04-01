@@ -2,6 +2,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
 import Ch8Generator from '../../applets/Ch8Generator';
+import TextToSpeech from '../../applets/TextToSpeech';
+
 
 function Book1Ch8() {
   return (
@@ -11,6 +13,11 @@ function Book1Ch8() {
         <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
         <a className="chapter-section-link" href="/book1ch8#1.8" id="1.8"><h3>Chapter 8. Coordination of Time Structures</h3></a>
         <a className="content-links" href="/book1ch8schillinger"><h5>View the source text.</h5></a>
+        <TextToSpeech 
+          text="
+          ā
+          "
+        />
           <p class="bookText">The common element to all music, regardless of culture or complexity, is that it represents motion: the change of place over time. Regardless of the pitches used, rhythms employed, harmony (or lack thereof), anything that can be called music can be annotated as <em>organized time</em>.</p>
           <p class="bookText">Organized time, more commonly referred to as <em>rhythm</em>, can be universally annotated with the following:</p>
           <ol>
