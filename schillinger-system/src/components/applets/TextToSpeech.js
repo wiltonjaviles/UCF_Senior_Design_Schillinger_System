@@ -13,6 +13,7 @@ function TextToSpeech(props) {
 
   const stopText = () => {
     if(isPlaying) {
+      speechSynthesis.pause();
       speechSynthesis.cancel();
       isPlaying = false;
     }
