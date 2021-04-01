@@ -3,7 +3,7 @@ import {Container, Row, Col} from 'react-bootstrap'
 import isAuthenticated from '.././components/authUser';
 
 function About() {
-  isAuthenticated();
+  // isAuthenticated();
   return (
     <div>
       <br />

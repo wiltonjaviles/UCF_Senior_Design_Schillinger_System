@@ -5,9 +5,30 @@ import abcjs from "abcjs";
 import Playback from '../applets/Playback';
 
 function Ch2Generator() {
+
+  var tempA = 3;
+  var tempB = 2;
+  // grab the current array sitting in local storage
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+
+  // need to make it so we can handle multiple versions of ch2 objects
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch2" ) {
+      tempA = old_data[i].a;
+      tempB = old_data[i].b;
+      console.log("TempA: " + tempA + " TempB: " + tempB);
+      break;
+    }
+  }
+
+  // if (old_data[0] === 'book1ch2') {
+  //   console.log("Yay!")
+  // }
+  
   const [state , setState] = useState({
-    variableA : 3,
-    variableB : 2,
+    variableA : tempA,
+    variableB : tempB,
     groupBy : 'a',
     OutputC1 : '',
     OutputC2 : '',
@@ -26,6 +47,14 @@ function Ch2Generator() {
   }
 
   const generateR = event => {
+
+     // use unshift to push the new applet ID to the front of the array
+     var book1ch2 = {"id":"book1ch2", "a":state.variableA, "b":state.variableB}; 
+     old_data.unshift(book1ch2);
+
+     // update the schillinger applet array in localStorage
+     localStorage.setItem('schillArr', JSON.stringify(old_data));
+
     event.preventDefault();    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
