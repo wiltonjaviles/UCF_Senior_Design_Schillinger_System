@@ -112,6 +112,8 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+### Running Local Development
+
 1. Launch the Client && the Server - Front-End on port 3000 | Back-End on port 5000.
   ```sh
   npm run dev
@@ -128,12 +130,58 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   ctrl + c
   ```
+  
+### Deploying Changes to the WebServer (Digital Ocean)
 
+1. Change to the production folder
+  ``` cd 
+  /var/www/learnschillinger/UCF_Senior_Design_Schillinger_System
+  ```
+2. Pull most recent changes.
+  ```git 
+  pull
+  ```
+3. Change to the front-end folder.
+  ```cd 
+  schillinger-system
+  ```
+4. Build the most recent changes.
+  ```npm 
+  run build
+  ```
 
+### nginx web service commands (Digital Ocean):
+1. Start Web Service
+  ```
+  sudo service nginx start
+  ```
+2. Stop Web Services
+  ```
+  sudo service nginx stop
+  ```
+3. Reload Web Services (safe way to reload nginx- tests new config file changes and keeps the site live if an error occurs)
+  ```
+  sudo service nginx reload
+  ```
+4. Restart Web Services (last case resort)
+  ```
+  sudo service nginx restart
+  ```
+5. Test Config Files and Validate Accuracy
+  ```
+  sudo nginx -t
+  ```
+6. Dislay Tail of Error Log
+  ```
+  sudo tail -f
+  ```
+7. Status of Web Services
+  ```
+  sudo systemctl status nginx
+  ```
 
 <!-- ROADMAP -->
 ## Roadmap
-
 
 
 <!-- CONTRIBUTING -->
