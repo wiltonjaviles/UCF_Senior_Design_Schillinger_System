@@ -138,7 +138,7 @@ function Ch12Generator() {
       sFactF = synchronizedFactorialFormula;
       var synchronizedFactorialPlugIn = " = "
       f.forEach(element => {
-        var sum = 0;
+        sum = 0;
         f.forEach(element2 => {
           sum += Number(element2);
         });
@@ -219,11 +219,11 @@ function Ch12Generator() {
 
     } else if (n > 2) {
       var group = state.input.split("^")[0];
-      var sum2 = 0;
+      sum = 0;
       f.forEach(element => {
-        sum2 += Number(element);
+        sum += Number(element);
       });
-      // var sync = DistributivePower(Number(n)-1, f);
+      DistributivePower(Number(n)-1, f);
       var splitFactorial = factF.split(" = ");
 
       var factorialFormula2 = "(";
@@ -238,10 +238,10 @@ function Ch12Generator() {
       factorialFormula2 = factorialFormula2.slice(0, -3);
       var factorialPlugIn2 = factP.replace(" = ", "");
       var arrFactPlugIn2 = factorialPlugIn2.split("+");
-      factorialPlugIn2 = String(sum2)+"("+factorialPlugIn2+")";
+      factorialPlugIn2 = String(sum)+"("+factorialPlugIn2+")";
       factorialPlugIn2 = " = ";
       arrFactPlugIn2.forEach(element => {
-        element = String(Number(sum2)*Number(element));
+        element = String(Number(sum)*Number(element));
         factorialPlugIn2 = factorialPlugIn2.concat(element+"+");
       });
       factorialPlugIn2 = factorialPlugIn2.slice(0, -1);
@@ -256,7 +256,7 @@ function Ch12Generator() {
       var arrsynchronizedFactorialPlugIn2 = synchronizedFactorialPlugIn2.split("+");
       synchronizedFactorialPlugIn2 = " = "
       arrsynchronizedFactorialPlugIn2.forEach(element => {
-        element = String(Number(sum2)*Number(element));
+        element = String(Number(sum)*Number(element));
         synchronizedFactorialPlugIn2 = synchronizedFactorialPlugIn2.concat(element+"+");
       });
       synchronizedFactorialPlugIn2 = synchronizedFactorialPlugIn2.slice(0, -1);
@@ -289,9 +289,9 @@ function Ch12Generator() {
       synchronizedFractionalFormula2 = "S = "+fracGroup+"("+synchronizedFractionalFormula2+")";
       var synchronizedFractionalPlugIn2 = sFracP;
       synchronizedFractionalPlugIn2 = synchronizedFractionalPlugIn2.replace(" = ", "");
-      var arrSynchFractionalPlugIn2 = synchronizedFractionalPlugIn2.split("+");
+      arrFractionalPlugIn2 = synchronizedFractionalPlugIn2.split("+");
       synchronizedFractionalPlugIn2 = " = ";
-      arrSynchFractionalPlugIn2.forEach(element => {
+      arrFractionalPlugIn2.forEach(element => {
         var elementArr = element.split("/");
         elementArr.forEach(element2 => {
           element2 = Number(element2)*fracSumNum;
