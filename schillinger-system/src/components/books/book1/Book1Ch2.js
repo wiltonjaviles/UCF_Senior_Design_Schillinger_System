@@ -35,7 +35,7 @@ function Book1Ch2() {
           Here is the example in numbers, graph, and musical notation:
           
           The resultant differs from b with respect to the accent in r (because both generators had an attack there).
-          This establishes a bar with a numerator of 2 i.e. 2/2, 2/4, etc. When the bar is 2/2, 1/2 = half note, when the bar is 2/4, 1/2 = quarter note.
+          This establishes a bar with a numerator of 2 i.e. 2 2, 2 4, etc. When the bar is 2 2, 1/2 = half note, when the bar is 2 4, 1/2 = quarter note.
           Another example.
           
           This case shows musical bars with 3 as a numerator. I.e..
