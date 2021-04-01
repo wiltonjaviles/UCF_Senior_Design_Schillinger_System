@@ -39,7 +39,6 @@ function Ch11Generator() {
     
     var outArrA = simpleToABC(sMakeR(vA,vB),vA)[4];
     var outArrB = simpleToABC(sMakeR(vA,vB),vB)[4];
-    var outArrU = simpleToABC(sMakeRU(vA,vB),vA)[5];
 
     var fA = smallestFactor(outArrA);
     var fB = smallestFactor(outArrB);
@@ -62,7 +61,7 @@ function Ch11Generator() {
     var outStrLC = rotateLeast(outStr.split("|"), v);
     var abcOutLC = "X:1\nK:C\n"+outStrLC+"\n";
     
-    var threshold = 200;
+    var threshold = 400;
     
     if(abcOutLC.length > threshold) {
       LCTooBig = true;
@@ -119,20 +118,6 @@ function Ch11Generator() {
         LCTooBig: LCTooBigMsg,
         MTooBig: MTooBigMsg,
         ATooBig: ATooBigMsg
-    }))
-  }
-
-  const clearResults = () => {
-    setState(prevState => ({
-      ...prevState,
-      vElement: "",
-      vMeasure: "",
-      resultArray: "",
-      reverseResultArray: "",
-      ABC: "",
-      reverseABC: "",
-      resultantABC: "",
-      abcString: ""
     }))
   }
 
@@ -269,57 +254,6 @@ function sMakeR(a,b) {
     return arr;
 }
 
-function sMakeRU(a,b) {
-    let arr = [];
-    for(let i=0; i<6; i++) {
-      arr[i] = [];
-    }
-  
-    for(let i=0; i<a*a; i++) {
-        arr[0].push(1);
-    }
-    arr[1].push(a*a);
-    for(let i=1; i<a*a; i++) {
-        arr[1].push('');
-    }
-    for(let i=0; i<a; i++) {
-        arr[2].push(a);
-        for(let j=1; j<a; j++) {
-            arr[2].push('');
-        }
-    }
-    for(let i=0; i<a; i++) {
-        arr[3].push(b);
-        for(let j=1; j<b; j++) {
-            arr[3].push('');
-        }
-    }
-    for(let i=a*b; i<a*a; i++) {
-      arr[3].push('');
-    }
-    
-    for(let i=0; i<a*a - a*b; i++) {
-      arr[4].push('');
-    }
-    for(let i=0; i<a; i++) {
-      arr[4].push(b);
-      for(let j=1; j<b; j++) {
-        arr[4].push('');
-      }
-    }
-  
-    let j=1;
-      for(let i=a*a-1; i>-1; i--) {
-          
-          if(arr[2][i] !== '' || arr[3][i] !== '' || arr[4][i] !== '') {
-              arr[5][i] = j;
-              j=1;
-          } else {j++; arr[5][i]='';}
-      }
-  
-    return arr;
-  }
-
 function simpleToABC(arrIn, measureLength) {
   let measure = Number(0);
   let longNote = Number(0);
@@ -392,7 +326,6 @@ function pushNote(a) {
  */
   function rotateLeast(arrIn, numGroups) {
     // alert(arrIn+"\n"+numGroups);
-    var arr = arrIn.join("");
     var n = numGroups;
     var result = [];
 

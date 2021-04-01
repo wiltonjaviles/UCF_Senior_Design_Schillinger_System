@@ -6,9 +6,9 @@ import Playback from './Playback';
 
 function Ch10Generator() {
   const [state , setState] = useState({
-    variableA : "𝅘𝅥",
-    variableB : "𝅘𝅥",
-    variableC: "𝅘𝅥",
+    variableA : "4",
+    variableB : "4",
+    variableC: "4",
     outputSteps: "",
     outputStepsG2: "",
     outputStepsB2: "",
@@ -39,83 +39,83 @@ function Ch10Generator() {
     var c1 = state.variableC;
     var outputSteps = "a1: "+a1+", b1: "+b1+", c1: "+c1+"\n";
     switch (a1) {
-      case "𝅘𝅥":
+      case "4":
         a1 = "G4";
         break;
-      case "𝅘𝅥𝅮𝅘𝅥𝅮":
+      case "2+2":
         a1 = "G2G2";
         break;
-      case "𝅘𝅥𝅮𝅘𝅥𝅯𝅘𝅥𝅯":
+      case "2+1+1":
         a1 = "G2G1G1";
         break;
-      case "𝅘𝅥𝅯𝅘𝅥𝅮𝅘𝅥𝅯":
+      case "1+2+1":
         a1 = "G1G2G1";
         break;
-      case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅮":
+      case "1+1+2":
         a1 = "G1G1G2";
         break;
-      case "𝅘𝅥𝅯𝅘𝅥𝅮.":
+      case "1+3":
         a1 = "G1G3";
         break;
-      case "𝅘𝅥𝅮.𝅘𝅥𝅯":
+      case "3+1":
         a1 = "G3G1";
         break;
-      case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯":
+      case "1+1+1+1":
         a1 = "G1G1G1G1";
         break;
       default: break;
     }
 
     switch (b1) {
-      case "𝅘𝅥":
+      case "4":
         b1 = "G4";
         break;
-      case "𝅘𝅥𝅮𝅘𝅥𝅮":
+      case "2+2":
         b1 = "G2G2";
         break;
-      case "𝅘𝅥𝅮𝅘𝅥𝅯𝅘𝅥𝅯":
+      case "2+1+1":
         b1 = "G2G1G1";
         break;
-      case "𝅘𝅥𝅯𝅘𝅥𝅮𝅘𝅥𝅯":
+      case "1+2+1":
         b1 = "G1G2G1";
         break;
-      case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅮":
+      case "1+1+2":
         b1 = "G1G1G2";
         break;
-      case "𝅘𝅥𝅯𝅘𝅥𝅮.":
+      case "1+3":
         b1 = "G1G3";
         break;
-      case "𝅘𝅥𝅮.𝅘𝅥𝅯":
+      case "3+1":
         b1 = "G3G1";
         break;
-      case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯":
+      case "1+1+1+1":
         b1 = "G1G1G1G1";
         break;
       default: break;
     }
     switch (c1) {
-      case "𝅘𝅥":
+      case "4":
         c1 = "G4";
         break;
-      case "𝅘𝅥𝅮𝅘𝅥𝅮":
+      case "2+2":
         c1 = "G2G2";
         break;
-      case "𝅘𝅥𝅮𝅘𝅥𝅯𝅘𝅥𝅯":
+      case "2+1+1":
         c1 = "G2G1G1";
         break;
-      case "𝅘𝅥𝅯𝅘𝅥𝅮𝅘𝅥𝅯":
+      case "1+2+1":
         c1 = "G1G2G1";
         break;
-      case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅮":
+      case "1+1+2":
         c1 = "G1G1G2";
         break;
-      case "𝅘𝅥𝅯𝅘𝅥𝅮.":
+      case "1+3":
         c1 = "G1G3";
         break;
-      case "𝅘𝅥𝅮.𝅘𝅥𝅯":
+      case "3+1":
         c1 = "G3G1";
         break;
-      case "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯":
+      case "1+1+1+1":
         c1 = "G1G1G1G1";
         break;
       default: break;
@@ -172,15 +172,15 @@ function Ch10Generator() {
                 </Col>
                 <Col className="col-2">
                   <Form.Group controlId="variableA">
-                    <Form.Control as="select" defaultValue="𝅘𝅥" value={state.variableA} onChange={handleSelect}>
-                      <option>𝅘𝅥</option>
-                      <option>𝅘𝅥𝅮𝅘𝅥𝅮</option>
-                      <option>𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅮</option>
-                      <option>𝅘𝅥𝅯𝅘𝅥𝅮𝅘𝅥𝅯</option>
-                      <option>𝅘𝅥𝅮𝅘𝅥𝅯𝅘𝅥𝅯</option>
-                      <option>𝅘𝅥𝅯𝅘𝅥𝅮.</option>
-                      <option>𝅘𝅥𝅮.𝅘𝅥𝅯</option>
-                      <option>𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯</option>
+                    <Form.Control as="select" defaultValue="4" value={state.variableA} onChange={handleSelect}>
+                      <option>4</option>
+                      <option>2+2</option>
+                      <option>1+1+2</option>
+                      <option>1+2+1</option>
+                      <option>2+1+1</option>
+                      <option>1+3</option>
+                      <option>3+1</option>
+                      <option>1+1+1+1</option>
                     </Form.Control>
                   </Form.Group>
                 </Col>
@@ -189,15 +189,15 @@ function Ch10Generator() {
                 </Col>
                 <Col className="col-2">              
                   <Form.Group controlId="variableB">
-                    <Form.Control as="select" defaultValue="𝅘𝅥" value={state.variableB} onChange={handleSelect}>
-                      <option>𝅘𝅥</option>
-                      <option>𝅘𝅥𝅮𝅘𝅥𝅮</option>
-                      <option>𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅮</option>
-                      <option>𝅘𝅥𝅯𝅘𝅥𝅮𝅘𝅥𝅯</option>
-                      <option>𝅘𝅥𝅮𝅘𝅥𝅯𝅘𝅥𝅯</option>
-                      <option>𝅘𝅥𝅯𝅘𝅥𝅮.</option>
-                      <option>𝅘𝅥𝅮.𝅘𝅥𝅯</option>
-                      <option>𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯</option>
+                    <Form.Control as="select" defaultValue="4" value={state.variableB} onChange={handleSelect}>
+                      <option>4</option>
+                      <option>2+2</option>
+                      <option>1+1+2</option>
+                      <option>1+2+1</option>
+                      <option>2+1+1</option>
+                      <option>1+3</option>
+                      <option>3+1</option>
+                      <option>1+1+1+1</option>
                     </Form.Control>
                   </Form.Group>
                 </Col>
@@ -206,15 +206,15 @@ function Ch10Generator() {
                 </Col>
                 <Col className="col-2">              
                   <Form.Group controlId="variableC">
-                    <Form.Control as="select" defaultValue="𝅘𝅥" value={state.variableC} onChange={handleSelect}>
-                      <option>𝅘𝅥</option>
-                      <option>𝅘𝅥𝅮𝅘𝅥𝅮</option>
-                      <option>𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅮</option>
-                      <option>𝅘𝅥𝅯𝅘𝅥𝅮𝅘𝅥𝅯</option>
-                      <option>𝅘𝅥𝅮𝅘𝅥𝅯𝅘𝅥𝅯</option>
-                      <option>𝅘𝅥𝅯𝅘𝅥𝅮.</option>
-                      <option>𝅘𝅥𝅮.𝅘𝅥𝅯</option>
-                      <option>𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯</option>
+                    <Form.Control as="select" defaultValue="4" value={state.variableC} onChange={handleSelect}>
+                      <option>4</option>
+                      <option>2+2</option>
+                      <option>1+1+2</option>
+                      <option>1+2+1</option>
+                      <option>2+1+1</option>
+                      <option>1+3</option>
+                      <option>3+1</option>
+                      <option>1+1+1+1</option>
                     </Form.Control>
                   </Form.Group>
                 </Col>
