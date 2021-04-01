@@ -5,7 +5,7 @@ import '.././Style.css';
 import isAuthenticated from '.././components/authUser';
 
 function Account() {
-  isAuthenticated();
+  // isAuthenticated();
   return (
     <div>
       <Container fluid>

@@ -48,10 +48,10 @@ if (process.env.NODE_ENV === "production") {
 	https.createServer(credentials, app).listen(443, () => {
 		console.log('HTTPS Server running on port 443')
 	});
-	// http.createServer( function(req, res) {
-	// 	res.writeHead(301, {"Location": "https://" + req.headers['host'] + req.url});
-	// 	res.end();
-	// }).listen(80);
+	http.createServer( function(req, res) {
+		res.writeHead(301, {"Location": "https://" + req.headers['host'] + req.url});
+		res.end();
+	}).listen(80);
 } else {
 	app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 }

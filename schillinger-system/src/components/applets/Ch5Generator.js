@@ -23,6 +23,7 @@ function Ch5Generator() {
   }
 
   const generateR = event => {
+
     event.preventDefault();    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);

@@ -5,6 +5,7 @@ import abcjs from "abcjs";
 import Playback from '../applets/Playback';
 
 function Ch4Generator() {
+
   const [state , setState] = useState({
     variableA : 3,
     variableB : 2,
@@ -22,6 +23,7 @@ function Ch4Generator() {
   }
 
   const generateR_ = event => {
+
     event.preventDefault();    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
