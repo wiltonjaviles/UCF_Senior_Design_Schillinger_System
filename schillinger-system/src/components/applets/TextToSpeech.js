@@ -7,8 +7,10 @@ function TextToSpeech(props) {
   var speech = new SpeechSynthesisUtterance(text);
   const playText = () => {
     // alert(text);
-    speechSynthesis.speak(speech);
-    isPlaying = true;
+    if(!isPlaying) {
+      speechSynthesis.speak(speech);
+      isPlaying = true;
+    }
   }
 
   const stopText = () => {
