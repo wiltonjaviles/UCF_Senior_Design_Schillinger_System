@@ -84,13 +84,13 @@ function Navigation() {
             <Nav.Link>
               <Link to="/contents" className="nav-link-item">Contents</Link>
             </Nav.Link>
-            <Nav.Link>
+            {/* <Nav.Link>
               <Link to="/recordings" className="nav-link-item">Recordings</Link>
-            </Nav.Link>
-            <NavDropdown title="Account" id="nav-dropdown">
+            </Nav.Link> */}
+            {/* <NavDropdown title="Account" id="nav-dropdown">
               <NavDropdown.Item href="/account" className="nav-dropdown">Sign in / Sign up</NavDropdown.Item>
               <NavDropdown.Item onClick={doLogout}>Log out</NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
     </Navbar>
