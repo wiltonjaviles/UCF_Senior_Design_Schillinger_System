@@ -31,16 +31,9 @@ function Book1Ch7() {
           </ol>
           <img className="img-fluid img-thumbnail" src="images/book1/ch7/img5.png" alt="book1ch7img5"></img>
           <p class="bookText">The following illustrate the continuous run of these instrumental forms of harmony with various simpler rhythmic resultants, all used one chord:</p>
-          <p class="bookText">3 ÷ 2</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch7/img6.png" alt="book1ch7img6"></img>
-          <br />
-          <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch7/img7.png" alt="book1ch7img7"></img>
-          <p class="bookText">4 ÷ 3</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch7/img8.png" alt="book1ch7img8"></img>
-          <br />
-          <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch7/img9.png" alt="book1ch7img9"></img>
+          <Ch7Generator />
+          
+          
           <p class="bookText">One can compose other instrumental forms of harmony with as many as 16 attacks - such as an alternation of the four different notes in the bass, with the upper part of the chord doubled in two octaves:</p>
           <p class="bookText">&emsp;16 attacks</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch7/img10.png" alt="book1ch7img10"></img>
@@ -53,7 +46,7 @@ function Book1Ch7() {
           <p class="bookText">For now this result is more of a curiosity, but techniques like this will be used later to develop rich textures in a full score.</p>
           <br />
         <br />
-        <Ch7Generator />
+        
         <br /> 
         <Row>
           <Col><Link to="/book1ch6" className="content-links"><h5>Previous Chapter</h5></Link></Col>
@@ -64,5 +57,18 @@ function Book1Ch7() {
     </div>
   );
 }
+
+/*
+<p class="bookText">3 ÷ 2</p>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch7/img6.png" alt="book1ch7img6"></img>
+          <br />
+          <br />
+          <img className="img-fluid img-thumbnail" src="images/book1/ch7/img7.png" alt="book1ch7img7"></img>
+          <p class="bookText">4 ÷ 3</p>
+          <img className="img-fluid img-thumbnail" src="images/book1/ch7/img8.png" alt="book1ch7img8"></img>
+          <br />
+          <br />
+          <img className="img-fluid img-thumbnail" src="images/book1/ch7/img9.png" alt="book1ch7img9"></img>
+*/
 
 export default Book1Ch7;
