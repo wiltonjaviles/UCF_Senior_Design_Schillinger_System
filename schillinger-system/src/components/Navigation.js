@@ -2,9 +2,10 @@ import '.././Style.css';
 import React from 'react';
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
-import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import {Navbar, Nav } from 'react-bootstrap';
+// import { NavDropdown } from 'react-bootstrap';
 
-const BASE_URL = 'https://learnschillinger.com/'
+// const BASE_URL = 'https://learnschillinger.com/'
 
 function Navigation() {
 
@@ -19,51 +20,51 @@ function Navigation() {
     logoutToken = '';
   }
 
-  const [message,setMessage] = useState('');
+  // const [message,setMessage] = useState('');
 
-  const doLogout = async event => {
-    event.preventDefault();
+  // const doLogout = async event => {
+  //   event.preventDefault();
 
-    if (logoutToken === '') {
-      alert("Error: Cannot log out with no session active!");
-    }
-    else {
-      var js = '{"token":"' + logoutToken + '"}';
+  //   if (logoutToken === '') {
+  //     alert("Error: Cannot log out with no session active!");
+  //   }
+  //   else {
+  //     var js = '{"token":"' + logoutToken + '"}';
 
-      try {
+  //     try {
 
-        const response = await fetch(BASE_URL + 'api/logout',
-        {
-          method:'POST',
-          body:js,
-          headers:
-          {
-            'Content-Type': 'application/json'
-          }
-        });
+  //       const response = await fetch(BASE_URL + 'api/logout',
+  //       {
+  //         method:'POST',
+  //         body:js,
+  //         headers:
+  //         {
+  //           'Content-Type': 'application/json'
+  //         }
+  //       });
 
-        var res = JSON.parse(await response.text());
+  //       var res = JSON.parse(await response.text());
 
-        if (res.error !== '') {
-          alert(res.error);
-          window.location.href = '/';
-        }
-        else {
-          session = {token:res.jwt}
-          localStorage.removeItem('user_data');
-          localStorage.removeItem('session_token');
-          localStorage.setItem('session_token', JSON.stringify(session));
-          setMessage('Logout Successful!');
-          window.location.href = '/';
-        }
-      }
-      catch(e) {
-        alert(e.toString());
-        return;
-      }
-      console.log(message);
-    }
-  }
+  //       if (res.error !== '') {
+  //         alert(res.error);
+  //         window.location.href = '/';
+  //       }
+  //       else {
+  //         session = {token:res.jwt}
+  //         localStorage.removeItem('user_data');
+  //         localStorage.removeItem('session_token');
+  //         localStorage.setItem('session_token', JSON.stringify(session));
+  //         setMessage('Logout Successful!');
+  //         window.location.href = '/';
+  //       }
+  //     }
+  //     catch(e) {
+  //       alert(e.toString());
+  //       return;
+  //     }
+  //     console.log(message);
+  //   }
+  // }
   
   return (
     <Navbar collapseOnSelect expand="lg">

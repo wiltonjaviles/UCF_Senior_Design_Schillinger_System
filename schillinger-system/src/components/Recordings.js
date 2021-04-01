@@ -4,7 +4,7 @@ import Ch11Generator from './applets/Ch11Generator';
 import isAuthenticated from '.././components/authUser';
 
 function Recordings() {
-  isAuthenticated();
+  // isAuthenticated();
   return (
     <div>
       <br />

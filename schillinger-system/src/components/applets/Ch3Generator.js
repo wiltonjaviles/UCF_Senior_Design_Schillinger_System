@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import '../.././Style.css';
 
 function Ch3Generator() {
+
   const [state , setState] = useState({
     groupingFormA : -1,
     groupingFormB : -1,
