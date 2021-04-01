@@ -55,31 +55,31 @@ function Home() {
           <Button variant="success" href={`/${schillArr_data[0].id}`} size="sm">
             {schillArr_data[0].id}
           </Button>
-          <Button variant="success" href={`/${schillArr_data[1]}`} size="sm">
+          <Button variant="success" href={`/${schillArr_data[1].id}`} size="sm">
             {schillArr_data[1].id}
           </Button>
-          <Button variant="success" href={`/${schillArr_data[2]}`} size="sm">
+          <Button variant="success" href={`/${schillArr_data[2].id}`} size="sm">
             {schillArr_data[2].id}
           </Button>
-          <Button variant="success" href={`/${schillArr_data[3]}`} size="sm">
+          <Button variant="success" href={`/${schillArr_data[3].id}`} size="sm">
             {schillArr_data[3].id}
           </Button>
-          <Button variant="success" href={`/${schillArr_data[4]}`} size="sm">
+          <Button variant="success" href={`/${schillArr_data[4].id}`} size="sm">
             {schillArr_data[4].id}
           </Button>
-          <Button variant="success" href={`/${schillArr_data[5]}`} size="sm">
+          <Button variant="success" href={`/${schillArr_data[5].id}`} size="sm">
             {schillArr_data[5].id}
           </Button>
-          <Button variant="success" href={`/${schillArr_data[6]}`} size="sm">
+          <Button variant="success" href={`/${schillArr_data[6].id}`} size="sm">
             {schillArr_data[6].id}
           </Button>
-          <Button variant="success" href={`/${schillArr_data[7]}`} size="sm">
+          <Button variant="success" href={`/${schillArr_data[7].id}`} size="sm">
             {schillArr_data[7].id}
           </Button>
-          <Button variant="success" href={`/${schillArr_data[8]}`} size="sm">
+          <Button variant="success" href={`/${schillArr_data[8].id}`} size="sm">
             {schillArr_data[8].id}
           </Button>
-          <Button variant="success" href={`/${schillArr_data[9]}`} size="sm">
+          <Button variant="success" href={`/${schillArr_data[9].id}`} size="sm">
             {schillArr_data[9].id}
           </Button>
         </ButtonGroup>
@@ -88,6 +88,8 @@ function Home() {
         <Speech 
           textAsButton={true}
           stop={true}
+          // pause={true}
+          // resume={true}
           displayText="Listen to this text" 
           text="Welcome to the Schillinger System of Musical Composition!" 
         />

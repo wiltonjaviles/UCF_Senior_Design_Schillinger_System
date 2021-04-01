@@ -19,7 +19,7 @@ function Ch2Generator() {
       tempA = old_data[i].a;
       tempB = old_data[i].b;
       tempGroup = old_data[i].groupBy;
-      console.log("TempA: " + tempA + " TempB: " + tempB);
+      console.log("TempA: " + tempA + " TempB: " + tempB, " groupBy " + tempGroup);
       break;
     }
   }
