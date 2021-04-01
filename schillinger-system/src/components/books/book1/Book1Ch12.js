@@ -12,6 +12,11 @@ function Book1Ch12() {
         <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
         <a className="chapter-section-link" href="/book1ch12#1.12" id="1.12"><h3>Chapter 12. Distributive Powers</h3></a>
         <a className="content-links" href="/book1ch12schillinger"><h5>View the source text.</h5></a>
+        <TextToSpeech 
+          text="
+          ā
+          "
+        />
         <a className="chapter-section-link" href="/book1#1.12.a" id="1.12.a"><h5>A. Continuity of Harmonic Contrasts</h5></a>
         <a className="chapter-section-link" href="/book1#1.12.b" id="1.12.b"><h5>B. Composition of Rhythmic Counterthemes</h5></a>
         <Ch12Generator />

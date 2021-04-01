@@ -12,6 +12,11 @@ function Book1Ch11() {
         <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
         <a className="chapter-section-link" href="/book1ch11#1.11" id="1.11"><h3>Chapter 11. Composition of Homogeneous Rhythmic Continuity</h3></a>
         <a className="content-links" href="/book1ch11schillinger"><h5>View the source text.</h5></a>
+        <TextToSpeech 
+          text="
+          ā
+          "
+        />
         <p class="bookText">There are three methods for creating great variety out of a single rhythmic group. The first creates the least variety, the second is in the middle, and the final can create an enormous amount of variety.</p>
         <ol>
           <li>Method one is to divide the group by its simplest divisor. Typically, this will be to divide the group into halves or into thirds, which can then be rotated.</li>

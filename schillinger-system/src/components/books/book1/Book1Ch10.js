@@ -12,6 +12,11 @@ function Book1Ch10() {
         <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
         <a className="chapter-section-link" href="/book1ch10#1.10" id="1.10"><h3>Chapter 10. Generalization of Variation Techniques</h3></a>
         <a className="content-links" href="/book1ch10schillinger"><h5>View the source text.</h5></a>
+        <TextToSpeech 
+          text="
+          ā
+          "
+        />
         <a className="chapter-section-link" href="/book1ch10#1.10.a" id="1.10.a"><h5>A. Permutations of the Higher Order</h5></a>
         <p class="bookText">We can use <em>permutations of a higher order</em> to create variations of a group and increase the total material. The total  number of elements in a certain permutation is equal to the square of the number of elements in the previous permutation. For example, if there are three elements in the original group, there will be 9 in the next (second) group, and 27 in the next (third group) and so on in circular permutations. If general permutations are used, then the second group will have 6 elements, and the third will have 720 elements, and so on.</p>
         <p class="bookText">If we label the original elements of the group as a1, b1 … for however many elements we have, we can permute the order of those elements for the next set of groups. The formula for an original group of 2 elements (a1 and b1) is the following:</p>
