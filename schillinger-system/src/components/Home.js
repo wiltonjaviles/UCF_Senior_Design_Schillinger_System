@@ -1,8 +1,9 @@
 import '.././Style.css';
-import isAuthenticated from '.././components/authUser';
+// import isAuthenticated from '.././components/authUser';
 import React from 'react';
-import Speech from 'react-speech';
+// import Speech from 'react-speech';
 import { Container, Button, ButtonGroup } from 'react-bootstrap';
+import TextToSpeech from './applets/TextToSpeech';
 
 function getItems(arrName) {
 
@@ -85,14 +86,15 @@ function Home() {
         </ButtonGroup>
         <br />
         <br />
-        <Speech 
+        <TextToSpeech text="Welcome to the Schillinger System of Musical Composition!" />
+        {/* <Speech 
           textAsButton={true}
           stop={true}
           // pause={true}
           // resume={true}
           displayText="Listen to this text" 
           text="Welcome to the Schillinger System of Musical Composition!" 
-        />
+        /> */}
         <br />
         <br />
       </Container>

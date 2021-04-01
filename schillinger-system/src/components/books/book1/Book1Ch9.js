@@ -2,6 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
 import Ch9Generator from '../../applets/Ch9Generator';
+import TextToSpeech from '../../applets/TextToSpeech';
 
 function Book1Ch9() {
   return (
@@ -11,6 +12,11 @@ function Book1Ch9() {
         <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
         <a className="chapter-section-link" href="/book1ch9#1.9" id="1.9"><h3>Chapter 9. Homogeneous Simultaneity and Continuity (Variations)</h3></a>
         <a className="content-links" href="/book1ch9schillinger"><h5>View the source text.</h5></a>
+        <TextToSpeech 
+          text="
+          ā
+          "
+        />
         <a className="chapter-section-link" href="/book1ch9#1.9.a" id="1.9.a"><h5>A. General and Circular Permutations</h5></a>
         <p class="bookText">In previous chapters, we have learned that all rhythms can be expressed as combinations or portions of resultants. Useful as they are, there are limits to what can be done with them alone. The human ear can rarely track a large pattern as one indivisible rhythm, however to repeat the same pattern over and over again would lead to boredom. It is therefore necessary to develop techniques that extend the novelty of a short rhythmic expression when used repeatedly; in short, we need variations.</p>
         <p class="bookText">In general, variations can be made of any rhythm by forming permutations of the constituent notes, with the number of available permutations being equal to n!, where n is the number of elements. For example, 3 + 2 + 1 (a dotted quarter, quarter and eighth) has a total of 3 x 2 x 1 = 6 permutations:</p>

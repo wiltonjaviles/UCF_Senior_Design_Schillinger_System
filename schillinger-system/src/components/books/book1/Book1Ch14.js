@@ -2,6 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
 import Ch14Generator from '../../applets/Ch14Generator';
+import TextToSpeech from '../../applets/TextToSpeech';
 
 function Book1Ch14() {
   return (
@@ -11,6 +12,11 @@ function Book1Ch14() {
         <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
         <a className="chapter-section-link" href="/book1ch14#1.14" id="1.14"><h3>Chapter 14. Rhythms of Variable Velocities</h3></a>
         <a className="content-links" href="/book1ch14schillinger"><h5>View the source text.</h5></a>
+        <TextToSpeech 
+          text="
+          ā
+          "
+        />
         <p class="bookText">Few things in the universe are constant; really, it would be very boring were that the case. This is also true for music. Traditionally in music this is indicated by the composer, and executed by the performer or conductor by intuition. Schillinger provides a variety of means by which acceleration, deceleration, holds and syncopations can be included in the music more literally and not depend on the intuitions of the musician. This is accomplished with mathematical series. The relevant series are as follows:</p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch14/img1.png" alt="book1ch14img1"></img>
         <p class="bookText">The most obvious distinction between these series is the significant difference in rate of change between them. For example, the ratios in a natural harmonic series (2:1, 3:2, 4:3…) become rapidly smaller as you move through the series, while this is less true in for example the first summation series (2:1, 3:2, 5:3, 8:5…). When applied as a change in tempo over time, this means that the natural harmonic series will sound like the acceleration or deceleration plateaus, especially when compared to a summation series.</p>
