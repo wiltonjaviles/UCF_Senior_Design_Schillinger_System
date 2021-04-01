@@ -9,7 +9,7 @@ function Book1Ch8() {
       <Container>
         <br /> 
         <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
-        <a className="chapter-section-link" href="/book1#1.8" id="1.8"><h3>Chapter 8. Coordination of Time Structures</h3></a>
+        <a className="chapter-section-link" href="/book1ch8#1.8" id="1.8"><h3>Chapter 8. Coordination of Time Structures</h3></a>
         <a className="content-links" href="/book1ch8schillinger"><h5>View the source text.</h5></a>
           <p class="bookText">The common element to all music, regardless of culture or complexity, is that it represents motion: the change of place over time. Regardless of the pitches used, rhythms employed, harmony (or lack thereof), anything that can be called music can be annotated as <em>organized time</em>.</p>
           <p class="bookText">Organized time, more commonly referred to as <em>rhythm</em>, can be universally annotated with the following:</p>
@@ -21,7 +21,7 @@ function Book1Ch8() {
             <li class="bookText">Overlaying the result on measures</li>
           </ol>
           <p class="bookText">The exact nature of the parts is only relevant insofar as a particular style is desired; the principles remain the same across mediums.</p>
-        <a className="chapter-section-link" href="/book1#1.8.a" id="1.8.a"><h5>A. Distribution of a Duration-Group</h5></a>
+        <a className="chapter-section-link" href="/book1ch8#1.8.a" id="1.8.a"><h5>A. Distribution of a Duration-Group</h5></a>
           <h3>Notation</h3>
             <p class="bookText">pli&emsp;number of places in the instrumental group</p>
             <p class="bookText">pla&emsp;number of places in the attack-group.</p>
@@ -46,7 +46,7 @@ function Book1Ch8() {
           <p class="bookText">5. Interference between the synchronized duration-group (T’) and the ﬁnal duration—group (T”).</p>
           <p class="equation">N<sub>T''</sub> = <sup>T'</sup>/<sub>T''</sub></p>
 
-        <a className="chapter-section-link" href="/book1#1.8.b" id="1.8.b"><h5>B. Synchronization of an Attack-Group</h5></a>
+        <a className="chapter-section-link" href="/book1ch8#1.8.b" id="1.8.b"><h5>B. Synchronization of an Attack-Group</h5></a>
           <p class="bookText">Distribution of attacks of an attack-group (a<sub>a</sub>) through the number of attacks of a duration—group (a<sub>T</sub>).</p>
           <p class="equation"><em>First Case:</em> <sup>a<sub>a</sub></sup>/<sub>a<sub>T</sub></sub> = 1</p>
           <p class="equation">A = a<sub>T</sub></p>
@@ -71,7 +71,7 @@ function Book1Ch8() {
           <p class="equation">A = 4a&#183;a3 = 12a</p>
           <p class="equation">T' = 6t&#183;3 = 18t</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch8/img3.png" alt="book1ch8img3"></img>
-        <a className="chapter-section-link" href="/book1#1.8.c" id="1.8.c"><h5>C. Distribution of a Synchronized Duration-Group</h5></a>
+        <a className="chapter-section-link" href="/book1ch8#1.8.c" id="1.8.c"><h5>C. Distribution of a Synchronized Duration-Group</h5></a>
           <p class="equation"><em>First Case:</em> <sup>T'</sup>/<sub>T''</sub> = 1</p>
           <p class="equation">T'' = T'</p>
           <p class="bookText">Example: T' = 6t;&emsp;T'' = 6t</p>
@@ -99,7 +99,7 @@ function Book1Ch8() {
           <br />
           <br />
           <img className="img-fluid img-thumbnail" src="images/book1/ch8/img9.png" alt="book1ch8img9"></img>
-        <a className="chapter-section-link" href="/book1#1.8.d" id="1.8.d"><h5>D. Synchronization of an Instrumental Group</h5></a> 
+        <a className="chapter-section-link" href="/book1ch8#1.8.d" id="1.8.d"><h5>D. Synchronization of an Instrumental Group</h5></a> 
           <p class="bookText">Example: pli = 4;&emsp;pla = 3;&emsp;a<sub>a</sub> = 3+2+3 = 8;&emsp;T = r<sub>5&#247;2</sub> = 10t;&emsp;6a</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch8/img10.png" alt="book1ch8img10"></img>
           <br />
