@@ -24,7 +24,7 @@ function Book1Ch14() {
         <p class="bookText">In general, 1 and 2 are used when introducing or concluding a section, while 3 and 4 are typical of climaxes. In every case, when determining which series to use (and what that series would look like), it is best to start with rallentando, for the simple reason that it is easier to start with 1. The goal when choosing a series is to look at the factors of the sum.</p>
         <p class="bookText">Take for example the natural harmonic series. The first 8 members of this series (1, 2, 3, 4, 5, 6, 7, 8) add up to 36. This makes acceleration over 8 members in this series highly convenient; 36 can represent nine measures of 4/4 time, four measures of 9/8 time, six measures of 6/8 time, or twelve bars in 3/4 time. This ability to divide into the sum of the series allows for the sense of rhythm to be preserved even as the tempo changes.</p>
         <p class="bookText">For another example, the first summation series works very kindly with the 8/8 family with the first 6 members of the series being neatly divisible by 8 (1 + 2 + 3 + 5 + 8 + 13 = 32).</p>
-        <h4>applet</h4>
+        <Ch14Generator />
         <p class="bookText"> Thus far, the methods for acceleration or deceleration apply to uniform rhythms (1 + 1 + 1 + 1…). Applying this method to non-uniform rhythms is straightforward: the group, A, is multiplied as a variable to each member of the series. So for example, the rhythm A = (3 + 1 + 2) applied to a natural harmonic series would be 1A + 2A + 3A + 4A… or </p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch14/img2.png" alt="book1ch14img2"></img>
         <p class="bookText"><b>Rubato</b></p>
@@ -47,7 +47,7 @@ function Book1Ch14() {
         <img className="img-fluid img-thumbnail" src="images/book1/ch14/img5.png" alt="book1ch14img5"></img>
         <br />
         <br />
-        <Ch14Generator />
+        
         <br /> 
         <Row>
           <Col><Link to="/book1ch13" className="content-links"><h5>Previous Chapter</h5></Link></Col>
