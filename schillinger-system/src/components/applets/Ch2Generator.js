@@ -73,13 +73,19 @@ function Ch2Generator() {
       default: break;
     }
     let outArr = simpleToABC(sMakeR(vA,vB),vG);
-    let abcOut = "X:1\nK:C\n"+outArr[4].join("")+"\n"
+    let abcOut = "X:1\nK:C\n"+outArr[4].join("")+"\n";
+    var abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble";
+    abc = abc+"\n[V: V1]"+outArr[0].join("");
+    abc = abc+"\n[V: V2]"+outArr[1].join("");
+    abc = abc+"\n[V: V3]"+outArr[2].join("");
+    abc = abc+"\n[V: V4]"+outArr[3].join("");
+    abc = abc+"\n[V: V5]"+outArr[4].join("");
     
-    abcjs.renderAbc("outputC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
-    abcjs.renderAbc("outputC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
-    abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
-    abcjs.renderAbc("outputB", "X:1\nK:C\n"+outArr[3].join("")+"\n");
-    abcjs.renderAbc("outputR", abcOut);
+    // abcjs.renderAbc("outputC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
+    // abcjs.renderAbc("outputC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
+    // abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
+    // abcjs.renderAbc("outputB", "X:1\nK:C\n"+outArr[3].join("")+"\n");
+    abcjs.renderAbc("outputR", abc);
 
     setState(prevState => ({
       ...prevState,
