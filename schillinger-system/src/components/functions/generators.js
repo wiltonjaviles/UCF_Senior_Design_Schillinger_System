@@ -86,31 +86,64 @@
         f = feed[feedCount%feed.length];
         
         switch(n) {
-          case '|':
-            outArr.push(n);
-            break;
-          case '(':
-            outArr.push(n);
-            break;
-          case ')':
-            outArr.push(n);
-            break;
-          case '-':
-            outArr.push(n);
-            break;
-          case '+':
-            break;
-          case '[':
-            outArr.push('Z');
-            break;
-          case ']':
-            break;
-          default:
-            outArr.push(f);
-            outArr.push(n);
-            feedCount++;
-            break;
-        }
+            case '|':
+              outArr.push(n);
+              break;
+            case '(':
+              outArr.push(n);
+              break;
+            case ')':
+              outArr.push(n);
+              break;
+            case '-':
+              outArr.push(n);
+              break;
+            case '+':
+              break;
+            default:
+              if(n>4) {
+                switch(n) {
+                  case '12' || 12:
+                    outArr.push(f);
+                    outArr.push(n);
+                    break;
+                  case '8' || 8:
+                    outArr.push(f);
+                    outArr.push(n);
+                    break;
+                  case '6' || 6:
+                    outArr.push(f);
+                    outArr.push(n);
+                    break;
+                  default:
+                    breakdown = n;
+                    
+                    while(breakdown>0) {
+                      outArr.push(f);
+                      if(breakdown>7) {
+                        outArr.push(8);
+                        breakdown-=8;
+                        if(breakdown!=0) {outArr.push('-');}
+                      } else if(breakdown>3) {
+                        outArr.push(4);
+                        breakdown-=4;
+                        if(breakdown!=0) {outArr.push('-');}
+                      } else {
+                        outArr.push(breakdown);
+                        breakdown=0;
+                      }
+                    }
+                  
+                    
+                    break;
+                }
+              } else {
+                outArr.push(f);
+                outArr.push(n);
+              }
+              feedCount++;
+              break;
+          }
       }
     }
   
