@@ -272,7 +272,20 @@
   }
 
 export function generator_R_Underlined(a, b, mode) {
-    
+    let outArr = [
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ];
+
+    if(mode === "all") {
+      return outArr;
+    } else {
+      return outArr[5];
+    }
 }
 
   
