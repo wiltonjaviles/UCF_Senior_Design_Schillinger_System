@@ -15,6 +15,9 @@ function Book1Ch12() {
         <TextToSpeech 
           text="
           ā
+          Chapter 12. Distributive Powers.
+          A. Continuity of Harmonic Contrasts.
+          
           "
         />
         <a className="chapter-section-link" href="/book1#1.12.a" id="1.12.a"><h5>A. Continuity of Harmonic Contrasts</h5></a>

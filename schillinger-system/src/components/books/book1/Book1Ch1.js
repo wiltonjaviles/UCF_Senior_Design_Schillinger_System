@@ -2,7 +2,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Waveform from '../../applets/Waveform';
 import Pendulum from '../../applets/Pendulum';
-import Speech from 'react-speech';
 import '../../.././Style.css';
 import TextToSpeech from '../../applets/TextToSpeech';
 
