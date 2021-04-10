@@ -28,41 +28,46 @@
         case ')':
           outArr.push(n);
           break;
+        case '-':
+          outArr.push(n);
+          break;
         case '+':
           break;
         default:
           if(n>4) {
             switch(n) {
-              case 12:
+              case '12' || 12:
                 outArr.push(f);
                 outArr.push(n);
                 break;
-              case 8:
+              case '8' || 8:
                 outArr.push(f);
                 outArr.push(n);
                 break;
-              case 6:
+              case '6' || 6:
                 outArr.push(f);
                 outArr.push(n);
                 break;
               default:
                 breakdown = n;
-                outArr.push('(');
+                
                 while(breakdown>0) {
                   outArr.push(f);
                   if(breakdown>7) {
                     outArr.push(8);
                     breakdown-=8;
+                    if(breakdown!=0) {outArr.push('-');}
                   } else if(breakdown>3) {
                     outArr.push(4);
                     breakdown-=4;
+                    if(breakdown!=0) {outArr.push('-');}
                   } else {
                     outArr.push(breakdown);
                     breakdown=0;
                   }
                 }
               
-                outArr.push(')');
+                
                 break;
             }
           } else {
@@ -88,6 +93,9 @@
             outArr.push(n);
             break;
           case ')':
+            outArr.push(n);
+            break;
+          case '-':
             outArr.push(n);
             break;
           case '+':
@@ -136,9 +144,9 @@
     if(measure > 0) {
       doMeasure = true;
       for(let i in outArr) {
-        outArr[i].push('|');
+        //outArr[i].push('|');
       }
-      if(measure!=a*b) {outArr[1].push('(');}
+      //if(measure!=a*b) {outArr[1].push('(');}
     }
   
     //iterate through all possible points of the input
@@ -159,6 +167,7 @@
       //handle C2 (if not putting in measures, this is handled at the end)
       if(doMeasure && i%measure===0) {
         outArr[1].push(measure);
+        outArr[1].push('-');
         outArr[1].push('|');
       }
       
@@ -172,17 +181,25 @@
             outArr[2].push(a);
             outArr[2].push('|');
           } else {
-            outArr[2].push('(');
+            //outArr[2].push('(');
             outArr[2].push(countMeasure);
+            outArr[2].push('-');
             outArr[2].push('|');
             countMeasureA = a-countMeasure;
             while(countMeasureA > measure) {
               outArr[2].push(measure);
+              outArr[2].push('-');
               outArr[2].push('|');
               countMeasureA = countMeasureA - measure;
             }
-            outArr[2].push(countMeasureA);
-            outArr[2].push(')');
+            if(countMeasureA != 0) {
+                outArr[2].push(countMeasureA);
+            } else {
+                outArr[2].pop();
+                outArr[2].pop();
+                outArr[2].push('|');
+            }
+            //outArr[2].push(')');
             if(countMeasureA!=measure) {outArr[2].push('+');} 
           }
         } else {
@@ -201,17 +218,26 @@
             outArr[3].push(b);
             outArr[3].push('|');
           } else {
-            outArr[3].push('(');
+            //outArr[3].push('(');
             outArr[3].push(countMeasure);
+            outArr[3].push('-');
             outArr[3].push('|');
             countMeasureB = b-countMeasure;
             while(countMeasureB > measure) {
               outArr[3].push(measure);
+              outArr[3].push('-');
               outArr[3].push('|');
               countMeasureB = countMeasureB - measure;
             }
-            outArr[3].push(countMeasureB);
-            outArr[3].push(')');
+            if(countMeasureB != 0) {
+                outArr[3].push(countMeasureB);
+            } else {
+                outArr[3].pop();
+                outArr[3].pop();
+                outArr[3].push('|');
+            }
+            
+            //outArr[3].push(')');
             if(countMeasureB!=measure) {outArr[3].push('+');} 
           }
         } else {
@@ -257,10 +283,22 @@
       outArr[4].push(lesser(a,b));
     } else {
       outArr[1].pop();
-      if(measure!=a*b) {outArr[1].push(')');}
+      outArr[1].pop();
+      //if(measure!=a*b) {outArr[1].push(')');}
       outArr[1].push('|');
       outArr[4].push(lesser(a,b));
       outArr[4].push('|');
+
+      for(let i in outArr) {
+          let n = outArr[i].pop();
+          if(n != '|') {
+              outArr[i].push(n);
+              outArr[i].push('|');
+          } else {
+              outArr[i].push(n);
+          }
+      }
+      
     }
     
   

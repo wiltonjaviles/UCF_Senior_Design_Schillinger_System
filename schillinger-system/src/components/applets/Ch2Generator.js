@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
 import Playback from '../applets/Playback';
+import {generator_R,toABC} from '../functions/./generators';
 
 function Ch2Generator() {
 
@@ -32,11 +33,7 @@ function Ch2Generator() {
     variableA : tempA,
     variableB : tempB,
     groupBy : tempGroup,
-    OutputC1 : '',
-    OutputC2 : '',
-    OuputA : '',
-    OutputB : '',
-    OutputR : '',
+    testOutput : '',
     abcString: ""
   })
 
@@ -72,7 +69,12 @@ function Ch2Generator() {
         break;
       default: break;
     }
-    let outArr = simpleToABC(sMakeR(vA,vB),vG);
+
+    let outArr = generator_R(vA,vB,vG,"all");
+    for(let i in outArr) {
+      outArr[i] = toABC(outArr[i]);
+    }
+
     let abcOut = "X:1\nK:C\n"+outArr[4].join("")+"\n";
     var abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble";
     abc = abc+"\n[V: V1]"+outArr[0].join("");
@@ -81,15 +83,17 @@ function Ch2Generator() {
     abc = abc+"\n[V: V4]"+outArr[3].join("");
     abc = abc+"\n[V: V5]"+outArr[4].join("");
     
-    // abcjs.renderAbc("outputC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
-    // abcjs.renderAbc("outputC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
-    // abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
-    // abcjs.renderAbc("outputB", "X:1\nK:C\n"+outArr[3].join("")+"\n");
+    /*abcjs.renderAbc("outputC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
+    abcjs.renderAbc("outputC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
+    abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
+    abcjs.renderAbc("outputB", "X:1\nK:C\n"+outArr[3].join("")+"\n");
+    abcjs.renderAbc("outputR", "X:1\nK:C\n"+outArr[4].join("")+"\n");*/
     abcjs.renderAbc("outputR", abc);
 
     setState(prevState => ({
       ...prevState,
-        abcString: abcOut
+        abcString : abcOut,
+        testOutput : outArr[3]
     }))
     
   }
@@ -109,7 +113,7 @@ function Ch2Generator() {
               <Row className="align-items-bottom justify-content-md-center">
                 <Col className="col-2">
                   <Form.Group controlId="variableA">
-                    <Form.Control as="select" defaultValue="3" value={state.variableA} onChange={handleSelect}>
+                    <Form.Control as="select" value={state.variableA} onChange={handleSelect}>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
@@ -126,7 +130,7 @@ function Ch2Generator() {
                 </Col>
                 <Col className="col-2">              
                   <Form.Group controlId="variableB">
-                    <Form.Control as="select" defaultValue="2" value={state.variableB} onChange={handleSelect}>
+                    <Form.Control as="select" value={state.variableB} onChange={handleSelect}>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -145,7 +149,8 @@ function Ch2Generator() {
                 </Col>
                 <Col className="col-2">              
                   <Form.Group controlId="groupBy">
-                    <Form.Control as="select" defaultValue="-1" value={state.groupBy} onChange={handleSelect}>
+                    <Form.Control as="select" value={state.groupBy} onChange={handleSelect}>
+                      <option></option>
                       <option>a</option>
                       <option>b</option>
                       <option>ab</option>
@@ -156,18 +161,13 @@ function Ch2Generator() {
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                 </Col>
               </Row>
+
               <Row className="justify-content-md-center">
-                <div id="outputC1"></div>
+                <h4>{state.testOutput}</h4>
               </Row>
-              <Row className="justify-content-md-center">
-                <div id="outputC2"></div>
-              </Row>
-              <Row className="justify-content-md-center">
-                <div id="outputA"></div>
-              </Row>
-              <Row className="justify-content-md-center">
-                <div id="outputB"></div>
-              </Row>
+              
+              
+
               <Row className="justify-content-md-center">
                 <div id="outputR"></div>
               </Row>
@@ -184,6 +184,7 @@ function Ch2Generator() {
 
 export default Ch2Generator;
 
+/*
 function sMakeR(a,b) {
     let arr = [];
     for(let i=0; i<5; i++) {
@@ -285,5 +286,19 @@ function pushNote(a) {
     return output.toString();
   } else {return 'A'+a;}
 }
-
+*/
 //<Button variant="secondary" type="submit" className="float-right" onClick={playBack}>Play R</Button>
+/*
+<Row className="justify-content-md-center">
+                <div id="outputC1"></div>
+              </Row>
+              <Row className="justify-content-md-center">
+                <div id="outputC2"></div>
+              </Row>
+              <Row className="justify-content-md-center">
+                <div id="outputA"></div>
+              </Row>
+              <Row className="justify-content-md-center">
+                <div id="outputB"></div>
+              </Row>
+              */
