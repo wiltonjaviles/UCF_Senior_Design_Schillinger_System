@@ -34,19 +34,37 @@ function Ch4Generator() {
     outArr[4].reverse();
 
     for(let i=0; i<vA-vB; i++) {
-      outArr[3].push('z4|');
-      outArr[4].push('z4|');
+      if(vA === 5) {
+        outArr[3].push('z4-z1|');
+        outArr[4].push('z4-z1|');
+      } else if(vA === 7) {
+        outArr[3].push('z6-z1|');
+        outArr[4].push('z6-z1|');
+      } else if(vA === 9) {
+        outArr[3].push('z8-z1|');
+        outArr[4].push('z8-z1|');
+      } else {
+        outArr[3].push('z'+vA+'|');
+        outArr[4].push('z'+vA+'|');
+      }
     }
     
     outArr[4].reverse();
     let outAbc = "X:1\nK:C\n"+outArr[5].join("")+"\n";
+    var abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble";
+    abc = abc+"\n[V: V1]"+outArr[0].join("");
+    abc = abc+"\n[V: V2]"+outArr[1].join("");
+    abc = abc+"\n[V: V3]"+outArr[2].join("");
+    abc = abc+"\n[V: V4]"+outArr[3].join("");
+    abc = abc+"\n[V: V5]"+outArr[4].join("");
+    abc = abc+"\n[V: V6]"+outArr[5].join("");
     
-    abcjs.renderAbc("outputC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
-    abcjs.renderAbc("outputC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
-    abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
-    abcjs.renderAbc("outputB1", "X:1\nK:C\n"+outArr[3].join("")+"\n");
-    abcjs.renderAbc("outputB2", "X:1\nK:C\n"+outArr[4].join("")+"\n");
-    abcjs.renderAbc("outputR_", outAbc);
+    // abcjs.renderAbc("outputC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
+    // abcjs.renderAbc("outputC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
+    // abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
+    // abcjs.renderAbc("outputB1", "X:1\nK:C\n"+outArr[3].join("")+"\n");
+    // abcjs.renderAbc("outputB2", "X:1\nK:C\n"+outArr[4].join("")+"\n");
+    abcjs.renderAbc("outputR_", abc, {wrap: {lastLineLimit: 2, minSpacing: 1, maxSpacing: 2, preferredMeasuresPerLine: 8}, staffwidth: 1000, viewportHorizontal: true});
 
     setState(prevState => ({
         ...prevState,
