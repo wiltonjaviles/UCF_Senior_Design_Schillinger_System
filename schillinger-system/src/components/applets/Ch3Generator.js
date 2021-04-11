@@ -5,6 +5,7 @@ import '../.././Style.css';
 function Ch3Generator() {
 
   const [state , setState] = useState({
+    warning: "",
     groupingFormA : -1,
     groupingFormB : -1,
     resultAB: "",
@@ -20,24 +21,56 @@ function Ch3Generator() {
     }))
   }
 
+  const clearResults = event => {
+    setState(prevState => ({
+      ...prevState,
+      resultAB: "",
+      resultA: "",
+      resultB: ""
+    }))
+  }
+
+  const errMsg = (code) => {
+    switch (code) {
+      case "incomplete_fields":
+        setState(prevState => ({
+          ...prevState,
+          warning: "Please fill out all fields!"
+        }))
+        clearResults();
+        break;
+      case "invalid_grouping":
+        setState(prevState => ({
+          ...prevState,
+          warning: "Invalid Grouping. B cannot be greater than or equal to A. Please try again!"
+        }))
+        clearResults();
+        break;
+    }
+  }
+
   const doGrouping = event => {
     event.preventDefault();
     if ( state.groupingFormA === -1 || state.groupingFormB === -1 ){
-      alert('Please fill out all fields!');
+      errMsg("incomplete_fields");
       return;
     } else if ( isNaN(state.groupingFormA) || isNaN(state.groupingFormB) ) {
-      alert('Please fill out all fields!');
+      errMsg("incomplete_fields");
       return;
     } else {
       const a = Number(state.groupingFormA);
       const b = Number(state.groupingFormB);
       if (b >= a) {
-        alert('Invalid Grouping. Please try again!');
+        errMsg("invalid_grouping");
         return;
       } else if ( a%b === 0 ) {
-        alert('Invalid Grouping. Please try again!');
+        errMsg("invalid_grouping");
         return;
       }
+      setState(prevState => ({
+        ...prevState,
+        warning: ""
+      }))
 
       // grouping by ab
       const ab = a*b;
@@ -133,6 +166,11 @@ function Ch3Generator() {
             <br />
             <Row className="justify-content-md-center">
               <h3>Results:</h3>
+            </Row>
+            <Row className="justify-content-md-center">
+              <Col>
+                <p>{state.warning}</p>
+              </Col>
             </Row>
             <Row className="justify-content-md-center">
               <Col className="col-3">
