@@ -324,17 +324,21 @@
 
       for(let i in outArr) {
           let n = outArr[i].pop();
+
           if(n != '|') {
+            if(n == '+') {
+            } else {
               outArr[i].push(n);
               outArr[i].push('|');
+            }
           } else {
-              outArr[i].push(n);
+            
+            outArr[i].push(n);
           }
       }
       
     }
     
-  
     if(mode === "all") {
       return outArr;
     } else {
