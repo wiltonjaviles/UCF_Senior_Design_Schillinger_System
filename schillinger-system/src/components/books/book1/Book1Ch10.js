@@ -15,6 +15,7 @@ function Book1Ch10() {
         <TextToSpeech 
           text="
           Chapter 10. Generalization of Variation Techniques.
+          
           ā. Permutations of the Higher Order.
           We can use permutations of a higher order to create variations of
           a group and increase the total material. The total number of elements in a certain permutation is equal to the square of the number of elements in the previous permutation. For example, if there are three elements in the original group, there will be 9 in the next (second) group, and 27 in the next (third group) and so on in circular permutations. If general permutations are used, then the second group will have 6 elements, and the third will have 720 elements, and so on.

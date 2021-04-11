@@ -16,6 +16,7 @@ function Book1Ch8() {
         <TextToSpeech 
           text="
           Chapter 8. Coordination of Time Structures.
+          
           The common element to all music, regardless of culture or complexity, is that it represents motion.
           the change of place over time. Regardless of the pitches used, rhythms employed, harmony (or lack thereof), 
           anything that can be called music can be annotated as organized time.

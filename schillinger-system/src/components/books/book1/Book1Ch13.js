@@ -14,6 +14,7 @@ function Book1Ch13() {
         <TextToSpeech 
           text="
           Chapter 13. Evolution of Rhythm Styles (Families).
+          
           ā. Swing Music.
           Tracing the origin of a binomial.
           For any given binomial ā + b, it is easy to determine the most basic generator that contains the binomial: the first term is given by the sum of the binomial, and the second term is the greater of a and b. So for example, for the binomial 5 + 3 (), the first term would be 8, and the second term would be 5, giving r 8%5.

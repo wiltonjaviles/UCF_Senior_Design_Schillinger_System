@@ -21,7 +21,7 @@ function Book1Ch1() {
           Time durations can be broken into 3 parallel systems: numbers, graphs, and musical notes. Understanding these groups is key to learning composition.
           Numbers will be used in their normal operations (addition, subtraction, multiplication, division, raising to powers, extracting roots, permutations, etc).
           
-          Graphing Music.
+          ā. Graphing Music.
           
           Graphs in this system are similar to the general use of graphs (to record changes in variables over time). The horizontal coordinate will be read from left to right and express time. The vertical coordinate will express the recurrence of a phase (the change in direction which is called an attack).
           Let a pendulum of a clock swing uniformly over a period of time to see the wave motion.
@@ -38,7 +38,7 @@ function Book1Ch1() {
           By assuming that the arrangement of durations is not showing the amplitude, we shall use rhythm graphs that look like this.
           
           The horizontal lines are a simple general curve that show time. The vertical lines show attacks (i.e. the change in rhythm). In this section all forms of attack will be constant and the time durations will change.
-          Forms of Periodicity.
+          B. Forms of Periodicity.
           Continuous recurrence of a group is periodicity. Periodicity where all groups are exactly the same is uniform periodicity. Different forms of uniform periodicity can be compared by the number of terms (places) in a recurrence.
           Groups with 1 term are called monomial periodicity. For example:
           ā t1+ ā t2+...+ā tn

@@ -15,6 +15,7 @@ function Book1Ch12() {
         <TextToSpeech 
           text="
           Chapter 12. Distributive Powers.
+          
           ā. Continuity of Harmonic Contrasts.
           All rhythms can be identified to a rhythmic family t. Each rhythmic family has two components: fractional continuity (expressed as 1/tn), and factorial continuity (expressed as tn). The following demonstrates all of the series which have been used by humans, ever.
           Most of western music, and most current music theory, is a combination of the family t = 2, with the occasional t = 3 and t = 6. This is likely due in no small part to the western writing system being based very directly on the two families; wholes, halves, quarters etc are all based on powers of 2, and so the standard western musical notation assumes by default that music will be in the two families of rhythm. There are of course ways to expand into other families. Typically this will involve either increasingly large numbers, or the inclusion of specially notated triplets, quintuplets, etc.

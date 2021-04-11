@@ -16,6 +16,7 @@ function Book1Ch7() {
         <TextToSpeech 
           text="
           Chapter 7. Resultants Applied to Instrumental Forms.
+          
           Time rhythm refers to the periodicity of attacks, or the intervals of time at which the attacks occur.
           A. Instrumental Rhythm.
           Instrumental rhythm is made up of the number of places of attack. For example, beating two kettle drums of different pitches in sequence results in two places of attack. 
