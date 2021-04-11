@@ -14,7 +14,6 @@ function Book1Ch12() {
         <a className="content-links" href="/book1ch12schillinger"><h5>View the source text.</h5></a>
         <TextToSpeech 
           text="
-          ā
           Chapter 12. Distributive Powers.
           ā. Continuity of Harmonic Contrasts.
           All rhythms can be identified to a rhythmic family t. Each rhythmic family has two components: fractional continuity (expressed as 1/tn), and factorial continuity (expressed as tn). The following demonstrates all of the series which have been used by humans, ever.
@@ -32,14 +31,14 @@ function Book1Ch12() {
           Formula: (ā+b+c) squared = (ā squared +ā b+ā c) + (ā b+b squared +bc) + (ā c + bc + c squared).
           The number of terms in a distributive square of any polynomial equals the square of the number of terms in the polynomial. Thus, a binomial gives 4 terms (2 squared = 4), a trinomial gives 9 terms (3 squared = 9). The denominator of all terms in the distributive square power-groups equals the square of the sum of all the terms. In a trinomial it equals (a+b+c) squared, like (3+2+1) squared = (6) squared = 36.
           In order to synchronize any initial polynomial with its distributive square, you need to find the products of each term but the sum of the polynomial. For example, to synchronize a trinomial with its distributive square.
-          You can express the above score in four bars in 4/4 assuming 1/16 = quarter note. You can also write the whole thing in integers, i.e., using the numerators only. Just like binomials, you would want to supplement this score with the first and second power resultants and the rā%b.
+          You can express the above score in four bars in 4 4 assuming 1/16 = quarter note. You can also write the whole thing in integers, i.e., using the numerators only. Just like binomials, you would want to supplement this score with the first and second power resultants and the rā%b.
           Here is the entire score.
           In the case of 2+1+1 and 1+1+2, classical composers were able to find the exact distributive squares intuitively. They could not however find 1+2+1.
           (1+2+1)+(2+4+2)+(1+2+1) is very useful for the tango.
           The reason for choosing these as the most practical trinomials will be given later when we discuss the evolution of style in rhythm.
            c. Square of any Polynomial.
           Formula: (ā +b+c+...+m) squared = (ā  squared+ā b+ā c+...+ā m) + (ā b+b squared+bc+...+bm) + (ā c+bc+c squared+...+cm)+ ... + (ā m+bm+cm+...+m squared).
-          The following graphs and scores on quintinomials of the 8/8 series should be worked out.
+          The following graphs and scores on quintinomials of the 8 8 series should be worked out.
           2+1+2+1+2.
           2+1+2+2+1.
           2+2+1+2+1.
@@ -49,7 +48,7 @@ function Book1Ch12() {
           (2+1+2+1+2)2 = (4+2+4+2+4) + (2+1+2+1+2) + (4+2+4+2+4) + (2+1+2+1+2) + (4+2+4+2+4).
           Synchronization.
           8(2+1+2+1+2) = 16+8+16+8+16.
-          This is the square of the real “hot” rhythms. Any bar of 4/4 treated as 8/8 will give a perfect countertheme for 8 bars. Take Pennies from Heaven (Copyright 1936 by Santly-Joy, Inc., New York, USA. Reprinted by permission of the publishers). The first bar is 3+1+2+2. It is then squared to get a countertheme for the first 8 bars.
+          This is the square of the real “hot” rhythms. Any bar of 4 4 treated as 8 8 will give a perfect countertheme for 8 bars. Take Pennies from Heaven (Copyright 1936 by Santly-Joy, Inc., New York, USA. Reprinted by permission of the publishers). The first bar is 3+1+2+2. It is then squared to get a countertheme for the first 8 bars.
           (3+1+2+2) squared = (9+3+6+6)+(3+1+2+2)+(6+2+4+4)+(6+2+4+4).
            d. Cube of a Binomial.
           Cubes add a whole new degree of harmonic contrasts. Distributive cubes serve as a new countertheme to the groups of the first and second power groups that they will be synchronized with. Cubes are related to squares as the squares are related to the first powers. The number of terms in a binomial to the third power is 2 to the 3 = 8.
@@ -109,7 +108,7 @@ function Book1Ch12() {
           <p class="bookText">Synchronization:</p>
           <p class="equation">8(2+1+2+1+2) = 16+8+16+8+16</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch12/img8.png" alt="book1ch12img8"></img>
-          <p class="bookText">This is the square of the real “hot” rhythms. Any bar of 4/4 treated as 8/8 will give a perfect countertheme for 8 bars. Take Pennies from Heaven (Copyright 1936 by Santly-Joy, Inc., New York, USA. Reprinted by permission of the publishers). The first bar is 3+1+2+2. It is then squared to get a countertheme for the first 8 bars.</p>
+          <p class="bookText">This is the square of the real “hot” rhythms. Any bar of   treated as 8/8 will give a perfect countertheme for 8 bars. Take Pennies from Heaven (Copyright 1936 by Santly-Joy, Inc., New York, USA. Reprinted by permission of the publishers). The first bar is 3+1+2+2. It is then squared to get a countertheme for the first 8 bars.</p>
           <p class="equation">(3+1+2+2)^2 = (9+3+6+6)+(3+1+2+2)+(6+2+4+4)+(6+2+4+4)</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch12/img9.png" alt="book1ch12img9"></img>
         <p class="bookText">&emsp;d. Cube of a Binomial</p>

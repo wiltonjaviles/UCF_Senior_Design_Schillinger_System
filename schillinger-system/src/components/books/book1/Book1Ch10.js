@@ -14,7 +14,6 @@ function Book1Ch10() {
         <a className="content-links" href="/book1ch10schillinger"><h5>View the source text.</h5></a>
         <TextToSpeech 
           text="
-          ā
           Chapter 10. Generalization of Variation Techniques.
           ā. Permutations of the Higher Order.
           We can use permutations of a higher order to create variations of
