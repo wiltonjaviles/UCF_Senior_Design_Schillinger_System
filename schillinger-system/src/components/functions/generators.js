@@ -56,11 +56,11 @@
                   if(breakdown>7) {
                     outArr.push(8);
                     breakdown-=8;
-                    if(breakdown!=0) {outArr.push('-');}
+                    if(breakdown!==0) {outArr.push('-');}
                   } else if(breakdown>3) {
                     outArr.push(4);
                     breakdown-=4;
-                    if(breakdown!=0) {outArr.push('-');}
+                    if(breakdown!==0) {outArr.push('-');}
                   } else {
                     outArr.push(breakdown);
                     breakdown=0;
@@ -79,7 +79,7 @@
       }
     }
   
-    while(feedCount%feed.length!=0) {
+    while(feedCount%feed.length!==0) {
       outArr.pop();
       for(let i in inArr) {
         n = inArr[i];
@@ -123,11 +123,11 @@
                       if(breakdown>7) {
                         outArr.push(8);
                         breakdown-=8;
-                        if(breakdown!=0) {outArr.push('-');}
+                        if(breakdown!==0) {outArr.push('-');}
                       } else if(breakdown>3) {
                         outArr.push(4);
                         breakdown-=4;
-                        if(breakdown!=0) {outArr.push('-');}
+                        if(breakdown!==0) {outArr.push('-');}
                       } else {
                         outArr.push(breakdown);
                         breakdown=0;
@@ -176,10 +176,10 @@
     //Start up the lines
     if(measure > 0) {
       doMeasure = true;
-      for(let i in outArr) {
+      // for(let i in outArr) {
         //outArr[i].push('|');
-      }
-      //if(measure!=a*b) {outArr[1].push('(');}
+      // }
+      //if(measure!==a*b) {outArr[1].push('(');}
     }
   
     //iterate through all possible points of the input
@@ -225,7 +225,7 @@
               outArr[2].push('|');
               countMeasureA = countMeasureA - measure;
             }
-            if(countMeasureA != 0) {
+            if(countMeasureA !== 0) {
                 outArr[2].push(countMeasureA);
             } else {
                 outArr[2].pop();
@@ -233,7 +233,7 @@
                 outArr[2].push('|');
             }
             //outArr[2].push(')');
-            if(countMeasureA!=measure) {outArr[2].push('+');} 
+            if(countMeasureA!==measure) {outArr[2].push('+');} 
           }
         } else {
           outArr[2].push(a);
@@ -262,7 +262,7 @@
               outArr[3].push('|');
               countMeasureB = countMeasureB - measure;
             }
-            if(countMeasureB != 0) {
+            if(countMeasureB !== 0) {
                 outArr[3].push(countMeasureB);
             } else {
                 outArr[3].pop();
@@ -271,7 +271,7 @@
             }
             
             //outArr[3].push(')');
-            if(countMeasureB!=measure) {outArr[3].push('+');} 
+            if(countMeasureB!==measure) {outArr[3].push('+');} 
           }
         } else {
           outArr[3].push(b);
@@ -317,7 +317,7 @@
     } else {
       outArr[1].pop();
       outArr[1].pop();
-      //if(measure!=a*b) {outArr[1].push(')');}
+      //if(measure!==a*b) {outArr[1].push(')');}
       outArr[1].push('|');
       outArr[4].push(lesser(a,b));
       outArr[4].push('|');
@@ -325,8 +325,8 @@
       for(let i in outArr) {
           let n = outArr[i].pop();
 
-          if(n != '|') {
-            if(n == '+') {
+          if(n !== '|') {
+            if(n === '+') {
             } else {
               outArr[i].push(n);
               outArr[i].push('|');

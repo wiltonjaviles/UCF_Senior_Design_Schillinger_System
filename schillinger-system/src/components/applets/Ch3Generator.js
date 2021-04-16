@@ -46,6 +46,7 @@ function Ch3Generator() {
         }))
         clearResults();
         break;
+      default: break;
     }
   }
 

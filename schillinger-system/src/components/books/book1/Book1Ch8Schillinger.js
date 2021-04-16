@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
+import TextToSpeech from '../../applets/TextToSpeech';
 
 function Book1Ch8Schillinger() {
   return (
@@ -8,6 +9,9 @@ function Book1Ch8Schillinger() {
       <Container>
         <br /> 
         <h1>Schillinger Source Text for Book 1 Chapter 8</h1>
+        <br />
+        <TextToSpeech />
+        <br />
         <img className="img-fluid img-thumbnail" src="images/book1/ch8/screenshots/book1ch8_01.png" alt="book1ch8img1"></img>
         <img className="img-fluid img-thumbnail" src="images/book1/ch8/screenshots/book1ch8_02.png" alt="book1ch8img2"></img>
         <img className="img-fluid img-thumbnail" src="images/book1/ch8/screenshots/book1ch8_03.png" alt="book1ch8img3"></img>
