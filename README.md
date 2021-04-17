@@ -20,7 +20,7 @@
   <h3 align="center">UCF Senior Design: Learn Schillinger</h3>
 
   <p align="center">
-    A fun and interactive way to learn the Schillinger system!
+    A fun and interactive way to learn the Schillinger System!
     <br />
     <a href=""><strong>Explore the docs »</strong></a>
     <br />
