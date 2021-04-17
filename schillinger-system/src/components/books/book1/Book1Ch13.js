@@ -23,7 +23,7 @@ function Book1Ch13() {
         />
         <a className="chapter-section-link" href="/book1ch13#1.13.a" id="1.13.a"><h5>A. Swing Music</h5></a>
         <p class="bookText">Tracing the origin of a binomial:
-        <p class="bookText">For any given binomial a + b, it is easy to determine the most basic generator that contains the binomial: the first term is given by the sum of the binomial, and the second term is the greater of a and b.  So for example, for the binomial 5 + 3 (), the first term would be 8, and the second term would be 5, giving r 8%5. </p>
+        <p class="bookText">For any given binomial a + b, it is easy to determine the most basic generator that contains the binomial: the first term is given by the sum of the binomial, and the second term is the greater of a and b.  So for example, for the binomial 5 + 3 (<img src="images/book1/ch13/small_img1.png" alt="book1ch13note1" />), the first term would be 8, and the second term would be 5, giving r 8%5. </p>
         <p class="bookText"></p>It may be observed that imbalances such as the one listed above can expand through a rhythmic family by the process of merging rhythm families, and then by unbalancing the rhythms.</p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch13/img1.png" alt="book1ch13img1"></img>
         <br />
