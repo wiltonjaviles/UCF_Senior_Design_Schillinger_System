@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../.././Style.css';
+import TextToSpeech from '../applets/TextToSpeech';
 
 function IntroductionSchillinger() {
   return (
@@ -8,6 +9,11 @@ function IntroductionSchillinger() {
       <Container>
         <br /> 
         <h1>Introduction</h1>
+        <br />
+        <TextToSpeech 
+          text=""
+        />
+        <br />
         <img class="screenshot" src="images/intro/screenshots/intro01.png" alt="introImg1"></img>
         <img class="screenshot" src="images/intro/screenshots/intro02.png" alt="introImg2"></img>
         <img class="screenshot" src="images/intro/screenshots/intro03.png" alt="introImg3"></img>
