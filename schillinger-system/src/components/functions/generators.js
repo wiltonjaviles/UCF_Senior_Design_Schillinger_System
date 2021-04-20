@@ -1,10 +1,13 @@
+
+
 /**
    * turns a schillinger polynomial into an abc string
    * @param {...string} inArr - 
    * @param {...string} melodyFeed - 
+   * @param {boolean} align - 
    * @returns - a new string array
    */
- export function toABC(inArr, melodyFeed) {
+ export function toABC(inArr, melodyFeed, align) {
     let outArr = [];
     let n = '';
     let f = '';
@@ -12,7 +15,7 @@
     let feedCount = 0;
     let breakdown = 0;
   
-    //do logic to determine iterations of the below to align with feed
+    
   
     for(let i in inArr) {
       n = inArr[i];
@@ -56,11 +59,11 @@
                   if(breakdown>7) {
                     outArr.push(8);
                     breakdown-=8;
-                    if(breakdown!=0) {outArr.push('-');}
+                    if(breakdown!==0) {outArr.push('-');}
                   } else if(breakdown>3) {
                     outArr.push(4);
                     breakdown-=4;
-                    if(breakdown!=0) {outArr.push('-');}
+                    if(breakdown!==0) {outArr.push('-');}
                   } else {
                     outArr.push(breakdown);
                     breakdown=0;
@@ -78,8 +81,13 @@
           break;
       }
     }
+
+    if(!align) {
+        return outArr;
+    }
   
-    while(feedCount%feed.length!=0) {
+    //align feed
+    while(feedCount%feed.length!==0) {
       outArr.pop();
       for(let i in inArr) {
         n = inArr[i];
@@ -123,11 +131,11 @@
                       if(breakdown>7) {
                         outArr.push(8);
                         breakdown-=8;
-                        if(breakdown!=0) {outArr.push('-');}
+                        if(breakdown!==0) {outArr.push('-');}
                       } else if(breakdown>3) {
                         outArr.push(4);
                         breakdown-=4;
-                        if(breakdown!=0) {outArr.push('-');}
+                        if(breakdown!==0) {outArr.push('-');}
                       } else {
                         outArr.push(breakdown);
                         breakdown=0;
@@ -151,7 +159,7 @@
   }
 
 /**
- * Generates R a+b, outputs in the form of a schillinger polynomial (a+b+c...etc)
+ * Generates R(a%b), outputs in the form of a schillinger polynomial (a+b+c...etc)
  * @param {number} a 
  * @param {number} b 
  * @param {number} measure - if you want measures, put this in. If blank there will be no measures. Ties are marked with parantheses.
@@ -160,12 +168,53 @@
  */
  export function generator_R(a, b, measure, mode) {
     let outArr = [
-      [],
-      [],
-      [],
-      [],
-      []
+      [], // C1 - one beat at every point
+      [], // C2 - one beat for the duration
+      [], // A - b iterations of a
+      [], // B - a iterations of b
+      []  // R - juxtaposition of A and B
     ];
+
+    if(a===b) {
+        //set up the most boring array
+        for(let i=0; i<a; i++) {
+            if(measure) {
+                outArr[0].push(a);
+                outArr[0].push('-');
+                outArr[0].push('|');
+                outArr[1].push(a);
+                outArr[1].push('|');
+                outArr[2].push(a);
+                outArr[2].push('|');
+                outArr[3].push(a);
+                outArr[3].push('|');
+                outArr[4].push(a);
+                outArr[4].push('|');
+            } else {
+                outArr[1].push(a);
+                outArr[1].push('+');
+                outArr[2].push(a);
+                outArr[2].push('+');
+                outArr[3].push(a);
+                outArr[3].push('+');
+                outArr[4].push(a);
+                outArr[4].push('+');
+            }
+        }
+        if(!measure) {
+            outArr[0].push(a*a);
+            outArr[1].pop();
+            outArr[2].pop();
+            outArr[3].pop();
+            outArr[4].pop();
+        }
+
+        if(mode==='all') {
+            return outArr;
+        } else {
+            return outArr[4];
+        }
+    }
   
     let held = -1;
     let doMeasure = false;
@@ -176,9 +225,9 @@
     //Start up the lines
     if(measure > 0) {
       doMeasure = true;
-      for(let i in outArr) {
+      //for(let i in outArr) {
         //outArr[i].push('|');
-      }
+      //}
       //if(measure!=a*b) {outArr[1].push('(');}
     }
   
@@ -225,7 +274,7 @@
               outArr[2].push('|');
               countMeasureA = countMeasureA - measure;
             }
-            if(countMeasureA != 0) {
+            if(countMeasureA !== 0) {
                 outArr[2].push(countMeasureA);
             } else {
                 outArr[2].pop();
@@ -262,7 +311,7 @@
               outArr[3].push('|');
               countMeasureB = countMeasureB - measure;
             }
-            if(countMeasureB != 0) {
+            if(countMeasureB !== 0) {
                 outArr[3].push(countMeasureB);
             } else {
                 outArr[3].pop();
@@ -271,7 +320,7 @@
             }
             
             //outArr[3].push(')');
-            if(countMeasureB!=measure) {outArr[3].push('+');} 
+            if(countMeasureB!==measure) {outArr[3].push('+');} 
           }
         } else {
           outArr[3].push(b);
@@ -324,7 +373,7 @@
 
       for(let i in outArr) {
           let n = outArr[i].pop();
-          if(n != '|') {
+          if(n !== '|') {
               outArr[i].push(n);
               outArr[i].push('|');
           } else {
@@ -342,15 +391,420 @@
     }
   }
 
-export function generator_R_Underlined(a, b, mode) {
+/**
+ * Generates R_(a%b), outputs in the form of a schillinger polynomial (a+b+c...etc)
+ * @param {number} a 
+ * @param {number} b 
+ * @param {boolean} measure - if you don't want measures, false. Defaults to greater input if true.
+ * @param {string} mode - if "all" changes output to 2D array with all components of generator
+ * @returns outArr - character array of R_
+ */
+export function generator_R_Underlined(a, b, measure, mode) {
+    let outArr = [
+        [], // C1 - one beat at every point
+        [], // C2 - one beat for the duration
+        [], // A - a iterations of a
+        [], // B1 - a iterations of b, offset of a-b measures at end
+        [], // B2 - a iterations of b, offset of a-b measures at beginning
+        []  // R - juxtaposition of A, B1 and B2
+    ];
+
+    if(a===b) {
+        //set up the most boring array
+        for(let i=0; i<a; i++) {
+            if(measure) {
+                outArr[0].push(a);
+                outArr[0].push('-');
+                outArr[0].push('|');
+                outArr[1].push(a);
+                outArr[1].push('|');
+                outArr[2].push(a);
+                outArr[2].push('|');
+                outArr[3].push(a);
+                outArr[3].push('|');
+                outArr[4].push(a);
+                outArr[4].push('|');
+                outArr[5].push(a);
+                outArr[5].push('|');
+            } else {
+                outArr[1].push(a);
+                outArr[1].push('+');
+                outArr[2].push(a);
+                outArr[2].push('+');
+                outArr[3].push(a);
+                outArr[3].push('+');
+                outArr[4].push(a);
+                outArr[4].push('+');
+                outArr[5].push(a);
+                outArr[5].push('+');
+            }
+        }
+        if(!measure) {
+            outArr[0].push(a*a);
+            outArr[1].pop();
+            outArr[2].pop();
+            outArr[3].pop();
+            outArr[4].pop();
+            outArr[5].pop();
+        }
+
+        if(mode==='all') {
+            return outArr;
+        } else {
+            return outArr[5];
+        }
+    }
+
+    //Make sure we are in a > b order
+    let t=greater(a,b);
+    b = lesser(a,b);
+    a = t;
+
+    //the gap at the front/end of b1/b2 respectively
+    let delayFactor = a*a-a*b;
     
+    //initialize arrays as needed
+
+    if(measure) {
+        let countMeasure = a;
+
+        //handle c1
+        for(let i=0; i<a*a; i++) {
+            outArr[0].push(1);
+            if(countMeasure > 0) {
+                outArr[0].push('+');
+                countMeasure--;
+            } else {
+                outArr[0].push('|');
+                countMeasure = a;
+            }  
+        }
+        //outArr[0].pop();
+        //outArr[0].push('|');
+
+        //handle c2 and a
+        for(let i=0; i<a; i++) {
+            outArr[1].push(a);
+            outArr[1].push('-');
+            outArr[1].push('|');
+
+            outArr[2].push(a);
+            outArr[2].push('|');
+        }
+
+        //handle b1
+        countMeasure = a;
+
+        for(let i=0; i<a; i++) {
+            if(b < countMeasure) {
+                outArr[3].push(b);
+                outArr[3].push('+');
+                countMeasure-=b;
+            } else if(b === countMeasure) {
+                outArr[3].push(b);
+                outArr[3].push('|');
+                countMeasure=a;
+            } else {
+                outArr[3].push(countMeasure);
+                outArr[3].push('-');
+                outArr[3].push('|');
+                outArr[3].push(b - countMeasure);
+                outArr[3].push('+');
+                countMeasure = a - (b - countMeasure);
+            }
+        }
+        for(let i=0; i<a-b; i++) {
+            outArr[3].push('[');
+            outArr[3].push(a);
+            outArr[3].push(']');
+            outArr[3].push('|');
+        }
+
+        //handle b2
+        countMeasure = a;
+
+        for(let i=0; i<a-b; i++) {
+            outArr[4].push('[');
+            outArr[4].push(a);
+            outArr[4].push(']');
+            outArr[4].push('|');
+        }
+        for(let i=0; i<a; i++) {
+            if(b < countMeasure) {
+                outArr[4].push(b);
+                outArr[4].push('+');
+                countMeasure-=b;
+            } else if(b === countMeasure) {
+                outArr[4].push(b);
+                outArr[4].push('|');
+                countMeasure=a;
+            } else {
+                outArr[4].push(countMeasure);
+                outArr[4].push('-');
+                outArr[4].push('|');
+                outArr[4].push(b - countMeasure);
+                outArr[4].push('+');
+                countMeasure = a - (b - countMeasure);
+            }
+        }
+
+        //handle r
+        countMeasure = a;
+
+        let held = -1;
+        let holding = 0;
+        let measureTrigger = 0;
+        let trigger = false;
+
+        let b1IsOn = true;
+        let b2IsOn = false;
+
+        outArr[5].push(b);
+        outArr[5].push('+');
+
+        for(let i=0; i<a; i++) {
+            if(i === a - (a-b)) {
+                b1IsOn = false;
+            }
+            if(i === a - b) {
+                b2IsOn = true;
+            }
+            for(let j=0; j<a; j++) {
+                if(j===0) {
+                    trigger = true;
+                }
+                if(b1IsOn) {
+                    if((i*a+j)%b===0) {
+                        trigger = true;
+                    }
+                }
+                if(b2IsOn) {
+                    if(((i-(a-b))*a+j)%b===0) {
+                        trigger = true;
+                    }
+                }
+                
+                if(trigger) {
+                    if(held > 0) {
+                        outArr[5].push(held);
+
+                        measureTrigger+=held;
+                        if(measureTrigger === a) {
+                            outArr[5].push('|');
+                            measureTrigger = 0;
+                        } else {
+                            outArr[5].push('+');
+                        }
+                        
+                        held = holding;
+                        holding = 1;
+                    }
+                } else {
+                    holding++;
+                }
+
+                trigger = false;
+            }
+            
+        }
+
+        outArr[5].push(b);
+        outArr[5].push('|');
+
+    } else { //these are much simpler, in general.
+        //handle c1
+        for(let i=0; i<a*a; i++) {
+            outArr[0].push(1);
+            outArr[0].push('+');
+        }
+        outArr[0].pop();
+
+        //handle c2
+        outArr[1].push(a*a);
+
+        //handle a
+        for(let i=0; i<a; i++) {
+            outArr[2].push(a);
+            outArr[2].push('+');
+        }
+        outArr[2].pop();
+
+        //handle b1
+        for(let i=0; i<a; i++) {
+            outArr[3].push(b);
+            outArr[3].push('+');
+        }
+        outArr[3].push('[');
+        outArr[3].push(delayFactor);
+        outArr[3].push(']');
+
+        //handle b2
+        outArr[4].push('[');
+        outArr[4].push(delayFactor);
+        outArr[4].push(']');
+        outArr[4].push('+');
+        for(let i=0; i<a; i++) {
+            outArr[4].push(b);
+            outArr[4].push('+');
+        }
+        outArr[4].pop();
+        
+        //handle r
+        let held = -1;
+        let holding = 0;
+        let delay1 = a*b;
+        let delay2 = delayFactor;
+        let trigger = false;
+        outArr[5].push(b);
+        outArr[5].push('+');
+        
+        for(let i=0; i<a*a; i++) {
+            if(i%a === 0) {
+                trigger = true;
+            }
+
+            if(delay1 > 0) {
+                if(i%b === 0) {
+                    trigger = true;
+                }
+                delay1--;
+            } 
+
+            if(delay2 < 0) {
+                if((i-delayFactor)%b === 0) {
+                    trigger = true;
+                }
+            } else {
+                delay2--;
+            }
+
+            if(trigger) {
+                if(held > 0) {
+                    outArr[5].push(held);
+                    outArr[5].push('+');
+                }
+                held = holding;
+                holding = 1;
+            } else {
+                holding++;
+            }
+
+            trigger = false;
+        }
+        outArr[5].push(b);
+    }
+
+    if(mode === "all") {
+        return outArr;
+    } else {
+        return outArr[5];
+    }
 }
 
+/**
+ * Generates R(a%b%c), outputs in the form of a schillinger polynomial (a+b+c...etc)
+ * @param {number} a 
+ * @param {number} b 
+ * @param {number} c 
+ * @param {number} measure - this should be the multiple of a subset of a,b,c. Nothing/0 removes measures.
+ * @param {string} mode - if "all", you get the whole array. If "R1" you get just R1. Else, you get R.
+ * @returns outArr - character array of R and/or R1
+ */
+export function generate_R_Trinomial(a,b,c,measure,mode) {
+    let outArr = [
+        [], 
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+    ];
+
+    if(measure > 0) {
+
+    } else { // no want measures? Okiedokie it's easy mode
+        //C1
+        for(let i = 0; i<a*b*c; i++) {
+            outArr[0].push(1);
+            outArr[0].push('+');
+        }
+        outArr[0].pop();
+
+        //C2
+        outArr[1].push(a*b*c);
+
+        //TODO
+        for(let i = 0; i<a; i++) {
+            outArr[2].push(b*c);
+            outArr[2].push('+');
+        }
+        outArr[2].pop();
+
+        //TODO
+        for(let i = 0; i<a; i++) {
+            outArr[3].push(b*c);
+            outArr[3].push('+');
+        }
+        outArr[3].pop();
+
+        //TODO
+        for(let i = 0; i<a; i++) {
+            outArr[4].push(b*c);
+            outArr[4].push('+');
+        }
+        outArr[4].pop();
+
+        //do [5] - R
+
+        //TODO
+        for(let i = 0; i<a; i++) {
+            outArr[4].push(b*c);
+            outArr[4].push('+');
+        }
+        outArr[4].pop();
+
+        //TODO
+        for(let i = 0; i<a; i++) {
+            outArr[4].push(b*c);
+            outArr[4].push('+');
+        }
+        outArr[4].pop();
+
+        //TODO
+        for(let i = 0; i<a; i++) {
+            outArr[4].push(b*c);
+            outArr[4].push('+');
+        }
+        outArr[4].pop();
+
+        //do [9] - R1
+ 
+    }
+
+    switch (mode) {
+        case 'all':
+            return outArr;
+        case 'R1':
+            return outArr[9];
+        default:
+            return outArr[5];
+    }
+}
   
 function lesser(a,b) {
     if (a>b) {
       return b;
     } else return a;
-  }
+}
+
+function greater(a,b) {
+    if(a>b) {
+        return a;
+    } else return b;
+}
   
   
