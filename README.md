@@ -14,7 +14,7 @@
 <br />
 <p align="center">
   <a href="">
-    <img src="schillinger-system/public/logo512.png" alt="Logo" width="80" height="80">
+    <img src="schillinger-system/public/logo512.png" href="https://www.learnschillinger.com" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">UCF Senior Design: Learn Schillinger</h3>
