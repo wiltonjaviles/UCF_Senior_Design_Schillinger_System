@@ -7,14 +7,14 @@ import {generator_R,toABC} from '../functions/./generators';
 
 function Ch2Generator() {
 
+  // Define the variables to be used for applet history and dynamic applet input
   var tempA = 3;
   var tempB = 2;
   var tempGroup = 'a'
+
   // grab the current array sitting in local storage
   var old_data = JSON.parse(localStorage.getItem('schillArr'));
 
-
-  // need to make it so we can handle multiple versions of ch2 objects
   for (let i in old_data) {
     if (old_data[i].id === "book1ch2" ) {
       tempA = old_data[i].a;
@@ -24,10 +24,6 @@ function Ch2Generator() {
       break;
     }
   }
-
-  // if (old_data[0] === 'book1ch2') {
-  //   console.log("Yay!")
-  // }
   
   const [state , setState] = useState({
     variableA : tempA,
@@ -47,6 +43,16 @@ function Ch2Generator() {
 
   const generateR = event => {
 
+    event.preventDefault();    
+
+    // need to remove previous version of ch2 applet history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch2" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
      // use unshift to push the new applet ID to the front of the array
      var book1ch2 = {"id":"book1ch2", "a":state.variableA, "b":state.variableB, "groupBy":state.groupBy}; 
      old_data.unshift(book1ch2);
@@ -54,7 +60,6 @@ function Ch2Generator() {
      // update the schillinger applet array in localStorage
      localStorage.setItem('schillArr', JSON.stringify(old_data));
 
-    event.preventDefault();    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
     let vG = Number(state.variableA);
@@ -107,7 +112,7 @@ function Ch2Generator() {
               <h1>R Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Select two integers a and b, then select a measure lenght equal to a, b, or a times b.  Click Generate to view output.
+                Select two integers a and b, then select a measure length equal to a, b, or a times b.  Click Generate to view output.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">

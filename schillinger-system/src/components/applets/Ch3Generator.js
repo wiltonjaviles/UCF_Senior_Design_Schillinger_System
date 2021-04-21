@@ -4,10 +4,25 @@ import '../.././Style.css';
 
 function Ch3Generator() {
 
+  // Define the variables to be used for applet history and dynamic applet input
+  var tempFormA = 'a';
+  var tempFormB = 'b';
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch3" ) {
+      tempFormA = old_data[i].a;
+      tempFormB = old_data[i].b;
+      console.log("tempFormA: " + tempFormA + " tempFormB: " + tempFormB);
+      break;
+    }
+  }
+
   const [state , setState] = useState({
     warning: "",
-    groupingFormA : -1,
-    groupingFormB : -1,
+    groupingFormA : tempFormA,
+    groupingFormB : tempFormB,
     resultAB: "",
     resultA: "",
     resultB: ""
@@ -51,7 +66,24 @@ function Ch3Generator() {
   }
 
   const doGrouping = event => {
+
     event.preventDefault();
+
+    // need to remove previous version of ch3 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch3" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch3 = {"id":"book1ch3", "a":state.groupingFormA, "b":state.groupingFormB}; 
+    old_data.unshift(book1ch3);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));
+
     if ( state.groupingFormA === -1 || state.groupingFormB === -1 ){
       errMsg("incomplete_fields");
       return;
