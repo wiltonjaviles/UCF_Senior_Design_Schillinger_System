@@ -724,65 +724,104 @@ export function generate_R_Trinomial(a,b,c,measure,mode) {
         []
     ];
 
-    if(measure > 0) {
+    //bad input management
+    if(a < 1) {
+      a=1;
+    }
+    if(b < 1) {
+      b=1;
+    }
+    if(c < 1) {
+      c=1;
+    }
+    if(a>b || a>c || b>c) {
+      let sort = [a,b,c];
+      sort.sort();
+      a = sort[0];
+      b = sort[1];
+      c = sort[2];
+    }
+    
 
-    } else { // no want measures? Okiedokie it's easy mode
-        //C1
+    //do it with measures
+    if(measure > 0) {
+      //C1
+      //C2
+
+    } else { // or not
+        //[0]-C1 [5]-R and [9]-R1
+        let track5 = -1;
+        let track9 = -1;
         for(let i = 0; i<a*b*c; i++) {
             outArr[0].push(1);
             outArr[0].push('+');
+            if(i%(a)===0 || i%(b)===0 || i%(c)===0){
+              if(track5>0) {
+                outArr[5].push(track5);
+                outArr[5].push('+');
+              }
+              track5 = 1;
+            } else {
+              track5++;
+            }
+            if(i%(a*b)===0 || i%(a*c)===0 || i%(b*c)===0){
+              if(track9>0) {
+                outArr[9].push(track9);
+                outArr[9].push('+');
+              }
+              track9 = 1;
+            } else {
+              track9++;
+            }
         }
         outArr[0].pop();
+        outArr[5].push(track5);
+        outArr[9].push(track9);
 
         //C2
         outArr[1].push(a*b*c);
 
-        //TODO
-        for(let i = 0; i<a; i++) {
-            outArr[2].push(b*c);
+        //a * (b*c)
+        for(let i = 0; i<b*c; i++) {
+            outArr[2].push(a);
             outArr[2].push('+');
         }
         outArr[2].pop();
 
-        //TODO
-        for(let i = 0; i<a; i++) {
-            outArr[3].push(b*c);
+        //b * (a*c)
+        for(let i = 0; i<a*c; i++) {
+            outArr[3].push(b);
             outArr[3].push('+');
         }
         outArr[3].pop();
 
-        //TODO
-        for(let i = 0; i<a; i++) {
-            outArr[4].push(b*c);
+        //c * (a*b)
+        for(let i = 0; i<a*b; i++) {
+            outArr[4].push(c);
             outArr[4].push('+');
         }
         outArr[4].pop();
 
-        //do [5] - R
-
-        //TODO
+        //(b*c) * a
         for(let i = 0; i<a; i++) {
-            outArr[4].push(b*c);
-            outArr[4].push('+');
+            outArr[6].push(b*c);
+            outArr[6].push('+');
         }
-        outArr[4].pop();
+        outArr[6].pop();
 
-        //TODO
-        for(let i = 0; i<a; i++) {
-            outArr[4].push(b*c);
-            outArr[4].push('+');
+        //(a*c) * b
+        for(let i = 0; i<b; i++) {
+            outArr[7].push(a*c);
+            outArr[7].push('+');
         }
-        outArr[4].pop();
+        outArr[7].pop();
 
-        //TODO
-        for(let i = 0; i<a; i++) {
-            outArr[4].push(b*c);
-            outArr[4].push('+');
+        //(a*b) * c
+        for(let i = 0; i<c; i++) {
+            outArr[8].push(a*b);
+            outArr[8].push('+');
         }
-        outArr[4].pop();
-
-        //do [9] - R1
- 
+        outArr[8].pop();
     }
 
     switch (mode) {
@@ -793,6 +832,67 @@ export function generate_R_Trinomial(a,b,c,measure,mode) {
         default:
             return outArr[5];
     }
+}
+
+/**
+ * 
+ * @param {*} inArr 
+ * @param {*} measure 
+ */
+function insertMeasures(inArr, measure) {
+  let outArr = [];
+
+  for(let i in outArr) {
+    n = inArr[i];
+    m = measure;
+    switch(n) {
+      case '+':
+        outArr.push(n);
+        break;
+      case '|':
+        return inArr; //this does *not* fix your measures.
+      case '':
+        break;
+      case '':
+        break;
+      case '':
+        break;
+      default:
+        if(n>m) { //split
+          outArr.push(m);
+          outArr.push('-');
+          outArr.push('|');
+          n-=m;
+          while(n>measure) {
+            outArr.push(measure);
+            outArr.push('-');
+            outArr.push('|');
+            n-=measure;
+          }
+          if(n===0) {
+            outArr.pop();
+            outArr.pop();
+            outArr.push('|');
+            m = measure;
+          } else {
+            outArr.push(n);
+            m = measure-n;
+          }
+        } else { //no split
+          outArr.push();
+          if(n===m) {
+            outArr.push('|');
+            m = measure;
+          } else {
+            m-=n;
+          }
+        }
+        
+        break;
+    }
+  }
+
+  return outArr;
 }
   
 function lesser(a,b) {
