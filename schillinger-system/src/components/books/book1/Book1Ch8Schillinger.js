@@ -26,131 +26,110 @@ Fortunately, we do not have to feel discouraged or moan over this lost art. The 
 This problem can be formulated as the distribution of a duration-group through instrumental and attack-groups.
 The entire technique consists of ﬁve successive operations with respect to the following:
 (1) The number of individual parts in a score;
-(2) The quantity of attacks appearing with each individual part in suc-
-cess10n;
+(2) The quantity of attacks appearing with each individual part in succession;
 (3) The rhythmic patterns for each individual part;
 (4) The coordination of all parts (which become the resultants of instrumental interference) into a form which, in turn, results in a speciﬁed rhythmic pattern (the resultant of interference of all parts); and
 (5) The application of such scores to any type of musical measures (bars).
-Any part of such a score can be treated as melody, coupled melody, block-harmony, harmony, instrumental ﬁguration—or as a purely percussive (drum) part. Aside from the temporal structure of the score, the practical uses of this technique in intonation depend on the composer’s skill in the respective ﬁelds concerned, i.e., melody, harmony, counterpoint and orchestration.
-A. DISTRIBUTION OF A DURATION-GROUP (T) THROUGH INSTRUMENTAL (i) AND ATTACK (a) GROUPS.
+Any part of such a score can be treated as melody, coupled melody, block-harmony, harmony, instrumental ﬁguration—or as a purely percussive (drum) part. Aside from the temporal structure of the score, the practical uses of this technique in intonation depend on the composer primes skill in the respective ﬁelds concerned, i.e., melody, harmony, counterpoint and orchestration.
+ā. DISTRIBUTION OF A DURATION-GROUP (T) THROUGH INSTRUMENTAL (i) AND ATTACK (a) GROUPS.
+
 Notation
-pli number of places in the instrumental group.
-pla number of places in the attack-group.
-aa number of attacks in the attack-group.
-aT number of attacks in the duration-group.
-PL the ﬁnal number of places.
-A the synchronized attack—group (the number of attacks synchronized with the number of places).
-A’ the ﬁnal attack group (number of attacks synchronized with the duration group).
+p l i number of places in the instrumental group.
+p l ā number of places in the attack-group.
+ā ā number of attacks in the attack-group.
+ā T number of attacks in the duration-group.
+P L the ﬁnal number of places.
+ā the synchronized attack—group (the number of attacks synchronized with the number of places).
+ā prime the ﬁnal attack group (number of attacks synchronized with the duration group).
 T the original duration-group.
-T’ the synchronized duration~group.
+T prime the synchronized duration~group.
 T the ﬁnal duration—group.
-NT the number of ﬁnal duration—groups.
+N T the number of ﬁnal duration—groups.
 Procedures:
-Interference between the_ number of places in the instrumental group (pli)
-and the number of places in the attack-group (pla).
-PL =pli/pla; pla(pli) Pli(pla)
-The product of the number of attacks in the attack group (aa) by the
-complementary factor to the number of places in the attack-group (pli
-after reduction).
-A = a_aXpli
+Interference between the_ number of places in the instrumental group (p l i)
+and the number of places in the attack-group (p l ā).
+PL =p l i divided by p l ā; p l ā (p l i) P l i(p l ā)
+The product of the number of attacks in the attack group (ā ā) by the complementary factor to the number of places in the attack-group (p l i after reduction).
+ā = ā_ā times p l i
 Interference between the synchronized attack-group (A) and the number
 of attacks in the original duration-group (aT).
-A’= A/aT=a_aXpli/aT
+ā prime= A divided by aT=ā_ā times p l i divided by ā T
 The product of the original duration-group (T) by the complementary
-factor to its number of attacks (A’).
-T’ = T-A’ = T xa_a pli/aT
-Interference between the synchronized duration-group (T’) and the ﬁnal
+factor to its number of attacks (ā prime).
+T prime = T-ā prime = T  times ā_ā p l i divided by āT
+Interference between the synchronized duration-group (T prime) and the ﬁnal
 duration—group (T).
-NT=T’/T
-B. SYNCHRONIZATION OF AN ATTACK-GROUP (a) WITH A DURATION-GROUP (T).
-Distribution of attacks of an attack-group (a_a) through the number of attacks of a duration group (aT).
-First Case: <a_a over a_T equals one>
+NT=T prime divided by T
+B. SYNCHRONIZATION OF AN ATTACK-GROUP (ā) WITH A DURATION-GROUP (T).
+
+Distribution of attacks of an attack-group (ā_ā) through the number of attacks of a duration group (aT).
+First Case: ā_ā over ā_T equals one
 Example:
-<figure 58>
 Second Case
 Example:
-Figure 59.
 Third Case: i.e., a reducible fraction
 Example:
-a_a = 6a; T = r3+2 = 6t; aT = 4a
-Figure 60
-C. DISTRIBUTION OF A SYNCHRONIZED DURATION-GROUP (T’) THROUGH THE
+ā_ā = 6a; T = r3+2 = 6t; āT = 4a
+C. DISTRIBUTION OF A SYNCHRONIZED DURATION-GROUP (T prime) THROUGH THE
 FINAL DURATION-GROUP (T‘).
 First Case: 
 Example:
-T’ = 6t; T = 6t
-Figure 61.
+T prime = 6t; T = 6t
 Second Case:
 Example :
-T’=6t; T=5t
+T prime=6t; T=5t
 N5t = 6
-Figure 62.
-Third Case i.e., a reducible traction
+Third Case i.e., a reducible fraction
 Example:
-T’ = 6t; T = 4t
-Figure 63.
+T prime = 6t; T = 4t
 Example :
-D. SYNCHRONIZATION OF AN INSTRUMENTAL GROUP (pli) WITH AN ATTACK-GROUP (pla)
+D. SYNCHRONIZATION OF AN INSTRUMENTAL GROUP (p l i) WITH AN ATTACK-GROUP (p l ā)
 Example:
-Pli = 4;
-pla= 3;
-a_a=3+2+3=8;
+P l i = 4;
+p l ā= 3;
+ā_ā=3+2+3=8;
 T=R5÷2=10t; 
-6a
-Figure 66
+6ā
 Example:
-pli=3:
-Pla =3;
-a_a=3+2+2+2+3=10;
+p l i=3:
+P l ā =3;
+ā_ā=3+2+2+2+3=10;
 T=r4÷3 =16t;
-10a
-Figure 67
+10ā
 Example:
-pli = 6;
-pla = 8;
-a_a= r5÷4= 20; 
+p l i = 6;
+p l ā = 8;
+ā_ā= r5÷4= 20; 
 T = r4÷3=16t; 
-10a T=8t
+10ā T=8t
 Example of composition of the resultant of instrumental interference.
-pl(i) =pl(a)=2
+pl(i) =pl(ā)=2
 Form Of distribution : 5+3
-Figure 68
-(1)
+(1) 2 2 = 1
 (2) 2 is an equivalent of 5+3 = 8
 (3) Duration-group: 
-(4) 10t X4 = 40t
-(5) 
-Preliminary Scoring
-Final Scoring
+(4) 10t  times 4 = 40t
+(5) When T double prime = 8 8, 40t divided by 8 = 5t double prime
+Preliminary Scoring.
+Final Scoring.
 Example of composition of the resultant of instrumental interference.
-P1(i) = 3 Mil) = 3
+P l (i) = 3 M i l) = 3
 Form of distribution: 8+3+5+2
-Figure 70.
 (1)  = 1
 (2) 4 is an equivalent of 8+3+5+2=18
-18X1 = 18
+18 times 1 = 18
 (3) Duration group: r 5+2 =10t 1'33— = 3 3(6)
-aT = 6
-(4) 10f X 3 = 30t
-(5) When T = 8/8, 30t/8+ 16/4; 15x4/4=15T
-Preliminary Scoring
-Figure 71 (continued).
-Figure 71 (concluded).
-Final Scoring
-Figure 72 (continued)
-Figure 72 (concluded).
+ā T = 6
+(4) 10f  times  3 = 30t
+(5) When T = 8 divided by 8, 30t divided by 8+ 16 divided by 4; 15 times 4 divided by 4=15T
 Example of composition of the resultant of instrumental interference.
-pl(i) = 6; p1(a) = 8;
+p l (i) = 6; p l (ā) = 8;
 Form of distribution: r5+4
-figure 73.
-(1) 
-(2) 8 is equivalent to 20 in r5÷4 20 X 3 = 60
-(3) Duration-group = r4÷3 aT = 10; 60/10=6 6(10)
-(4) 16 X 6 = 96t; a given T = 8/8
-(5)96t/8t = 12T
-Preliminary Scoring
-Figure 74
-Final Scoring
+(1) 6 8 = 3 4    6 (4) 8 (3)
+(2) 8 is equivalent to 20 in r5÷4 20  times  3 = 60
+(3) Duration-group = r4÷3 āT = 10; 60 divided by 10=6 6(10)
+(4) 16  times  6 = 96t; a given T = 8 divided by 8
+(5)96t divided by 8t = 12T
 "
         />
         <br />
