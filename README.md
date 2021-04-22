@@ -191,6 +191,23 @@ This is an example of how to list things you need to use the software and how to
 5. Open a Pull Request / Merge to Master
 
 
+# How to merge two branches:
+Branch **<src>** is the branch with the code you want to merge (usually master or your branch when you're ready to merge your changes into master)
+Branch **<dest>** is the branch where you want the code to be merged with (your branch or master when you're ready to merge your changes into master)
+
+1. Pull the latest changes in the src branch
+````
+git checkout <src>
+git pull
+````
+
+2. Merge those changes into your dest branch
+````
+git checkout <dest>
+git merge <src>
+git push
+````
+
 
 <!-- LICENSE -->
 ## License
