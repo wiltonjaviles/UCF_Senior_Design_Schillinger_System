@@ -241,6 +241,8 @@ Michael Alaniz - [@mikey_alaniz](https://twitter.com/mikey_alaniz) - michael.yea
 * [Choose an Open Source License](https://choosealicense.com)
 * [Nodemon](https://nodemon.io/)
 * [Dotenv](https://www.npmjs.com/package/dotenv)
+* [anime.js](https://animejs.com/)
+* [JSXGraph](https://jsxgraph.uni-bayreuth.de/wp/index.html)
 
 
 
