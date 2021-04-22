@@ -20,7 +20,7 @@ function Book1Ch12() {
           All rhythms can be identified to a rhythmic family t. Each rhythmic family has two components: fractional continuity (expressed as 1/tn), and factorial continuity (expressed as tn). The following demonstrates all of the series which have been used by humans, ever.
           Most of western music, and most current music theory, is a combination of the family t = 2, with the occasional t = 3 and t = 6. This is likely due in no small part to the western writing system being based very directly on the two families; wholes, halves, quarters etc are all based on powers of 2, and so the standard western musical notation assumes by default that music will be in the two families of rhythm. There are of course ways to expand into other families. Typically this will involve either increasingly large numbers, or the inclusion of specially notated triplets, quintuplets, etc.
           B. Composition of Rhythmic Counterthemes.
-          What follows are a series of examples demontrating rhythmic expansion and variation based on algebra.
+          What follows are a series of examples demonstrating rhythmic expansion and variation based on algebra.
            ā. Square of a Binomial.
           Formula:
           (a) Factorial: (ā+b) squared = ā squared + ā b + ā b + b squared 
@@ -138,7 +138,7 @@ function Book1Ch12() {
           <br />
           <p class="bookText">Most of western music, and most current music theory, is a combination of the family t = 2, with the occasional t = 3 and t = 6.  This is likely due in no small part to the western writing system being based very directly on the two families; wholes, halves, quarters etc are all based on powers of 2, and so the standard western musical notation assumes by default that music will be in the two families of rhythm. There are of course ways to expand into other families. Typically this will involve either increasingly large numbers, or the inclusion of specially notated triplets, quintuplets, etc.</p>
         <a className="chapter-section-link" href="/book1#1.12.b" id="1.12.b"><h5>B. Composition of Rhythmic Counterthemes</h5></a>
-          <p class="bookText">What follows are a series of examples demontrating rhythmic expansion and variation based on algebra</p>
+          <p class="bookText">What follows are a series of examples demonstrating rhythmic expansion and variation based on algebra</p>
           <p class="bookText">&emsp;a. Square of a Binomial</p>
             <p class="bookText">Formula:</p>
             <p class="equation">(a) Factorial: (a+b)<sup>2</sup> = a<sup>2</sup>+ab+ab+b<sup>2</sup></p>
