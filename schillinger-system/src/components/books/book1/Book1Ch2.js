@@ -14,7 +14,7 @@ function Book1Ch2() {
         <a className="content-links" href="/book1ch2schillinger"><h5>View the source text.</h5></a>
         <TextToSpeech 
         text="
-          Chapter 2. Interfences of Periodicities.
+          Chapter 2. Interferences of Periodicities.
 
           Now we shall discuss combining one periodicity (say, 3, 3, 3, 3) with another (say, 4, 4, 4, 4), called interference.
           The periodicity with larger numbers (in our case, 4) will be called the “major generator”; the smaller will be called the “minor generator”. The way we will express two synchronized generators producing one interference group is ā ÷ b . The resultant of interference is r ā ÷ b.

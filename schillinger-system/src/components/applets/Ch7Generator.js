@@ -5,10 +5,27 @@ import abcjs from "abcjs";
 import Playback from '../applets/Playback';
 
 function Ch7Generator() {
+
+  var tempA = 3;
+  var tempB = 2;
+  var tempAttacks = 2;
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch7" ) {
+      tempA = old_data[i].a;
+      tempB = old_data[i].b;
+      tempAttacks = old_data[i].attacks;
+      console.log("tempA: " + tempA + " tempB: " + tempB, "tempAttacks: " + tempAttacks);
+      break;
+    }
+  }
+
   const [state , setState] = useState({
-    variableA : '3',
-    variableB : '2',
-    attacks : '2',
+    variableA : tempA,
+    variableB : tempB,
+    attacks : tempAttacks,
     r: "",
     abcString: ""
   })
@@ -22,7 +39,24 @@ function Ch7Generator() {
   }
 
   const generateR = event => {
-    event.preventDefault();    
+    
+    event.preventDefault();   
+    
+    // need to remove previous version of ch7 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch7" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch7 = {"id":"book1ch7", "a":state.variableA, "b":state.variableB, "attacks": state.attacks}; 
+    old_data.unshift(book1ch7);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));
+
     var a = Number(state.variableA);
     var b = Number(state.variableB);
     var attacks = Number(state.attacks);

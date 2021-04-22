@@ -4,25 +4,61 @@ import '../.././Style.css';
 import abcjs from "abcjs";
 
 function Ch9Generator() {
+
+  var tempA = '1';
+  var tempSuppA = '';
+  var tempB = '1';
+  var tempSuppB = '';
+  var tempC = '1';
+  var tempSuppC = '';
+  var tempD = '1';
+  var tempSuppD = '';
+  var tempPoly1 = 'a';
+  var tempPoly2 = 'a';
+  var tempPoly3 = '';
+  var tempPoly4 = '';
+  var tempDirection = 'Clockwise';
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch9" ) {
+      tempA = old_data[i].a;
+      tempSuppA = old_data[i].aSupp;
+      tempB = old_data[i].b;
+      tempSuppB = old_data[i].bSupp;
+      tempC = old_data[i].c;
+      tempSuppC = old_data[i].cSupp;
+      tempD = old_data[i].d
+      tempSuppD = old_data[i].dSupp;
+      tempPoly1 = old_data[i].poly1;
+      tempPoly2 = old_data[i].poly2;
+      tempPoly3 = old_data[i].poly3;
+      tempPoly4 = old_data[i].poly4;
+      tempDirection = old_data[i].direction;
+      break;
+    }
+  }
+
   const [state , setState] = useState({
-    variableA : '1',
-    supplementA : '',
-    variableB : '1',
-    supplementB : '',
-    variableC : '1',
-    supplementC : '',
-    variableD : '1',
-    supplementD : '',
-    poly1 : 'a',
-    poly2 : 'a',
-    poly3 : '',
-    poly4 : '',
+    variableA : tempA,
+    supplementA : tempSuppA,
+    variableB : tempB,
+    supplementB : tempSuppB,
+    variableC : tempC,
+    supplementC : tempSuppC,
+    variableD : tempD,
+    supplementD : tempSuppD,
+    poly1 : tempPoly1,
+    poly2 : tempPoly2,
+    poly3 : tempPoly3,
+    poly4 : tempPoly4,
     Polynomial : '',
     DefineA : '',
     DefineB : '',
     DefineC : '',
     DefineD : '',
-    direction : 'Clockwise',
+    direction : tempDirection,
     Result : ''
   })
 
@@ -35,7 +71,39 @@ function Ch9Generator() {
   }
 
   const generateR = event => {
-    event.preventDefault();    
+
+    event.preventDefault();
+    
+    // need to remove previous version of ch7 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch9" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+    
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch9 = {
+      "id": "book1ch9", 
+      "a": state.variableA, 
+      "aSupp": state.supplementA, 
+      "b": state.variableB, 
+      "bSupp": state.supplementB,
+      "c": state.variableC,
+      "cSupp": state.supplementC,
+      "d": state.variableD,
+      "dSupp": state.supplementD,
+      "poly1": state.poly1,
+      "poly2": state.poly2,
+      "poly3": state.poly3,
+      "poly4": state.poly4,
+      "direction": state.direction
+    }
+    old_data.unshift(book1ch9);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));    
+
     let a = defineVariable(state.variableA,state.supplementA);
     let b = defineVariable(state.variableB,state.supplementB);
     let c = defineVariable(state.variableC,state.supplementC);

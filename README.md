@@ -13,7 +13,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="">
+  <a href="https://www.learnschillinger.com">
     <img src="schillinger-system/public/logo512.png" alt="Logo" width="80" height="80">
   </a>
 

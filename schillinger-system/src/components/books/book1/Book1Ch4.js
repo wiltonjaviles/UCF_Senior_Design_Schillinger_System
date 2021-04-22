@@ -20,7 +20,7 @@ function Book1Ch4() {
           The groups derived from the second process are referred to as “rhythmic resultants with fractioning around the axis of symmetry.”
           Symbols: a ÷ b and r ā ÷ b. note the underline.
           The process of synchronization is:
-          1. Take the product of ā by ā (ie ā 2 ). ā becomes its own complementary factor.
+          1. Take the product of ā by ā (ie ā squared ). ā becomes its own complementary factor.
           2. Use a as a complementary factor of b. (ie b appears a times)
           3. The minor generator completes itself before the major generator. Lets call the first group of the minor generator b1. Start b1 at the beginning of the first phase of ā . Start b2 at the beginning of the second phase of a. And repeat this process until both generators complete at the same time.
           To find the total number of b groups:
