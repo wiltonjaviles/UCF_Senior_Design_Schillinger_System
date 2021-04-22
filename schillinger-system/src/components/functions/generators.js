@@ -710,7 +710,7 @@ export function generator_R_Underlined(a, b, measure, mode) {
  * @param {string} mode - if "all", you get the whole array. If "R1" you get just R1. Else, you get R.
  * @returns outArr - character array of R and/or R1
  */
-export function generate_R_Trinomial(a,b,c,measure,mode) {
+export function generator_R_Trinomial(a,b,c,measure,mode) {
     let outArr = [
         [], 
         [],
@@ -725,6 +725,10 @@ export function generate_R_Trinomial(a,b,c,measure,mode) {
     ];
 
     //bad input management
+    a = Number(a);
+    b = Number(b);
+    c = Number(c);
+    measure = Number(measure);
     if(a < 1) {
       a=1;
     }
@@ -742,86 +746,85 @@ export function generate_R_Trinomial(a,b,c,measure,mode) {
       c = sort[2];
     }
     
+    //[0]-C1 [5]-R and [9]-R1
+    let track5 = -1;
+    let track9 = -1;
+    for(let i = 0; i<a*b*c; i++) {
+      outArr[0].push(1);
+      outArr[0].push('+');          
+      if(i%(a)===0 || i%(b)===0 || i%(c)===0){
+        if(track5>0) {
+          outArr[5].push(track5);
+          outArr[5].push('+');
+        }
+        track5 = 1;
+      } else {
+        track5++;
+      }
+      if(i%(a*b)===0 || i%(a*c)===0 || i%(b*c)===0){
+        if(track9>0) {
+          outArr[9].push(track9);
+          outArr[9].push('+');
+        }
+        track9 = 1;
+        } else {
+          track9++;          
+        }
+    }
+    outArr[0].pop();
+    outArr[5].push(track5);
+    outArr[9].push(track9);
 
-    //do it with measures
+    //C2
+    outArr[1].push(a*b*c);
+
+    //a * (b*c)
+    for(let i = 0; i<b*c; i++) {
+      outArr[2].push(a);
+      outArr[2].push('+');
+    }
+    outArr[2].pop();
+
+    //b * (a*c)
+    for(let i = 0; i<a*c; i++) {
+      outArr[3].push(b);
+      outArr[3].push('+');
+    }
+    outArr[3].pop();
+
+    //c * (a*b)
+    for(let i = 0; i<a*b; i++) {
+      outArr[4].push(c);
+      outArr[4].push('+');
+    }
+    outArr[4].pop();
+
+    //(b*c) * a
+    for(let i = 0; i<a; i++) {
+      outArr[6].push(b*c);
+      outArr[6].push('+');
+    }
+    outArr[6].pop();
+
+    //(a*c) * b
+    for(let i = 0; i<b; i++) {
+      outArr[7].push(a*c);
+      outArr[7].push('+');
+    }
+    outArr[7].pop();
+
+    //(a*b) * c
+    for(let i = 0; i<c; i++) {
+      outArr[8].push(a*b);
+      outArr[8].push('+');
+    }
+    outArr[8].pop();
+    
+
     if(measure > 0) {
-      //C1
-      //C2
-
-    } else { // or not
-        //[0]-C1 [5]-R and [9]-R1
-        let track5 = -1;
-        let track9 = -1;
-        for(let i = 0; i<a*b*c; i++) {
-            outArr[0].push(1);
-            outArr[0].push('+');
-            if(i%(a)===0 || i%(b)===0 || i%(c)===0){
-              if(track5>0) {
-                outArr[5].push(track5);
-                outArr[5].push('+');
-              }
-              track5 = 1;
-            } else {
-              track5++;
-            }
-            if(i%(a*b)===0 || i%(a*c)===0 || i%(b*c)===0){
-              if(track9>0) {
-                outArr[9].push(track9);
-                outArr[9].push('+');
-              }
-              track9 = 1;
-            } else {
-              track9++;
-            }
-        }
-        outArr[0].pop();
-        outArr[5].push(track5);
-        outArr[9].push(track9);
-
-        //C2
-        outArr[1].push(a*b*c);
-
-        //a * (b*c)
-        for(let i = 0; i<b*c; i++) {
-            outArr[2].push(a);
-            outArr[2].push('+');
-        }
-        outArr[2].pop();
-
-        //b * (a*c)
-        for(let i = 0; i<a*c; i++) {
-            outArr[3].push(b);
-            outArr[3].push('+');
-        }
-        outArr[3].pop();
-
-        //c * (a*b)
-        for(let i = 0; i<a*b; i++) {
-            outArr[4].push(c);
-            outArr[4].push('+');
-        }
-        outArr[4].pop();
-
-        //(b*c) * a
-        for(let i = 0; i<a; i++) {
-            outArr[6].push(b*c);
-            outArr[6].push('+');
-        }
-        outArr[6].pop();
-
-        //(a*c) * b
-        for(let i = 0; i<b; i++) {
-            outArr[7].push(a*c);
-            outArr[7].push('+');
-        }
-        outArr[7].pop();
-
-        //(a*b) * c
-        for(let i = 0; i<c; i++) {
-            outArr[8].push(a*b);
-            outArr[8].push('+');
-        }
-        outArr[8].pop();
+      for(let i in outArr) {
+        outArr[i] = insertMeasures(outArr[i],measure);
+      }
     }
 
     switch (mode) {
@@ -841,33 +844,37 @@ export function generate_R_Trinomial(a,b,c,measure,mode) {
  */
 function insertMeasures(inArr, measure) {
   let outArr = [];
-
-  for(let i in outArr) {
-    n = inArr[i];
-    m = measure;
+  let m = measure;
+  for(let i in inArr) {
+    let n = inArr[i];
     switch(n) {
       case '+':
-        outArr.push(n);
         break;
       case '|':
         return inArr; //this does *not* fix your measures.
-      case '':
+      case '(':
         break;
-      case '':
+      case ')':
         break;
-      case '':
+      case '-':
+        break;
+      case 'N':
+        break;
+      case 'L':
         break;
       default:
         if(n>m) { //split
-          outArr.push(m);
-          outArr.push('-');
+          if(m!=0){
+            outArr.push(m);
+            outArr.push('-');
+          }
           outArr.push('|');
-          n-=m;
+          n = n-m;
           while(n>measure) {
             outArr.push(measure);
             outArr.push('-');
             outArr.push('|');
-            n-=measure;
+            n = n-measure;
           }
           if(n===0) {
             outArr.pop();
@@ -879,17 +886,26 @@ function insertMeasures(inArr, measure) {
             m = measure-n;
           }
         } else { //no split
-          outArr.push();
+          outArr.push(n);
           if(n===m) {
             outArr.push('|');
             m = measure;
           } else {
-            m-=n;
+            outArr.push('+');
+            m = m-n;
           }
         }
         
         break;
     }
+  }
+
+  m = outArr.pop();
+  if(m!='|') {
+    outArr.push(m);
+    outArr.push('|')
+  } else {
+    outArr.push(m);
   }
 
   return outArr;

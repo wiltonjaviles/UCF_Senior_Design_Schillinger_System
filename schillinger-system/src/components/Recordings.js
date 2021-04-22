@@ -1,7 +1,5 @@
 import '.././Style.css';
-import Ch4Generator from './applets/Ch4Generator'
-import Ch11Generator from './applets/Ch11Generator';
-import isAuthenticated from '.././components/authUser';
+import Ch6Generator from './applets/Ch6Generator';
 
 function Recordings() {
   // isAuthenticated();
@@ -9,8 +7,7 @@ function Recordings() {
     <div>
       <br />
       <h1>Recordings Page (Coming soon!)</h1>
-      <Ch4Generator />
-      <Ch11Generator />
+      <Ch6Generator />
     </div>
   );
 }

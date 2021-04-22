@@ -3,25 +3,20 @@ import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
 import Playback from '../applets/Playback';
+import {generator_R_Trinomial,toABC} from '../functions/./generators';
 
 function Ch6Generator() {
   const [state , setState] = useState({
     variableA : 2,
     variableB : 3,
-    variableC : 4,
+    variableC : 5,
     groupBy : 'a',
-    OutputABC1 : '',
-    OutputABC2 : '',
-    OuputA : '',
-    OutputB : '',
-    OutputC : '',
-    OutputR : '',
-    OutputComplementA : '',
-    OutputComplementB : '',
-    OutputComplementC : '',
-    OutputR1 : '',
+    showing : 'Show Rs',
+    OutputABC : '',
     abcString: ""
   })
+
+  let show = true;
 
   const handleSelect = (e) => {
     const {id , value} = e.target   
@@ -36,10 +31,11 @@ function Ch6Generator() {
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
     const vC = Number(state.variableC);
-    let vG = Number(state.variableA)
+    let vG = 0;
     
     switch(state.groupBy) {
       case 'a':
+        vG = state.variableA;
         break;
       case 'b':
         vG = state.variableB;
@@ -62,27 +58,45 @@ function Ch6Generator() {
       default: break;
     }
 
-    let outArr = simpleToABC(sMakeTrinomialR(vA,vB,vC),vG);
-    let abcOutR = "X:1\nK:C\n"+outArr[5].join("")+"\n";
-    // let abcOutR1 = "X:1\nK:C\n"+outArr[9].join("")+"\n";
+    switch(state.showing) {
+      case 'Show All':
+        show = true;
+        break;
+      case 'Show Rs':
+        show = false;
+        break;
+    }
 
-    abcjs.renderAbc("outputABC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
-    abcjs.renderAbc("outputABC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
-    abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
-    abcjs.renderAbc("outputB", "X:1\nK:C\n"+outArr[3].join("")+"\n");
-    abcjs.renderAbc("outputC", "X:1\nK:C\n"+outArr[4].join("")+"\n");
-    abcjs.renderAbc("outputR", "X:1\nK:C\n"+outArr[5].join("")+"\n");
-    abcjs.renderAbc("outputComplementA", "X:1\nK:C\n"+outArr[6].join("")+"\n");
-    abcjs.renderAbc("outputComplementB", "X:1\nK:C\n"+outArr[7].join("")+"\n");
-    abcjs.renderAbc("outputComplementC", "X:1\nK:C\n"+outArr[8].join("")+"\n");
-    abcjs.renderAbc("outputR1", "X:1\nK:C\n"+outArr[9].join("")+"\n");
     
+    let outArr = generator_R_Trinomial(vA,vB,vC,vG,'all');
+    let abcOutput = '';
+    if(show) {
+      var abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble\nV: V6 clef=treble\nV: V7 clef=treble\nV: V8 clef=treble\nV: V9 clef=treble";
+      abc = abc+"\n[V: V1]"+toABC(outArr[0]).join("");
+      abc = abc+"\n[V: V2]"+toABC(outArr[1]).join("");
+      abc = abc+"\n[V: V3]"+toABC(outArr[2]).join("");
+      abc = abc+"\n[V: V4]"+toABC(outArr[3]).join("");
+      abc = abc+"\n[V: V5]"+toABC(outArr[4]).join("");
+      abc = abc+"\n[V: V6]"+toABC(outArr[5]).join("");
+      abc = abc+"\n[V: V7]"+toABC(outArr[6]).join("");
+      abc = abc+"\n[V: V8]"+toABC(outArr[7]).join("");
+      abc = abc+"\n[V: V9]"+toABC(outArr[8]).join("");
+      abc = abc+"\n[V: V10]"+toABC(outArr[9]).join("");
+      abcOutput = "X:1\nK:C\n" + toABC(outArr[5]).join('') + "\n";
+    } else {
+      var abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble";
+      abc = abc+"\n[V: V1]"+toABC(outArr[5]).join("");
+      abc = abc+"\n[V: V2]"+toABC(outArr[9]).join("");
+      abcOutput = abc;
+    }
 
+    abcjs.renderAbc("outputABC", abc);
+    
     setState(prevState => ({
         ...prevState,
-        OutputR : outArr[5].toString(),
-        OutputR1 : outArr[9].toString(),
-        abcString : abcOutR
+        /*OutputR : abcOutput,
+        OutputR1 : vG,*/
+        abcString : abcOutput
       }))
   }
 
@@ -95,21 +109,19 @@ function Ch6Generator() {
               <h1>Trinomial Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Select three integers a, b and c, then select a measure length.  Click Generate to view output.
+                Select three integers a, b and c, then select a measure length.  Click Generate to view output. Large inputs will go off the screen.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">
                 <Col className="col-2">
                   <Form.Group controlId="variableA">
-                    <Form.Control as="select" defaultValue="2" value={state.variableA} onChange={handleSelect}>
+                    <Form.Control as="select" value={state.variableA} onChange={handleSelect}>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
                       <option>5</option>
                       <option>6</option>
                       <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
                     </Form.Control>
                   </Form.Group>
                 </Col>
@@ -118,8 +130,7 @@ function Ch6Generator() {
                 </Col>
                 <Col className="col-2">              
                   <Form.Group controlId="variableB">
-                    <Form.Control as="select" defaultValue="3" value={state.variableB} onChange={handleSelect}>
-                      <option>1</option>
+                    <Form.Control as="select" value={state.variableB} onChange={handleSelect}>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
@@ -135,8 +146,7 @@ function Ch6Generator() {
                 </Col>
                 <Col className="col-2">              
                   <Form.Group controlId="variableC">
-                    <Form.Control as="select" defaultValue="4" value={state.variableC} onChange={handleSelect}>
-                      <option>1</option>
+                    <Form.Control as="select" value={state.variableC} onChange={handleSelect}>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
@@ -144,12 +154,15 @@ function Ch6Generator() {
                       <option>6</option>
                       <option>7</option>
                       <option>8</option>
+                      <option>9</option>
                     </Form.Control>
                   </Form.Group>
                 </Col>
+              </Row>
+              <Row className="align-items-bottom justify-content-md-center">
                 <Col className="col-2">              
                   <Form.Group controlId="groupBy">
-                    <Form.Control as="select" defaultValue="-1" value={state.groupBy} onChange={handleSelect}>
+                    <Form.Control as="select" value={state.groupBy} onChange={handleSelect}>
                       <option>a</option>
                       <option>b</option>
                       <option>c</option>
@@ -160,88 +173,27 @@ function Ch6Generator() {
                     </Form.Control>
                   </Form.Group>
                 </Col>
+                <Col className="col-2">              
+                  <Form.Group controlId="showing">
+                    <Form.Control as="select" value={state.showing} onChange={handleSelect}>
+                      <option>Show All</option>
+                      <option>Show Rs</option>
+                    </Form.Control>
+                  </Form.Group>
+                </Col>
                 <Col className="col-3">
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                 </Col>
               </Row>
                 
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>R: </h4>
-                    </Col>
-                    <Col className="col-8">
-                        <h4>{state.OutputR}</h4>
-                    </Col>
-                </Row>
                 
                 <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>R': </h4>
-                    </Col>
-                    <Col className="col-8">
-                        <h4>{state.OutputR1}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
                     
-                      <div id="outputABC1"></div>
+                      <div id="outputABC"></div>
                       
                     
                 </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputABC2"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputA"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputB"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputC"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputR"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputComplementA"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputComplementB"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputComplementC"></div>
-                      
-                    
-                </Row>
-                <Row className="justify-content-md-center">
-                    
-                      <div id="outputR1"></div>
-                      
-                    
-                </Row>
+                
                 <Playback abc = {state.abcString}/>
             </Form>
           </Card.Body>
@@ -253,7 +205,7 @@ function Ch6Generator() {
 }
 
 export default Ch6Generator;
-
+/*
 function sMakeTrinomialR(a,b,c) {
   let arr = [];
   for(let i=0; i<10; i++) {
@@ -398,6 +350,7 @@ function pushNote(a) {
     return output.toString();
   } else {return 'A'+a;}
 }
+*/
 
 /*
 function simpleToABC(arrIn, measureLength) {
@@ -417,4 +370,25 @@ function simpleToABC(arrIn, measureLength) {
       }
   }
   return arrOut;
-}*/
+}
+
+
+<Row className="justify-content-md-center">
+                    <Col className="col-3">
+                        <h4>R: </h4>
+                    </Col>
+                    <Col className="col-8">
+                        <h4>{state.OutputR}</h4>
+                    </Col>
+                </Row>
+                
+                <Row className="justify-content-md-center">
+                    <Col className="col-3">
+                        <h4>R': </h4>
+                    </Col>
+                    <Col className="col-8">
+                        <h4>{state.OutputR1}</h4>
+                    </Col>
+                </Row>
+
+*/
