@@ -191,7 +191,7 @@ This is an example of how to list things you need to use the software and how to
 5. Open a Pull Request / Merge to Master
 
 
-# How to merge two branches:
+### How to merge two branches:
 Branch **<src>** is the branch with the code you want to merge (usually master or your branch when you're ready to merge your changes into master)
 Branch **<dest>** is the branch where you want the code to be merged with (your branch or master when you're ready to merge your changes into master)
 
