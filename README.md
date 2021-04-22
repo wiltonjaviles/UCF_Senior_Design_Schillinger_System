@@ -54,7 +54,13 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li>
+      <a href="#contributing">Contributing</a>
+      <ul>
+        <li><a href="#how-to-merge-two-branches">How to Merge Two Branches</a></li>
+        <li><a href="#more-git-resources">More Git Resources</a></li>
+      </ul>
+    </li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -190,7 +196,28 @@ This is an example of how to list things you need to use the software and how to
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request / Merge to Master
 
+<!-- HOW TO MERGE TWO BRANCHES -->
+### How to Merge Two Branches
+Branch **<src>** is the branch with the code you want to merge (usually master or your branch when you're ready to merge your changes into master)
+Branch **<dest>** is the branch where you want the code to be merged with (your branch or master when you're ready to merge your changes into master)
 
+1. Pull the latest changes in the src branch
+````
+git checkout <src>
+git pull
+````
+
+2. Merge those changes into your dest branch
+````
+git checkout <dest>
+git merge <src>
+git push
+````
+
+### More Git Resources
+<a href="https://training.github.com/downloads/github-git-cheat-sheet.pdf">Git Cheat Sheet</a>
+
+<a href="http://git-school.github.io/visualizing-git/">Visualizing Git</a>
 
 <!-- LICENSE -->
 ## License
@@ -214,6 +241,8 @@ Michael Alaniz - [@mikey_alaniz](https://twitter.com/mikey_alaniz) - michael.yea
 * [Choose an Open Source License](https://choosealicense.com)
 * [Nodemon](https://nodemon.io/)
 * [Dotenv](https://www.npmjs.com/package/dotenv)
+* [anime.js](https://animejs.com/)
+* [JSXGraph](https://jsxgraph.uni-bayreuth.de/wp/index.html)
 
 
 
