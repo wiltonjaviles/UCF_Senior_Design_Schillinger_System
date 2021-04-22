@@ -12,8 +12,44 @@ function Book1Ch4Schillinger() {
         <br />
         <TextToSpeech 
           text="
-          
-          "
+          CHAPTER 4. THE TECHNIQUES 0F FRACTIONING
+
+THE FIRST process by which rhythmic resultants are generated—the process just explained in the foregoing— is not entirely satisfactory for all musical purposes; it is too rich in its variety for all uses, and one may feel the need for a higher degree of uniformity which would complement this variety. Thus the second process by which rhythmic resultants may be generated is now offered with this purpose in mind.
+Groups arrived at by means of this second process will be known as rhythmic resultants with fractioning around the axis of symmetry.
+Symbols: (ā÷b (underlined) and r ā÷b underlined
+The process of synchronization is:
+(1) Take the product of ā by ā, i.e., ā squared (read: ā square). ā becomes its own complementary factor.
+(2) Use ā as a complementary factor of b, i.e., b appears ā times.
+(3) The minor generator completes itself before the major generator. Call the ﬁrst group of the minor generator b_1 (the ﬁrst b). Start the second b (b_2) at the beginning of the second phase of ā. Start the third b (b_3) at the beginning of the third phase of ā, when present. This procedure is continued until both generators complete at the same time.
+b_1, b_2, b_3, . . . always appear ā times.
+To ﬁnd the total number of b groups this formula is used:
+N_b = ā-b+1  i.e., the number of b groups equals ā minus b plus 1.
+Example:
+3÷2 ﬁnd r3÷2
+3 times 3=3 squared = 9
+3 (3)
+3 (2)
+N2=3-2+1=2,i.e.,b_1 and b_2
+Fundamental Grouping by ā squared or ā only
+Grouping by ā squared.
+Grouping by ā.
+Grouping by b of the resultant: with fractioning serves the purpose of producing syncopated rhythms. In such cases the resultant and the bar do not close simultaneously in the ﬁrst run of the resultant. Therefore, the resultant should be repeated from the point where it stops.
+Just when the resultant and the bar come out even may be found in the following manner:
+ā squared divided by b=Q
+The Q stands for the quotient which indicates the number of bars. It always has a remainder. The denominator of the remainder indicates how many times the resultant will have to run. For the b grouping, the resultant is used alone.
+b X Q = bQ
+Example: (1)
+ā squared divided by b=9 divided by 2=4 1 divided by 2 indicates the number of bars. 2 indicates the number of groups of r. 2 (4 1 divided by 2) = 9 
+Example: (2)
+4÷3 Find r4÷3
+4 squared =16
+4 (4)
+4 (3)
+N_3=4-3+1=2
+Grouping by ā squared
+Grouping by ā
+Grouping by b
+"
         />
         <br />
         <img className="img-fluid img-thumbnail" src="images/book1/ch4/screenshots/book1ch4_01.png" alt="book1ch4img1"></img>
