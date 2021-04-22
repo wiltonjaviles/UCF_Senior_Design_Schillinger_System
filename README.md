@@ -52,8 +52,14 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li>
+      <a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#running-local-development">Running Local Development</a></li>
+        <li><a href="#deploying-changes-to-the-web-server">Deploying Changes to the Web server</a></li>
+        <li><a href="#nginx-web-service-commands">Nginx Web Service Commands</a></li>
+      </ul>
+    </li>
     <li>
       <a href="#contributing">Contributing</a>
       <ul>
@@ -134,7 +140,7 @@ This is an example of how to list things you need to use the software and how to
   ctrl + c
   ```
   
-### Deploying Changes to the WebServer (Digital Ocean)
+### Deploying Changes to the Web Server
 
 1. Change to the production folder
   ```sh
@@ -153,7 +159,7 @@ This is an example of how to list things you need to use the software and how to
   npm run build
   ```
 
-### nginx web service commands (Digital Ocean):
+### Nginx Web Service Commands
 1. Start Web Service
   ```sh
   sudo service nginx start
@@ -182,10 +188,6 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   sudo systemctl status nginx
   ```
-
-<!-- ROADMAP -->
-## Roadmap
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
