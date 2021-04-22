@@ -10,7 +10,11 @@ function Book1Ch6Schillinger() {
         <br /> 
         <h1>Schillinger Source Text for Book 1 Chapter 6</h1>
         <br />
-        <TextToSpeech />
+        <TextToSpeech 
+          text="
+          
+          "
+        />
         <br />
         <img className="img-fluid img-thumbnail" src="images/book1/ch6/screenshots/book1ch6_01.png" alt="book1ch6img1"></img>
         <img className="img-fluid img-thumbnail" src="images/book1/ch6/screenshots/book1ch6_02.png" alt="book1ch6img2"></img>
