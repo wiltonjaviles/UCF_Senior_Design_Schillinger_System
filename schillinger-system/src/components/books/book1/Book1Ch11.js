@@ -31,6 +31,7 @@ function Book1Ch11() {
           Were this to be fully expanded with general permutations, there would be 3,628,800 permutations with a total of 145,152,000 bars over 10 parts.
           "
         />
+        <br />
         <p class="bookText">There are three methods for creating great variety out of a single rhythmic group. The first creates the least variety, the second is in the middle, and the final can create an enormous amount of variety.</p>
         <ol>
           <li>Method one is to divide the group by its simplest divisor. Typically, this will be to divide the group into halves or into thirds, which can then be rotated.</li>
@@ -45,10 +46,12 @@ function Book1Ch11() {
         <p class="bookText">While many resultants are divisible by 2, not all are. In some cases they will be divisible by 3 (as in the case of r<sub>5%3</sub> grouped by 5), or some even higher prime number. Note however, that in the case of r<sub>5%3</sub> grouped by 5, dividing by 3 results in it being split down to the measure, meaning that by default the second method is what is applied.</p>
         <p class="bookText">With the second method, r<sub>4%3</sub> is split along all of its measures, 4 in this case. These 4 groups can then be rotated clockwise, creating a total of 4 groups, which themselves can be rotated (creating 4 parts each with 4 4-part groups).</p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch11/img2.png" alt="book1ch11img2"></img>
+        <br /> <br />
         <p class="bookText">This method is not limited to clockwise, circular rotation. Counterclockwise rotation, general permutations, etc all can be used, to create potentially massive sets of variations within the same family.</p>
         <p class="bookText">This method in general will result in a score where the number of parts equals the number of bars (that is an n x n square), and that number n equals the permutations made available by whatever method was chosen. For example, r<sub>8%5</sub> results in 8 bars in 8 parts when a circular permutation is applied to it, or a gratuitous 40,320 bars in 40,320 parts when a general permutation is applied.</p>
         <p class="bookText">In the third method, the entire rhythm group is broken down to its individual attacks, and rotated on these. In our example r<sub>4%3</sub>, we have 10 individual notes; when these are permuted upon in a circle, the result is 10 parts with a length of four bars.</p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch11/img3.png" alt="book1ch11img3"></img>
+        <br /> <br />
         <p class="bookText">This method can rapidly produce far more permutations and concurrent sound than any human ear could hope to hear, where even a single circular permutation creates a wall of notes.</p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch11/img4.png" alt="book1ch11img4"></img>
         <h4>playable example?</h4>

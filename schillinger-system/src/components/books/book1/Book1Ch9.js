@@ -34,6 +34,7 @@ function Book1Ch9() {
           or an accent.
           "
         />
+        <br />
         <a className="chapter-section-link" href="/book1ch9#1.9.a" id="1.9.a"><h5>A. General and Circular Permutations</h5></a>
         <p class="bookText">In previous chapters, we have learned that all rhythms can be expressed as combinations or portions of resultants. Useful as they are, there are limits to what can be done with them alone. The human ear can rarely track a large pattern as one indivisible rhythm, however to repeat the same pattern over and over again would lead to boredom. It is therefore necessary to develop techniques that extend the novelty of a short rhythmic expression when used repeatedly; in short, we need variations.</p>
         <p class="bookText">In general, variations can be made of any rhythm by forming permutations of the constituent notes, with the number of available permutations being equal to n!, where n is the number of elements. For example, 3 + 2 + 1 (a dotted quarter, quarter and eighth) has a total of 3 x 2 x 1 = 6 permutations:</p>

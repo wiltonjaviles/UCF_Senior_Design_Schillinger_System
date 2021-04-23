@@ -50,6 +50,7 @@ function Book1Ch1() {
           
           Musical notation will be the final form of number and graph expressions, where where 1 = quarter note, 2 = half note, 3 = dotted half note , 4 = whole note, etc.
           " />
+          <br></br>
           <p class="bookText">The customary method of musical notation is inadequate for the analysis and study of rhythmic patterns because it offers no basis for computations. It is limiting even for the greatest composers.</p>
           <p class="bookText">Time durations can be broken into 3 parallel systems: numbers, graphs, and musical notes. Understanding these groups is key to learning composition.</p>
           <p class="bookText">Numbers will be used in their normal operations (addition, subtraction, multiplication, division, raising to powers, extracting roots, permutations, etc).</p>

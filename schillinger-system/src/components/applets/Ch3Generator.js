@@ -14,7 +14,6 @@ function Ch3Generator() {
     if (old_data[i].id === "book1ch3" ) {
       tempFormA = old_data[i].a;
       tempFormB = old_data[i].b;
-      console.log("tempFormA: " + tempFormA + " tempFormB: " + tempFormB);
       break;
     }
   }

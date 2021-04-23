@@ -17,7 +17,7 @@ function Book1Ch6() {
           Chapter 6. Utilization of Three or more Generators.
 
           Rhythmic groups may be developed using two generators; this can also be accomplished with three or more generators. In using more than two generators, the selection of the third is crucial. Schillinger stated in his “Mathematical Basis of the Arts” that all generators pertaining to one family of rhythm belong to the same series of number-values.
-          These series are the series of growth, which can be found throughout music, other arts and various forms of growth in nature, such as horns, sunflower seeds, and maple leaves. Mathematically, one can produce an infinite number of types of the series of growth, and an infinite number of series of each type of series. The series of growth is a type of summation series.
+          These series are the series of growth which can be found throughout music, other arts, and various forms of growth in nature- such as horns, sunflower seeds, and maple leaves. Mathematically, one can produce an infinite number of types of the series of growth, and an infinite number of series of each type of series. The series of growth is a type of summation series.
           In this particular series, every third number is the sum of the two preceding numbers (ex. 1, 2, 3, 5, 8, 13, 21, …). Each style, or family, of rhythm evolves through these types of summation series. The following are all the series that are useful for musical purposes.
           1, 2, 3, 5, 8, 13, ...
           1, 3, 4, 7, 11, 18, ...
@@ -39,8 +39,9 @@ function Book1Ch6() {
 
           "
         />
+          <br />
           <p className="bookText">Rhythmic groups may be developed using two generators; this can also be accomplished with three or more generators. In using more than two generators, the selection of the third is crucial. Schillinger stated in his “Mathematical Basis of the Arts” that <em>all generators pertaining to one family of rhythm belong to the same series of number-values</em>.</p>
-          <p className="bookText">These series are the series of growth, which can be found throughout music, other arts and various forms of growth in nature, such as horns, sunflower seeds, and maple leaves. Mathematically, one can produce an infinite number of <em>types</em> of the series of growth, and an infinite number of series of each type of series. The series of growth is a type of <em>summation series</em>.</p>
+          <p className="bookText">These series are the series of growth which can be found throughout music, other arts, and various forms of growth in nature- such as horns, sunflower seeds, and maple leaves. Mathematically, one can produce an infinite number of <em>types</em> of the series of growth, and an infinite number of series of each type of series. The series of growth is a type of <em>summation series</em>.</p>
           <p className="bookText">In this particular series, every third number is the sum of the two preceding numbers (ex. 1, 2, 3, 5, 8, 13, 21, …). Each style, or family, of rhythm evolves through these types of summation series. The following are all the series that are useful for musical purposes:</p>
           <ol type="I">
             <li className="bookText">1, 2, 3, 5, 8, 13, …</li>

@@ -45,6 +45,7 @@ function Book1Ch14() {
 
           "
         />
+        <br />
         <p class="bookText">Few things in the universe are constant; really, it would be very boring were that the case. This is also true for music. Traditionally in music this is indicated by the composer, and executed by the performer or conductor by intuition. Schillinger provides a variety of means by which acceleration, deceleration, holds and syncopations can be included in the music more literally and not depend on the intuitions of the musician. This is accomplished with mathematical series. The relevant series are as follows:</p>
         <p class="bookText">(1) Natural Harmonic Series</p>
         <p class="equation">1, 2, 3, 4, 5, 6, 7, 8, 9 ...</p>
@@ -99,8 +100,10 @@ function Book1Ch14() {
         <p class="bookText">Schillinger provides two methods for quantifying fermata. The first is simply to multiply or add up the preceding notes.  This is typically done when the fermata represents a full stop, ending, or transition of a piece.  The effect is to end the fermata in time with the meter of the music, or in other words to recognize that even if the fermata notation has “stopped” the rhythm pattern, the listener will still notice when that pattern is broken.</p>
         <p class="bookText">The second case of fermata is somewhat more complex, and is used when a fermata is used to bring unusual emphasis to a note within a rhythm pattern. He gives the following example:</p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch14/img2.png" alt="book1ch14img2"></img>
+        <br /> <br />
         <p class="bookText">This pattern can be split into three groups: <img src="images/book1/ch14/small_img1.png" alt="book1ch14note1" />, <img src="images/book1/ch14/small_img2.png" alt="book1ch14note2" />, and the whole note. Put together, this forms:</p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch14/img3.png" alt="book1ch14img3"></img>
+        <br /> <br />
         <p class="bookText">From here we do a little bit of math with fractions. To compare a 3/4 time signature to 2/8, we multiply by 2/2 to create 6/8. The ratio between 6/8 and 2/8 is 3:1. We simplify this ratio, and apply it to the second measure; in this case, simplifying from 3:1 to 2:1. All of this is to say that we isolate the second measure and expand it to a 3/8 measure, and simplify the syncopation from a 3:1 ratio to a 2:1 ratio.</p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch14/img4.png" alt="book1ch14img4"></img>
         <br />
