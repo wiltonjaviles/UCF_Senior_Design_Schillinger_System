@@ -97,7 +97,8 @@ function Ch9Generator() {
       "poly2": state.poly2,
       "poly3": state.poly3,
       "poly4": state.poly4,
-      "direction": state.direction
+      "direction": state.direction,
+      "title": "Homogeneous Simultaneity and Continuity (Variations)"
     }
     old_data.unshift(book1ch9);
 

@@ -52,7 +52,7 @@ function Ch5Generator() {
     }
 
     // use unshift to push the new applet ID to the front of the array
-    var book1ch5 = {"id":"book1ch5", "a":state.variableA, "b":state.variableB, "variant": state.variant}; 
+    var book1ch5 = {"id":"book1ch5", "title":"Composition of Groups by Pairs", "a":state.variableA, "b":state.variableB, "variant": state.variant}; 
     old_data.unshift(book1ch5);
 
     // update the schillinger applet array in localStorage

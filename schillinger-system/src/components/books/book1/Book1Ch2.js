@@ -17,16 +17,16 @@ function Book1Ch2() {
           Chapter 2. Interferences of Periodicities.
 
           Now we shall discuss combining one periodicity (say, 3, 3, 3, 3) with another (say, 4, 4, 4, 4), called interference.
-          The periodicity with larger numbers (in our case, 4) will be called the “major generator”; the smaller will be called the “minor generator”. The way we will express two synchronized generators producing one interference group is ā ÷ b . The resultant of interference is r ā ÷ b.
+          The periodicity with larger numbers (in our case, 4) will be called the “major generator”; the smaller will be called the “minor generator”. The way we will express two synchronized generators producing one interference group is a ÷ b . The resultant of interference is r a ÷ b.
           
           Binary Synchronization.
           
           To synchronize two periodicities, you must.
           1. Find common product or common denominator (c.p. or c.d.).
-          2. Find complementary factors of both generators; the complementary factor of ā is (ā b)÷a=b, and the complementary factor of b is (a b)÷b=a.
+          2. Find complementary factors of both generators; the complementary factor of a is (a b)÷a=b, and the complementary factor of b is (a b)÷b=a.
           After this, you must draw a graph of both generators. To find the resultant (r), draw vertical lines from all attack points on both generators. The resultant is found by drawing lines through these points, placing accents over intersecting points. Then the common product is written, numbers are drawn out, and the whole thing is translated into musical notation.
-          When ā equals any number and b equals 1, the resultant (r) represents a musical “bar”. The formula for a musical bar is.
-          T=r ā ÷ 1.
+          When a equals any number and b equals 1, the resultant (r) represents a musical “bar”. The formula for a musical bar is.
+          T=r a ÷ 1.
           (the musical bar (T) is the resultant of a to one)
           Example:
           
@@ -41,7 +41,7 @@ function Book1Ch2() {
           
           A third example.
           
-          The importance of this is that even the most noted composers do not seem to know that an accent should not be forced but should result from the superimposition of ā on b.
+          The importance of this is that even the most noted composers do not seem to know that an accent should not be forced but should result from the superimposition of a on b.
           When it comes to the application of higher numerators (5, 7, 11, etc), the music becomes incomprehensible to the average listener and the composer is the one to blame. When it comes to the shifting of accents which aren’t correctly expressed (through a and b), the performance suffers and listeners are confused.
           Non-uniform rhythmic resultants occur when b ≠ 1. With the procedure we described above, you can find all rhythmic patterns used in the past, present, and future.
           Example:

@@ -13,7 +13,7 @@ function Ch4Generator() {
   // grab the current array sitting in local storage
   var old_data = JSON.parse(localStorage.getItem('schillArr'));
 
-  // need to make it so we can handle multiple versions of ch2 objects
+  // If there is already a saved state of the applet we overwrite the default values
   for (let i in old_data) {
     if (old_data[i].id === "book1ch4" ) {
       tempA = old_data[i].a;
@@ -52,7 +52,7 @@ function Ch4Generator() {
     }
 
      // use unshift to push the new applet ID to the front of the array
-     var book1ch4 = {"id":"book1ch4", "a":state.variableA, "b":state.variableB}; 
+     var book1ch4 = {"id":"book1ch4", "title":"The Techniques of Fractioning", "a":state.variableA, "b":state.variableB}; 
      old_data.unshift(book1ch4);
 
      // update the schillinger applet array in localStorage

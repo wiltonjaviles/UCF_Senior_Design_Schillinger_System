@@ -371,7 +371,7 @@ function Ch12Generator() {
     }
 
     // use unshift to push the new applet ID to the front of the array
-    var book1ch12 = {"id":"book1ch12", "input": state.input}; 
+    var book1ch12 = {"id":"book1ch12", "title":"Distributive Powers", "input": state.input}; 
     old_data.unshift(book1ch12);
 
     // update the schillinger applet array in localStorage
