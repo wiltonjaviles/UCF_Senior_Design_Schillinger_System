@@ -18,7 +18,6 @@ function Ch5Generator() {
       tempA = old_data[i].a;
       tempB = old_data[i].b;
       tempVariant = old_data[i].variant;
-      console.log("tempA: " + tempA + " tempB: " + tempB, "tempVariant: " + tempVariant);
       break;
     }
   }

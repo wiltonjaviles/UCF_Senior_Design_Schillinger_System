@@ -131,12 +131,14 @@ function Book1Ch12() {
           Example:
           "
         />
+        <br />
         <a className="chapter-section-link" href="/book1#1.12.a" id="1.12.a"><h5>A. Continuity of Harmonic Contrasts</h5></a>
           <p class="bookText">All rhythms can be identified to a rhythmic family t. Each rhythmic family has two components: fractional continuity (expressed as <sup>1</sup>/<sub>t<sup>n</sup></sub>), and factorial continuity (expressed as t<sup>n</sup>). The following demonstrates all of the series which have been used by humans, ever.</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch12/img1.png" alt="book1ch12img1"></img>
           <br />
           <br />
           <p class="bookText">Most of western music, and most current music theory, is a combination of the family t = 2, with the occasional t = 3 and t = 6.  This is likely due in no small part to the western writing system being based very directly on the two families; wholes, halves, quarters etc are all based on powers of 2, and so the standard western musical notation assumes by default that music will be in the two families of rhythm. There are of course ways to expand into other families. Typically this will involve either increasingly large numbers, or the inclusion of specially notated triplets, quintuplets, etc.</p>
+          <br />
         <a className="chapter-section-link" href="/book1#1.12.b" id="1.12.b"><h5>B. Composition of Rhythmic Counterthemes</h5></a>
           <p class="bookText">What follows are a series of examples demonstrating rhythmic expansion and variation based on algebra</p>
           <p class="bookText">&emsp;a. Square of a Binomial</p>

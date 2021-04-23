@@ -41,7 +41,7 @@ function Book1Ch8() {
           T double prime is the final duration—group.
           N sub T double prime is the number of final duration—groups.
           Prodecures.
-          1. Interference between the_ number of places in the instrumental group (p l i) and the number of places in the attack-group (p l ā).
+          1. Interference between the number of places in the instrumental group (p l i) and the number of places in the attack-group (p l ā).
           PL = p l i divided by p l ā; p l ā (p l i)  p l i (p l ā).
           2. The product of the number of attacks in the attack group (ā sub ā) by the complementary factor to the number of places in the attack-group (p l i after reduction).
           ā = ā sub ā times  p l i.
@@ -99,6 +99,7 @@ function Book1Ch8() {
           Example of composition of the resultant of instrumental interference.
           "
         />
+          <br />
           <p class="bookText">The common element to all music, regardless of culture or complexity, is that it represents motion: the change of place over time. Regardless of the pitches used, rhythms employed, harmony (or lack thereof), anything that can be called music can be annotated as <em>organized time</em>.</p>
           <p class="bookText">Organized time, more commonly referred to as <em>rhythm</em>, can be universally annotated with the following:</p>
           <ol>
@@ -123,7 +124,7 @@ function Book1Ch8() {
             <p class="bookText">T”&emsp;the ﬁnal duration—group.</p>
             <p class="bookText">N<sub>T”</sub>&emsp;the number of ﬁnal duration—groups.</p>
           <h5>Prodecures:</h5>
-          <p class="bookText">1. Interference between the_ number of places in the instrumental group (pli) and the number of places in the attack-group (pla).</p>
+          <p class="bookText">1. Interference between the number of places in the instrumental group (pli) and the number of places in the attack-group (pla).</p>
               <p class="equation">PL = <sup>pli</sup>/<sub>pla</sub> ;&emsp;<sup>pla (pli)</sup><sub>pli (pla)</sub></p>
           <p class="bookText">2. The product of the number of attacks in the attack group (a<sub>a</sub>) by the complementary factor to the number of places in the attack-group (pli after reduction).</p>
           <p class="equation">A = a<sub>a</sub>&#183;pli</p>
@@ -133,7 +134,6 @@ function Book1Ch8() {
           <p class="equation">T' = T&#183;A' = <sup>T&#183;a<sub>a</sub> pli</sup>/<sub>a<sub>T</sub></sub></p>
           <p class="bookText">5. Interference between the synchronized duration-group (T’) and the ﬁnal duration—group (T”).</p>
           <p class="equation">N<sub>T''</sub> = <sup>T'</sup>/<sub>T''</sub></p>
-
         <a className="chapter-section-link" href="/book1ch8#1.8.b" id="1.8.b"><h5>B. Synchronization of an Attack-Group</h5></a>
           <p class="bookText">Distribution of attacks of an attack-group (a<sub>a</sub>) through the number of attacks of a duration—group (a<sub>T</sub>).</p>
           <p class="equation"><em>First Case:</em> <sup>a<sub>a</sub></sup>/<sub>a<sub>T</sub></sub> = 1</p>
@@ -159,6 +159,7 @@ function Book1Ch8() {
           <p class="equation">A = 4a&#183;a3 = 12a</p>
           <p class="equation">T' = 6t&#183;3 = 18t</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch8/img3.png" alt="book1ch8img3"></img>
+          <br /> <br />
         <a className="chapter-section-link" href="/book1ch8#1.8.c" id="1.8.c"><h5>C. Distribution of a Synchronized Duration-Group</h5></a>
           <p class="equation"><em>First Case:</em> <sup>T'</sup>/<sub>T''</sub> = 1</p>
           <p class="equation">T'' = T'</p>
@@ -187,6 +188,7 @@ function Book1Ch8() {
           <br />
           <br />
           <img className="img-fluid img-thumbnail" src="images/book1/ch8/img9.png" alt="book1ch8img9"></img>
+          <br /> <br />
         <a className="chapter-section-link" href="/book1ch8#1.8.d" id="1.8.d"><h5>D. Synchronization of an Instrumental Group</h5></a> 
           <p class="bookText">Example: pli = 4;&emsp;pla = 3;&emsp;a<sub>a</sub> = 3+2+3 = 8;&emsp;T = r<sub>5&#247;2</sub> = 10t;&emsp;6a</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch8/img10.png" alt="book1ch8img10"></img>

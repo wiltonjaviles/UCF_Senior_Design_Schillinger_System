@@ -5,11 +5,31 @@ import abcjs from "abcjs";
 import Playback from '../applets/Playback';
 
 function Ch6Generator() {
+
+  // Define the variables to be used for applet history and dynamic applet input
+  var tempA = 2;
+  var tempB = 3;
+  var tempC = 4;
+  var tempGroup = 'a';
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch6" ) {
+      tempA = old_data[i].a;
+      tempB = old_data[i].b;
+      tempC = old_data[i].c;
+      tempGroup = old_data[i].groupBy
+      break;
+    }
+  }
+
   const [state , setState] = useState({
-    variableA : 2,
-    variableB : 3,
-    variableC : 4,
-    groupBy : 'a',
+    variableA : tempA,
+    variableB : tempB,
+    variableC : tempC,
+    groupBy : tempGroup,
     OutputABC1 : '',
     OutputABC2 : '',
     OuputA : '',
@@ -32,7 +52,23 @@ function Ch6Generator() {
   }
 
   const generateR = event => {
-    event.preventDefault();    
+    event.preventDefault();   
+    
+    // need to remove previous version of ch6 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch6" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+     // use unshift to push the new applet ID to the front of the array
+     var book1ch6 = {"id":"book1ch6", "a":state.variableA, "b":state.variableB, "c": state.variableC, 'groupBy': state.groupBy}; 
+     old_data.unshift(book1ch6);
+ 
+     // update the schillinger applet array in localStorage
+     localStorage.setItem('schillArr', JSON.stringify(old_data));
+
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
     const vC = Number(state.variableC);

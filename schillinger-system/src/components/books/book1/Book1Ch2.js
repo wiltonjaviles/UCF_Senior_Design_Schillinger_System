@@ -76,6 +76,7 @@ function Book1Ch2() {
           The a and b components show how ‘cross-rhythms’ should be performed. Beat ā and b with both hands, listen to the resultant.
           " 
         />
+          <br></br>
           <p class="bookText">Now we shall discuss combining one periodicity (say, 3, 3, 3, 3) with another (say, 4, 4, 4, 4), called interference.</p>
           <p class="bookText">The periodicity with larger numbers (in our case, 4) will be called the “major generator”; the smaller will be called the “minor generator”. The way we will express two synchronized generators producing one interference group is a ÷ b *. The resultant of interference is r<sub>a ÷ b</sub>.</p>
         <a className="chapter-section-link" href="/book1ch2#1.2.a" id="1.2.a"><h5>A. Binary Synchronization</h5></a>
@@ -93,6 +94,7 @@ function Book1Ch2() {
           <p class="bookText">*note: sometimes Schillinger uses ÷ to indicate the a and b relationship, but also sometimes uses : to indicate the relationship instead. These both mean <em>interference</em></p>
           <p class="bookText">Here is the example in numbers, graph, and musical notation:</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch2/img2.png" alt="book1ch2img2"></img>
+          
           <p class="bookText">The resultant differs from b with respect to the accent in r (because both generators had an attack there). </p>
           <p class="bookText">This establishes a bar with a numerator of 2 i.e. 2/2, 2/4, etc. When the bar is 2/2, 1/2 = 𝅗𝅥, when the bar is 2/4, 1/2 = ♩. </p>
           <p class="bookText">Another example:</p>

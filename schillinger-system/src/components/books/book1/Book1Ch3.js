@@ -49,6 +49,7 @@ function Book1Ch3() {
           This table includes all the necessary scores. Some forms of T are not in common use due to the lack of adequate rhythmic patterns for their representation. ( 10 8 , 14 8 ).   
           " 
         />
+        <br />
           <p class="bookText">Now we will look at how the patterns may be grouped.</p>
           <p class="bookText">There’s three fundamental forms of group of a ÷ b:</p>
           <ol>

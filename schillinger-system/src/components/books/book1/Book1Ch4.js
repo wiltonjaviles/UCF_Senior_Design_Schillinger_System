@@ -16,7 +16,7 @@ function Book1Ch4() {
           text="
           Chapter 4. The Techniques of Fractioning.
 
-          The first process to generate rhythmic resultants is not going to work for all musical purposes as it is too “rich” in its variety for all uses. The following second process helps this issue by providing a higher degree of uniformity.
+          The first process to generate rhythmic resultants is not going to work for all musical purposes as it is too “rich” in its variety for all uses. The following, second, process helps this issue by providing a higher degree of uniformity.
           The groups derived from the second process are referred to as “rhythmic resultants with fractioning around the axis of symmetry.”
           Symbols: a ÷ b and r ā ÷ b. note the underline.
           The process of synchronization is:
@@ -36,7 +36,8 @@ function Book1Ch4() {
           This will give us the number of bars the resultant will have. It will always have a remainder. The denominator of the remainder will tell us how many times the resultant will have to be repeated.
           " 
         />
-          <p class="bookText">The first process to generate rhythmic resultants is not going to work for all musical purposes as it is too “rich” in its variety for all uses. The following second process helps this issue by providing a higher degree of uniformity.</p>
+          <br />
+          <p class="bookText">The first process to generate rhythmic resultants is not going to work for all musical purposes as it is too “rich” in its variety for all uses. The following, second, process helps this issue by providing a higher degree of uniformity.</p>
           <p class="bookText">The groups derived from the second process are referred to as “rhythmic resultants with fractioning around the axis of symmetry.”</p>
           <p class="bookText">Symbols:   <u>a ÷ b</u> and r<sub><u>a ÷ b</u></sub> note the underline.</p>
           <p class="bookText">The process of synchronization is:</p>
@@ -52,15 +53,21 @@ function Book1Ch4() {
           <br />
           <img className="img-fluid img-thumbnail" src="images/book1/ch4/img2.png" alt="book1ch4img2"></img>
           <p class="bookText">(Fig. 26) Note the alignment of the b groups to the waveform of a. This is what step 3 means when you “start b<sub>2</sub> at the beginning of the second phase of a", with the second phase being the change in the waveform. (I’m using waveform informally here).</p>
+          <br />
           <img className="img-fluid img-thumbnail" src="images/book1/ch4/img3.png" alt="book1ch4img3"></img>
           <p class="bookText">(Fig. 27) This is a musical note representation of Figure 26.</p>
+          <br />
           <img className="img-fluid img-thumbnail" src="images/book1/ch4/img4.png" alt="book1ch4img4"></img>
           <br />
           <br />
           <img className="img-fluid img-thumbnail" src="images/book1/ch4/img5.png" alt="book1ch4img5"></img>
+          <br />
+          <br />
           <p class="bookText">Grouping by b produces syncopated rhythms. The resultant and the bar do not close at the same time during the first run of the resultant. This means the resultant needs to be repeated so they stop at the same time.</p>
           <p class="bookText">We can find when they will align from the following:</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch4/img6.png" alt="book1ch4img6"></img>
+          <br />
+          <br />
           <p class="bookText">This will give us the number of bars the resultant will have. It will always have a remainder. The denominator of the remainder will tell us how many times the resultant will have to be repeated.</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch4/img7.png" alt="book1ch4img7"></img>
           <br />
