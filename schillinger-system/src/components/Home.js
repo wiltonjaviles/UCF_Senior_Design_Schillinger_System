@@ -2,9 +2,10 @@ import '.././Style.css';
 // import isAuthenticated from '.././components/authUser';
 import React from 'react';
 // import Speech from 'react-speech';
-import { Container, Button, ButtonGroup } from 'react-bootstrap';
+import { Container, Button, ButtonGroup, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import TextToSpeech from './applets/TextToSpeech';
 
+// function to retrieve and parse applet history items
 function getItems(arrName) {
 
     var schillArr_data = JSON.parse(localStorage.getItem(arrName));
@@ -12,36 +13,22 @@ function getItems(arrName) {
   
 }
 
-function Home() {
+function clearStorage() {
+  localStorage.clear();
+  window.location.reload();
+}
 
-  // isAuthenticated();
+function Home() {
 
   if (localStorage.getItem("schillArr") == null) {
 
-    // make a new array to hold our schillinger applets, place it in localStorage
+    // make a new array to hold our schillinger applet history, place it in localStorage
     return localStorage.setItem('schillArr', '["empty","empty","empty","empty","empty","empty","empty","empty","empty","empty"]');
   
   }
   
+  // get the current applet history array items
   var schillArr_data = getItems("schillArr");
-  console.log(schillArr_data);
-
-  // if the array is undefined, make a new array
-  // if (localStorage.getItem('schillArr') === null) {
-
-  //   // make a new array to hold our schillinger applets, place it in localStorage
-  //   localStorage.setItem('schillArr', '[]');
-
-  //   // grab the current array sitting in local storage
-  //   var schillArr_data = JSON.parse(localStorage.getItem('schillArr'));
-    
-  //   // use unshift to push the new applet ID to the front of the array
-  //   // schillArr_data.unshift(new_data);
-
-  //   // update the schillinger applet array in localStorage
-  //   localStorage.setItem('schillArr', JSON.stringify(schillArr_data));
-
-  // }
 
   return (
     <div>
@@ -49,43 +36,78 @@ function Home() {
         <br />
         <h1>Welcome to the Schillinger System of Musical Composition!</h1>
         <br />
-        <p>Welcome to the Schillinger System of Musical Composition!</p>
-        <br />
+        {/* <p>Welcome to the Schillinger System of Musical Composition!</p> */}
+        {/* <br /> */}
         <h2>Applet History</h2>
-        <ButtonGroup aria-label="Hello Test">
-          <Button variant="success" href={`/${schillArr_data[0].id}`} size="sm">
-            {schillArr_data[0].id}
-          </Button>
-          <Button variant="success" href={`/${schillArr_data[1].id}`} size="sm">
-            {schillArr_data[1].id}
-          </Button>
-          <Button variant="success" href={`/${schillArr_data[2].id}`} size="sm">
-            {schillArr_data[2].id}
-          </Button>
-          <Button variant="success" href={`/${schillArr_data[3].id}`} size="sm">
-            {schillArr_data[3].id}
-          </Button>
-          <Button variant="success" href={`/${schillArr_data[4].id}`} size="sm">
-            {schillArr_data[4].id}
-          </Button>
-          <Button variant="success" href={`/${schillArr_data[5].id}`} size="sm">
-            {schillArr_data[5].id}
-          </Button>
-          <Button variant="success" href={`/${schillArr_data[6].id}`} size="sm">
-            {schillArr_data[6].id}
-          </Button>
-          <Button variant="success" href={`/${schillArr_data[7].id}`} size="sm">
-            {schillArr_data[7].id}
-          </Button>
-          <Button variant="success" href={`/${schillArr_data[8].id}`} size="sm">
-            {schillArr_data[8].id}
-          </Button>
-          <Button variant="success" href={`/${schillArr_data[9].id}`} size="sm">
-            {schillArr_data[9].id}
-          </Button>
+        <br />
+        <p>Applet History saves previous versions of your executed applets. These actions are ordered from most recent to least recent.</p>
+        <p>Hover the buttons below to see the book, chapter, and chapter title that each button corresponds to.</p>
+        <br />
+        
+        <Button variant="success" onClick={clearStorage}>
+          Clear Applet History
+        </Button>
+
+        <br /> 
+        <br />
+
+        <ButtonGroup>
+          <OverlayTrigger overlay={<Tooltip>Book/Chapter: {schillArr_data[0].id} <br /> Title: {schillArr_data[0].title}</Tooltip>} placement="bottom">
+            <Button variant="success" href={`/${schillArr_data[0].id}`}>
+              1
+            </Button>
+          </OverlayTrigger>
+          <OverlayTrigger overlay={<Tooltip>Book/Chapter: {schillArr_data[1].id} <br /> Title: {schillArr_data[1].title}</Tooltip>} placement="bottom">
+            <Button variant="success" href={`/${schillArr_data[1].id}`}>
+              2
+            </Button>
+          </OverlayTrigger>
+          <OverlayTrigger overlay={<Tooltip>Book/Chapter: {schillArr_data[2].id} <br /> Title: {schillArr_data[2].title}</Tooltip>} placement="bottom">
+            <Button variant="success" href={`/${schillArr_data[2].id}`}>
+              3
+            </Button>
+          </OverlayTrigger>
+          <OverlayTrigger overlay={<Tooltip>Book/Chapter: {schillArr_data[3].id} <br /> Title: {schillArr_data[3].title}</Tooltip>} placement="bottom">
+            <Button variant="success" href={`/${schillArr_data[3].id}`}>
+              4
+            </Button>
+          </OverlayTrigger>
+          <OverlayTrigger overlay={<Tooltip>Book/Chapter: {schillArr_data[4].id} <br /> Title: {schillArr_data[4].title}</Tooltip>} placement="bottom">
+            <Button variant="success" href={`/${schillArr_data[4].id}`}>
+              5
+            </Button>
+          </OverlayTrigger>
+          <OverlayTrigger overlay={<Tooltip>Book/Chapter: {schillArr_data[5].id} <br /> Title: {schillArr_data[5].title}</Tooltip>} placement="bottom">
+            <Button variant="success" href={`/${schillArr_data[5].id}`}>
+              6
+            </Button>
+          </OverlayTrigger>
+          <OverlayTrigger overlay={<Tooltip>Book/Chapter: {schillArr_data[6].id} <br /> Title: {schillArr_data[6].title}</Tooltip>} placement="bottom">
+            <Button variant="success" href={`/${schillArr_data[6].id}`}>
+              7
+            </Button>
+          </OverlayTrigger>
+          <OverlayTrigger overlay={<Tooltip>Book/Chapter: {schillArr_data[7].id} <br /> Title: {schillArr_data[7].title}</Tooltip>} placement="bottom">
+            <Button variant="success" href={`/${schillArr_data[7].id}`}>
+              8
+            </Button>
+          </OverlayTrigger>
+          <OverlayTrigger overlay={<Tooltip>Book/Chapter: {schillArr_data[8].id} <br /> Title: {schillArr_data[8].title}</Tooltip>} placement="bottom">
+            <Button variant="success" href={`/${schillArr_data[8].id}`}>
+              9
+            </Button>
+          </OverlayTrigger>
+          <OverlayTrigger overlay={<Tooltip>Book/Chapter: {schillArr_data[9].id} <br /> Title: {schillArr_data[9].title}</Tooltip>} placement="bottom">
+            <Button variant="success" href={`/${schillArr_data[9].id}`}>
+              {/* {schillArr_data[9].id} */}
+              10
+            </Button>
+          </OverlayTrigger>
         </ButtonGroup>
+
+        <br /> 
         <br />
-        <br />
+
         <TextToSpeech text="Welcome to the Schillinger System of Musical Composition!" />
         {/* <Speech 
           textAsButton={true}

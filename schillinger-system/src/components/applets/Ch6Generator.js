@@ -63,7 +63,7 @@ function Ch6Generator() {
     }
 
      // use unshift to push the new applet ID to the front of the array
-     var book1ch6 = {"id":"book1ch6", "a":state.variableA, "b":state.variableB, "c": state.variableC, 'groupBy': state.groupBy}; 
+     var book1ch6 = {"id":"book1ch6", "title":"Utilization of Three or More Generators", "a":state.variableA, "b":state.variableB, "c": state.variableC, 'groupBy': state.groupBy}; 
      old_data.unshift(book1ch6);
  
      // update the schillinger applet array in localStorage

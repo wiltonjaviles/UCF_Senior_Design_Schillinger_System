@@ -17,7 +17,6 @@ function Ch7Generator() {
       tempA = old_data[i].a;
       tempB = old_data[i].b;
       tempAttacks = old_data[i].attacks;
-      console.log("tempA: " + tempA + " tempB: " + tempB, "tempAttacks: " + tempAttacks);
       break;
     }
   }
@@ -51,7 +50,7 @@ function Ch7Generator() {
     }
 
     // use unshift to push the new applet ID to the front of the array
-    var book1ch7 = {"id":"book1ch7", "a":state.variableA, "b":state.variableB, "attacks": state.attacks}; 
+    var book1ch7 = {"id":"book1ch7", "title":"Resultants Applied to Instrumental Forms", "a":state.variableA, "b":state.variableB, "attacks": state.attacks}; 
     old_data.unshift(book1ch7);
 
     // update the schillinger applet array in localStorage

@@ -77,7 +77,7 @@ function Ch3Generator() {
     }
 
     // use unshift to push the new applet ID to the front of the array
-    var book1ch3 = {"id":"book1ch3", "a":state.groupingFormA, "b":state.groupingFormB}; 
+    var book1ch3 = {"id":"book1ch3", "title": "The Techniques of Goruping", "a":state.groupingFormA, "b":state.groupingFormB}; 
     old_data.unshift(book1ch3);
 
     // update the schillinger applet array in localStorage

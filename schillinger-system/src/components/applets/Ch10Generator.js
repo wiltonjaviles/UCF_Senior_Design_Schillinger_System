@@ -56,7 +56,7 @@ function Ch10Generator() {
     }
 
     // use unshift to push the new applet ID to the front of the array
-    var book1ch10 = {"id":"book1ch10", "a":state.variableA, "b":state.variableB, "c": state.variableC}; 
+    var book1ch10 = {"id":"book1ch10","title": "Generalization of Variation Techniques", "a":state.variableA, "b":state.variableB, "c": state.variableC}; 
     old_data.unshift(book1ch10);
 
     // update the schillinger applet array in localStorage
