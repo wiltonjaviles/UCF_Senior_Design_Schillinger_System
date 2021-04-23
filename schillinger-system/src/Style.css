@@ -177,3 +177,7 @@ td {
 .progress-indicator {
   left: 0px;
 }
+
+.playback-card {
+  width: 25%
+}
