@@ -2,8 +2,12 @@ import '.././Style.css';
 // import isAuthenticated from '.././components/authUser';
 import React from 'react';
 // import Speech from 'react-speech';
+<<<<<<< HEAD
 import { Container, Button, ButtonGroup, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import TextToSpeech from './applets/TextToSpeech';
+=======
+import { Container, Button, ButtonGroup } from 'react-bootstrap';
+>>>>>>> 9e2ca4eb2d3195e94fada0e1ddde7f976190ddf0
 
 // function to retrieve and parse applet history items
 function getItems(arrName) {
@@ -107,6 +111,7 @@ function Home() {
 
         <br /> 
         <br />
+<<<<<<< HEAD
 
         <TextToSpeech text="Welcome to the Schillinger System of Musical Composition!" />
         {/* <Speech 
@@ -119,6 +124,9 @@ function Home() {
         /> */}
         <br />
         <br />
+=======
+        
+>>>>>>> 9e2ca4eb2d3195e94fada0e1ddde7f976190ddf0
       </Container>
     </div>
   );
