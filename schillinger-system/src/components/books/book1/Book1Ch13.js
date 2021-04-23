@@ -17,9 +17,33 @@ function Book1Ch13() {
           Chapter 13. Evolution of Rhythm Styles (Families).
           
           ā. Swing Music.
+          
           Tracing the origin of a binomial.
           For any given binomial ā + b, it is easy to determine the most basic generator that contains the binomial: the first term is given by the sum of the binomial, and the second term is the greater of a and b. So for example, for the binomial 5 + 3 (), the first term would be 8, and the second term would be 5, giving r 8%5.
           It may be observed that imbalances such as the one listed above can expand through a rhythmic family by the process of merging rhythm families, and then by unbalancing the rhythms.
+          Chronologically, music tends to start in a balanced state and move approximately towards imbalance. As it does so, it tends to merge families into each other, which can be seen whenever specially marked note durations (think triplets in 4 4 or duplets in 6 8) make their appearance. For example, as 2+1 is closer to balance than 3+1, 3 4 time is more likely to become 9 8 time than 16 8, as (2+1) + (2+1) + (2+1) is a more natural evolution from 3 4 than a grouping of (3+1).
+          An example of this type of evolution can be demonstrated in the Rosenkavalier waltz by Richard Strauss.
+          The above is 3 + 1 + 5 + 1 + 5 + 1 + 2. Taking note of the 3 4 time signature, this should evolve into a 9 9 series (second power of 3), but by staying in 3 4 time only an approximation is available, in this case the 5+1+5 figure is close to a the 4+1+4 figure of a nearly balanced 9 series resultant.
+          In many cases, more direct hybrids can be found in waltzes. For example:
+          This is a 4 series binomial (3+1) overlayed on a 3 series time signature.
+          In many Viennese waltzes, there will appear a 6 6 series figure with a high degree of imbalance:
+          Leaving Waltzes, swing will frequently overlay a 3 multiple series over another series, most commonly experienced as syncopation.
+          For all cases of these hybridizations and approximations of higher series patterns, there is a sense of wanting to break out from the base 2 series that standard musical notation tends to stay locked into, resulting in hybridizations forced into a 3 4 time signature or the use of 12 12 instead of 9 9.
+          In general, the evolution pattern for rhythmic families may be expressed as follows:
+          r 1 . . . P r 1 . . . S P r 1 . . . i 1
+          r 2 . . . P r 2 . . . S P r 2 . . . i 2
+          . . . . . . . . . . . . . . . . . . . .
+          r 2 1 . . . P r 2 1 . . . S P r 2 1 . . . i 1
+          r 2 2 . . . P r 2 2 . . . S P r 2 2 . . . i 1
+          . . . . . . . . . . . . . . . . . . . .
+          r n 1 . . . P r n 1 . . . S P r n 1 . . . i n 1
+          . . . . . . . . . . . . . . . . . . . .
+          r n n . . . P r n n . . . S P r n n . . . i n n
+          . . . . . . . . . . . . . . . . . . . .
+          r - is the resultant
+          P - Permutations
+          S - Synchronization
+          i - Interference
           "
         />
         <br />
