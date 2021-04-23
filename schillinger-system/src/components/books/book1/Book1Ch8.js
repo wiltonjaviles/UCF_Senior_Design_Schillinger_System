@@ -30,48 +30,48 @@ function Book1Ch8() {
           A. Distribution of a Duration-Group.
           Notation.
           p l i is the number of places in the instrumental group.
-          p l ā is the number of places in the attack-group.
-          ā sub ā is the number of attacks in the attack-group.
-          ā sub T is the number of attacks in the duration-group.
+          p l ae is the number of places in the attack-group.
+          ae sub ae is the number of attacks in the attack-group.
+          ae sub T is the number of attacks in the duration-group.
           P L  is the final number of places.
-          ā is the synchronized attack—group (the number of attacks synchronized with the number of places).
-          ā prime is the final attack group (number of attacks synchronized with the duration—group).
+          ae is the synchronized attack—group (the number of attacks synchronized with the number of places).
+          ae prime is the final attack group (number of attacks synchronized with the duration—group).
           T is the original duration-group.
           T prime is the synchronized duration~group.
           T double prime is the final duration—group.
           N sub T double prime is the number of final duration—groups.
           Prodecures.
-          1. Interference between the number of places in the instrumental group (p l i) and the number of places in the attack-group (p l ā).
-          PL = p l i divided by p l ā; p l ā (p l i)  p l i (p l ā).
-          2. The product of the number of attacks in the attack group (ā sub ā) by the complementary factor to the number of places in the attack-group (p l i after reduction).
-          ā = ā sub ā times  p l i.
-          3. Interference between the synchronized attack-group (ā) and the number of attacks in the original duration-group (ā sub T).
-          ā prime = ā divided by ā T = ā sub ā times p l i divided by ā sub T.
+          1. Interference between the number of places in the instrumental group (p l i) and the number of places in the attack-group (p l ae).
+          PL = p l i divided by p l ae; p l ae (p l i)  p l i (p l ae).
+          2. The product of the number of attacks in the attack group (ae sub ae) by the complementary factor to the number of places in the attack-group (p l i after reduction).
+          ae = ae sub ae times  p l i.
+          3. Interference between the synchronized attack-group (ae) and the number of attacks in the original duration-group (ae sub T).
+          ae prime = ae divided by ae T = ae sub ae times p l i divided by ae sub T.
           4. The product of the original duration-group (T) by the complementary factor to its number of attacks (A prime).
-          T prime = T times ā prime = T times ā sub ā times p l i divided by ā sub T.
+          T prime = T times ae prime = T times ae sub ae times p l i divided by ae sub T.
           5. Interference between the synchronized duration-group (T prime) and the final duration—group (T prime).
           N sub T prime = T prime divided by T double prime.
           B. Synchronization of an Attack-Group.
-          Distribution of attacks of an attack-group (ā sub ā) through the number of attacks of a duration—group (ā sub T).
-          First Case: ā sub ā divided by ā T = 1.
-          ā = ā sub T.
+          Distribution of attacks of an attack-group (ae sub ae) through the number of attacks of a duration—group (ae sub T).
+          First Case: ae sub ae divided by ae T = 1.
+          ae = ae sub T.
           T prime = T.
-          Example: ā sub ā = 4 ā; T = r 3÷2 = 6 t; ā T = 4 ā.
-          ā = 4 ā.
+          Example: ae sub ae = 4 ae; T = r 3÷2 = 6 t; ae T = 4 ae.
+          ae = 4 ae.
           T prime = 6 t.
-          Second Case: ā sub ā divided by ā sub T ≠ 1.
-          ā = ā T times ā sub ā.
-          T prime = T times ā sub ā.
-          Example: ā sub ā = 5 ā; T = r3÷2 = 6t; ā T = 4 ā.
+          Second Case: ae sub ae divided by ae sub T ≠ 1.
+          ae = ae T times ae sub ae.
+          T prime = T times ae sub ae.
+          Example: ae sub ae = 5 ae; T = r3÷2 = 6t; ae T = 4 ae.
           5 divided by 4.
-          ā = 5 ā times 4 = 20 ā.
+          ae = 5 ae times 4 = 20 ae.
           T prime = 6 t times 5 = 30 t.
-          Third Case: ā sub ā divided by ā sub T = ā sub ā' divided by ā sub T prime i.e., a reducible fraction.
-          ā = ā sub T times ā sub ā.
-          T prime = T times ā sub ā prime.
-          Example: ā sub ā = 6 ā ; T = r3÷2 = 6t; ā sub T = 4 ā.
+          Third Case: ae sub ae divided by ae sub T = ae sub ae' divided by ae sub T prime i.e., a reducible fraction.
+          ae = ae sub T times ae sub ae.
+          T prime = T times ae sub ae prime.
+          Example: ae sub ae = 6 ae ; T = r3÷2 = 6t; ae sub T = 4 ae.
           6 divided by 4 = 3 divided by 2.
-          ā  = 4 ā times 3 = 12 ā.
+          ae  = 4 ae times 3 = 12 ae.
           T prime = 6 t times 3 = 18 t.
           C. Distribution of a Synchronized Duration-Group.
           First Case: T prime divided by T double prime = 1.
@@ -86,7 +86,7 @@ function Book1Ch8() {
           Example: T prime = 6t; T double prime = 4t.
           6 divided by 4 = 3 divided by 2.
           N sub 4t = 3.
-          Example: ā sub ā = 5 ā; t = r 5÷2 = 10t; ā sub T = 6 ā.
+          Example: ae sub ae = 5 ae; t = r 5÷2 = 10t; ae sub T = 6 ae.
           1.
           6 divided by 5 = 5 (6) 6 (5).
           2.
@@ -94,8 +94,8 @@ function Book1Ch8() {
           3.
           When T double prime = 8 divided by 8, 50 t divided by 8 = 25 times 4 divided by 4 = 25T double prime.
           D. Synchronization of an Instrumental Group.
-          Example: p l i = 4; p l ā = 3; ā sub ā = 3+2+3 = 8; T = r 5÷2 = 10 t; 6 ā.
-          Example: p l i = 3; p l ā = 3; ā sub ā = 3+2+2+3=10; T = r 4÷3 = 16 t; 10 ā T double prime = 8 t.
+          Example: p l i = 4; p l ae = 3; ae sub ae = 3+2+3 = 8; T = r 5÷2 = 10 t; 6 ae.
+          Example: p l i = 3; p l ae = 3; ae sub ae = 3+2+2+3=10; T = r 4÷3 = 16 t; 10 ae T double prime = 8 t.
           Example of composition of the resultant of instrumental interference.
           "
         />

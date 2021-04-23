@@ -21,7 +21,7 @@ function Book1Ch1() {
           Time durations can be broken into 3 parallel systems: numbers, graphs, and musical notes. Understanding these groups is key to learning composition.
           Numbers will be used in their normal operations (addition, subtraction, multiplication, division, raising to powers, extracting roots, permutations, etc).
           
-          ā. Graphing Music.
+          ae. Graphing Music.
           
           Graphs in this system are similar to the general use of graphs (to record changes in variables over time). The horizontal coordinate will be read from left to right and express time. The vertical coordinate will express the recurrence of a phase (the change in direction which is called an attack).
           Let a pendulum of a clock swing uniformly over a period of time to see the wave motion.
@@ -33,7 +33,7 @@ function Book1Ch1() {
           The complexity of a wave depends on the number of components. The simplest wave is shown in figure 1. The general form of the analysis of wave-motion is the Fourier method developed in 1822. This method is very precise, but is very complicated for analyzing music. It takes several hours to analyze a wave with so many components, thus machines have been developed that can do the work of a mathematician in a fraction of the time.
           A simple, 1 component wave for one period (recurrence) looks like this.
           
-          The distance from ā to alpha to b and from b to alpha prime to ā prime are the same. The curves are phases of the wave, and two phases is called a period. We will use phases as units of measurement. The distances from ā to beta and ā prime to beta prime are equal and called the amplitude. They express the intensity of the wave.
+          The distance from ae to alpha to b and from b to alpha prime to ae prime are the same. The curves are phases of the wave, and two phases is called a period. We will use phases as units of measurement. The distances from ae to beta and ae prime to beta prime are equal and called the amplitude. They express the intensity of the wave.
           We only care about intensity in reference to accents only.
           By assuming that the arrangement of durations is not showing the amplitude, we shall use rhythm graphs that look like this.
           
@@ -41,8 +41,8 @@ function Book1Ch1() {
           B. Forms of Periodicity.
           Continuous recurrence of a group is periodicity. Periodicity where all groups are exactly the same is uniform periodicity. Different forms of uniform periodicity can be compared by the number of terms (places) in a recurrence.
           Groups with 1 term are called monomial periodicity. For example:
-          ā t1+ ā t2+...+ā tn
-          ā is the recurring term and tn are the times that a occurs. In music these values are integers, ā may be 1, 2, 3, … , n.
+          ae t1+ ae t2+...+ae tn
+          ae is the recurring term and tn are the times that a occurs. In music these values are integers, ae may be 1, 2, 3, … , n.
           When expressed using numbers, they look like this.
           
           Where each horizontal segment in the wave represents a time unit.

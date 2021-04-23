@@ -56,7 +56,7 @@ function Book1Ch2() {
           a = 3. In this case, c.p. is excluded and b becomes merely an optional component.
           
           3. Superimposition of b. 
-          b = 2. c.p. is excluded; ā becomes optional.
+          b = 2. c.p. is excluded; ae becomes optional.
           
           Another Example.
           
@@ -68,12 +68,12 @@ function Book1Ch2() {
           Inversion.
           Thus, harmony of form is a product of physical efficiency.
           All rhythmic patterns in music are either complete or incomplete resultants.
-          When all of the resultants up to ā = 9 have been found, you can create all rhythm patterns in the past, present, and even the future.
+          When all of the resultants up to ae = 9 have been found, you can create all rhythm patterns in the past, present, and even the future.
           All the necessary generators are:
           
-          When c.p. is greater than 15, use ā or b superimposition only.
+          When c.p. is greater than 15, use ae or b superimposition only.
           When the numbers get large, a musical eighth note is the best denominator. All reducible fractions have been excluded from the above chart.
-          The a and b components show how ‘cross-rhythms’ should be performed. Beat ā and b with both hands, listen to the resultant.
+          The a and b components show how ‘cross-rhythms’ should be performed. Beat ae and b with both hands, listen to the resultant.
           " 
         />
           <br></br>

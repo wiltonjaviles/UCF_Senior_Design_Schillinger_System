@@ -23,7 +23,7 @@ function Book1Ch9Schillinger() {
           and to perform the rhythm of it in a percussive manner.
           The musical components of rhythm include durations, rests, accents, split-unit groups and groups in general. The inherent variability of any of these components of the time rhythm depends solely on their quantitative form, i.e., whether there are two or three, or more, elements involved in the pattern subjected to variations——for example, two elements, two durations, two forms of accent, as well as binary combinations of rests with durations, or durations with accents. The variability of groups follows the general principles of permutations.
 
-          ā. GENERAL AND CIRCULAR PERMUTATIONS
+          ae. GENERAL AND CIRCULAR PERMUTATIONS
           There are two fundamental forms of permutations: ﬁrst, general permutations; second, circular permutations (displacement). The quantity of general permutations is the product of all integers from unity up to the number expressing the quantity of the elements in a group. For example, the general number of permutations produced by 5 elements equals the product of 1 X 2 X 3 X 4 X 5, i.e., 120. The number of circular permutations equals the number of elements in a group. Thus, ﬁve elements produce ﬁve circular permutations.
           When an extremely large amount of material is used, general permutations become very practical. But in cases where limitations are imposed by a certain type of esthetic necessity, circular permutations may solve the problem better than a vague selection from the entire number of general permutations,
           In the following exposition, a bi-coordinate method will be applied to the composition of continuity. A linear sequence of the modiﬁed versions of one pattern produces the time coordinate (continuity). A correlation of the modiﬁed patterns produces the coordinate of simultaneity (or pitch). In other words, all modiﬁed forms of the original pattern may grow through the bi-Coordinate system, i.e., they appear one after another in different parts, thus producing compensatory balance.
@@ -65,7 +65,7 @@ function Book1Ch9Schillinger() {
           When two elements in a group of three are identical, circular permutations either in clockwise or counter-clockwise direction are the only possible ones.
           Examples of Application:
           (1) Durations:
-          Trinomial 2+1+1;ā=2;b =1
+          Trinomial 2+1+1;ae=2;b =1
           Using circular permutations of this continuity, we obtain the following simultaneity:
           (2) Rests:
           Trinomial
@@ -86,7 +86,7 @@ function Book1Ch9Schillinger() {
           (1) Durations:
           (a) All four elements different.
           Quadrinomial from r5÷4; 4 + 1 + 3 + 2
-          ā=4;b=1;c=3;d=2
+          ae=4;b=1;c=3;d=2
           (4+1+3+2) + (4+1+2+3) + (4+2+1+3) + (2+4+1+3) +
           + (4+3+1+2) + (4+3+2+l) + (4+2+3+1) + (2+4+3+1) +
           + (3+4+1+2) + (3+4+2+1) + (3+2+4+1) + (2+3+4+1) +
@@ -99,7 +99,7 @@ function Book1Ch9Schillinger() {
           (b) Two elements identical.
           Quadrinomial from r÷3; 3 + 1 + 2 + 2
           a = 2; b = 3; c = 1
-          Form: b+c +ā+ā
+          Form: b+c +ae+ae
           Starting with the third permutation of the corresponding table, we obtain:
           (3+1+2+2) + (1+2+2+3) + (2+2+1+3) + (2+1+3+2) +
           + (1+3+2+2) + (3+2+2+1) + (2+3+2+1) + (3+2+1+2) +
@@ -108,21 +108,21 @@ function Book1Ch9Schillinger() {
           (c) Two pairs identical.
           Quadrinomial +2; 2 + 1 + 1 + 2
           a = 2; b = 1
-          Form: ā+b +b +ā
+          Form: ae+b +b +ae
           Starting with the second permutation of the corresponding table, we obtain:
           (2+1+1+2) + (1+1+2+2) + (1+2+2+1) + (2+1+2+1) +
           + (1+2-+1+2) + (2+2+1+1)
           This 6-group continuity produces a 6-part simultaneity in 6 bars of 6 8 time or in 12 bars of % time (1 = J ). Clockwise circular permutations give 4 parts in 4 bars of % time or 4 parts in 8 bars of  3 4 time (1 =  )
           (d) Three elements identical.
           Quadrinomial: 3 +1 +1 +1
-          ā=1;b =3
-          Form:b+ā+ā+ā
+          ae=1;b =3
+          Form:b+ae+ae+ae
           Starting with the fourth permutation of the corresponding table we obtain:
           (3+1+1+1) + (1+1+1+3) + (1+1+3+1) + (1+3+1+1)
           This 4-group continuity produces a 4-part simultaneity in 4 bars of 6 8 time
           or in 8 bars of 3 4 time.
           Assigning different symbols to the same group we obtain the form a +b+b+b.
-          Then: (ā+b+b+b) + (b+ā+b+b) + (b+b+ā+b) + (b+b+b+ā)
+          Then: (ae+b+b+b) + (b+ae+b+b) + (b+b+ae+b) + (b+b+b+ae)
           This produces a continuity of perfect musical quality:
           Similar modiﬁcation of the symbols assigned is possible with any group
           containing identical terms.

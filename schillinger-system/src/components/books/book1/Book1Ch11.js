@@ -21,7 +21,7 @@ function Book1Ch11() {
           Method two is to divide the group by measures, and to then rotate.
           Method three is to divide the group by all of its attacks.
           To apply the first method to r 4 divided by 3, start by observing that the number of measures is an even number, meaning that the simplest divisor is 2. r 4 divided by 3 contains 4 measures, and so in this method is split into groups of 2, which are then subjected to a simple rotation.
-          In the above figure, ā2 is the original r 4 divided by 3, and b2 is a simple rotation of ā2. Notice that if b2+ā2 is stacked with ā2+b2, the result (if played simultaneously) is a continuous stream of quarter notes.
+          In the above figure, ae2 is the original r 4 divided by 3, and b2 is a simple rotation of ae2. Notice that if b2+ae2 is stacked with ae2+b2, the result (if played simultaneously) is a continuous stream of quarter notes.
           While many resultants are divisible by 2, not all are. In some cases they will be divisible by 3 (as in the case of r 5 divided by 3 grouped by 5), or some even higher prime number. Note however, that in the case of r 5 divided by 3 grouped by 5, dividing by 3 results in it being split down to the measure, meaning that by default the second method is what is applied.
           With the second method, r 4 divided by 3 is split along all of its measures, 4 in this case. These 4 groups can then be rotated clockwise, creating a total of 4 groups, which themselves can be rotated (creating 4 parts each with 4 4-part groups).
           This method is not limited to clockwise, circular rotation. Counterclockwise rotation, general permutations, etc all can be used, to create potentially massive sets of variations within the same family.

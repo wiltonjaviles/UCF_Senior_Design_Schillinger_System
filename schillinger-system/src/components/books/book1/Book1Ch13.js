@@ -16,10 +16,10 @@ function Book1Ch13() {
           text="
           Chapter 13. Evolution of Rhythm Styles (Families).
           
-          ā. Swing Music.
+          ae. Swing Music.
           
           Tracing the origin of a binomial.
-          For any given binomial ā + b, it is easy to determine the most basic generator that contains the binomial: the first term is given by the sum of the binomial, and the second term is the greater of a and b. So for example, for the binomial 5 + 3 (), the first term would be 8, and the second term would be 5, giving r 8%5.
+          For any given binomial ae + b, it is easy to determine the most basic generator that contains the binomial: the first term is given by the sum of the binomial, and the second term is the greater of a and b. So for example, for the binomial 5 + 3 (), the first term would be 8, and the second term would be 5, giving r 8%5.
           It may be observed that imbalances such as the one listed above can expand through a rhythmic family by the process of merging rhythm families, and then by unbalancing the rhythms.
           Chronologically, music tends to start in a balanced state and move approximately towards imbalance. As it does so, it tends to merge families into each other, which can be seen whenever specially marked note durations (think triplets in 4 4 or duplets in 6 8) make their appearance. For example, as 2+1 is closer to balance than 3+1, 3 4 time is more likely to become 9 8 time than 16 8, as (2+1) + (2+1) + (2+1) is a more natural evolution from 3 4 than a grouping of (3+1).
           An example of this type of evolution can be demonstrated in the Rosenkavalier waltz by Richard Strauss.

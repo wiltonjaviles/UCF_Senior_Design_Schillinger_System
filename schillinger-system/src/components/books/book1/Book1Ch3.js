@@ -17,32 +17,32 @@ function Book1Ch3() {
           Chapter 3. The Techniques of Grouping.
 
           Now we will look at how the patterns may be grouped.
-          There’s three fundamental forms of group ā ÷ b.
-          Grouping by the product (by ā b).
-          Grouping by the Major generator (by ā ).
+          There’s three fundamental forms of group ae ÷ b.
+          Grouping by the product (by ae b).
+          Grouping by the Major generator (by ae ).
           Grouping by the Minor generator.
-          Using arbitrary variables, in order to group m elements by n groups, you divide m by n. If you were using grouping method 1 (by ā b) then you would divide m by ā b.
-          In this case of binary synchronization the duration of the score equals ā b. 
-          Grouping that by ā b would result in the following formula:
-          ā b÷ā b=T (1)
-          ie. grouping by ā b produces one T with ā b t.
+          Using arbitrary variables, in order to group m elements by n groups, you divide m by n. If you were using grouping method 1 (by ae b) then you would divide m by ae b.
+          In this case of binary synchronization the duration of the score equals ae b. 
+          Grouping that by ae b would result in the following formula:
+          ae b÷ae b=T (1)
+          ie. grouping by ae b produces one T with ae b t.
           Example:
           3 ÷ 2   
-          ā b÷ā b=
+          ae b÷ae b=
           6÷6 T, one measure with 6t.
           6t can be represented as any measure with 6 single units. For instance, 3 4 time where t = eighth note, or 6 4 time where t = quarter note, or 6 8 time where t = eighth note.
-          Grouping by a: ā b÷a = b T (2)
+          Grouping by a: ae b÷a = b T (2)
           3 ÷ 2 3×2÷3=3×2÷2=2T ie two measures with 3t.
-          When grouping by a, ā b must be excluded from the score or else it will sound like one T.
+          When grouping by a, ae b must be excluded from the score or else it will sound like one T.
           Also, b becomes an optional component, causing an effect known as syncopation.
           Syncopation - a temporary displacement of the regular metrical accent in music caused typically by stressing the weak beat. (Merriam-Webster)
-          Grouping by b: ā b÷b = a T (3)
+          Grouping by b: ae b÷b = a T (3)
           3 ÷ 2 
           3×2÷3 
           = 6÷2 
           =3T ie three measures with 2t.
-          Again, exclude ā b from the score and ā is an optional component.
-          It’s possible to score all the 19 cases of binary synchronization by ā b, by ā, and by b, unless ā b is too great to be used as one T.
+          Again, exclude ae b from the score and ae is an optional component.
+          It’s possible to score all the 19 cases of binary synchronization by ae b, by ae, and by b, unless ae b is too great to be used as one T.
           This table includes all the necessary scores. Some forms of T are not in common use due to the lack of adequate rhythmic patterns for their representation. ( 10 8 , 14 8 ).   
           " 
         />

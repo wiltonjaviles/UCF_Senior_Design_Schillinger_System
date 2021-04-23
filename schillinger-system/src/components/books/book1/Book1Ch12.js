@@ -16,18 +16,18 @@ function Book1Ch12() {
           text="
           Chapter 12. Distributive Powers.
           
-          ā. Continuity of Harmonic Contrasts.
+          ae. Continuity of Harmonic Contrasts.
           All rhythms can be identified to a rhythmic family t. Each rhythmic family has two components: fractional continuity (expressed as 1/tn), and factorial continuity (expressed as tn). The following demonstrates all of the series which have been used by humans, ever.
           Most of western music, and most current music theory, is a combination of the family t = 2, with the occasional t = 3 and t = 6. This is likely due in no small part to the western writing system being based very directly on the two families; wholes, halves, quarters etc are all based on powers of 2, and so the standard western musical notation assumes by default that music will be in the two families of rhythm. There are of course ways to expand into other families. Typically this will involve either increasingly large numbers, or the inclusion of specially notated triplets, quintuplets, etc.
           B. Composition of Rhythmic Counterthemes.
           What follows are a series of examples demonstrating rhythmic expansion and variation based on algebra.
-           ā. Square of a Binomial.
+           ae. Square of a Binomial.
           Formula:
-          (a) Factorial: (ā+b) squared = ā squared + ā b + ā b + b squared 
-          (b) Fractional: (a/ā + b + b/ā + b) squared  = ā squared /(ā + b) squared  + ā b/(ā + b) squared  + ā b/(ā + b) squared  + b squared /(ā + b) squared 
+          (a) Factorial: (ae+b) squared = ae squared + ae b + ae b + b squared 
+          (b) Fractional: (a/ae + b + b/ae + b) squared  = ae squared /(ae + b) squared  + ae b/(ae + b) squared  + ae b/(ae + b) squared  + b squared /(ae + b) squared 
           Formula for Synchronization:
-          (a) Factorial: S = ā(ā + b)  +  b(ā + b)
-          (b) Fractional: S = ā/ā + b · (ā + b/ā + b)  +  b/ā + b · (ā + b/ā + b)
+          (a) Factorial: S = ae(ae + b)  +  b(ae + b)
+          (b) Fractional: S = ae/ae + b · (ae + b/ae + b)  +  b/ae + b · (ae + b/ae + b)
           Example:
           Series 3/3 Factorial binomials: 2 + 1 and 1 + 2
           Fractional binomials: 2/3 + 1/3 and 1/3 + 2/3
@@ -35,23 +35,23 @@ function Book1Ch12() {
           3/3(2/3  +  1/3) = 6/9 + 3/9 (synchronization)
           (1/3  +  2/3)squared = 1/9 + 2/9 + 2/9 + 4/9 (squaring)
           3/3(1/3  +  2/3) = 3/9 + 6/9 (synchronization)
-          The initial binomials synchronized with their distributive squares represent the themes. The distributive squares themselves represent counter themes. The proportion ā squared/ā b = ā b/b squared produces harmonic contrast and gives aesthetic satisfaction.
+          The initial binomials synchronized with their distributive squares represent the themes. The distributive squares themselves represent counter themes. The proportion ae squared/ae b = ae b/b squared produces harmonic contrast and gives aesthetic satisfaction.
           Here is a graph and the musical notation of the entire score:
           As numbers grow it’s practical to find the resultants of interferences between the initial binomials (synchronized) and the resultants of distributive squares. Having these groups may be later utilized in scoring.
-          In addition to this, it is important to supplement the score by r ā/b where ā is the determinant in the series. For example, in the previous case of 3/3. The determinant is 3; therefore r 3÷2 may be added to the score.
+          In addition to this, it is important to supplement the score by r ae/b where ae is the determinant in the series. For example, in the previous case of 3/3. The determinant is 3; therefore r 3÷2 may be added to the score.
           Here is a complete graph and musical notation of the power groups, their resultants, and r_.
           Factorial groups of rhythm build the entire continuity in terms of bars, while fractional groups build the bars in terms of duration-units.
            b. Square of a Trinomial.
-          Formula: (ā+b+c) squared = (ā squared +ā b+ā c) + (ā b+b squared +bc) + (ā c + bc + c squared).
+          Formula: (ae+b+c) squared = (ae squared +ae b+ae c) + (ae b+b squared +bc) + (ae c + bc + c squared).
           The number of terms in a distributive square of any polynomial equals the square of the number of terms in the polynomial. Thus, a binomial gives 4 terms (2 squared = 4), a trinomial gives 9 terms (3 squared = 9). The denominator of all terms in the distributive square power-groups equals the square of the sum of all the terms. In a trinomial it equals (a+b+c) squared, like (3+2+1) squared = (6) squared = 36.
           In order to synchronize any initial polynomial with its distributive square, you need to find the products of each term but the sum of the polynomial. For example, to synchronize a trinomial with its distributive square.
-          You can express the above score in four bars in 4 4 assuming 1/16 = quarter note. You can also write the whole thing in integers, i.e., using the numerators only. Just like binomials, you would want to supplement this score with the first and second power resultants and the rā%b.
+          You can express the above score in four bars in 4 4 assuming 1/16 = quarter note. You can also write the whole thing in integers, i.e., using the numerators only. Just like binomials, you would want to supplement this score with the first and second power resultants and the rae%b.
           Here is the entire score.
           In the case of 2+1+1 and 1+1+2, classical composers were able to find the exact distributive squares intuitively. They could not however find 1+2+1.
           (1+2+1)+(2+4+2)+(1+2+1) is very useful for the tango.
           The reason for choosing these as the most practical trinomials will be given later when we discuss the evolution of style in rhythm.
            c. Square of any Polynomial.
-          Formula: (ā +b+c+...+m) squared = (ā  squared+ā b+ā c+...+ā m) + (ā b+b squared+bc+...+bm) + (ā c+bc+c squared+...+cm)+ ... + (ā m+bm+cm+...+m squared).
+          Formula: (ae +b+c+...+m) squared = (ae  squared+ae b+ae c+...+ae m) + (ae b+b squared+bc+...+bm) + (ae c+bc+c squared+...+cm)+ ... + (ae m+bm+cm+...+m squared).
           The following graphs and scores on quintinomials of the 8 8 series should be worked out.
           2+1+2+1+2.
           2+1+2+2+1.
@@ -81,7 +81,7 @@ function Book1Ch12() {
            e. Cube of a Trinomial.
           This process is similar to the square, just multiply each term in the group by the distributed square of a trinomial.
           Formula:
-          (ā +b+c) cubed = ā [(ā  squared +ā b+ā c) + (ā b+b squared +bc) + (ā c+bc+c squared )] + b[(ā  squared +ā b+ā c) + (ā b+b squared +bc) + (ā c+bc+c squared )] + c[(ā  squared +ā b+ā c) + (ā b+b squared +bc) + (ā c+bc+c squared )] = (ā  cubed+ā  squared b+ā  squared c+ā  squared b+ā b squared +ā bc+ā  squared c+ā bc+ā c squared ) + (ā  squared b+ā b squared +ā bc+ā b squared +b cubed+b squared c+ā bc+b squared c+bc squared ) + (ā  squared c+ā bc+ā c squared +ā bc+b squared c+bc squared +ā c squared +bc squared +c cubed)
+          (ae +b+c) cubed = ae [(ae  squared +ae b+ae c) + (ae b+b squared +bc) + (ae c+bc+c squared )] + b[(ae  squared +ae b+ae c) + (ae b+b squared +bc) + (ae c+bc+c squared )] + c[(ae  squared +ae b+ae c) + (ae b+b squared +bc) + (ae c+bc+c squared )] = (ae  cubed+ae  squared b+ae  squared c+ae  squared b+ae b squared +ae bc+ae  squared c+ae bc+ae c squared ) + (ae  squared b+ae b squared +ae bc+ae b squared +b cubed+b squared c+ae bc+b squared c+bc squared ) + (ae  squared c+ae bc+ae c squared +ae bc+b squared c+bc squared +ae c squared +bc squared +c cubed)
           The denominator is the sum of the trinomial cubed.
           Synchronizing the first and second trinomials with the cube are done by multiplying each term of the first trinomial by the square of the sum of its terms, and for synchronizing the square, by the sum of its terms.
           Example:
@@ -113,7 +113,7 @@ function Book1Ch12() {
            f. Cube of any polynomial
           To find the cube of any group (polynomial) you must obtain the square first, and multiply all its terms by the terms of the first power polynomial consecutively; then add all the products in sequence.
           Formula:
-          (ā +b+c+...+m) cubed = ā [(ā  squared +ā b+ā c+...+ā m) + (ā b+b squared +bc+...+bm) + (ā c+bc+c squared +...+cm)] + ... + b[(ā  squared +ā b+ā c+...+ā m) + (ā b+b squared +bc+...+bm) + (ā c+bc+c squared +...+cm)] + ... + c[(ā  squared +ā b+ā c+...+ā m) + (ā b+b squared +bc+...+bm) + (ā c+bc+c squared +...+cm)] + ... + m[(ā  squared +ā b+ā c+...+ā m) + (ā b+b squared +bc+...+bm) + (ā c+bc+c squared +...+cm)]
+          (ae +b+c+...+m) cubed = ae [(ae  squared +ae b+ae c+...+ae m) + (ae b+b squared +bc+...+bm) + (ae c+bc+c squared +...+cm)] + ... + b[(ae  squared +ae b+ae c+...+ae m) + (ae b+b squared +bc+...+bm) + (ae c+bc+c squared +...+cm)] + ... + c[(ae  squared +ae b+ae c+...+ae m) + (ae b+b squared +bc+...+bm) + (ae c+bc+c squared +...+cm)] + ... + m[(ae  squared +ae b+ae c+...+ae m) + (ae b+b squared +bc+...+bm) + (ae c+bc+c squared +...+cm)]
           Synchronization is found the same way, by consecutively multiplying by the square of the sum, or by the sum respectively
           One bar of 8 8 will give an entire countertheme of 64 bars. You should make charts and scores of the following quintomials:
           2+1+2+1+2

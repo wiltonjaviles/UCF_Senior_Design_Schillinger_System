@@ -6,12 +6,16 @@ function TextToSpeech(props) {
   var isPaused = false;
   var text = String(props.text);
   var speech = new SpeechSynthesisUtterance(text);
+  speech.lang='en-US';
   const playText = () => {
-    // alert(text);
     if(!isPlaying) {
       speechSynthesis.speak(speech);
       isPlaying = true;
     }
+  }
+
+  speech.onend = () => {
+    isPlaying = false;
   }
 
   const stopText = () => {

@@ -31,7 +31,7 @@ function Book1Ch6Schillinger() {
           SERIESI. 2+3+5 3+5+8
           SERIES II. 3+4+7
           SERIES III. 4—2—5 +9.
-          ā. THE TECHNIQUE OF SYNCHRONIZATION
+          ae. THE TECHNIQUE OF SYNCHRONIZATION
 
           In order to synchronize three or more generators, it is necessary first to find their common product and their complementary factors.
           Let Us Take 2÷3÷5

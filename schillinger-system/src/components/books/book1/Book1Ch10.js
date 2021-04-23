@@ -16,24 +16,24 @@ function Book1Ch10() {
           text="
           Chapter 10. Generalization of Variation Techniques.
           
-          ā. Permutations of the Higher Order.
+          ae. Permutations of the Higher Order.
           We can use permutations of a higher order to create variations of a group and increase the total material. The total number of elements in a certain permutation is equal to the square of the number of elements in the previous permutation. For example, if there are three elements in the original group, there will be 9 in the next (second) group, and 27 in the next (third group) and so on in circular permutations. If general permutations are used, then the second group will have 6 elements, and the third will have 720 elements, and so on.
-          If we label the original elements of the group as ā1, b1 … for however many elements we have, we can permute the order of those elements for the next set of groups. The formula for an original group of 2 elements (ā1 and b1) is the following:
+          If we label the original elements of the group as ae1, b1 … for however many elements we have, we can permute the order of those elements for the next set of groups. The formula for an original group of 2 elements (ae1 and b1) is the following:
           This is a really easy way to evolve a large amount of material from a small group. If you repeat this formula using only two elements in a group 6 times, you will end up with 64 total elements.
           Music of animated motion often has a lot of rhythmic elements (durations, rest, etc.). Take a waltz for example: with four bars to a line, 5 lines to a page, in eighth notes for 3 pages, we would have 360 durations.
           Here is an example breakdown of 5 permutations of two elements:
-          If you add in the missing 8 bars for b5 (b4+ā4) of the fifth permutation, you would have 16 continuous bars with a lot of variety when compared to simply repeating ā1+b1 for 16 bars. It’s a lot more useful to continue this pattern rather than simple repetition when you need to extend a section of music but maintain its character.
+          If you add in the missing 8 bars for b5 (b4+ae4) of the fifth permutation, you would have 16 continuous bars with a lot of variety when compared to simply repeating ae1+b1 for 16 bars. It’s a lot more useful to continue this pattern rather than simple repetition when you need to extend a section of music but maintain its character.
           In musical scores, for example, it may be useful to maintain rhythm forms and keep them going for 10-15 minutes. Using this technique is preferred to simple repetition to avoid annoying the audience with repeating composition for that long. A neutral background that is homogenous yet continually varied through permutation, will serve its purpose much better.
-          Permutations based on a group with 3 elements (ā1, b1, c1), will have the following combinations of 2: ā1+b1, ā1+c1, b1+c1. These are the three possible alternatives when 2 elements out of 3 are used. (note: in combinations, the order of elements does not matter. If we had done permutations of the original group we would include all of the previous groups and also b1+ā1, c1+ā1, and c1+b1).
-          There is only one combination by 3 of the original group: ā1+b1+c1. The permutations by 3 for the original group is:
-          ā1 + b1 + c1 = a2
-          ā1 + c1 + b1 = b2
-          c1 + ā1 + b1 = c2
-          b1 + ā1 + c1 = d2
-          b1 + c1 + ā1 = e2
-          c1 + b1 + ā1 = f2
+          Permutations based on a group with 3 elements (ae1, b1, c1), will have the following combinations of 2: ae1+b1, ae1+c1, b1+c1. These are the three possible alternatives when 2 elements out of 3 are used. (note: in combinations, the order of elements does not matter. If we had done permutations of the original group we would include all of the previous groups and also b1+ae1, c1+ae1, and c1+b1).
+          There is only one combination by 3 of the original group: ae1+b1+c1. The permutations by 3 for the original group is:
+          ae1 + b1 + c1 = a2
+          ae1 + c1 + b1 = b2
+          c1 + ae1 + b1 = c2
+          b1 + ae1 + c1 = d2
+          b1 + c1 + ae1 = e2
+          c1 + b1 + ae1 = f2
           These 6 elements of the second order produce, in turn, combinations by 2, by 3, by 4, by 5 and by 6.
-          All of the combinations with recurrences (ie two or more of the elements are identical. a2+a2+b2 is an example of a combination with a recurrence). These can be consulted for coefficients of recurrence (ie  ā 2+ ā 2+b2 = 2 ā 2+b2). An example of this is:
+          All of the combinations with recurrences (ie two or more of the elements are identical. a2+a2+b2 is an example of a combination with a recurrence). These can be consulted for coefficients of recurrence (ie  ae 2+ ae 2+b2 = 2 ae 2+b2). An example of this is:
           When the quantities exceed the necessary amount, you can limit the number of variations by reducing them to circular permutations only. A circular permutation means only rotating all of the elements around.
           "
         />

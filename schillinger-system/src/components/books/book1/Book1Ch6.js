@@ -27,7 +27,7 @@ function Book1Ch6() {
           Series 1. 2 ÷ 3 ÷ 5 and 3 ÷ 5 ÷ 8.
           Series 2. 3 ÷ 4 ÷ 7.
           Series 3. 4 ÷ 5 ÷ 9.
-          ā. The Technique of Synchronization.
+          ae. The Technique of Synchronization.
           To synchronize three or more generators, it is necessary to first find their common product and their complementary factors.
           2 ÷ 3 ÷ 5.
           2 times 3 times 5 = 30.

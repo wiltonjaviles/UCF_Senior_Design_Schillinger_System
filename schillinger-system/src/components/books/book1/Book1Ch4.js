@@ -18,15 +18,15 @@ function Book1Ch4() {
 
           The first process to generate rhythmic resultants is not going to work for all musical purposes as it is too “rich” in its variety for all uses. The following, second, process helps this issue by providing a higher degree of uniformity.
           The groups derived from the second process are referred to as “rhythmic resultants with fractioning around the axis of symmetry.”
-          Symbols: a ÷ b and r ā ÷ b. note the underline.
+          Symbols: a ÷ b and r ae ÷ b. note the underline.
           The process of synchronization is:
-          1. Take the product of ā by ā (ie ā squared ). ā becomes its own complementary factor.
+          1. Take the product of ae by ae (ie ae squared ). ae becomes its own complementary factor.
           2. Use a as a complementary factor of b. (ie b appears a times)
-          3. The minor generator completes itself before the major generator. Lets call the first group of the minor generator b1. Start b1 at the beginning of the first phase of ā . Start b2 at the beginning of the second phase of a. And repeat this process until both generators complete at the same time.
+          3. The minor generator completes itself before the major generator. Lets call the first group of the minor generator b1. Start b1 at the beginning of the first phase of ae . Start b2 at the beginning of the second phase of a. And repeat this process until both generators complete at the same time.
           To find the total number of b groups:
-          Nb=ā minus b+1
+          Nb=ae minus b+1
           
-          (Fig. 26) Note the alignment of the b groups to the waveform of ā. This is what step 3 means when you “start b2 at the beginning of the second phase of a”, with the second phase being the change in the waveform. (I’m using waveform informally here).
+          (Fig. 26) Note the alignment of the b groups to the waveform of ae. This is what step 3 means when you “start b2 at the beginning of the second phase of a”, with the second phase being the change in the waveform. (I’m using waveform informally here).
           
           (Fig. 27) This is a musical note representation of Figure 26.
           
