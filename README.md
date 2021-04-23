@@ -235,7 +235,9 @@ Dr. Leinecker - richard.leinecker@ucf.edu
 **Team 1**
 
 Michael Alaniz - [@mikey_alaniz](https://twitter.com/mikey_alaniz) - michael.yeah@pm.me
-
+Wilton Aviles - wiltonjaviles@gmail.com
+Michael Duke - 
+Kathryn Wyrick - 
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
