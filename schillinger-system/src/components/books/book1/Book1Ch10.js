@@ -17,8 +17,7 @@ function Book1Ch10() {
           Chapter 10. Generalization of Variation Techniques.
           
           ā. Permutations of the Higher Order.
-          We can use permutations of a higher order to create variations of
-          a group and increase the total material. The total number of elements in a certain permutation is equal to the square of the number of elements in the previous permutation. For example, if there are three elements in the original group, there will be 9 in the next (second) group, and 27 in the next (third group) and so on in circular permutations. If general permutations are used, then the second group will have 6 elements, and the third will have 720 elements, and so on.
+          We can use permutations of a higher order to create variations of a group and increase the total material. The total number of elements in a certain permutation is equal to the square of the number of elements in the previous permutation. For example, if there are three elements in the original group, there will be 9 in the next (second) group, and 27 in the next (third group) and so on in circular permutations. If general permutations are used, then the second group will have 6 elements, and the third will have 720 elements, and so on.
           If we label the original elements of the group as ā1, b1 … for however many elements we have, we can permute the order of those elements for the next set of groups. The formula for an original group of 2 elements (ā1 and b1) is the following:
           This is a really easy way to evolve a large amount of material from a small group. If you repeat this formula using only two elements in a group 6 times, you will end up with 64 total elements.
           Music of animated motion often has a lot of rhythmic elements (durations, rest, etc.). Take a waltz for example: with four bars to a line, 5 lines to a page, in eighth notes for 3 pages, we would have 360 durations.

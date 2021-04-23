@@ -16,7 +16,7 @@ function Book1Ch9() {
           text="
           Chapter 9. Homogeneous Simultaneity and Continuity (Variations).
           
-          A. General and Circular Permutations.
+          ā. General and Circular Permutations.
           In previous chapters, we have learned that all rhythms can be expressed as combinations or portions of resultants. Useful as they are, there are limits to what can be done with them alone. The human ear can rarely track a large pattern as one indivisible rhythm, however to repeat the same pattern over and over again would lead to boredom. It is therefore necessary to develop techniques that extend the novelty of a short rhythmic expression when used repeatedly; in short, we need variations.
           In general, variations can be made of any rhythm by forming permutations of the constituent notes, with the number of available permutations being equal to n!, where n is the number of elements. For example, 3 + 2 + 1 (a dotted quarter, quarter and eighth) has a total of 3 timese 2 timese 1 = 6 permutations.
           3 + 2 + 1; 3 + 1 + 2; 2 + 3 + 1; 2 + 1 + 3; 1 + 2 + 3; 1 + 3 + 2

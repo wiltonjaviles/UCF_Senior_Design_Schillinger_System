@@ -19,7 +19,7 @@ function Book1Ch5() {
           The techniques of obtaining resultants can be extended into expanding processes of composing rhythmic resultants in pairs. In the traditional exposition of musical themes, the theme is stated twice, where the first time it sounds incomplete and the second time it is a complete sound.
           When attempting to do so, composers tend to make variations of the theme’s cadence harmonically. Composers also struggle with expansion, moving from a short group to an adjacent long group, and contraction, moving from a long group to an adjacent short group. Beethoven made clumsy attempts at expansion and contraction in some of his piano sonatas. In No. 1 in the first movement at the end of the exposition, he states a two-bar group three times. He makes an expansion on the third statement by holding the chord through the whole bar, a whole note, adding one more bar. In No. 7 in the beginning of the finale, he has a four-bar group. There are several rests in the group and he makes a three-bar group by simply omitting those rests.
           Here, we will present a general method of balancing, expanding, and contracting a pair of adjacent groups.
-          A. Balance.
+          ā. Balance.
           Figure 37 shows that in order to balance two resultants with identical generators, take the resultant of ā to b, with fractioning, add the resultant of ā to b and add ā times the difference of ā and b. 
           Grouping for such pairs is through ā only.
           

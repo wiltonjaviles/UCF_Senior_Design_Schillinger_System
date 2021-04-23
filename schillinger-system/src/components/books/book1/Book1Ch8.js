@@ -49,7 +49,7 @@ function Book1Ch8() {
           ā prime = ā divided by ā T = ā sub ā times p l i divided by ā sub T.
           4. The product of the original duration-group (T) by the complementary factor to its number of attacks (A prime).
           T prime = T times ā prime = T times ā sub ā times p l i divided by ā sub T.
-          5. Interference between the synchronized duration-group (T prime) and the ﬁnal duration—group (T prime).
+          5. Interference between the synchronized duration-group (T prime) and the final duration—group (T prime).
           N sub T prime = T prime divided by T double prime.
           B. Synchronization of an Attack-Group.
           Distribution of attacks of an attack-group (ā sub ā) through the number of attacks of a duration—group (ā sub T).
@@ -116,13 +116,13 @@ function Book1Ch8() {
             <p class="bookText">pla&emsp;number of places in the attack-group.</p>
             <p class="bookText">a<sub>a</sub>&emsp;number of attacks in the attack-group.</p>
             <p class="bookText">a<sub>T</sub>&emsp;number of attacks in the duration-group.</p>
-            <p class="bookText">PL&emsp;the ﬁnal number of places.</p>
+            <p class="bookText">PL&emsp;the final number of places.</p>
             <p class="bookText">A&emsp;the synchronized attack—group (the number of attacks synchronized with the number of places).</p>
-            <p class="bookText">A’&emsp;the ﬁnal attack group (number of attacks synchronized with the duration—group).</p>
+            <p class="bookText">A’&emsp;the final attack group (number of attacks synchronized with the duration—group).</p>
             <p class="bookText">T&emsp;the original duration-group.</p>
             <p class="bookText">T’&emsp;the synchronized duration~group.</p>
-            <p class="bookText">T”&emsp;the ﬁnal duration—group.</p>
-            <p class="bookText">N<sub>T”</sub>&emsp;the number of ﬁnal duration—groups.</p>
+            <p class="bookText">T”&emsp;the final duration—group.</p>
+            <p class="bookText">N<sub>T”</sub>&emsp;the number of final duration—groups.</p>
           <h5>Prodecures:</h5>
           <p class="bookText">1. Interference between the number of places in the instrumental group (pli) and the number of places in the attack-group (pla).</p>
               <p class="equation">PL = <sup>pli</sup>/<sub>pla</sub> ;&emsp;<sup>pla (pli)</sup><sub>pli (pla)</sub></p>
@@ -132,7 +132,7 @@ function Book1Ch8() {
           <p class="equation">A' = <sup>A</sup>/<sub>a<sub>T</sub></sub> = <sup>a<sub>a</sub>&#183;pli</sup>/<sub>a<sub>T</sub></sub></p>
           <p class="bookText">4. The product of the original duration-group (T) by the complementary factor to its number of attacks (A’).</p>
           <p class="equation">T' = T&#183;A' = <sup>T&#183;a<sub>a</sub> pli</sup>/<sub>a<sub>T</sub></sub></p>
-          <p class="bookText">5. Interference between the synchronized duration-group (T’) and the ﬁnal duration—group (T”).</p>
+          <p class="bookText">5. Interference between the synchronized duration-group (T’) and the final duration—group (T”).</p>
           <p class="equation">N<sub>T''</sub> = <sup>T'</sup>/<sub>T''</sub></p>
         <a className="chapter-section-link" href="/book1ch8#1.8.b" id="1.8.b"><h5>B. Synchronization of an Attack-Group</h5></a>
           <p class="bookText">Distribution of attacks of an attack-group (a<sub>a</sub>) through the number of attacks of a duration—group (a<sub>T</sub>).</p>
