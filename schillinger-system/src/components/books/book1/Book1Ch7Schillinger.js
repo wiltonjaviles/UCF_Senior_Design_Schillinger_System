@@ -17,7 +17,7 @@ function Book1Ch7Schillinger() {
           A. INSTRUMENTAL RHYTHM
 
           Instrumental rhythm is made up of the number of places of attack; for example, in beating two differently pitched kettle drums in sequence, we are dealing with two places of attack.
-          Synchronizations of these two types of rhythm i.e, time rhythm and instrumental rhythmﬂare subject to the same laws of synchronization and interference as the time periodicity previously discussed.
+          Synchronizations of these two types of rhythm i.e, time rhythm and instrumental rhythmflare subject to the same laws of synchronization and interference as the time periodicity previously discussed.
           When the number of places in an instrumental group does not coincide with the number of terms in a time group, then a common denominator will define the number of time groups—and the number of instrumental groups— until their recurrence. For example, if we use two differently tuned kettle drums on r3÷ 2, the entire figure will close after the first group is over because the number of places in the instrumental group is two (kettle drums) and the number of terms in the time group is four (4÷2 = 2). This means that while the instrumental group appears twice, the rhythmic resultant will appear once.
           R3÷2
           Taking the same case of the two kettle drums for r 3÷ 2, we get a totally different resultant. The number of attacks in the instrumental group remains the same (2). The number of terms in the rhythmic resultant is 7, (2 + 1 + 1 + 1+1 + 1+ 2). 7X 2 = 14. Seven has a complementary factor 2, and 2 has a complementary factor 7. The kettle drum 2 attack figure will appear 7 times, while the rhythmic resultant appears twice.
