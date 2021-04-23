@@ -22,7 +22,7 @@ function TextToSpeech(props) {
 
   const pauseText = () => {
     speechSynthesis.pause();
-    isPlaying = true;
+    isPaused = true;
   }
 
   const resumeText = () => {
