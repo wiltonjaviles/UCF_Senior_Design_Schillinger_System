@@ -66,10 +66,11 @@ function Ch4Generator() {
 
 
     let outArr = [];
+    var abc = "";
     
     if(state.showing === 'Show All') {
       outArr = r_(vA,vB,true,'all');
-      var abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble";
+      abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble";
       abc = abc+"\n[V: V1]"+toABC(outArr[0]).join("");
       abc = abc+"\n[V: V2]"+toABC(outArr[1]).join("");
       abc = abc+"\n[V: V3]"+toABC(outArr[2]).join("");
@@ -79,7 +80,7 @@ function Ch4Generator() {
       abcjs.renderAbc("outputR_", abc);
     } else {
       outArr = r_(vA,vB,true);
-      var abc = "X:1\nK:C\n" + toABC(outArr).join("");
+      abc = "X:1\nK:C\n" + toABC(outArr).join("");
       abcjs.renderAbc("outputR_",abc);
     }
     

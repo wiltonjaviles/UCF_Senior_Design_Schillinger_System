@@ -26,6 +26,11 @@ function Ch6Generator() {
     }
   }
 
+  console.log(tempA);
+  console.log(tempB);
+  console.log(tempC);
+  console.log(tempGroup);
+
   const [state , setState] = useState({
     variableA : 2,
     variableB : 3,
@@ -101,13 +106,15 @@ function Ch6Generator() {
       case 'Show Rs':
         show = false;
         break;
+      default: break;
     }
 
     
     let outArr = r3(vA,vB,vC,vG,'all');
     let abcOutput = '';
+    var abc = ""
     if(show) {
-      var abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble\nV: V6 clef=treble\nV: V7 clef=treble\nV: V8 clef=treble\nV: V9 clef=treble";
+      abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble\nV: V6 clef=treble\nV: V7 clef=treble\nV: V8 clef=treble\nV: V9 clef=treble";
       abc = abc+"\n[V: V1]"+toABC(outArr[0]).join("");
       abc = abc+"\n[V: V2]"+toABC(outArr[1]).join("");
       abc = abc+"\n[V: V3]"+toABC(outArr[2]).join("");
@@ -120,7 +127,7 @@ function Ch6Generator() {
       abc = abc+"\n[V: V10]"+toABC(outArr[9]).join("");
       abcOutput = "X:1\nK:C\n" + toABC(outArr[5]).join('') + "\n";
     } else {
-      var abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble";
+      abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble";
       abc = abc+"\n[V: V1]"+toABC(outArr[5]).join("");
       abc = abc+"\n[V: V2]"+toABC(outArr[9]).join("");
       abcOutput = abc;

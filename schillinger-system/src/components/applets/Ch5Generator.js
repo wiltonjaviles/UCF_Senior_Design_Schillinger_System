@@ -23,6 +23,10 @@ function Ch5Generator() {
     }
   }
 
+  console.log(tempA);
+  console.log(tempB);
+  console.log(tempVariant);
+
   const [state , setState] = useState({
     variableA : 3,
     variableB : 2,
