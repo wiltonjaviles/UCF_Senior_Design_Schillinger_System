@@ -36,10 +36,10 @@ function Book1Ch4Schillinger() {
           Grouping by b of the resultant: with fractioning serves the purpose of producing syncopated rhythms. In such cases the resultant and the bar do not close simultaneously in the first run of the resultant. Therefore, the resultant should be repeated from the point where it stops.
           Just when the resultant and the bar come out even may be found in the following manner:
           ae squared divided by b=Q
-          The Q stands for the quotient which indicates the number of bars. It always has a remainder. The denominator of the remainder indicates how many times the resultant will have to run. For the b grouping, the resultant is used alone.
+          The Q stands for the quotient which indicates the number of- bars. It always has a remainder. The denominator of the remainder indicates how many times the resultant will have to run. For the b grouping, the resultant is used alone.
           b X Q = b Q
           Example: (1)
-          ae squared divided by b=9 divided by 2=4 1 divided by 2 indicates the number of bars. 2 indicates the number of groups of r. 2 (4 1 divided by 2) = 9 
+          ae squared divided by b=9 divided by 2=4 1 divided by 2 indicates the number of- bars. 2 indicates the number of groups of r. 2 (4 1 divided by 2) = 9 
           Example: (2)
           4÷3 Find r4÷3
           4 squared =16

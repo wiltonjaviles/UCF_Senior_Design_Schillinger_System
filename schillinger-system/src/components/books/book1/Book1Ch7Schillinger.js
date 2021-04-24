@@ -49,7 +49,7 @@ function Book1Ch7Schillinger() {
           [Rhumba]
           2 (3 + 3+ 2)
           The preceding technical items may also be treated in combination. The following example represents the application of two generators and their resultants, combined with the instrumental interference. The accompaniment represents the minor generator (2). The sustained chords represent the major generator (5). The melody represents the resultant (5÷2). In addition, the whole score is carried out through an alien measure grouping, in While the entire
-          rhythmic score would occupy 4 bars in 5 4 time, it takes 5 bars in 4 4 time. This example illustrates the possibility of introducing various rhythmic resultants into music which is supposed to be written in common time.
+          rhythmic score would occupy 4- bars in 5 4 time, it takes 5- bars in 4 4 time. This example illustrates the possibility of introducing various rhythmic resultants into music which is supposed to be written in common time.
           The example in Figure 57 is of more than passing interest because it foreshadows the way in which full orchestral scores unprecedented richness and complexity are developed logically and organically from the rhythmic raw materials now being discussed  in this section.
           "
         />
