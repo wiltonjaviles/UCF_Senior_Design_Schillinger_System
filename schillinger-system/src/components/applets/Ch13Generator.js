@@ -176,7 +176,7 @@ function Ch13Generator() {
               <h1>Family Lookup</h1>
               <h3>Instructions</h3>
               <p>
-                Select two integers a and b.  Click Generate to view output.
+                Choose a family, then select a level of imalance.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">
