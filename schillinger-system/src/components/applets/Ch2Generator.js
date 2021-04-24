@@ -82,14 +82,14 @@ function Ch2Generator() {
       }
       abcOut = "X:1\nK:C\n"+outArr[4].join("")+"\n";
       abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble";
-      abc = abc+"\n[V: V1]"+outArr[0].join("");
-      abc = abc+"\n[V: V2]"+outArr[1].join("");
-      abc = abc+"\n[V: V3]"+outArr[2].join("");
-      abc = abc+"\n[V: V4]"+outArr[3].join("");
-      abc = abc+"\n[V: V5]"+outArr[4].join("");
+      abc = abc+'\n[V: V1]"C1"'+outArr[0].join("");
+      abc = abc+'\n[V: V2]"C2"'+outArr[1].join("");
+      abc = abc+'\n[V: V3]"A"'+outArr[2].join("");
+      abc = abc+'\n[V: V4]"B"'+outArr[3].join("");
+      abc = abc+'\n[V: V5]"R"'+outArr[4].join("");
     } else {
       outArr = toABC(r(vA,vB,vG));
-      abcOut = "X:1\nK:C\n"+outArr.join("")+"\n";
+      abcOut = 'X:1\nK:C\n"R"'+outArr.join("")+"\n";
       abc = abcOut;
     }
     
@@ -98,8 +98,7 @@ function Ch2Generator() {
 
     setState(prevState => ({
       ...prevState,
-        abcString : abcOut,
-        testOutput : outArr[3]
+        abcString : abcOut
     }))
     
   }
@@ -178,12 +177,6 @@ function Ch2Generator() {
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                 </Col>
               </Row>
-
-              <Row className="justify-content-md-center">
-                <h4>{state.testOutput}</h4>
-              </Row>
-              
-              
 
               <Row className="justify-content-md-center">
                 <div id="outputR"></div>

@@ -36,16 +36,16 @@ function Ch4Generator() {
     if(state.showing === 'Show All') {
       outArr = r_(vA,vB,true,'all');
       var abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble";
-      abc = abc+"\n[V: V1]"+toABC(outArr[0]).join("");
-      abc = abc+"\n[V: V2]"+toABC(outArr[1]).join("");
-      abc = abc+"\n[V: V3]"+toABC(outArr[2]).join("");
-      abc = abc+"\n[V: V4]"+toABC(outArr[3]).join("");
-      abc = abc+"\n[V: V5]"+toABC(outArr[4]).join("");
-      abc = abc+"\n[V: V6]"+toABC(outArr[5]).join("");
+      abc = abc+'\n[V: V1]"C1"'+toABC(outArr[0]).join("");
+      abc = abc+'\n[V: V2]"C2"'+toABC(outArr[1]).join("");
+      abc = abc+'\n[V: V3]"A"'+toABC(outArr[2]).join("");
+      abc = abc+'\n[V: V4]"B1"'+toABC(outArr[3]).join("");
+      abc = abc+'\n[V: V5]"B2"'+toABC(outArr[4]).join("");
+      abc = abc+'\n[V: V6]"R_"'+toABC(outArr[5]).join("");
       abcjs.renderAbc("outputR_", abc);
     } else {
       outArr = r_(vA,vB,true);
-      var abc = "X:1\nK:C\n" + toABC(outArr).join("");
+      var abc = 'X:1\nK:C\n"R_"' + toABC(outArr).join("");
       abcjs.renderAbc("outputR_",abc);
     }
     
