@@ -58,8 +58,8 @@ function Book1Ch14Schillinger() {
         (4) The resultant of acceleration.
         Forms (1) and (2) may be used for the introductions and conclusions (codas); forms (3) and (4) for the climaxes.
         In either case it is more practical to find the decreasing velocity (increasing number-values) first, as it is more practical to have a definite initial number-value.
-        For example, if we use the natural harmonic series and start with unity, we find a practical stopping point at 8, because 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36. The sum must be in a simple relation to the multiples of the group-unit (measure). The value 36 offers a number of possibilities. Four-and-a-half of 4 4 time (in eighths); nine bars in 4 4 time (in quarters); four bars of 9 8 time (in eighths); six bars in 6 8 time (in eighths); twelve bars in  3 4 time (in quarters).
-        Using the first summation series for accelerando in the 8 8 family, we obtain a practical value of 32 by summing up 1 + 2 + 3 + 5 + 8 + 13. This offers exactly four bars of 8 8 time, and in music of eight-bar groups. the ratio becomes very simple (8 4 = 2 1).
+        For example, if we use the natural harmonic series and start with unity, we find a practical stopping point at 8, because 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36. The sum must be in a simple relation to the multiples of the group-unit (measure). The value 36 offers a number of possibilities. Four-and-a-half of 4 4 time (in eighths); nine- bars in 4 4 time (in quarters); four- bars of 9 8 time (in eighths); six- bars in 6 8 time (in eighths); twelve- bars in  3 4 time (in quarters).
+        Using the first summation series for accelerando in the 8 8 family, we obtain a practical value of 32 by summing up 1 + 2 + 3 + 5 + 8 + 13. This offers exactly four- bars of 8 8 time, and in music of eight-bar groups. the ratio becomes very simple (8 4 = 2 1).
         A. ACCELERATION IN UNIFORM GROUPS.
         Examples.
         B. ACCELERATION IN NON-UNIFORM GROUPS.
@@ -77,7 +77,7 @@ function Book1Ch14Schillinger() {
         Formula for a standard unit of deviation.
         tau = 1/t
         Example 1. 
-        Take the second theme of Chopin’s Valse in c# minor. All bars of this theme have the following construction;  3 4 . Many performers play the first bar of this theme like this. . Let us see what causes the transformation of 2 + 2 into 3 +1. The way this binomial is written makes it 2 4 + 2 4. In this case we have a 4 4 series, where <tau = 1/4>. Therefore, the process of unbalancing the original binomial (2 4 + 2 4) may be expressed as follows.
+        Take the second theme of Chopin’s Valse in c# minor. All- bars of this theme have the following construction;  3 4 . Many performers play the first bar of this theme like this. . Let us see what causes the transformation of 2 + 2 into 3 +1. The way this binomial is written makes it 2 4 + 2 4. In this case we have a 4 4 series, where <tau = 1/4>. Therefore, the process of unbalancing the original binomial (2 4 + 2 4) may be expressed as follows.
         which means .
         Example II.
         Take any foxtrot where you find 4 4  in the printed copies. In a performance you hear it as. Let us follow the previous procedure. The two half-notes in a fox-trot time belong in reality to the 8 8 series. They must be expressed as 8 8 = 4 8 + 4 8. In this case tau = 1 8. By adding 1 8 to the first term and subtracting from the second we obtain (4 8 + 1 8) + (4 8 minus 1 8) = 5 8 + 3 8.
@@ -88,7 +88,7 @@ function Book1Ch14Schillinger() {
         There are two types of fermata; the two may seem to have an entirely different character, but in reality this difference is purely quantitative. The first type produces the effect of a full stop. It is commonly used at the very beginning, at the very end, at the moment of a climax, or before a new theme enters.
         In writing out such a fermata, it is best to make it a simple multiple of the preceding or the following values, or the sum of the preceding group of uniform values.
         An example of transcription of a fermata of the first type.
-        The first four bars move in halves, the following two—in wholes. By assigning a double value to the last note, we satisfy two requirements. One. we produce a simple ratio of 1 + 1 + 2 in the last three bars, i.e. our last note is the simplest multiple for each of the two preceding notes; two. such a multiple compensates the first four bars, thus creating a balance 4 + 4.
+        The first four- bars move in halves, the following two—in wholes. By assigning a double value to the last note, we satisfy two requirements. One. we produce a simple ratio of 1 + 1 + 2 in the last three- bars, i.e. our last note is the simplest multiple for each of the two preceding notes; two. such a multiple compensates the first four- bars, thus creating a balance 4 + 4.
         Transcription.
         Obviously, this gives the utmost satisfaction.
         The second type of fermata is a temporary delay. The method of creating simple ratios is most effective in transcribing this type of fermata. Here is a transcription of the following example.
