@@ -80,9 +80,6 @@ function Navigation() {
               <Link to="/" className="nav-link-item">Home</Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/about" className="nav-link-item">About</Link>
-            </Nav.Link>
-            <Nav.Link>
               <Link to="/contents" className="nav-link-item">Contents</Link>
             </Nav.Link>
             <Nav.Link>
