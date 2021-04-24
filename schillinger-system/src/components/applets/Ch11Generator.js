@@ -58,10 +58,10 @@ function Ch11Generator() {
       outStr = outStr.slice(0, -1);
     }
 
+    var threshold = 321;
+
     var outStrLC = rotateLeast(outStr.split("|"), v);
     var abcOutLC = "X:1\nK:C\n"+outStrLC+"\n";
-    
-    var threshold = 400;
     
     if(abcOutLC.length > threshold) {
       LCTooBig = true;
@@ -172,18 +172,26 @@ function Ch11Generator() {
               </Form.Row>
               <br />
               <Row className="justify-content-md-center">
-                <h4>Result: </h4>
+                <h4>Rotate by Least Common Divisor: </h4>
               </Row>
               <Row className="justify-content-md-center">
                 <div id="outputLC"></div>
               </Row>
               <Row className="justify-content-center"><p>{state.LCTooBig}</p></Row>
-              <Playback abc = {state.abcStringLC}/> 
+              <Playback abc = {state.abcStringLC}/>
+              <hr />
+              <Row className="justify-content-md-center">
+                <h4>Rotate by Measures: </h4>
+              </Row>
               <Row className="justify-content-md-center">
                 <div id="outputM"></div>
               </Row>
               <Row className="justify-content-center"><p>{state.MTooBig}</p></Row>
-              <Playback abc = {state.abcStringM}/> 
+              <Playback abc = {state.abcStringM}/>
+              <hr />
+              <Row className="justify-content-md-center">
+                <h4>Rotate by Attacks: </h4>
+              </Row>
               <Row className="justify-content-md-center">
                 <div id="outputA"></div>
               </Row>

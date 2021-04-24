@@ -1,6 +1,6 @@
 import '.././Style.css';
 import React from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import {Navbar, Nav } from 'react-bootstrap';
 // import { NavDropdown } from 'react-bootstrap';
@@ -9,16 +9,16 @@ import {Navbar, Nav } from 'react-bootstrap';
 
 function Navigation() {
 
-  var _session = localStorage.getItem('session_token');
-  var session = JSON.parse(_session);
-  var logoutToken;
+  // var _session = localStorage.getItem('session_token');
+  // var session = JSON.parse(_session);
+  // var logoutToken;
 
-  if (session != null){
-    logoutToken = session.token;
-  }
-  else {
-    logoutToken = '';
-  }
+  // if (session != null){
+  //   logoutToken = session.token;
+  // }
+  // else {
+  //   logoutToken = '';
+  // }
 
   // const [message,setMessage] = useState('');
 
@@ -84,6 +84,9 @@ function Navigation() {
             </Nav.Link>
             <Nav.Link>
               <Link to="/contents" className="nav-link-item">Contents</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/applethistory" className="nav-link-item">Applet History</Link>
             </Nav.Link>
             {/* <Nav.Link>
               <Link to="/recordings" className="nav-link-item">Recordings</Link>

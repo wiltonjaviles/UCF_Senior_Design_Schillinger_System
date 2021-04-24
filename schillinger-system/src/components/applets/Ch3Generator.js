@@ -4,9 +4,24 @@ import '../.././Style.css';
 
 function Ch3Generator() {
 
+  // Define the variables to be used for applet history and dynamic applet input
+  var tempFormA = 'a';
+  var tempFormB = 'b';
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch3" ) {
+      tempFormA = old_data[i].a;
+      tempFormB = old_data[i].b;
+      break;
+    }
+  }
+
   const [state , setState] = useState({
-    groupingFormA : -1,
-    groupingFormB : -1,
+    warning: "",
+    groupingFormA : tempFormA,
+    groupingFormB : tempFormB,
     resultAB: "",
     resultA: "",
     resultB: ""
@@ -20,24 +35,74 @@ function Ch3Generator() {
     }))
   }
 
+  const clearResults = event => {
+    setState(prevState => ({
+      ...prevState,
+      resultAB: "",
+      resultA: "",
+      resultB: ""
+    }))
+  }
+
+  const errMsg = (code) => {
+    switch (code) {
+      case "incomplete_fields":
+        setState(prevState => ({
+          ...prevState,
+          warning: "Please fill out all fields!"
+        }))
+        clearResults();
+        break;
+      case "invalid_grouping":
+        setState(prevState => ({
+          ...prevState,
+          warning: "Invalid Grouping. B cannot be greater than or equal to A. Please try again!"
+        }))
+        clearResults();
+        break;
+      default: break;
+    }
+  }
+
   const doGrouping = event => {
+
     event.preventDefault();
+
+    // need to remove previous version of ch3 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch3" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch3 = {"id":"book1ch3", "title": "The Techniques of Goruping", "a":state.groupingFormA, "b":state.groupingFormB}; 
+    old_data.unshift(book1ch3);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));
+
     if ( state.groupingFormA === -1 || state.groupingFormB === -1 ){
-      alert('Please fill out all fields!');
+      errMsg("incomplete_fields");
       return;
     } else if ( isNaN(state.groupingFormA) || isNaN(state.groupingFormB) ) {
-      alert('Please fill out all fields!');
+      errMsg("incomplete_fields");
       return;
     } else {
       const a = Number(state.groupingFormA);
       const b = Number(state.groupingFormB);
       if (b >= a) {
-        alert('Invalid Grouping. Please try again!');
+        errMsg("invalid_grouping");
         return;
       } else if ( a%b === 0 ) {
-        alert('Invalid Grouping. Please try again!');
+        errMsg("invalid_grouping");
         return;
       }
+      setState(prevState => ({
+        ...prevState,
+        warning: ""
+      }))
 
       // grouping by ab
       const ab = a*b;
@@ -133,6 +198,11 @@ function Ch3Generator() {
             <br />
             <Row className="justify-content-md-center">
               <h3>Results:</h3>
+            </Row>
+            <Row className="justify-content-md-center">
+              <Col>
+                <p>{state.warning}</p>
+              </Col>
             </Row>
             <Row className="justify-content-md-center">
               <Col className="col-3">

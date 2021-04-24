@@ -4,6 +4,17 @@ import '../.././Style.css';
 
 function Ch12Generator() {
 
+  var tempInput = "";
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch12" ) {
+      tempInput = old_data[i].input;
+      break;
+    }
+  }
+
   var  factF = "";
   var  factP = "";
   var sFactF = "";
@@ -16,7 +27,7 @@ function Ch12Generator() {
   
   const [state , setState] = useState({
     warning: "",
-    input : "",
+    input : tempInput,
     factorialFormula: "",
     factorialPlugIn: "",
     synchronizedFactorialFormula: "",
@@ -348,7 +359,24 @@ function Ch12Generator() {
   }
 
   const doAction = event => {
+
     event.preventDefault();
+
+    // need to remove previous version of ch3 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch12" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch12 = {"id":"book1ch12", "title":"Distributive Powers", "input": state.input}; 
+    old_data.unshift(book1ch12);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));
+
     var f = String(state.input);
     var n = 1;
     if (!f.includes("^")) {

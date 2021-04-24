@@ -7,6 +7,23 @@ import {r_,toABC} from '../functions/./generators';
 
 function Ch4Generator() {
 
+  // Define the variables to be used for applet history and dynamic applet input
+  var tempA = 3;
+  var tempB = 2;
+
+  // grab the current array sitting in local storage
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch4" ) {
+      tempA = old_data[i].a;
+      tempB = old_data[i].b;
+      console.log("TempA: " + tempA + " TempB: " + tempB);
+      break;
+    }
+  }
+
   const [state , setState] = useState({
     variableA : 3,
     variableB : 2,
@@ -25,7 +42,24 @@ function Ch4Generator() {
 
   const generateR_ = event => {
 
-    event.preventDefault();    
+    event.preventDefault();  
+    
+    // need to remove previous version of ch4 applet history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch4" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+     // use unshift to push the new applet ID to the front of the array
+     var book1ch4 = {"id":"book1ch4", "title":"The Techniques of Fractioning", "a":state.variableA, "b":state.variableB}; 
+     old_data.unshift(book1ch4);
+
+     // update the schillinger applet array in localStorage
+     localStorage.setItem('schillArr', JSON.stringify(old_data));
+
+
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
 

@@ -6,6 +6,23 @@ import Playback from '../applets/Playback';
 import {balance,expand,contract,toABC} from '../functions/./generators';
 
 function Ch5Generator() {
+
+  // Define the variables to be used for applet history and dynamic applet input
+  var tempA = 2;
+  var tempB = 1;
+  var tempVariant = 'Balance'
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch5" ) {
+      tempA = old_data[i].a;
+      tempB = old_data[i].b;
+      tempVariant = old_data[i].variant;
+      break;
+    }
+  }
+
   const [state , setState] = useState({
     variableA : 3,
     variableB : 2,
@@ -25,7 +42,24 @@ function Ch5Generator() {
 
   const generateR = event => {
 
-    event.preventDefault();    
+    event.preventDefault(); 
+    
+    // need to remove previous version of ch5 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch5" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch5 = {"id":"book1ch5", "title":"Composition of Groups by Pairs", "a":state.variableA, "b":state.variableB, "variant": state.variant}; 
+    old_data.unshift(book1ch5);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));
+
+
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
     const vV = String(state.variant);

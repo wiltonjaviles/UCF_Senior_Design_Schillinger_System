@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import About from './components/About';
 import Contents from './components/Contents';
+import AppletHistory from './components/AppletHistory';
 import Recordings from './components/Recordings';
 import Account from './components/Account';
 import Overture from './components/books/Overture';
@@ -46,6 +47,7 @@ import Book6 from './components/books/book6/Book6';
 import Book7 from './components/books/book7/Book7';
 import ScrollToTop from './components/ScrollToTop';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Pendulum from './components/applets/Pendulum';
 
 function App() {
   return (
@@ -57,6 +59,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/contents" component={Contents} />
+          <Route path="/applethistory" component={AppletHistory} />
           <Route path="/recordings" component={Recordings} />
           <Route path="/account" component={Account} />
           <Route path="/overture" component={Overture} />
@@ -98,6 +101,7 @@ function App() {
           <Route path="/book5" component={Book5} />
           <Route path="/book6" component={Book6} />
           <Route path="/book7" component={Book7} />
+          <Route path="/ch1pendulum" component={Pendulum} />
         </Switch>
       </Router>
     </div>

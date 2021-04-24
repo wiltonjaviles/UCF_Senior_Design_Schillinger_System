@@ -1,5 +1,7 @@
 import '.././Style.css';
-import Ch2Generator from './applets/Ch2Generator';
+import Ch4Generator from './applets/Ch4Generator'
+import Ch11Generator from './applets/Ch11Generator';
+// import isAuthenticated from '.././components/authUser';
 
 function Recordings() {
   // isAuthenticated();

@@ -1,4 +1,4 @@
-import {Container, Row, Col, Button} from 'react-bootstrap';
+import {Container, Row, Button, ButtonGroup, ButtonToolbar} from 'react-bootstrap';
 import React from 'react';
 import '../.././Style.css';
 // import abcjs from 'abcjs';
@@ -34,12 +34,16 @@ function Playback(props) {
   return (
     <Container>
       <div id="paper"></div>
-      <Row>
-        <Col className="col-5"></Col>
-        <Col><Button className="btn-light" onClick={play}>Play</Button></Col>
-        <Col><Button className="btn-light" onClick={stop}>Stop</Button></Col>
-        <Col className="col-5"></Col>
-      </Row>
+      <Row className="justify-content-center">
+          <ButtonToolbar>
+            <ButtonGroup className="mr-2">              
+              <Button className="btn-light btn-sm" onClick={play}>Play</Button>
+            </ButtonGroup>
+            <ButtonGroup>              
+              <Button className="btn-light btn-sm" onClick={stop}>Stop</Button>
+            </ButtonGroup>
+          </ButtonToolbar>
+        </Row>
     </Container>
   );
 }

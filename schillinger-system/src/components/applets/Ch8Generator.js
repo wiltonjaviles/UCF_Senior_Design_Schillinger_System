@@ -437,6 +437,6 @@ function embedMelody(arrIn, melodyArray, repeatR) {
     return arrOut;
 }
 
-function feed(melodyArray, n) {
-    return melodyArray[n%melodyArray.length];
-}
+// function feed(melodyArray, n) {
+//     return melodyArray[n%melodyArray.length];
+// }
