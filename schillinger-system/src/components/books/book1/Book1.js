@@ -8,6 +8,7 @@ function Book1() {
       <Container>
         <br /> 
         <Link to="/contents" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
+        <p>Click on Book One: Theory of Rhythm to go back to the Contents Page</p>
         <Row>
           <Col className="col-3"></Col>
           <Col className="col-6">

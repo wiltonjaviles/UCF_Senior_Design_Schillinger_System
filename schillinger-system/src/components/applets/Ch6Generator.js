@@ -150,7 +150,9 @@ function Ch6Generator() {
               <h1>Trinomial Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Select three integers a, b and c, then select how you would like the Rs to be grouped. Select "Show all" to see all the steps or "Show Rs" to just see the Rs. Click Generate to view output. Large inputs will go off the screen.
+                Select three integers a, b and c, then select how you would like the Rs to be grouped. 
+                Select "Show all" to see all the steps or "Show Rs" to just see the Rs. Click Generate to view output. 
+                Large inputs will wrap to the next line in a group.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">
