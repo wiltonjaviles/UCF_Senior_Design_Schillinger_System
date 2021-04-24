@@ -90,6 +90,7 @@ There is also a small chance that because our project revives interest in Schill
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [React](https://reactjs.org/)
 * [React-Bootstrap](https://react-bootstrap.github.io/)
+* [React-Router-DOM](https://reactrouter.com/web/guides/quick-start)
 
 
 <!-- GETTING STARTED -->
@@ -200,8 +201,8 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- HOW TO MERGE TWO BRANCHES -->
 ### How to Merge Two Branches
-Branch **<src>** is the branch with the code you want to merge (usually master or your branch when you're ready to merge your changes into master)
-Branch **<dest>** is the branch where you want the code to be merged with (your branch or master when you're ready to merge your changes into master)
+Branch `<src>` is the branch with the code you want to merge (usually master or your branch when you're ready to merge your changes into master).
+Branch `<dest>` is the branch where you want the code to be merged with (your branch or master when you're ready to merge your changes into master)
 
 1. Pull the latest changes in the src branch
 ````
@@ -237,7 +238,7 @@ Dr. Leinecker - richard.leinecker@ucf.edu
 Michael Alaniz - [@mikey_alaniz](https://twitter.com/mikey_alaniz) - michael.yeah@pm.me
 Wilton Aviles - wiltonjaviles@gmail.com
 Michael Duke - luckystarnova@gmail.com
-Kathryn Wyrick - 
+Kathryn Wyrick - kathryn.m.wyrick@gmail.com
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
