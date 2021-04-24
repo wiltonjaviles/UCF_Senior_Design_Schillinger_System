@@ -23,6 +23,9 @@ function Ch4Generator() {
     }
   }
 
+  console.log(tempA);
+  console.log(tempB);
+
   const [state , setState] = useState({
     variableA : 3,
     variableB : 2,
