@@ -5,10 +5,22 @@ import '../.././Style.css';
 import Playback from './Playback';
 
 function Ch14Generator() {
+
+  var tempVSeries = "";
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch14" ) {
+      tempVSeries = old_data[i].vSeries;
+      break;
+    }
+  }
+
   const [state , setState] = useState({
     vElement : "",
     vMeasure : "",
-    vSeries : "",
+    vSeries : tempVSeries,
     resultArray: "",
     reverseResultArray: "",
     ABC: "",
@@ -41,6 +53,22 @@ function Ch14Generator() {
 
   const createAcceleration = event => {
     event.preventDefault();
+
+    // need to remove previous version of ch3 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch14" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch14 = {"id":"book1ch14", "title":"Rhythms of Variable Velocities", "vSeries":state.vSeries}; 
+    old_data.unshift(book1ch14);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));
+
     var inputSeries = String(state.vSeries);
     if(inputSeries === "Select Series") {
       alert("Please select a series!");

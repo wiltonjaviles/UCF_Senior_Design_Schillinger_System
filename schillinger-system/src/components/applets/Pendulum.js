@@ -1,5 +1,6 @@
 import {Container, Row, Col, Card, Form} from 'react-bootstrap';
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import anime from "animejs";
 import '../.././Style.css';
 
@@ -74,6 +75,7 @@ function Pendulum() {
             Use the sliders to adjust the starting angle of the pendulum and the length of the period 
             of the pendulum. Observe how both affect the speed of the pendulum's movement!
           </p>
+          <Link to="/ch1pendulum"> Open Applet</Link>
         </Card.Body>
       </Card>
       <br />

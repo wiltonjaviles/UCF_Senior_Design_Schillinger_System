@@ -303,7 +303,7 @@ export function r(a,b,measure,mode) {
                 outArr[2].push('|');
             }
             //outArr[2].push(')');
-            if(countMeasureA!=measure) {outArr[2].push('+');} 
+            if(countMeasureA!==measure) {outArr[2].push('+');} 
           }
         } else {
           outArr[2].push(a);
@@ -387,7 +387,7 @@ export function r(a,b,measure,mode) {
     } else {
       outArr[1].pop();
       outArr[1].pop();
-      //if(measure!=a*b) {outArr[1].push(')');}
+      //if(measure!==a*b) {outArr[1].push(')');}
       outArr[1].push('|');
       outArr[4].push(lesser(a,b));
       outArr[4].push('|');
@@ -398,13 +398,13 @@ export function r(a,b,measure,mode) {
               outArr[i].push(n);
               outArr[i].push('|');
           } else {
-              outArr[i].push(n);
+            
+            outArr[i].push(n);
           }
       }
       
     }
     
-  
     if(mode === "all") {
       return outArr;
     } else {
