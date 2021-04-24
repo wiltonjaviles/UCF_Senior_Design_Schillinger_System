@@ -156,7 +156,7 @@ function Ch14Generator() {
               <h1>Chapter 14 Accelerator</h1>
               <h3>Instructions</h3>
               <p>
-                Select a series from the dropdown and view the acceleration, decceleration, and resultant for that series.
+                Select a series from the dropdown and view the rallentando, accelerando, and resultant of both for that series.
               </p>
               <br />
               <Form.Row className="justify-content-center">

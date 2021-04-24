@@ -176,7 +176,7 @@ function Ch13Generator() {
               <h1>Family Lookup</h1>
               <h3>Instructions</h3>
               <p>
-                Choose a family, then select a level of imalance.
+                Choose a family, then select a level of imbalance.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">
