@@ -16,7 +16,7 @@ function Book1Ch3Schillinger() {
 
           HAVING SEEN how two monomial periodicities produce a resultant, we have now to consider the manner in which these patterns may be grouped.
           There are three fundamental forms of grouping of ae÷b.
-          (l) Grouping by the product (by aeb); 
+          (l) Grouping by the product (by ae b); 
           (2) Grouping by the major generator (by ae);
           (3) Grouping by the minor generator (by b).
           In order to group m elements by n, it is necessary to divide m by n. Thus grouping by ae b is the quotient of m/ae b.
@@ -26,12 +26,12 @@ function Book1Ch3Schillinger() {
           Example:
           3÷2 ae b/ae b=6/6=T, one measure with 6t.
           The 6t; can be represented in musical notation as any measure with 6 single units. For instance, 3/4; time, where t = eigth note, or 6/4 time, where t = quarter note, or 6/8 time,
-          where t = eigth note.
+          where t = eighth note.
           Grouping by a: ae b/ae= bT (2)
           In grouping by a, ae b must be excluded from the score, as the presence of the latter neutralizes one of the accents, which as a result makes it sound like one T.
           3÷2 ae b/ae=6/3=2T, i.e., two measures with 3t.
           When grouped by a, b becomes an optional component, causing an effect known as syncopation.
-          Grouping by b: ae b/b=aT (3)
+          Grouping by b: ae b/b=ae T (3)
           Exclude ae b from the score and assign a as an optional component.
           3÷2 ae b/b=6/2=#T i.e., three measures with 2t.
           It is practical to score all the 19 cases of binary synchronization by ae b, by a, and by b, with the exception of cases in which ae b is too great to be used as one T. The latter consideration is merely a concession to musical habits.

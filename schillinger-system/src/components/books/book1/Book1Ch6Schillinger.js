@@ -34,10 +34,10 @@ function Book1Ch6Schillinger() {
           ae. THE TECHNIQUE OF SYNCHRONIZATION
 
           In order to synchronize three or more generators, it is necessary first to find their common product and their complementary factors.
-          Let Us Take 2÷3÷5
+          Let Us Take 2÷3÷5.
           The product is 2 X 3 X 5 = 30
           The complementary factors are the quotients of the product by a generator. Thus, 30 divided by 2 = 15 means that 15 is a complementary factor of 2.
-          Therefore; 
+          Therefore. 
           15 (2)
           10 (3)
           6 (5)
@@ -45,7 +45,7 @@ function Book1Ch6Schillinger() {
           r=2+1+1+1+1+2+1+142+2+1+1+
           2+2+1+1+2+1+1+1+1+2
           H=6+4+2+3+3+2+4+6
-          The rule of grouping is: group by any generator or any of the complementary factors. In the case of 2÷3÷5, grouping is available through 2 3,5,6,10,15, i.e. 2 4, 3 4, 5 4,6 8,10 8,15 8.
+          The rule of grouping is group by any generator or any of the complementary factors. In the case of 2÷3÷5, grouping is available through 2 3,5,6,10,15, i.e., 2 4, 3 4, 5 4,6 8,10 8,15 8.
           Grouped through 6 8, r prime appears as follows:
           It can be seen from this example that no more rhythmically suitable countertheme can be devised. The theme makes three recurrences while the countertheme makes continuous changes in much longer values. The listener has the opportunity to hear both themes together.
           All resultants from three or more generators have these recurrences and variations as their chief characteristics.

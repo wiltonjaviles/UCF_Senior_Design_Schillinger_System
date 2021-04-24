@@ -63,7 +63,7 @@ function Book1Ch13Schillinger() {
         The original patterns.
         The syncopated patterns.
         The characteristic values are.
-        2, i.e  (an eighth tied to an eighth, or a quarter).
+        2, i.e.  (an eighth tied to an eighth, or a quarter).
         3, i.e.  (a quarter tied to an eighth, or an eighth tied to a quarter).
         4, i.e.  (a quarter tied to a quarter).
         Often some of these number-values appear as rests.
@@ -74,7 +74,7 @@ function Book1Ch13Schillinger() {
         r - is the resultant.
         P - Permutations.
         S - Synchronization.
-        I - lnterference.
+        I - interference.
         Continuous dotted line represents uniformity.
         The first resultant (r sub 1) produces its permutations (P r sub 1) which form the first interference-group; these being synchronized (S P r sub 1) produce the first interference. The resultant of this interference is the second resultant (r sub 2), etc.
         The following graphs should be converted into musical notation.
