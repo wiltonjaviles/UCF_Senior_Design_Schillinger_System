@@ -21,27 +21,30 @@ function Book1Ch5Schillinger() {
           As the resultants which have identical generators have a great deal in common, such performance gives the utmost esthetic satisfaction.
           (ae) Balance B = balance
 
-          B = r underlined ae divided by b + r ae divided by b + ae times (ae-b)
+          B = r underlined ae divided by b + r ae divided by b + ae times (ae-b).
           The above means that in order to balance two resultants with identical generators, take the resultant of ae to b, with fractioning, add the resultant of ae. to b and add ae times a minus b. Grouping for such pairs is through ae only.
           Example:
           B =r3÷2+r3÷2+3 times (3—2) = [(2+1) + (1+1+1) + (1+2)] +
           [(2+1) +(1+2) +3]
-          B= r4÷3+r4÷3+4 times (4-3) = [(3+1) + (2+1+1) + 
+          B= r underlined 4÷3+r4÷3+4 times (4-3) = [(3+1) + (2+1+1) + 
           (1+1+2) +(1+3)] + [(3+1) + (2+2) + (1+3) +4].
-          Balance does not seem natural when ae > 2b, ae > 3b, i.e., when ae is greater than 2b or greater than 3b. Yet it may be accomplished through a general procedure.
+          Balance does not seem natural when ae is greater than 2b, ae is greater than 3b, i.e., when ae is greater than 2b or greater than 3b. Yet it may be accomplished through a general procedure.
           (1) Take r underlined ae÷b
           (2) Take r ae÷b as many times as it enters (as divisor) into ae squared.
           (3) Add one total duration which equals the difference between ae squared and 2 ae b, ae squared and 3 ae b, etc.
+
+          B ae is greater than m b = r underlined ae divided by b plus m r a divided by b plus (ae squared minus m ae b)
+
           Example:
-          5+2 5> 2 times 2
+          5+2 5 is greater than 2 times 2
           (B) Expansion E = expansion
 
-          E =r ae÷b=r underlined ae+b Grouping by ae only
+          E =r ae÷b + r underlined ae+b. Grouping by ae only
           Example:
           E = r3÷2+ r3÷2= [(2+1) + (1+2) 1 + [ (2+1) + (1+1+1) + (1+2)]
           (C) Contraction C = contraction
           
-          C=r underlined ae÷b+ r ae÷b Grouping by ae only.
+          C=r underlined ae÷b+ r ae÷b. Grouping by ae only.
           "
         />
         <br />
