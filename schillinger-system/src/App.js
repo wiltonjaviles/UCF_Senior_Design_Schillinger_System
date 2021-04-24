@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import About from './components/About';
 import Contents from './components/Contents';
+import AppletHistory from './components/AppletHistory';
 import Recordings from './components/Recordings';
 import Account from './components/Account';
 import Overture from './components/books/Overture';
@@ -58,6 +59,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/contents" component={Contents} />
+          <Route path="/applethistory" component={AppletHistory} />
           <Route path="/recordings" component={Recordings} />
           <Route path="/account" component={Account} />
           <Route path="/overture" component={Overture} />

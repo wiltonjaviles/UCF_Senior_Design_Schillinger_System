@@ -6,12 +6,11 @@ import TextToSpeech from "./applets/TextToSpeech";
 
 // function to retrieve and parse applet history items
 function getItems(arrName) {
-
-    var schillArr_data = JSON.parse(localStorage.getItem(arrName));
-    return schillArr_data;
-  
+  var schillArr_data = JSON.parse(localStorage.getItem(arrName));
+  return schillArr_data;
 }
 
+// function to clear local storage (clear applet history button)
 function clearStorage() {
   localStorage.clear();
   window.location.reload();
