@@ -248,6 +248,7 @@ Kathryn Wyrick - kathryn.m.wyrick@gmail.com
 * [Dotenv](https://www.npmjs.com/package/dotenv)
 * [anime.js](https://animejs.com/)
 * [JSXGraph](https://jsxgraph.uni-bayreuth.de/wp/index.html)
+* [SpeechSynthesis API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis)
 
 
 
