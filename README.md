@@ -201,7 +201,7 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- HOW TO MERGE TWO BRANCHES -->
 ### How to Merge Two Branches
-Branch `<src` is the branch with the code you want to merge (usually master or your branch when you're ready to merge your changes into master).
+Branch `<src>` is the branch with the code you want to merge (usually master or your branch when you're ready to merge your changes into master).
 Branch `<dest>` is the branch where you want the code to be merged with (your branch or master when you're ready to merge your changes into master)
 
 1. Pull the latest changes in the src branch
