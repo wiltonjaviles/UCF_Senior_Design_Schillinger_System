@@ -18,6 +18,7 @@ function Home() {
         />
         {/* <p>Welcome to the Schillinger System of Musical Composition!</p> */}
         {/* <br /> */}
+        <br />
         <h2>Introduction</h2>
         <p>The <b>Schillinger System of Musical Composition</b>, named after Joseph Schillinger, is a method of musical composition based on mathematical processes. It comprises theories of rhythm, harmony, melody, counterpoint, form and semantics (emotional meaning, as in movie music). It offers a systematic and non-genre approach to music analysis and composition, a descriptive rather than prescriptive grammar of music. The Schillinger System might have served as a road map for many later developments in music theory and composition. Instead, it languished in relative obscurity <a href="https://en.wikipedia.org/wiki/Schillinger_System">(source)</a>.</p>
         <p><b>Joseph Moiseyevich Schillinger</b> (1895-1943), was a composer, music theorist, and composition teacher; he was born in Kharkiv, in the Kharkov Governorate of the Russian Empire (present-day Ukraine) and died in New York City <a href="https://en.wikipedia.org/wiki/Joseph_Schillinger">(source)</a>.</p>

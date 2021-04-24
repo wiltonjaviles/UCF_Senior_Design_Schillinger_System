@@ -6,10 +6,22 @@ import Playback from '../applets/Playback';
 
 function Ch13Generator() {
 
-  
+  var tempFamily = '2';
+  var tempBalance = '1';
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+    // If there is already a saved state of the applet we overwrite the default values
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch13" ) {
+        tempFamily = old_data[i].family;
+        tempBalance = old_data[i].balance;
+        break;
+      }
+    }
+
   const [state , setState] = useState({
-    family : '2',
-    balance : '1',
+    family : tempFamily,
+    balance : tempBalance,
     Output : '',
     abcString: ""
   })
@@ -129,6 +141,21 @@ function Ch13Generator() {
 
     event.preventDefault();
     
+    // need to remove previous version of ch3 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch13" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch13 = {"id":"book1ch13", "title":"Evolution of Rhythm Styles (Families)", "family": state.family, "balance": state.balance}; 
+    old_data.unshift(book1ch13);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));
+
     abcOut = 'X:1\nK:C\n' + familyArray[state.family][state.balance];
     
     abcjs.renderAbc("output", abcOut);
@@ -149,7 +176,7 @@ function Ch13Generator() {
               <h1>Family Lookup</h1>
               <h3>Instructions</h3>
               <p>
-                Select two integers a and b, then select a measure lenght equal to a, b, or a times b.  Click Generate to view output.
+                Choose a family, then select a level of imalance.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">

@@ -19,7 +19,6 @@ function Ch4Generator() {
     if (old_data[i].id === "book1ch4" ) {
       tempA = old_data[i].a;
       tempB = old_data[i].b;
-      console.log("TempA: " + tempA + " TempB: " + tempB);
       break;
     }
   }
