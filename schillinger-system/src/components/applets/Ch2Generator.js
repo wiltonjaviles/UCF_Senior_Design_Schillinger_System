@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
 import Playback from '../applets/Playback';
-import {generator_R,toABC} from '../functions/./generators';
+import {r,toABC} from '../functions/./generators';
 
 function Ch2Generator() {
 
@@ -30,6 +30,7 @@ function Ch2Generator() {
     variableA : tempA,
     variableB : tempB,
     groupBy : tempGroup,
+    showing : 'Show All',
     testOutput : '',
     abcString: ""
   })
@@ -76,24 +77,29 @@ function Ch2Generator() {
       default: break;
     }
 
-    let outArr = generator_R(vA,vB,vG,"all");
-    for(let i in outArr) {
-      outArr[i] = toABC(outArr[i]);
-    }
+    let outArr = [];
+    let abcOut = "";
+    var abc = "";
 
-    let abcOut = "X:1\nK:C\n"+outArr[4].join("")+"\n";
-    var abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble";
-    abc = abc+"\n[V: V1]"+outArr[0].join("");
-    abc = abc+"\n[V: V2]"+outArr[1].join("");
-    abc = abc+"\n[V: V3]"+outArr[2].join("");
-    abc = abc+"\n[V: V4]"+outArr[3].join("");
-    abc = abc+"\n[V: V5]"+outArr[4].join("");
+    if(state.showing === 'Show All') {
+      outArr = r(vA,vB,vG,"all");
+      for(let i in outArr) {
+        outArr[i] = toABC(outArr[i]);
+      }
+      abcOut = "X:1\nK:C\n"+outArr[4].join("")+"\n";
+      abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble";
+      abc = abc+"\n[V: V1]"+outArr[0].join("");
+      abc = abc+"\n[V: V2]"+outArr[1].join("");
+      abc = abc+"\n[V: V3]"+outArr[2].join("");
+      abc = abc+"\n[V: V4]"+outArr[3].join("");
+      abc = abc+"\n[V: V5]"+outArr[4].join("");
+    } else {
+      outArr = toABC(r(vA,vB,vG));
+      abcOut = "X:1\nK:C\n"+outArr.join("")+"\n";
+      abc = abcOut;
+    }
     
-    /*abcjs.renderAbc("outputC1", "X:1\nK:C\n"+outArr[0].join("")+"\n");
-    abcjs.renderAbc("outputC2", "X:1\nK:C\n"+outArr[1].join("")+"\n");
-    abcjs.renderAbc("outputA", "X:1\nK:C\n"+outArr[2].join("")+"\n");
-    abcjs.renderAbc("outputB", "X:1\nK:C\n"+outArr[3].join("")+"\n");
-    abcjs.renderAbc("outputR", "X:1\nK:C\n"+outArr[4].join("")+"\n");*/
+    
     abcjs.renderAbc("outputR", abc);
 
     setState(prevState => ({
@@ -163,6 +169,17 @@ function Ch2Generator() {
                     </Form.Control>
                   </Form.Group>
                 </Col>
+                <Col className="col-2">
+                  <h5>Show:</h5>
+                </Col>
+                <Col className="col-2">              
+                  <Form.Group controlId="showing">
+                    <Form.Control as="select" value={state.showing} onChange={handleSelect}>
+                      <option>Show R</option>
+                      <option>Show All</option>
+                    </Form.Control>
+                  </Form.Group>
+                </Col>
                 <Col className="col-3">
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                 </Col>
@@ -189,122 +206,3 @@ function Ch2Generator() {
 }
 
 export default Ch2Generator;
-
-/*
-function sMakeR(a,b) {
-    let arr = [];
-    for(let i=0; i<5; i++) {
-        arr[i] = [];
-      }
-
-    for(let i=0; i<a*b; i++) {
-        arr[0].push(1);
-    }
-    arr[1].push(a*b);
-    for(let i=1; i<a*b; i++) {
-        arr[1].push('');
-    }
-    for(let i=0; i<b; i++) {
-        arr[2].push(a);
-        for(let j=1; j<a; j++) {
-            arr[2].push('');
-        }
-    }
-    for(let i=0; i<a; i++) {
-        arr[3].push(b);
-        for(let j=1; j<b; j++) {
-            arr[3].push('');
-        }
-    }
-    let j=1;
-    for(let i=a*b-1; i>-1; i--) {
-        
-        if(arr[2][i] !== '' || arr[3][i] !== '') {
-            arr[4][i] = j;
-            j=1;
-        } else {j++; arr[4][i]='';}
-    }
-
-    return arr;
-}
-
-function simpleToABC(arrIn, measureLength) {
-  let measure = Number(0);
-  let longNote = Number(0);
-    
-    
-    let arrOut = [];
-    for(let i=0; i<arrIn.length; i++) {
-        arrOut[i] = [];
-    }
-
-    for(let i=0; i<arrIn.length; i++) {
-        measure = measureLength;
-        for(let j=0; j<arrIn[i].length; j++) {
-          
-          if(arrIn[i][j] !== ''){
-            if(arrIn[i][j] <= measure) {
-              arrOut[i].push(pushNote(arrIn[i][j]));
-              measure = measure - arrIn[i][j];
-            } else if(arrIn[i][j] > measure) {
-                if(arrIn[i][j] >= measureLength) {
-                  
-                  arrOut[i].push(pushNote(measure)+'-|');
-                  longNote = arrIn[i][j] - measure;
-                  for(longNote; longNote > 0; longNote=longNote-measureLength) {
-                    arrOut[i].push(pushNote(measureLength)+'-|');
-                  }
-                  if(longNote > 0) {
-                    arrOut[i].push(pushNote(longNote));
-                  } else {
-                    arrOut[i].pop();
-                    arrOut[i].push(pushNote(measureLength)+'|');
-                  }
-                  measure = measureLength - longNote;
-                } else {
-                  arrOut[i].push(pushNote(measure)+'-|'+pushNote(arrIn[i][j]-measure));
-                  measure = measureLength - (arrIn[i][j]-measure);
-                }
-            }
-            
-            if(measure === 0) {
-              arrOut[i].push('|');
-              measure = measureLength;
-            }
-
-          }
-        }
-    }
-    return arrOut;
-}
-
-function pushNote(a) {
-  if(a === 5) {
-    return 'A4-A1';
-  } else if(a > 8) {
-    let output = new Array(['A8-']);
-    let count = a-8;
-    while(count > 8) {
-      output.push('A8-');
-      count = count-8;
-    }
-    output.push('A'+count);
-    return output.toString();
-  } else {return 'A'+a;}
-}
-*/
-//<Button variant="secondary" type="submit" className="float-right" onClick={playBack}>Play R</Button>
-/*
-<Row className="justify-content-md-center">
-                <div id="outputC1"></div>
-              </Row>
-              <Row className="justify-content-md-center">
-                <div id="outputC2"></div>
-              </Row>
-              <Row className="justify-content-md-center">
-                <div id="outputA"></div>
-              </Row>
-              <Row className="justify-content-md-center">
-                <div id="outputB"></div>
-              </Row>
-              */
