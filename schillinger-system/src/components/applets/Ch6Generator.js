@@ -133,7 +133,7 @@ function Ch6Generator() {
       abcOutput = abc;
     }
 
-    abcjs.renderAbc("outputABC", abc);
+    abcjs.renderAbc("outputABC", abc, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 });
     
     setState(prevState => ({
         ...prevState,
@@ -150,7 +150,7 @@ function Ch6Generator() {
               <h1>Trinomial Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Select three integers a, b and c, then select a measure length.  Click Generate to view output. Large inputs will go off the screen.
+                Select three integers a, b and c, then select how you would like the Rs to be grouped. Select "Show all" to see all the steps or "Show Rs" to just see the Rs. Click Generate to view output. Large inputs will go off the screen.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">

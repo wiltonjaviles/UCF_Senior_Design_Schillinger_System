@@ -101,7 +101,7 @@ function Ch7Generator() {
               <h1>Waltz Walker</h1>
               <h3>Instructions</h3>
               <p>
-                Enter generator a and b, select number of attacks and the base.
+                Enter generator a and b, select number of attacks and the base to see how the resultant is synchronized with the instrumental group.
               </p>
               <br />
                 <Row className="form-row justify-content-md-center">

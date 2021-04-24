@@ -29,7 +29,7 @@ function Ch4Generator() {
   const [state , setState] = useState({
     variableA : 3,
     variableB : 2,
-    showing : 'Show R',
+    showing : 'Show R_',
     testOutput : "",
     abcString: ""
   })
@@ -103,7 +103,7 @@ function Ch4Generator() {
               <h1>R_ Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Select two integers a and b.  Click Generate to view output.
+                Select two integers a and b to see R_. Select "Show all" to see all the steps used. Select "Show R_" to just see R_. Click Generate to view output.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">
@@ -139,7 +139,7 @@ function Ch4Generator() {
                 <Col className="col-2">              
                   <Form.Group controlId="showing">
                     <Form.Control as="select" value={state.showing} onChange={handleSelect}>
-                      <option>Show R</option>
+                      <option>Show R_</option>
                       <option>Show All</option>
                     </Form.Control>
                   </Form.Group>

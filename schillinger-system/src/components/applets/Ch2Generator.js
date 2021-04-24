@@ -118,7 +118,7 @@ function Ch2Generator() {
               <h1>R Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Select two integers a and b, then select a measure length equal to a, b, or a times b.  Click Generate to view output.
+                Select two integers a and b, then select how you would like to group the resultant: a, b, or a times b. If you would like to see all the steps, select "Show all". If you only want to see R, select "Show R". Click Generate to view output.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">
@@ -183,13 +183,9 @@ function Ch2Generator() {
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                 </Col>
               </Row>
-
               <Row className="justify-content-md-center">
                 <h4>{state.testOutput}</h4>
               </Row>
-              
-              
-
               <Row className="justify-content-md-center">
                 <div id="outputR"></div>
               </Row>
