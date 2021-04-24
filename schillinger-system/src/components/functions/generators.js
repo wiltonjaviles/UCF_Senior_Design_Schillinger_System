@@ -1,4 +1,7 @@
-
+/*
+Michael Duke
+luckystarnova@gmail.com
+*/
 
 /**
    * turns a schillinger polynomial into an abc string
@@ -14,8 +17,7 @@
     let feed =  melodyFeed || ['A'];
     let feedCount = 0;
     let breakdown = 0;
-  
-    
+    let resting = false;
   
     for(let i in inArr) {
       n = inArr[i];
@@ -36,7 +38,14 @@
           break;
         case '+':
           break;
+        case 'Z'||'z':
+          resting = true;
+          break;
         default:
+          if(resting) {
+            f = 'z';
+            resting = false;
+          }
           if(n>4) {
             switch(n) {
               case '12' || 12:
@@ -159,7 +168,19 @@
   }
 
 /**
- * Generates R(a%b), outputs in the form of a schillinger polynomial (a+b+c...etc)
+ * Generates r(a%b), outputs in the form of a schillinger polynomial (a+b+c...etc)
+ * @param {number} a 
+ * @param {number} b 
+ * @param {number} measure - if you want measures, put this in. If blank there will be no measures. Ties are marked with parantheses.
+ * @param {string} mode - if "all" changes output to 2D array with all components of generator
+ * @returns outArr - character array of R
+ */
+export function r(a,b,measure,mode) {
+  return generator_R(a,b,measure,mode);
+}
+
+/**
+ * Generates r(a%b), outputs in the form of a schillinger polynomial (a+b+c...etc)
  * @param {number} a 
  * @param {number} b 
  * @param {number} measure - if you want measures, put this in. If blank there will be no measures. Ties are marked with parantheses.
@@ -392,7 +413,19 @@
   }
 
 /**
- * Generates R_(a%b), outputs in the form of a schillinger polynomial (a+b+c...etc)
+ * Generates r_(a%b), outputs in the form of a schillinger polynomial (a+b+c...etc)
+ * @param {number} a 
+ * @param {number} b 
+ * @param {boolean} measure - if you don't want measures, false. Defaults to greater input if true.
+ * @param {string} mode - if "all" changes output to 2D array with all components of generator
+ * @returns outArr - character array of R_
+ */ 
+export function r_(a,b,measure,mode) {
+  return generator_R_Underlined(a,b,measure,mode);
+}
+
+/**
+ * Generates r_(a%b), outputs in the form of a schillinger polynomial (a+b+c...etc)
  * @param {number} a 
  * @param {number} b 
  * @param {boolean} measure - if you don't want measures, false. Defaults to greater input if true.
@@ -446,6 +479,10 @@ export function generator_R_Underlined(a, b, measure, mode) {
             outArr[3].pop();
             outArr[4].pop();
             outArr[5].pop();
+        } else {
+          outArr[0].pop();
+          outArr[0].pop();
+          outArr[0].push('|');
         }
 
         if(mode==='all') {
@@ -461,26 +498,21 @@ export function generator_R_Underlined(a, b, measure, mode) {
     a = t;
 
     //the gap at the front/end of b1/b2 respectively
-    let delayFactor = a*a-a*b;
+    let displacement = a*a-a*b;
     
     //initialize arrays as needed
 
     if(measure) {
-        let countMeasure = a;
-
         //handle c1
-        for(let i=0; i<a*a; i++) {
+        for(let i=0; i<a; i++) {
+          for(let j=0; j<a; j++) {
             outArr[0].push(1);
-            if(countMeasure > 0) {
-                outArr[0].push('+');
-                countMeasure--;
-            } else {
-                outArr[0].push('|');
-                countMeasure = a;
-            }  
+            outArr[0].push('+');
+          }
+          outArr[0].pop();
+          outArr[0].push('|');
+          
         }
-        //outArr[0].pop();
-        //outArr[0].push('|');
 
         //handle c2 and a
         for(let i=0; i<a; i++) {
@@ -491,125 +523,87 @@ export function generator_R_Underlined(a, b, measure, mode) {
             outArr[2].push(a);
             outArr[2].push('|');
         }
+        outArr[1].pop();
+        outArr[1].pop();
+        outArr[1].push('|');
 
-        //handle b1
-        countMeasure = a;
+        //handle b1 and b2
+        let countMeasure = a;
+
+        for(let i=0; i<(displacement/a); i++) {
+          outArr[4].push('Z');
+          outArr[4].push(a);
+          outArr[4].push('|');
+        }
 
         for(let i=0; i<a; i++) {
             if(b < countMeasure) {
                 outArr[3].push(b);
+                outArr[4].push(b);
                 outArr[3].push('+');
+                outArr[4].push('+');
                 countMeasure-=b;
             } else if(b === countMeasure) {
                 outArr[3].push(b);
+                outArr[4].push(b);
                 outArr[3].push('|');
+                outArr[4].push('|');
                 countMeasure=a;
             } else {
                 outArr[3].push(countMeasure);
-                outArr[3].push('-');
-                outArr[3].push('|');
-                outArr[3].push(b - countMeasure);
-                outArr[3].push('+');
-                countMeasure = a - (b - countMeasure);
-            }
-        }
-        for(let i=0; i<a-b; i++) {
-            outArr[3].push('[');
-            outArr[3].push(a);
-            outArr[3].push(']');
-            outArr[3].push('|');
-        }
-
-        //handle b2
-        countMeasure = a;
-
-        for(let i=0; i<a-b; i++) {
-            outArr[4].push('[');
-            outArr[4].push(a);
-            outArr[4].push(']');
-            outArr[4].push('|');
-        }
-        for(let i=0; i<a; i++) {
-            if(b < countMeasure) {
-                outArr[4].push(b);
-                outArr[4].push('+');
-                countMeasure-=b;
-            } else if(b === countMeasure) {
-                outArr[4].push(b);
-                outArr[4].push('|');
-                countMeasure=a;
-            } else {
                 outArr[4].push(countMeasure);
+                outArr[3].push('-');
                 outArr[4].push('-');
+                outArr[3].push('|');
                 outArr[4].push('|');
+                outArr[3].push(b - countMeasure);
                 outArr[4].push(b - countMeasure);
+                outArr[3].push('+');
                 outArr[4].push('+');
                 countMeasure = a - (b - countMeasure);
             }
         }
-
-        //handle r
-        countMeasure = a;
-
-        let held = -1;
-        let holding = 0;
-        let measureTrigger = 0;
-        let trigger = false;
-
-        let b1IsOn = true;
-        let b2IsOn = false;
-
-        outArr[5].push(b);
-        outArr[5].push('+');
-
-        for(let i=0; i<a; i++) {
-            if(i === a - (a-b)) {
-                b1IsOn = false;
-            }
-            if(i === a - b) {
-                b2IsOn = true;
-            }
-            for(let j=0; j<a; j++) {
-                if(j===0) {
-                    trigger = true;
-                }
-                if(b1IsOn) {
-                    if((i*a+j)%b===0) {
-                        trigger = true;
-                    }
-                }
-                if(b2IsOn) {
-                    if(((i-(a-b))*a+j)%b===0) {
-                        trigger = true;
-                    }
-                }
-                
-                if(trigger) {
-                    if(held > 0) {
-                        outArr[5].push(held);
-
-                        measureTrigger+=held;
-                        if(measureTrigger === a) {
-                            outArr[5].push('|');
-                            measureTrigger = 0;
-                        } else {
-                            outArr[5].push('+');
-                        }
-                        
-                        held = holding;
-                        holding = 1;
-                    }
-                } else {
-                    holding++;
-                }
-
-                trigger = false;
-            }
-            
+        for(let i=0; i<(displacement/a); i++) {
+          outArr[3].push('Z');
+          outArr[3].push(a);
+          outArr[3].push('|');
         }
 
+        //handle r_
+        let doit=false;
+        let held = -1;
+
+        for(let i=0; i<a*a; i++) {
+          if(i%a===0) {
+            doit = true;
+          }
+          if(i>displacement) {
+            if((i-displacement)%b===0) {
+              doit = true;
+            }
+          }
+          if(i<(a*a-displacement)) {
+            if(i%b===0) {
+              doit = true;
+            }
+          }
+          if(doit) {
+            if(held===-1){
+              held=1;
+            } else {
+              outArr[5].push(held);
+              outArr[5].push('+');
+              held=1;
+            }
+            doit=false;
+          } else {
+            held++;
+          }
+          
+        }
+        
         outArr[5].push(b);
-        outArr[5].push('|');
+        outArr[5] = insertMeasures(outArr[5],a);
 
     } else { //these are much simpler, in general.
         //handle c1
@@ -634,14 +628,12 @@ export function generator_R_Underlined(a, b, measure, mode) {
             outArr[3].push(b);
             outArr[3].push('+');
         }
-        outArr[3].push('[');
-        outArr[3].push(delayFactor);
-        outArr[3].push(']');
+        outArr[3].push('Z');
+        outArr[3].push(a);
 
         //handle b2
-        outArr[4].push('[');
-        outArr[4].push(delayFactor);
-        outArr[4].push(']');
+        outArr[4].push('Z');
+        outArr[4].push(a);
         outArr[4].push('+');
         for(let i=0; i<a; i++) {
             outArr[4].push(b);
@@ -650,46 +642,36 @@ export function generator_R_Underlined(a, b, measure, mode) {
         outArr[4].pop();
         
         //handle r
+        let doit=false;
         let held = -1;
-        let holding = 0;
-        let delay1 = a*b;
-        let delay2 = delayFactor;
-        let trigger = false;
-        outArr[5].push(b);
-        outArr[5].push('+');
-        
-        for(let i=0; i<a*a; i++) {
-            if(i%a === 0) {
-                trigger = true;
+
+        for(let i =0; i<a*a; i++) {
+          if(i%a===0) {
+            doit = true;
+          }
+          if(i>a) {
+            if((i+a)%b===0) {
+              //doit = true;
             }
-
-            if(delay1 > 0) {
-                if(i%b === 0) {
-                    trigger = true;
-                }
-                delay1--;
-            } 
-
-            if(delay2 < 0) {
-                if((i-delayFactor)%b === 0) {
-                    trigger = true;
-                }
+          }
+          if(i<(a*a-a)) {
+            if(i%b===0) {
+              doit = true;
+            }
+          }
+          if(doit) {
+            if(held===-1){
+              held=1;
             } else {
-                delay2--;
+              outArr[5].push(held);
+              outArr[5].push('+');
+              held=1;
             }
-
-            if(trigger) {
-                if(held > 0) {
-                    outArr[5].push(held);
-                    outArr[5].push('+');
-                }
-                held = holding;
-                holding = 1;
-            } else {
-                holding++;
-            }
-
-            trigger = false;
+            doit=false;
+          } else {
+            held++;
+          }
+          
         }
         outArr[5].push(b);
     }
@@ -702,7 +684,20 @@ export function generator_R_Underlined(a, b, measure, mode) {
 }
 
 /**
- * Generates R(a%b%c), outputs in the form of a schillinger polynomial (a+b+c...etc)
+ * Generates r(a%b%c), outputs in the form of a schillinger polynomial (a+b+c...etc)
+ * @param {number} a 
+ * @param {number} b 
+ * @param {number} c 
+ * @param {number} measure - this should be the multiple of a subset of a,b,c. Nothing/0 removes measures.
+ * @param {string} mode - if "all", you get the whole array. If "R1" you get just R1. Else, you get R.
+ * @returns outArr - character array of R and/or R1
+ */
+export function r3(a,b,c,measure,mode) {
+  return generator_R_Trinomial(a,b,c,measure,mode);
+}
+
+/**
+ * Generates r(a%b%c), outputs in the form of a schillinger polynomial (a+b+c...etc)
  * @param {number} a 
  * @param {number} b 
  * @param {number} c 
@@ -838,7 +833,7 @@ export function generator_R_Trinomial(a,b,c,measure,mode) {
 }
 
 /**
- * 
+ * This is a laziness function that I should have written first, then used everywhere.
  * @param {*} inArr 
  * @param {*} measure 
  */
@@ -909,6 +904,53 @@ function insertMeasures(inArr, measure) {
   }
 
   return outArr;
+}
+
+/**
+ * r_a%b + ra%b + a(a-b)
+ * @param {*} a 
+ * @param {*} b 
+ * @returns balanced polynomial (includes measures)
+ */
+export function balance(a, b) {
+  let arrOut = generator_R(a,b,a);
+  arrOut.push.apply(arrOut,generator_R_Underlined(a,b,true));
+  for(let i=0; i<(a-b); i++) {
+    arrOut.push(a);
+    arrOut.push('-');
+    arrOut.push('|');
+  }
+  arrOut.pop();
+  arrOut.pop();
+  arrOut.push('|');
+
+  return arrOut;
+}
+
+/**
+ * ra%b + r_a%b
+ * @param {*} a 
+ * @param {*} b 
+ * @returns expanded polynomial (includes measures)
+ */
+export function expand(a, b) {
+  let arrOut = generator_R_Underlined(a,b,true);
+  arrOut.push.apply(arrOut,generator_R(a,b,a));
+
+  return arrOut;
+}
+
+/**
+ * r_a%b + ra%b
+ * @param {*} a 
+ * @param {*} b 
+ * @returns contracted polynomial (includes measures)
+ */
+export function contract(a, b) {
+  let arrOut = generator_R(a,b,a);
+  arrOut.push.apply(arrOut,generator_R_Underlined(a,b,true));
+
+  return arrOut;
 }
   
 function lesser(a,b) {
