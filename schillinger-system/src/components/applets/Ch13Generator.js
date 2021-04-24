@@ -149,7 +149,7 @@ function Ch13Generator() {
               <h1>Family Lookup</h1>
               <h3>Instructions</h3>
               <p>
-                Select two integers a and b, then select a measure lenght equal to a, b, or a times b.  Click Generate to view output.
+              Choose a family, then select of level of imbalance.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">
