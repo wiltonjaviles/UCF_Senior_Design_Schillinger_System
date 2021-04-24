@@ -35,7 +35,7 @@ function Ch6Generator() {
     variableA : 2,
     variableB : 3,
     variableC : 5,
-    groupBy : 'a',
+    groupBy : 'ab',
     showing : 'Show Rs',
     OutputABC : '',
     abcString: ""
