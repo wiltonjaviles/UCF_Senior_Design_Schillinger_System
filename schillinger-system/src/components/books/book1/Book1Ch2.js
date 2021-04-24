@@ -10,6 +10,7 @@ function Book1Ch2() {
       <Container>
         <br /> 
         <Link to="/book1" className="content-links"><h1>Book One: Theory of Rhythm</h1></Link>
+        <p>Hey! Click on Book One: Theory of Rhythm on any chapter page to go back to the Book One table of contents!</p>
         <a className="chapter-section-link" href="/book1ch2#1.2" id="1.2"><h3>Chapter 2. Interferences of Periodicities</h3></a>
         <a className="content-links" href="/book1ch2schillinger"><h5>View the source text.</h5></a>
         <TextToSpeech 
