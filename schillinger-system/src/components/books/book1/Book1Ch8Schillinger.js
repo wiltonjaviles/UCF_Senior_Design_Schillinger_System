@@ -115,7 +115,7 @@ function Book1Ch8Schillinger() {
           18 times 1 = 18
           (3) Duration group: r 5+2 =10t 1 33— = 3 3(6)
           ae T = 6
-          (4) 10f times  3 = 30t
+          (4) 10t times  3 = 30t
           (5) When T = 8 divided by 8, 30t divided by 8+ 16 divided by 4; 15 times 4 divided by 4=15T
           Example of composition of the resultant of instrumental interference.
           p l (i) = 6; p l (ae) = 8.
