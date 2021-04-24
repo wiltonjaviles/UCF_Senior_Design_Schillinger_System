@@ -99,7 +99,7 @@ function Ch5Generator() {
               <h1>Variation Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Select two integers a and b, then select a measure lenght equal to a, b, or a times b.  Click Generate to view output.
+                Select two integers a and b, then select whether to Balance, Expand, or Contract.  Click Generate to view output.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">

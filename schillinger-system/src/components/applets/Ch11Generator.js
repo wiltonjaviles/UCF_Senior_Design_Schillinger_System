@@ -5,9 +5,25 @@ import abcjs from "abcjs";
 import Playback from '../applets/Playback';
 
 function Ch11Generator() {
+
+  var tempA = 3;
+  var tempB = 2;
+  
+   // grab the current array sitting in local storage
+   var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+   // If there is already a saved state of the applet we overwrite the default values
+   for (let i in old_data) {
+     if (old_data[i].id === "book1ch11" ) {
+       tempA = old_data[i].a;
+       tempB = old_data[i].b;
+       break;
+     }
+   }
+
   const [state , setState] = useState({
-    variableA : 3,
-    variableB : 2,
+    variableA : tempA,
+    variableB : tempB,
     rType : 'r by a',
     permuteBy : 'least common',
     OutputR : '',
@@ -28,7 +44,24 @@ function Ch11Generator() {
   }
 
   const generateR = event => {
+
     event.preventDefault();    
+    
+    // need to remove previous version of ch2 applet history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch11" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+     // use unshift to push the new applet ID to the front of the array
+     var book1ch11 = {"id":"book1ch11", "title": "Composition of Homogeneous Rhythmic Continuity", "a":state.variableA, "b":state.variableB}; 
+     old_data.unshift(book1ch11);
+
+     // update the schillinger applet array in localStorage
+     localStorage.setItem('schillArr', JSON.stringify(old_data));
+    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
     var v = -1;
@@ -130,7 +163,7 @@ function Ch11Generator() {
               <h1>Rotate Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Select a and b, and the type of resultant to make, then press submit to see one rotation of each method of rotation in this
+                Select a and b, then press submit to see one rotation of each method of rotation in this
                 chapter.
               </p>
               <br />
