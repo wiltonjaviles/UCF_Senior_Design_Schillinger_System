@@ -86,7 +86,7 @@ function Ch5Generator() {
     outArr = toABC(outArr);
     let abcOut = "X:1\nK:C\n"+outArr.join("")+"\n";
 
-    abcjs.renderAbc("output", abcOut);
+    abcjs.renderAbc("output", abcOut, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 });
 
     setState(prevState => ({
         ...prevState,

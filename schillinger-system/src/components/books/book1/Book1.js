@@ -47,7 +47,7 @@ function Book1() {
         </Row>
         <Row>
           <Col><Link to="/intro" className="content-links"><h5>Previous Book</h5></Link></Col>
-          <Col><Link to="/book1ch1#1.1" className="content-links"><h5>Next Chapter</h5></Link></Col>
+          <Col><Link to="/book2" className="content-links"><h5>Next Book</h5></Link></Col>
         </Row>
         <br />
       </Container>
