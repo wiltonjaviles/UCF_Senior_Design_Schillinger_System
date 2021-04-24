@@ -85,6 +85,9 @@ function Navigation() {
             <Nav.Link>
               <Link to="/contents" className="nav-link-item">Contents</Link>
             </Nav.Link>
+            <Nav.Link>
+              <Link to="/applethistory" className="nav-link-item">Applet History</Link>
+            </Nav.Link>
             {/* <Nav.Link>
               <Link to="/recordings" className="nav-link-item">Recordings</Link>
             </Nav.Link> */}
