@@ -52,7 +52,7 @@ function Book1Ch9Schillinger() {
           Any rhythmic group may become an element and be permuted with its
           converse.
           Song: Pennies from Heaven
-          Schillinger's study of musical styles and the development of music took him from the earliest forms of recorded sound to contemporary  popular American song. With an unusual catholicity of interest. Schillinger chooses illustrative materials frequently from popular songs. (Ed.) Copyright 1963 by Santly-Joy, Inc., New York, U.S.A. Reprinted by permission of the publishers.
+          Schillinger's study of musical styles and the development of music took him from the earliest forms of recorded sound to contemporary popular American song. With an unusual catholicity of interest. Schillinger chooses illustrative materials frequently from popular songs. (Ed.) Copyright 1963 by Santly-Joy, Inc., New York, U.S.A. Reprinted by permission of the publishers.
           As can be easily observed from these examples, the converse variation-group produces a rhythmic counterpart.
           3 Elements
           Table of General Permutations:
@@ -78,7 +78,7 @@ function Book1Ch9Schillinger() {
           Copyright 1936 by Santy-Joy, Inc., New York, U.S.A. Reprinted by permission of Publishers.
           4 Elements
           Table of General Permutations:
-          (1) All elements different;
+          (1) All elements different.
           (3) Two pairs identical:
           (4) Three elements identical:
           Assuming that any of the permutations is an original group, each of the above groups may be limited to four circular permutations.
@@ -86,7 +86,7 @@ function Book1Ch9Schillinger() {
           (1) Durations:
           (a) All four elements different.
           Quadrinomial from r5÷4; 4 + 1 + 3 + 2
-          ae=4;b=1;c=3;d=2
+          ae=4; b=1;c=3;d=2
           (4+1+3+2) + (4+1+2+3) + (4+2+1+3) + (2+4+1+3) +
           + (4+3+1+2) + (4+3+2+l) + (4+2+3+1) + (2+4+3+1) +
           + (3+4+1+2) + (3+4+2+1) + (3+2+4+1) + (2+3+4+1) +
@@ -108,15 +108,15 @@ function Book1Ch9Schillinger() {
           (c) Two pairs identical.
           Quadrinomial +2; 2 + 1 + 1 + 2
           a = 2; b = 1
-          Form: ae+b +b +ae
+          Form: ae + b +b +ae
           Starting with the second permutation of the corresponding table, we obtain:
           (2+1+1+2) + (1+1+2+2) + (1+2+2+1) + (2+1+2+1) +
           + (1+2-+1+2) + (2+2+1+1)
-          This 6-group continuity produces a 6-part simultaneity in 6 bars of 6 8 time or in 12 bars of % time (1 = J ). Clockwise circular permutations give 4 parts in 4 bars of % time or 4 parts in 8 bars of  3 4 time (1 =  )
+          This 6-group continuity produces a 6-part simultaneity in 6 bars of 6 8 time or in 12 bars of 3 4 time (1 = quarter note). Clockwise circular permutations give 4 parts in 4 bars of % time or 4 parts in 8 bars of 3 4 time (1 = quarter note)
           (d) Three elements identical.
           Quadrinomial: 3 +1 +1 +1
-          ae=1;b =3
-          Form:b+ae+ae+ae
+          ae=1; b =3
+          Form: b + ae + ae + ae
           Starting with the fourth permutation of the corresponding table we obtain:
           (3+1+1+1) + (1+1+1+3) + (1+1+3+1) + (1+3+1+1)
           This 4-group continuity produces a 4-part simultaneity in 4 bars of 6 8 time
@@ -165,11 +165,11 @@ function Book1Ch9Schillinger() {
           The number of variations is the same as in the preceding group.
           A group consisting of 4 elements may be produced from any rhythmic resultant, providing a non-uniform, distribution is applied:
           For example: r5÷3 grouped by b in 3 4 time:
-          Example from the popular song. Pennies From Heaven. When necessary a tie between the notes may be omitted, though it is not necessary if the same group repeats itself.
+          Example from the popular song. Pennies from Heaven. When necessary, a tie between the notes may be omitted, though it is not necessary if the same group repeats itself.
           You can see what extraordinary variety may be secured by a group as simple as this through this variation method.
           As the general velocity of musical time (tempo) is most essential in establishing one or another characteristic, many of the preceding examples, although similar in numbers, produce musical continuities as remote from each other in character as Handel is remote from the Cuban rhumba.
-          For example the group: ( (circled 1) +1+1+1) + (1 + (circled 1) +1+1) + (1+1+ (circled 1) +1) +
-          (1 +1+1+(circled 1) ) being written and performed as largo in 4/4 time.
+          For example, the group: ((circled 1) +1+1+1) + (1 + (circled 1) +1+1) + (1+1+ (circled 1) +1) +
+          (1 +1+1+(circled 1)) being written and performed as largo in 4/4 time.
           Copyright 1936 bySantly-Joy, Inc., New York, U.S.A. Reprinted by permission of the Publishers.
           The tables are worked out in detail on these and other pages not only for the sake of clarity; it is also a way of furnishing the practical composer with ready-made calculations so that each pattern need not be re-calculated whenever it is needed in actual composition. The time-saving way is to refer to the tables in this book, although a composer should also know how to calculate them afresh for himself, if necessary. 
           "

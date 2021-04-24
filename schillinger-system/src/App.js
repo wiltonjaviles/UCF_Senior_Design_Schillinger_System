@@ -47,6 +47,7 @@ import Book6 from './components/books/book6/Book6';
 import Book7 from './components/books/book7/Book7';
 import ScrollToTop from './components/ScrollToTop';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Pendulum from './components/applets/Pendulum';
 
 function App() {
   return (
@@ -100,6 +101,7 @@ function App() {
           <Route path="/book5" component={Book5} />
           <Route path="/book6" component={Book6} />
           <Route path="/book7" component={Book7} />
+          <Route path="/ch1pendulum" component={Pendulum} />
         </Switch>
       </Router>
     </div>

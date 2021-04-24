@@ -13,7 +13,7 @@ function Book1Ch12Schillinger() {
         <TextToSpeech
           text="
           CHAPTER 12. DISTRIBUTIVE POWERS.
-          A. CONTINUITY of HARMONIC CONTRASTS.
+          ae. CONTINUITY of HARMONIC CONTRASTS.
           THE PROBLEM of producing contrasts in a rhythmic continuity concerns the two fundamental methods of evolving rhythm : one, the patterns generated through the common denominator and constituting. rhythmic continuity within musical measures t over t ; and two, the patterns of the measures themselves growing into a complete form expressing the rhythm of measures and of groups of measures. The first form of continuity is called fractional continuity; the second, factorial continuity.
           While rhythm evolves within musical measures, musical measures [themselves also evolve their own rhythm: The correlation of the two in time sequence will be incorporated into the series of factorial-fractional continuity. Homogeneous series of factorial-fractional continuity are power~series. The original value t over t represents the determinant of a series. Powers express the evolution of a number through its own continuous factoring. Algebraic treatment of the power processes is quantitative and—being applied—does not bring the solution of esthetic.
           problems. Esthetic problems are essentially the problems of distribution and coordination, and not problems of mere quantity. The process of evolving any initial ratio through its own factoring lies within the field of distributive powers. The distributive powers organize not Only the value but also the quantity of the values harmonically. Any binomial under distributive powers becomes a quadrinomial on the square (2 squared = 4). It becomes a group of 8 terms on the cube; 3. trinomial becomes a polynomial with 9 terms on the square (3 squared= 9)..
@@ -28,7 +28,7 @@ function Book1Ch12Schillinger() {
           The following is a survey of the series which have been employed to date from the beginning of music by the inhabitants of this planet.
           Each of the series whose determinants are indicated above represents centuries, sometimes millennia. of musical evolution. The most familiar of all is the series with the determinant 2. The 2/2 series represents our own musical civilization, known to us as an important and glorious period of musical history, but it certainly does not appear very inventive from the viewpoint of objective analysis. The 2/2 series has, in fact, caused more damage to the evolution of our musical culture than it has helped the development of our culture—with respect to rhythm. The number-values found on the right side of the determinant represent the constant growth of factorial groups (measures and their multiples). The left side represents the formation of rhythmic patterns within each consecutive measure.
           The real reason for our musical civilization's being so elementary is the system of notation evolved in Europe during recent centuries. Just a few hundred years ago, the very idea of recording rhythm in relative durations seemed to be quite revolutionary (Mensural system). Even in our own day our schools teach that a whole note consists of two half-notes, and the two half-notes consist of four quarter notes, etc. But why mention notes, when this is an ordinary process of arithmetical division by two The habit of thinking in two's and their multiples has retarded the development of our musical civilization to such an extent that the rhythms used on the African continent, perhaps thirty thousand years ago, seem to us to be quite exciting even today. The general field of classical music deals with division by two and multiplication by two. All classical rhythmic patterns are based on halfs, quarters. eights, sixteenths, etc. Measures accumulate through the same multiples.
-          Measure-groups (known as phrases) appear in 2's, 4's, 8’s, etc. The inefficiency of the accepted system of musical notation was sufficiently discussed at the beginning of this theory.* When a symbol called a quarter-note appears in musical writing, such a quarter-note does not necessarily represent a quarter of anything. It may be a half, a third, a fifth. or any other fraction.
+          Measure-groups (known as phrases) appear in 2's, 4's, 8’s, etc. The inefficiency of the accepted system of musical notation was sufficiently discussed at the beginning of this theory. When a symbol called a quarter-note appears in musical writing, such a quarter-note does not necessarily represent a quarter of anything. It may be a half, a third, a fifth. or any other fraction.
           See Chapter 1 of Theory of Rhythm. See also Chapter 2 of Book IV, Theory of Melody which presents a history of musical notation.
           and fully describes the inadequacy of the accepted system of notation that caused Schillinger to search for a new system,.
           Classical music developed very little efiiciency in the 3/3 series. The right side is entirely untouched, because when we find 3-bar phrases in such music, it is usually a 4-bar or 2-bar phrase—modified by means of expansion or contraction. The left side of the 3 3 series is somewhat better developed. There are bars with three beats (3 4 time), there are bars with nine beats (9 8 time), and there are even a few rare cases when 27 16 appears as a musical measure, as in some works of J. S. Bach. If music has been developed so consistently up to the seventh power on the determinant 2 2, why should it not develop with the same consistency on any other determinant in use Why has the 3 3 series reached only its cube, and that.
@@ -39,10 +39,10 @@ function Book1Ch12Schillinger() {
           frequently becomes  , and not  as it should.
           This tendency toward simplification is philosophically puzzling. We must ask: is this number 2 an unavoidable condition in evolving any series, as in the multiplication of spermatozoa and other microbes and lower organisms Or is the determinant 2 not as vital as it may seem at first, merely serving as an outlet for simplification.
           If the former were true, one could not find any pure folk music with any other form of fractional development than that (achieved through the determinant 2. Yet the music of Hindustan, very old and very traditional, uses a great many triplets representing a split-unit group of one beat in 5 4 time  This shows that the 5 5 determinant, which is characteristic of many old Asiatic civilizations, acquires its simplified fractioning through the 3 3 series, i.e.,1 5 X 1 3 = 15.
-          The 5 5 series, in addition to being characteristic of Hindustan, is also characteristic of Java, Bali and Siam, whence it moved westward inﬂuencing Afghanistan, Persia, Arabia and Russia. '.
+          The 5 5 series, in addition to being characteristic of Hindustan, is also characteristic of Java, Bali and Siam, whence it moved westward influencing Afghanistan, Persia, Arabia and Russia. '.
           (American Library of Musicology, 1932).
           The present state of development of the 5 5 series is still very elementary. Five-bar groups are as rare as the quintuplets in 5 5 time. It is difficult now to make’ a definite statement on the origin of the 5 5 series. It may.
-          have been inﬂuenced by the forms of poetical rhythm known as pentameter; and it may have been inﬂuenced by the very same factors that inﬂuenced the formation of a pentacle in starfish.
+          have been influenced by the forms of poetical rhythm known as pentameter; and it may have been influenced by the very same factors that influenced the formation of a pentacle in starfish.
           The 6 6 series, being a multiple of 2 2 by 3 3, is a typical European hybrid. It may be found throughout the southern coast of Europe, and especially in Portugal, Spain and Italy. Most of the barcarolles of the last-mentioned are written in 6 8 time.
           The 7 7 series is also of eastern origin. In its trans-Asiatic travel it has crossed the Ural mountains and reached central Russia (Borodine, Rimsky—Korsakov).
           The 8 8 series is of African origin and is the most popular in dance music in the United States  today. These patterns undoubtedly penetrated through the imported Negro slaves, as the patterns are common in South America, Puerto Rico, Cuba and the United States. In ancient times, these rhythms traveled northward and reached Arabia. During the late Middle Ages they got as far as North Russia and slowed down their pace, in the literal sense of the word. Folk music in the region of the White Sea and the Arctic Ocean on the north coast of European Russia has patterns identical with the Cuban rhumba of today; but the absolute velocity of the rhumba is doubled as compared with Russian music. This means that by taking a rhumba and slowing it down exactly twice, you will get the rhythms of North-Russia, constructed in s time.
@@ -77,16 +77,11 @@ function Book1Ch12Schillinger() {
           The proportionproduces harmonic contrast, and gives esthetic satisfaction as to both simultaneity and continuity.
           Here is a graph and the musical notation of the entire score.
           The same score may be expressed in 3 4 time.
-          Figure 126.
-          Figure 127.
           6 9 + 3 9 and 4 9 + 2 9 +2 9 +1 9 in continuity.
-          Figure 128.
           Musical intuition in some cases approximates these harmonic groups. Here is a musical pattern which is the nearest approximation to the case above.
-          Figure 129.
           As the numbers grow, it becomes practical to find the resultants of interference between the initial binomials (synchronized with their squares) and the resultants of the distributive squares. Having these resultants available, Such power groups may later be utilized in scoring (when more than one orchestral part is desirable), and the resultants of such groups may be used when one part must express the same rhythm.
           In addition to this, it is important to supplement the score by ra÷b where a is the determinant of a series. For example, in the foregoing case the determinant is 3; therefore r3÷2 may be added to the score.
           Here is a complete graph and musical notation of the power groups, their resultants and ra÷ b.
-          figure 130.
           Chart of the binomials for squaring and synchronization.
           Factorial groups of rhythm build the entire continuity in terms of bars, while fractional groups build. the bars in terms of duration-units (attacks).
           II. Square of a Trinomial.
@@ -95,11 +90,9 @@ function Book1Ch12Schillinger() {
           The number of terms in a distributive square of any polynomial equals the square of this number. Thus, a binomial gives 4 terms (2 squared = 4), a. Trinomial gives 9 terms (3 squared = 9), etc. The denominator of all terms in the distributive power-groups equals the quantitative square of the sum. In a trinomial it equals(a + b +c) squared, like (3 + 2 +1) squared= 36.
           In order to synchronize any initial polynomial with its distributive square, it is necessary to find the products of each term by the sum of the polynomial. For example, to synchronize a trinomial with its distributive square.
           Series.
-          figure 131.
           The same score may be expressed in four bars in i assuming 1/16=. The above computation can be made in integers, i.e., using the numerators only.
           As in the case of binomials, it is desirable to supplement this score by the first and second power resultants and the ra÷ b.
           Here is the entire score.
-          figure 132.
           It is interesting to note that in this particular case, i.e., 2 + 1 + 1 and 1 + 1 + 2, classical composers found intuitively the exact distributive squares. As you can see from this score, they could not find the square of 1 + 2 + 1. This figure, i.e., (1 + 2 + 1) + (2 + 4 + 2) + (1 + 2 + 1), or assuming 1 16 =  is very practical for the tango.
           Chart of Trinomials.
           The reason for selecting these particular trinomials will be given later when we discuss the evolution of style in rhythm.
@@ -114,13 +107,13 @@ function Book1Ch12Schillinger() {
           1 + 2 + 2 + 1 + 2.
           The following is an illustration of the first one.
           Synchronization.
-          Figure 133.
           This 1s the square of the real hot rhythms and it has the utmost plasticity. Nobody realizes, listening to this, that the eight bars are over.
-          Any bar of 4 4 treated as 8 8 will give a perfect countertheme for 8 bars. Take, for example, the song used earlier, Pennies from Heaven.* The first bar (it may be any bar) is , i-e. 3+1+2+2. It is now squared in order to obtain a countertheme for the first eight bars.
-          (3+1+2+2)^2=(9+3+6+6)+(3+1+2+2)+(6+2+4+4)+(6+2+4+4).
+          Any bar of 4 4 treated as 8 8 will give a perfect countertheme for 8 bars. Take, for example, the song used earlier, Pennies from Heaven.  Copyright 1936 by Sandy-Joy, Inc., New York, U.S.A. Reprinted by permission of the.
+          publishers.
+ The first bar (it may be any bar) is , i-e. 3+1+2+2. It is now squared in order to obtain a countertheme for the first eight bars.
+          (3+1+2+2) squared =(9+3+6+6)+(3+1+2+2)+(6+2+4+4)+(6+2+4+4).
           Theme.
           Counter-Theme.
-          Figure 134.
           IV. Cube of a Binomial.
           Cubes produce a new degree of harmonic contrasts. Distributive cubes serve as a new countertheme to the groups of the first and the second power with which they will be synchronized. Cubes are related to squares as the squares are related to the first powers. The number of terms in a distributive binomial of the third power equals. The recurrence of the central binomial is an invariant of a distributive binomial of the third power.
           To obtain the distributive third power of binomials, multiply the distributive second power binomial by the first term of the first power binomial, then by the second term of the first power binomial, and add the products in the same sequence.
@@ -128,13 +121,11 @@ function Book1Ch12Schillinger() {
           The denominator is the quantitative cube of the sum.
           To synchronize the distributive square with the distributive cube, it is necessary to multiply each term of the square by the sum of the first power binomial.
           To synchronize the first power binomial with its distributive cube, it is necessary to multiply each term of the first power binomial by the square of the sum of the binomial.
-          (2+1)^3=2(4+2+2+1)+(4+2+2+1)=.
+          (2+1) cubed=2(4+2+2+1)+(4+2+2+1)=.
           =(8+4+4+4+2)+(4+2+2+1)+27.
-          Copyright 1936 by Sandy-Joy, Inc., New York, U.S.A. Reprinted by permission of the.
-          publishers.
           Synchronization of the square with the cube.
           Synchronization of the first power with the cube.
-          1 + 2 gives the converse of these groups. Assuming,.
+          1 + 2 gives the converse of these groups. Assuming,
           we obtain 3 bars in 9 8 time.
           This produces three harmonically contrasting pairs. Using the first, the second and the third power groups in sequence, we obtain a harmonically growing animation.
           As cubes become relatively great number-values, it is practical to limit them for musical purposes by the value 3. Thus, the only practical binomials are.
@@ -148,7 +139,6 @@ function Book1Ch12Schillinger() {
           Synchronization of the square.
           Synchronization of the first power.
           Assuming.
-          Figure 136.
           Trinomials to be cubed and synchronized with their second and first power groups.
           VI. Generalization of the Cube.
           (Any Polynomial).
@@ -169,7 +159,6 @@ function Book1Ch12Schillinger() {
           To synchronize the first power group with the  power group, it is necessary to multiply each term of the first power group by the quantitative n-1 power of the same group To synchronize the second power group with the power group, it is necessary to multiply each term of the second power group by the quantitative n-2 power of the same group, etc.
           All permutations in the power groups must be performed through the terms of the preceding power.
           Example.
-          Figure 187.
           "
         />
         <br />
