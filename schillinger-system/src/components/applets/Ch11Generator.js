@@ -163,8 +163,8 @@ function Ch11Generator() {
               <h1>Rotate Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Select a and b, then press submit to see one rotation of each method of rotation in this
-                chapter.
+                Select a and b, then press submit to see one rotation of the resultant by each method of rotation in this
+                chapter. Some methods produce so much music for the higher resultants are too big to display on the page.
               </p>
               <br />
               <Form.Row className="align-items-bottom justify-content-md-center">

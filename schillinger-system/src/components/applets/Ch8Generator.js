@@ -94,9 +94,9 @@ function Ch8Generator() {
         abcjs.renderAbc("outputMelody", 'X:1\nK:C\n"a_a='+state.c_a_a+'"'+outArrMelody.join("")+"\n");
 
         if(v_A===v_A1) {
-            abcjs.renderAbc("outputSynced", 'X:1\nK:C\n"A='+v_A+'"'+outArrSynced.join("")+"\n");
+            abcjs.renderAbc("outputSynced", 'X:1\nK:C\n"T’='+v_A+'"'+outArrSynced.join("")+"\n");
         } else {
-            abcjs.renderAbc("outputSynced", 'X:1\nK:C\n"A='+v_A+', A1='+v_A1+'"'+outArrSynced.join("")+"\n");
+            abcjs.renderAbc("outputSynced", 'X:1\nK:C\n"T’='+v_A+', A1='+v_A1+'"'+outArrSynced.join("")+"\n");
         }
         
     
@@ -114,7 +114,7 @@ function Ch8Generator() {
                   <h1>Formula</h1>
                   <h3>Instructions</h3>
                   <p>
-                    TODO
+                    Select a resultant for T. Then select the number of attacks (a<sub>a</sub>). Click generate to see how the resultant and attacks are synchronized.
                   </p>
                   <br />
                     <Row className="form-row justify-content-md-center">
@@ -164,12 +164,10 @@ function Ch8Generator() {
                             </Form.Control>
                             </Form.Group>
                         </Col>
-                        
-                        
                     </Row>
                     <Row className="form-row justify-content-md-center">
                         <Col className="col-1">
-                            <h4>a_a</h4>
+                            <h4>a<sub>a</sub></h4>
                         </Col>
                         <Col className="col-1">
                             <Form.Group controlId="c_a_a">
@@ -187,8 +185,6 @@ function Ch8Generator() {
                             </Form.Control>
                             </Form.Group>
                         </Col>
-                    </Row>
-                    <Row className="form-row justify-content-md-center">
                         <Col className="col-3 text-center ml-4">
                             <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                         </Col>
@@ -196,16 +192,16 @@ function Ch8Generator() {
                     <Row className="form-row justify-content-md-center">
                         <div id="outputR"></div>
                     </Row>
+                    <hr />
                     <Row className="form-row justify-content-md-center">
                         <div id="outputMelody"></div>
                     </Row>
-                    <Row className="form-row justify-content-md-center">
-                        <div id="outputSynced"></div>
-                    </Row>
-                    <Playback abc = {state.abcString}/>
+                    <hr />
+                  <Row className="form-row justify-content-md-center">
+                    <div id="outputSynced"></div>
+                  </Row>
+                  <Playback abc = {state.abcString}/>
                 </Form>
-                
-                
               </Card.Body>
             </Card>
             <br />
