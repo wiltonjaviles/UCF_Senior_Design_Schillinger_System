@@ -48,6 +48,20 @@ import Book7 from './components/books/book7/Book7';
 import ScrollToTop from './components/ScrollToTop';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Pendulum from './components/applets/Pendulum';
+import Waveform from './components/applets/Waveform';
+import Ch2Generator from './components/applets/Ch2Generator';
+import Ch3Generator from './components/applets/Ch3Generator';
+import Ch4Generator from './components/applets/Ch4Generator';
+import Ch5Generator from './components/applets/Ch5Generator';
+import Ch6Generator from './components/applets/Ch6Generator';
+import Ch7Generator from './components/applets/Ch7Generator';
+import Ch8Generator from './components/applets/Ch8Generator';
+import Ch9Generator from './components/applets/Ch9Generator';
+import Ch10Generator from './components/applets/Ch10Generator';
+import Ch11Generator from './components/applets/Ch11Generator';
+import Ch12Generator from './components/applets/Ch12Generator';
+import Ch13Generator from './components/applets/Ch13Generator';
+import Ch14Generator from './components/applets/Ch14Generator';
 
 function App() {
   return (
@@ -102,6 +116,21 @@ function App() {
           <Route path="/book6" component={Book6} />
           <Route path="/book7" component={Book7} />
           <Route path="/ch1pendulum" component={Pendulum} />
+          <Route path="/ch1waveform" component={Waveform} />
+          <Route path="/ch2generator" component={Ch2Generator} />
+          <Route path="/ch3generator" component={Ch3Generator} />
+          <Route path="/ch4generator" component={Ch4Generator} />
+          <Route path="/ch5generator" component={Ch5Generator} />
+          <Route path="/ch6generator" component={Ch6Generator} />
+          <Route path="/ch7generator" component={Ch7Generator} />
+          <Route path="/ch8generator" component={Ch8Generator} />
+          <Route path="/ch9generator" component={Ch9Generator} />
+          <Route path="/ch10generator" component={Ch10Generator} />
+          <Route path="/ch11generator" component={Ch11Generator} />
+          <Route path="/ch12generator" component={Ch12Generator} />
+          <Route path="/ch13generator" component={Ch13Generator} />
+          <Route path="/ch14generator" component={Ch14Generator} />
+
         </Switch>
       </Router>
     </div>

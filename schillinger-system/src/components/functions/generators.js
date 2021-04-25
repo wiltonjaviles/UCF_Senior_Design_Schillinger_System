@@ -859,7 +859,7 @@ function insertMeasures(inArr, measure) {
         break;
       default:
         if(n>m) { //split
-          if(m!=0){
+          if(m!==0){
             outArr.push(m);
             outArr.push('-');
           }
@@ -896,7 +896,7 @@ function insertMeasures(inArr, measure) {
   }
 
   m = outArr.pop();
-  if(m!='|') {
+  if(m!=='|') {
     outArr.push(m);
     outArr.push('|')
   } else {

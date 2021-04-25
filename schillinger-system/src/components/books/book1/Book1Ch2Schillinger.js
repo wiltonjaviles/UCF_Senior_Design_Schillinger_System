@@ -44,7 +44,7 @@ function Book1Ch2Schillinger() {
         3 x1 = 3
         1 (3)
         3 (I)
-        In this case, using a and b we hear the resultant, i.e., three uniform durations, with the accent on the first, this produces all bars with musical numerator three, i. E. 3/2,3/4,3/8.
+        In this case, using a and b we hear the resultant, i.e., three uniform durations, with the accent on the first, this produces all- bars with musical numerator three, i. E. 3/2,3/4,3/8.
         Third Case
         4÷ 1
         Find the resultant, r4÷ 1.

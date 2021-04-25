@@ -14,7 +14,7 @@ function TextToSpeech(props) {
     }
   }
 
-  speech.onend = () => {
+  speech.onend = function() {
     isPlaying = false;
   }
 
