@@ -55,7 +55,10 @@ function Home() {
         <Row>
           <Col className="col-1"></Col>
           <Col className="col-3"><h4>Michael Alaniz</h4><h5>Full Stack Float</h5><img className="img-fluid img-thumbnail" src="images/teamphotos/MichaelAlaniz.png" alt="AlanizPhoto"></img></Col>
-          <Col><br/><br/><br/><p className="bookText">Stuff about Michael</p></Col>
+          <Col><br/><br/><br/><p className="bookText">
+            Michael Alaniz is a Computer Science graduate from UCF, Spring 2021, and was a member of the first team to work on the Learn Schillinger project. He was in charge of the Web Server implementation, management, and a Full-Stack float.
+            Michael enjoys playing the piano, music production, machine learning, and deep learning. <a href="https://www.linkedin.com/in/michael-alaniz-825393136/">LinkedIn</a>
+            </p></Col>
           <Col className="col-1"></Col>
         </Row>
         <br />
