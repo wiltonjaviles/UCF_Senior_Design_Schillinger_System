@@ -4,7 +4,7 @@ import '../../.././Style.css';
 import Ch5Generator from '../../applets/Ch5Generator';
 import TextToSpeech from '../../applets/TextToSpeech';
 import Playback from '../../applets/Playback';
-import {balance,expand,contract,r_,toABC} from '../../functions/generators';
+import {balance, expand, contract, toABC} from '../../functions/generators';
 
 function Book1Ch5() {
   return (
