@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from 'abcjs';
 import Playback from '../applets/Playback';
-import {r,r_,toABC, r} from '../functions/./generators';
+import {r,r_,toABC} from '../functions/./generators';
 
 function Ch5Generator() {
 
