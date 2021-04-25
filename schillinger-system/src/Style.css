@@ -181,3 +181,7 @@ td {
 .playback-card {
   width: 25%
 }
+
+li {
+  text-align: justify;
+}

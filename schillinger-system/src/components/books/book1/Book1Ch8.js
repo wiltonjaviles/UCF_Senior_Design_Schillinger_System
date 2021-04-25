@@ -151,7 +151,7 @@ function Book1Ch8() {
           <p class="equation">A = a<sub>T</sub>&#183;a<sub>a</sub></p>
           <p class="equation">T' = T&#183;a<sub>a</sub></p>
           <p class="bookText">Example: a<sub>a</sub> = 5a; T = r<sub>3&#247;2</sub> = 6t; a<sub>T</sub> = 4a</p>
-          <p class="bookText"><sup>5</sup>/<sub>4</sub></p>
+          <p class="equation"><sup>5</sup>/<sub>4</sub></p>
           <p class="equation">A = 5a&#183;4 = 20a</p>
           <p class="equation">T' = 6t&#183;5 = 30t</p>
           <Row className="justify-content-center">
