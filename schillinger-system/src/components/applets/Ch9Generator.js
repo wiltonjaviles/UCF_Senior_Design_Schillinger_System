@@ -311,15 +311,6 @@ function Ch9Generator() {
                     <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                   </Col>
                 </Row>
-
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>Polynomial: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.Polynomial}</h4>
-                    </Col>
-                </Row>
                 <Row className="justify-content-md-center">
                     <Col className="col-3">
                         <h4>A: </h4>
@@ -344,14 +335,6 @@ function Ch9Generator() {
                     </Col>
                     <Col className="col-2">
                         <h4>{state.DefineD}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>Result: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.Result}</h4>
                     </Col>
                 </Row>
                 <Row className="justify-content-md-center">
