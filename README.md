@@ -100,11 +100,20 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+It is recommended you use Visual Studio Code as a team to streamline the work and have access to a built-in terminal.
+
+Visual Studio Code supports:
+
+1. Live, collaborative, environments via Live Share that will allow your team to work together in real-time.
+
+2. Version Control (git) built-in to handles diffs, staging files, commits, etc. 
+
+3. An integrated terminal.
+
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [VSCode Live Share](https://code.visualstudio.com/learn/collaboration/live-share)
+* [VSCode Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
+* [VSCode Version Control - Git](https://code.visualstudio.com/docs/editor/versioncontrol)
 
 ### Installation
 
@@ -122,7 +131,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-### Running Local Development
+### Running Local Development - In the root folder: "UCF_Senior_Design_Schillinger_System"
 
 1. Launch the Client && the Server - Front-End on port 3000 | Back-End on port 5000.
   ```sh

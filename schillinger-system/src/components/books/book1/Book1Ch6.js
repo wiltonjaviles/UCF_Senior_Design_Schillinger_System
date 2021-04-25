@@ -3,6 +3,9 @@ import {Link} from 'react-router-dom';
 import '../../.././Style.css';
 import Ch6Generator from '../../applets/Ch6Generator';
 import TextToSpeech from '../../applets/TextToSpeech';
+import Playback from '../../applets/Playback';
+import {r3,toABC} from '../../functions/generators';
+
 
 function Book1Ch6() {
   return (
@@ -60,9 +63,16 @@ function Book1Ch6() {
           <p className="bookText">The complementary factors are the quotients of the product by a generator. Thus 30 ÷ 2 = 15 means that 15 is a complementary factor of 2.</p>
           <p className="bookText">Therefore: 15(2); 10(3); 6(5)</p>
           <p className="bookText">This method offers two resultants at a time (r and r’), one being a theme and the other a countertheme. Generators produce r, and the complementary factors produce r’.</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch6/img1.png" alt="book1ch7img1"></img>
+          <Row className="justify-content-center">
+          <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch6/img1.png" alt="book1ch7img1"></img></Col>
+          </Row>
           <p className="bookText">The rule of grouping is: <em>group by any generator of any of the complementary factors</em>. In 2÷3÷5, grouping is available through 2, 3, 5, 6, 10, 15 (i.e., 2 / 4, 3 / 4, 5 / 4, 6 / 8, 10 / 8, 15 / 8).</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch6/img2.png" alt="book1ch7img2"></img>
+          <Row className="justify-content-center">
+          <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch6/img2.png" alt="book1ch7img2"></img></Col>
+          </Row>
+          <br />
+          <Playback abc={toABC(r3(2,3,5))} />
+          <br />
           <p className="bookText">In figure 48, no more rhythmically suitable counterthemes can be devised. The theme makes three recurrences while the countertheme makes continuous changes in longer values. This allows the listener to hear both themes together. All resultants from three or more generators are characterized by these recurrences and variations.</p>
         <br />
         <br />

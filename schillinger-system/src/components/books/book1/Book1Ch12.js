@@ -134,7 +134,9 @@ function Book1Ch12() {
         <br />
         <a className="chapter-section-link" href="/book1#1.12.a" id="1.12.a"><h5>A. Continuity of Harmonic Contrasts</h5></a>
           <p class="bookText">All rhythms can be identified to a rhythmic family t. Each rhythmic family has two components: fractional continuity (expressed as <sup>1</sup>/<sub>t<sup>n</sup></sub>), and factorial continuity (expressed as t<sup>n</sup>). The following demonstrates all of the series which have been used by humans, ever.</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch12/img1.png" alt="book1ch12img1"></img>
+          <Row className="justify-content-center">
+          <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch12/img1.png" alt="book1ch12img1"></img></Col>
+          </Row>
           <br />
           <br />
           <p class="bookText">Most of western music, and most current music theory, is a combination of the family t = 2, with the occasional t = 3 and t = 6.  This is likely due in no small part to the western writing system being based very directly on the two families; wholes, halves, quarters etc are all based on powers of 2, and so the standard western musical notation assumes by default that music will be in the two families of rhythm. There are of course ways to expand into other families. Typically this will involve either increasingly large numbers, or the inclusion of specially notated triplets, quintuplets, etc.</p>
@@ -170,7 +172,9 @@ function Book1Ch12() {
             </Row>
             <br />
             <p class="bookText">Here is a complete graph and musical notation of the power groups, their resultants, and r_.</p>
-            <img className="img-fluid img-thumbnail" src="images/book1/ch12/img3.png" alt="book1ch12img3"></img>
+            <Row className="justify-content-center">
+            <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch12/img3.png" alt="book1ch12img3"></img></Col>
+            </Row>
             <br />
           <br />
             <p class="bookText">Factorial groups of rhythm build the entire continuity in terms of bars, while fractional groups build the bars in terms of duration-units.</p>
@@ -178,12 +182,16 @@ function Book1Ch12() {
           <p class="equation">Formula: (a+b+c)<sup>2</sup> = (a<sup>2</sup>+ab+ac) + (ab+b<sup>2</sup>+bc) + (ac + bc + c<sup>2</sup>)</p>
           <p class="bookText">The number of terms in a distributive square of any polynomial equals the square of the number of terms in the polynomial. Thus, a binomial gives 4 terms (2<sup>2</sup> = 4), a trinomial gives 9 terms (3<sup>2</sup> = 9). The denominator of all terms in the distributive square power-groups equals the square of the sum of all the terms. In a trinomial it equals (a+b+c)<sup>2</sup>, like (3+2+1)<sup>2</sup> = (6)<sup>2</sup> = 36.</p>
           <p class="bookText">In order to synchronize any initial polynomial with its distributive square, you need to find the products of each term but the sum of the polynomial. For example, to synchronize a trinomial with its distributive square:</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch12/img4.png" alt="book1ch12img4"></img>
+          <Row className="justify-content-center">
+          <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch12/img4.png" alt="book1ch12img4"></img></Col>
+          </Row>
           <br />
           <br />
           <p class="bookText">You can express the above score in four bars in <sup>4</sup>/<sub>4</sub> assuming <sup>1</sup>/<sub>16</sub> = quarter note. You can also write the whole thing in integers, i.e., using the numerators only. Just like binomials, you would want to supplement this score with the first and second power resultants and the r<sub>a%b</sub>.</p>
           <p class="bookText">Here is the entire score:</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch12/img5.png" alt="book1ch12img5"></img>
+          <Row className="justify-content-center">
+          <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch12/img5.png" alt="book1ch12img5"></img></Col>
+          </Row>
           <br />
           <br />
           <p class="bookText">In the case of 2+1+1 and 1+1+2, classical composers were able to find the exact distributive squares intuitively. They could not however find 1+2+1.</p>
@@ -286,12 +294,16 @@ function Book1Ch12() {
           <p class="equation">(2+1+2+1+2)<sup>2</sup> = (4+2+4+2+4) + (2+1+2+1+2) + (4+2+4+2+4) + (2+1+2+1+2) + (4+2+4+2+4)</p>
           <p class="bookText">Synchronization:</p>
           <p class="equation">8(2+1+2+1+2) = 16+8+16+8+16</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch12/img6.png" alt="book1ch12img6"></img>
+          <Row className="justify-content-center">
+          <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch12/img6.png" alt="book1ch12img6"></img></Col>
+          </Row>
           <br />
           <br />
           <p class="bookText">This is the square of the real “hot” rhythms. Any bar of   treated as 8/8 will give a perfect countertheme for 8 bars. Take Pennies from Heaven (Copyright 1936 by Santly-Joy, Inc., New York, USA. Reprinted by permission of the publishers). The first bar is 3+1+2+2. It is then squared to get a countertheme for the first 8 bars.</p>
           <p class="equation">(3+1+2+2)^2 = (9+3+6+6)+(3+1+2+2)+(6+2+4+4)+(6+2+4+4)</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch12/img7.png" alt="book1ch12img7"></img>
+          <Row className="justify-content-center">
+          <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch12/img7.png" alt="book1ch12img7"></img></Col>
+          </Row>
           <br />
           <br />
         <p class="bookText">&emsp;d. Cube of a Binomial</p>
@@ -307,7 +319,9 @@ function Book1Ch12() {
           <p class="bookText">Synchronization of the first power with the cube:</p>
           <p class="equation">9(2+1) = 18+9 = 27</p>
           <p class="bookText">1+2 gives the converse.</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch12/img8.png" alt="book1ch12img8"></img>
+          <Row className="justify-content-center">
+          <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch12/img8.png" alt="book1ch12img8"></img></Col>
+          </Row>
           <br />
           <br />
           <p class="bookText">This gives three contrasting pairs. Using the 1st, 2nd, and 3rd power groups in sequence gives a growing animation.</p>
@@ -344,7 +358,9 @@ function Book1Ch12() {
           <p class="equation">4(4+2+2) + (2+1+1) + (2+1+1) = (16+8+8) + (8+4+4) + (8+4+4)</p>
           <p class="bookText">Synchronization of the first power:</p>
           <p class="equation">16(2+1+1) = 32+16+16</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch12/img9.png" alt="book1ch12img9"></img>
+          <Row className="justify-content-center">
+          <Col className="col-8"><img className="img-fluid img-thumbnail" src="images/book1/ch12/img9.png" alt="book1ch12img9"></img></Col>
+          </Row>
           <br />
           <br />
           <p class="bookText">Trinomials to be cubed and synchronized:</p>
@@ -458,7 +474,9 @@ function Book1Ch12() {
           <p class="bookText">To synchronize, multiply each term of the original group by the sum of the  n-1 power of the same group. To synchronize the second power group, multiply by the sum of the n-2 power of the same group, etc.</p>
           <p class="bookText">All permutations in the power groups must be done through terms of the previous power.</p>
           <p class="bookText">Example:</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch12/img10.png" alt="book1ch12img10"></img>
+          <Row className="justify-content-center">
+          <Col className="col-7"><img className="img-fluid img-thumbnail" src="images/book1/ch12/img10.png" alt="book1ch12img10"></img></Col>
+          </Row>
           <br />
           <br />
         <Ch12Generator />

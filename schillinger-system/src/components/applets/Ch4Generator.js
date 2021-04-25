@@ -29,7 +29,7 @@ function Ch4Generator() {
   const [state , setState] = useState({
     variableA : 3,
     variableB : 2,
-    showing : 'Show R_',
+    showing : 'Show All',
     testOutput : "",
     abcString: ""
   })

@@ -8,6 +8,7 @@ function Introduction() {
   return (
     <div>
       <Container>
+        <br />
         <Link to="/contents" className="content-links"><h1>Introduction</h1></Link>
         <a className="content-links" href="/introschillinger"><h5>View the source text.</h5></a>
         <TextToSpeech
@@ -67,6 +68,7 @@ function Introduction() {
         Schillinger's system provides a scientific system for writing and analyzing music.
         " 
         />
+          <br />
           <p class="bookText">Schillinger combined musical theory with recent findings in various scientific disciplines. He was the first to scientifically classify components of the musical system. Musical theory and science have been previously intertwined, dating back to Pythagoras, up to more modern musical theorists like Jean-Philippe Rameau and Helmholtz. Even so, mathematics and music has been a rare combination, considering the abstract nature of music and the strictness of mathematics. This cross has been a result of romanticism, thus being fairly recent in a historical context. One of Schillinger’s aims is to discover “general underlying principles” of the behavior of tonal phenomena. His contributions to theory, unlike his predecessors, is based on actual properties of music, and not deriving from previous theorists. Another one of Schillinger’s aims is to uncover and classify “all of the available resources of our tonal system”. The use of mathematics allows the task to be practical since it is of a great enough scope, unlike any other methodology.</p>
           <p class="bookText">A third, and larger, goal is defined by Schillinger as a necessary corollary of the first two. “From the standpoint of science, analysis implies synthesis.” He is saying that the ability to break down a problem or structure into its main components implies the ability to reconstruct such things through synthesizing such elements. The argument is made that previous scientific approaches to musical theory were “partial in character”. It is said their generalizations were applicable to given aspects, not the art of composition as a whole.” Schillinger himself phrases his complete method as involving “the prefabrication and the assembly of components according to a preconceived design of the whole.”</p>
         <h5>Tools and Concepts:</h5>

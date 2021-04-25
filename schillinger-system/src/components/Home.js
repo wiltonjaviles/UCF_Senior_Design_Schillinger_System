@@ -10,6 +10,7 @@ function Home() {
       <Container>
         <br />
         <h1>Welcome to the Schillinger System of Musical Composition!</h1>
+        <hr />
         <br />
         <TextToSpeech 
           text="Welcome to the Schillinger System of Musical Composition!
@@ -26,9 +27,6 @@ function Home() {
           <Col></Col>
         </Row>
         <br />
-        <br /> 
-        <br />
-        <h2>About this project</h2>
         <Row>
           <p>
             This website was created as a senior design project for University of Central Florida's computer science 
