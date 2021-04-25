@@ -56,8 +56,8 @@
       <a href="#usage">Usage</a>
       <ul>
         <li><a href="#running-local-development">Running Local Development</a></li>
-        <li><a href="#deploying-changes-to-the-web-server">Deploying Changes to the Web server</a></li>
-        <li><a href="#nginx">Nginx</a></li>
+        <li><a href="#deploying-changes-to-the-website">Deploying Changes to the Website</a></li>
+        <li><a href="#nginx-web-server">Nginx-web-server</a></li>
       </ul>
     </li>
     <li>
@@ -150,7 +150,7 @@ Visual Studio Code supports:
   ctrl + c
   ```
   
-### Deploying Changes to the Web Server
+### Deploying Changes to the Website
 
 1. Change to the production folder
   ```sh
@@ -169,7 +169,8 @@ Visual Studio Code supports:
   npm run build
   ```
 
-### Nginx
+### Nginx Web Server
+The webserver is configured to always redirect to https. E.g., www.learnschillinger.com -> https://learnschillinger.com
 1. Location of Nginx Configuration (filename: learnschillinger.com)
   ```
   /etc/nginx/sites-available
