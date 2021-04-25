@@ -52,18 +52,28 @@ function Book1Ch13() {
         <p class="bookText">For any given binomial a + b, it is easy to determine the most basic generator that contains the binomial: the first term is given by the sum of the binomial, and the second term is the greater of a and b.  So for example, for the binomial 5 + 3 (<img src="images/book1/ch13/small_img1.png" alt="book1ch13note1" />), the first term would be 8, and the second term would be 5, giving r 8%5. </p>
         <p class="bookText"></p>It should be observed that the closer a and b are to each other, the more dramatic the imbalance of the first two notes. This imbalance can be expressed within each family, starting from perfect balance (dividing in half) and stretching to maximum imbalance with a binomial of n+1 or 1+n, along with all accompanying resultants.</p>
         <Ch13Generator />
+        <Row className="justify-content-center">
         <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch13/img1.png" alt="book1ch13img1"></img></Col>
+        </Row>
         <p class="bookText">Chronologically, music tends to start in a balanced state and move approximately towards imbalance. As it does so, it tends to merge families into each other, which can be seen whenever specially marked note durations (think triplets in 4/4 or duplets in 6/8) make their appearance. For example, as 2+1 is closer to balance than 3+1, 3/4 time is more likely to become 9/8 time than 16/8, as (2+1) + (2+1) + (2+1) is a more natural evolution from 3/4 than a grouping of (3+1).</p>
         <p class="bookText">An example of this type of evolution can be demonstrated in the Rosenkavalier waltz by Richard Strauss.</p>
+        <Row className="justify-content-center">
         <Col className="col-4"><img className="img-fluid img-thumbnail" src="images/book1/ch13/img2.png" alt="book1ch13img2"></img></Col>
+        </Row>
         <p class="bookText">The above is 3 + 1 + 5 + 1 + 5 + 1 + 2. Taking note of the 3/4 time signature, this should evolve into a 9/9 series (second power of 3), but by staying in 3/4 time only an approximation is available, in this case the 5+1+5 figure is close to a the 4+1+4 figure of a nearly balanced 9 series resultant.</p>
         <p class="bookText">In many cases, more direct hybrids can be found in waltzes. For example:</p>
+        <Row className="justify-content-center">
         <Col className="col-3"><img className="img-fluid img-thumbnail" src="images/book1/ch13/img3.png" alt="book1ch13img3"></img></Col>
+        </Row>
         <p class="bookText">This is a 4 series binomial (3+1) overlayed on a 3 series time signature.</p>
         <p class="bookText">In many Viennese waltzes, there will appear a 6/6 series figure with a high degree of imbalance:</p>
+        <Row className="justify-content-center">
         <Col className="col-3"><img className="img-fluid img-thumbnail" src="images/book1/ch13/img4.png" alt="book1ch13img4"></img></Col>
+        </Row>
         <p class="bookText">Leaving Waltzes, swing will frequently overlay a 3 multiple series over another series, most commonly experienced as syncopation.</p>
+        <Row className="justify-content-center">
         <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch13/img5.png" alt="book1ch13img5"></img></Col>
+        </Row>
         <p class="bookText">For all cases of these hybridizations and approximations of higher series patterns, there is a  sense of wanting to break out from the base 2 series that standard musical notation tends to stay locked into, resulting in hybridizations forced into a 3/4 time signature or the use of 12/12 instead of 9/9.</p>
         <p class="bookText">In general, the evolution pattern for rhythmic families may be expressed as follows:</p>
         <p class="equation">r<sub>1</sub> . . . Pr<sub>1</sub> . . . SPr<sub>1</sub> . . . i<sub>1</sub></p>
