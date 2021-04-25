@@ -83,20 +83,25 @@ function Ch11Generator() {
     var fA = smallestFactor(outArrA);
     var fB = smallestFactor(outArrB);
     
+    var RABC = "";
     var outStr = outArrA.join("");
     if(fA < fB) {
       outStr = outArrA.join("");
       v = fA;
       v2 = vA;
+      RABC = outArrA;
     } else {
       outStr = outArrB.join("");
       v = fB;
       v2 = vB;
+      RABC = outArrB;
     }
     
     if(outStr[outStr.length - 1] === "|") {
       outStr = outStr.slice(0, -1);
     }
+
+    var abcOutR = "X:1\nK:C\n"+RABC.join("")+"\n";
 
     var threshold = 321;
 
@@ -125,6 +130,8 @@ function Ch11Generator() {
     var LCTooBigMsg = "";
     var MTooBigMsg = "";
     var ATooBigMsg = "";
+    abcjs.renderAbc("outputR", abcOutR, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 } );
+
     if(!LCTooBig) {
       abcjs.renderAbc("outputLC", abcOutLC, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 } );
       LCTooBigMsg = "";
@@ -211,6 +218,13 @@ function Ch11Generator() {
                 </Col>
               </Form.Row>
               <br />
+              <Row className="justify-content-md-center">
+                <h4>R: </h4>
+              </Row>
+              <Row className="justify-content-md-center">
+                <div id="outputR"></div>
+              </Row>
+              <hr />
               <Row className="justify-content-md-center">
                 <h4>Rotate by Least Common Divisor: </h4>
               </Row>
