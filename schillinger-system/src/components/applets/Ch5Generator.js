@@ -16,8 +16,8 @@ function Ch5Generator() {
   }
 
   // Define the variables to be used for applet history and dynamic applet input
-  var tempA = 2;
-  var tempB = 1;
+  var tempA = 3;
+  var tempB = 2;
   var tempVariant = 'Balance'
   var old_data = JSON.parse(localStorage.getItem('schillArr'));
 

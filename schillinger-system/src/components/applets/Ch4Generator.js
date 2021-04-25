@@ -83,20 +83,18 @@ function Ch4Generator() {
     if(state.showing === 'Show All') {
       outArr = r_(vA,vB,true,'all');
       abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble";
-      abc = abc+"\n[V: V1]"+toABC(outArr[0]).join("");
-      abc = abc+"\n[V: V2]"+toABC(outArr[1]).join("");
-      abc = abc+"\n[V: V3]"+toABC(outArr[2]).join("");
-      abc = abc+"\n[V: V4]"+toABC(outArr[3]).join("");
-      abc = abc+"\n[V: V5]"+toABC(outArr[4]).join("");
-      abc = abc+"\n[V: V6]"+toABC(outArr[5]).join("");
+      abc = abc+'\n[V: V1]"C1"'+toABC(outArr[0]).join("");
+      abc = abc+'\n[V: V2]"C2"'+toABC(outArr[1]).join("");
+      abc = abc+'\n[V: V3]"A"'+toABC(outArr[2]).join("");
+      abc = abc+'\n[V: V4]"B1"'+toABC(outArr[3]).join("");
+      abc = abc+'\n[V: V5]"B2"'+toABC(outArr[4]).join("");
+      abc = abc+'\n[V: V6]"R"'+toABC(outArr[5]).join("");
       abcjs.renderAbc("outputR_", abc);
     } else {
       outArr = r_(vA,vB,true);
-      abc = "X:1\nK:C\n" + toABC(outArr).join("");
+      abc = 'X:1\nK:C\n"R"' + toABC(outArr).join("");
       abcjs.renderAbc("outputR_",abc);
     }
-    
-    
 
     setState(prevState => ({
         ...prevState,
@@ -110,10 +108,10 @@ function Ch4Generator() {
         <Card>
           <Card.Body>
             <Form>
-              <h1>R_ Generator</h1>
+              <h1><u>R</u> Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Select two integers a and b to see R_. Select "Show all" to see all the steps used. Select "Show R_" to just see R_. Click Generate to view output.
+                Select two integers a and b to see <u>R</u>. Select "Show all" to see all the steps used. Select "Show <u>R</u>" to just see <u>R</u>. Click Generate to view output.
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">
@@ -149,7 +147,7 @@ function Ch4Generator() {
                 <Col className="col-2">              
                   <Form.Group controlId="showing">
                     <Form.Control as="select" value={state.showing} onChange={handleSelect}>
-                      <option>Show R_</option>
+                      <option>Show R</option>
                       <option>Show All</option>
                     </Form.Control>
                   </Form.Group>
