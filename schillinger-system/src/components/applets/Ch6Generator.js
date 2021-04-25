@@ -125,21 +125,21 @@ function Ch6Generator() {
     var abc = ""
     if(show) {
       abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble\nV: V6 clef=treble\nV: V7 clef=treble\nV: V8 clef=treble\nV: V9 clef=treble";
-      abc = abc+"\n[V: V1]"+toABC(outArr[0]).join("");
-      abc = abc+"\n[V: V2]"+toABC(outArr[1]).join("");
-      abc = abc+"\n[V: V3]"+toABC(outArr[2]).join("");
-      abc = abc+"\n[V: V4]"+toABC(outArr[3]).join("");
-      abc = abc+"\n[V: V5]"+toABC(outArr[4]).join("");
-      abc = abc+"\n[V: V6]"+toABC(outArr[5]).join("");
-      abc = abc+"\n[V: V7]"+toABC(outArr[6]).join("");
-      abc = abc+"\n[V: V8]"+toABC(outArr[7]).join("");
-      abc = abc+"\n[V: V9]"+toABC(outArr[8]).join("");
-      abc = abc+"\n[V: V10]"+toABC(outArr[9]).join("");
+      abc = abc+'\n[V: V1]"C1"'+toABC(outArr[0]).join('');
+      abc = abc+'\n[V: V2]"C2"'+toABC(outArr[1]).join('');
+      abc = abc+'\n[V: V3]"A"'+toABC(outArr[2]).join('');
+      abc = abc+'\n[V: V4]"B"'+toABC(outArr[3]).join('');
+      abc = abc+'\n[V: V5]"C"'+toABC(outArr[4]).join('');
+      abc = abc+'\n[V: V6]"R"'+toABC(outArr[5]).join('');
+      abc = abc+'\n[V: V7]"A’"'+toABC(outArr[6]).join('');
+      abc = abc+'\n[V: V8]"B’"'+toABC(outArr[7]).join('');
+      abc = abc+'\n[V: V9]"C’"'+toABC(outArr[8]).join('');
+      abc = abc+'\n[V: V10]"R’"'+toABC(outArr[9]).join('');
       abcOutput = "X:1\nK:C\n" + toABC(outArr[5]).join('') + "\n";
     } else {
       abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble";
-      abc = abc+"\n[V: V1]"+toABC(outArr[5]).join("");
-      abc = abc+"\n[V: V2]"+toABC(outArr[9]).join("");
+      abc = abc+'\n[V: V1]"R"'+toABC(outArr[5]).join('');
+      abc = abc+'\n[V: V2]"R’"'+toABC(outArr[9]).join('');
       abcOutput = abc;
     }
 
