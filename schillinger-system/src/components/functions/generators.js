@@ -645,16 +645,16 @@ export function generator_R_Underlined(a, b, measure, mode) {
         let doit=false;
         let held = -1;
 
-        for(let i =0; i<a*a; i++) {
+        for(let i=0; i<a*a; i++) {
           if(i%a===0) {
             doit = true;
           }
-          if(i>a) {
-            if((i+a)%b===0) {
-              //doit = true;
+          if(i>displacement) {
+            if((i-displacement)%b===0) {
+              doit = true;
             }
           }
-          if(i<(a*a-a)) {
+          if(i<(a*a-displacement)) {
             if(i%b===0) {
               doit = true;
             }
@@ -913,8 +913,8 @@ function insertMeasures(inArr, measure) {
  * @returns balanced polynomial (includes measures)
  */
 export function balance(a, b) {
-  let arrOut = generator_R(a,b,a);
-  arrOut.push.apply(arrOut,generator_R_Underlined(a,b,true));
+  let arrOut = r_(a,b,a);
+  arrOut.push.apply(arrOut,r(a,b,true));
   for(let i=0; i<(a-b); i++) {
     arrOut.push(a);
     arrOut.push('-');
@@ -934,8 +934,8 @@ export function balance(a, b) {
  * @returns expanded polynomial (includes measures)
  */
 export function expand(a, b) {
-  let arrOut = generator_R_Underlined(a,b,true);
-  arrOut.push.apply(arrOut,generator_R(a,b,a));
+  let arrOut = r(a,b,true);
+  arrOut.push.apply(arrOut,r_(a,b,a));
 
   return arrOut;
 }
@@ -947,8 +947,8 @@ export function expand(a, b) {
  * @returns contracted polynomial (includes measures)
  */
 export function contract(a, b) {
-  let arrOut = generator_R(a,b,a);
-  arrOut.push.apply(arrOut,generator_R_Underlined(a,b,true));
+  let arrOut = r_(a,b,a);
+  arrOut.push.apply(arrOut,r(a,b,true));
 
   return arrOut;
 }

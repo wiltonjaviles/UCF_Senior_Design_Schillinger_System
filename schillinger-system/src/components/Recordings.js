@@ -9,7 +9,7 @@ function Recordings() {
     <div>
       <br />
       <h1>Recordings Page (Coming soon!)</h1>
-      <Ch2Generator />
+      
     </div>
   );
 }

@@ -85,7 +85,7 @@ function Book1Ch14() {
         <p class="bookText">For another example, the first summation series works very kindly with the 8/8 family with the first 6 members of the series being neatly divisible by 8 (1 + 2 + 3 + 5 + 8 + 13 = 32).</p>
         <Ch14Generator />
         <p class="bookText"> Thus far, the methods for acceleration or deceleration apply to uniform rhythms (1 + 1 + 1 + 1…). Applying this method to non-uniform rhythms is straightforward: the group, A, is multiplied as a variable to each member of the series. So for example, the rhythm A = (3 + 1 + 2) applied to a natural harmonic series would be 1A + 2A + 3A + 4A… or </p>
-        <img className="img-fluid img-thumbnail" src="images/book1/ch14/img1.png" alt="book1ch14img1"></img>
+        <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch14/img1.png" alt="book1ch14img1"></img></Col>
         <p class="bookText"><b>Rubato</b></p>
         <p class="bookText">Within the Schillinger system, the definition of rubato is made narrow. Rubato is any case where a pair of notes is brought either closer or further from balance, changing its complexity. This is accomplished by taking a unit of deviation from one of the notes and adding it to the other. It is easier to see this in an example:</p>
         <h4>example</h4>
@@ -99,13 +99,13 @@ function Book1Ch14() {
         <p class="bookText"><b>Fermata</b></p>
         <p class="bookText">Schillinger provides two methods for quantifying fermata. The first is simply to multiply or add up the preceding notes.  This is typically done when the fermata represents a full stop, ending, or transition of a piece.  The effect is to end the fermata in time with the meter of the music, or in other words to recognize that even if the fermata notation has “stopped” the rhythm pattern, the listener will still notice when that pattern is broken.</p>
         <p class="bookText">The second case of fermata is somewhat more complex, and is used when a fermata is used to bring unusual emphasis to a note within a rhythm pattern. He gives the following example:</p>
-        <img className="img-fluid img-thumbnail" src="images/book1/ch14/img2.png" alt="book1ch14img2"></img>
+        <Col className="col-5"><img className="img-fluid img-thumbnail" src="images/book1/ch14/img2.png" alt="book1ch14img2"></img></Col>
         <br /> <br />
         <p class="bookText">This pattern can be split into three groups: <img src="images/book1/ch14/small_img1.png" alt="book1ch14note1" />, <img src="images/book1/ch14/small_img2.png" alt="book1ch14note2" />, and the whole note. Put together, this forms:</p>
-        <img className="img-fluid img-thumbnail" src="images/book1/ch14/img3.png" alt="book1ch14img3"></img>
+        <Col className="col-5"><img className="img-fluid img-thumbnail" src="images/book1/ch14/img3.png" alt="book1ch14img3"></img></Col>
         <br /> <br />
         <p class="bookText">From here we do a little bit of math with fractions. To compare a 3/4 time signature to 2/8, we multiply by 2/2 to create 6/8. The ratio between 6/8 and 2/8 is 3:1. We simplify this ratio, and apply it to the second measure; in this case, simplifying from 3:1 to 2:1. All of this is to say that we isolate the second measure and expand it to a 3/8 measure, and simplify the syncopation from a 3:1 ratio to a 2:1 ratio.</p>
-        <img className="img-fluid img-thumbnail" src="images/book1/ch14/img4.png" alt="book1ch14img4"></img>
+        <Col className="col-5"><img className="img-fluid img-thumbnail" src="images/book1/ch14/img4.png" alt="book1ch14img4"></img></Col>
         <br />
         <br />
         
