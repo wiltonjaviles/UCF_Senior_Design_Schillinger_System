@@ -82,13 +82,19 @@ function Ch4Generator() {
     
     if(state.showing === 'Show All') {
       outArr = r_(vA,vB,true,'all');
-      abc = "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=treble\nV: V3 clef=treble\nV: V4 clef=treble\nV: V5 clef=treble";
+      abc = 'X:1\nK:C\n';
+      for(let i=1; i<outArr.length+1; i++) {
+        abc = abc + 'V: V'+i+' clef=treble\n';
+      }
       abc = abc+'\n[V: V1]"C1"'+toABC(outArr[0]).join("");
       abc = abc+'\n[V: V2]"C2"'+toABC(outArr[1]).join("");
       abc = abc+'\n[V: V3]"A"'+toABC(outArr[2]).join("");
-      abc = abc+'\n[V: V4]"B1"'+toABC(outArr[3]).join("");
-      abc = abc+'\n[V: V5]"B2"'+toABC(outArr[4]).join("");
-      abc = abc+'\n[V: V6]"R"'+toABC(outArr[5]).join("");
+      for(let i=1; i<outArr.length-3; i++) {
+        let j = i+3
+        abc = abc+'\n[V: V'+j+']"B'+i+'"'+toABC(outArr[i+2]).join("");
+      }
+      abc = abc+'\n[V: V'+outArr.length+']"R"'+toABC(outArr[outArr.length-1]).join("");
+        
       abcjs.renderAbc("outputR_", abc);
     } else {
       outArr = r_(vA,vB,true);
@@ -98,7 +104,8 @@ function Ch4Generator() {
 
     setState(prevState => ({
         ...prevState,
-        abcString : abc
+        abcString : abc,
+        testOutput : abc
       }))
   }
 
@@ -156,6 +163,10 @@ function Ch4Generator() {
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR_}>Generate</Button>
                 </Col>
               </Row>
+
+              <Row className="justify-content-md-center">
+              <p>{state.testOutput}</p>
+            </Row>
               
               <Row className="justify-content-md-center">
                 <div id="outputR_"></div>

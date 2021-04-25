@@ -433,18 +433,12 @@ export function r_(a,b,measure,mode) {
  * @returns outArr - character array of R_
  */
 export function generator_R_Underlined(a, b, measure, mode) {
-    let outArr = [
-        [], // C1 - one beat at every point
-        [], // C2 - one beat for the duration
-        [], // A - a iterations of a
-        [], // B1 - a iterations of b, offset of a-b measures at end
-        [], // B2 - a iterations of b, offset of a-b measures at beginning
-        []  // R - juxtaposition of A, B1 and B2
-    ];
+    
 
     if(a===b) {
+      return r(a,b,measure,mode);
         //set up the most boring array
-        for(let i=0; i<a; i++) {
+        /*for(let i=0; i<a; i++) {
             if(measure) {
                 outArr[0].push(a);
                 outArr[0].push('-');
@@ -489,7 +483,7 @@ export function generator_R_Underlined(a, b, measure, mode) {
             return outArr;
         } else {
             return outArr[5];
-        }
+        }*/
     }
 
     //Make sure we are in a > b order
@@ -497,189 +491,89 @@ export function generator_R_Underlined(a, b, measure, mode) {
     b = lesser(a,b);
     a = t;
 
-    //the gap at the front/end of b1/b2 respectively
-    let displacement = a*a-a*b;
+    let displacement = a-b;
+    let outArr = [];
+    let tempArr = [];
+
+    for(let i=0; i<a*a; i++) {
+      tempArr.push(1);
+      tempArr.push('+');
+    }
+    tempArr.pop();
+    outArr.push(tempArr);
+
+    tempArr = [(a*a)];
+    outArr.push(tempArr);
+
+    tempArr = [];
+    for(let i=0; i<a; i++) {
+      tempArr.push(a);
+      tempArr.push('+');
+    }
+    tempArr.pop();
+    outArr.push(tempArr);
+
+    for(let i=0; i<displacement+1; i++) {
+      tempArr = [];
+      for(let j=0; j<i; j++) {
+        tempArr.push('Z');
+        tempArr.push(a);
+        tempArr.push('+');
+      }
+      for(let j=0; j<a; j++) {
+        tempArr.push(b);
+        tempArr.push('+');
+      }
+      for(let j=i; j<displacement; j++) {
+        tempArr.push('Z');
+        tempArr.push(a);
+        tempArr.push('+');
+      }
+      tempArr.pop();
+      outArr.push(tempArr);
+    }
+
+    tempArr = [];
+    let doit = false;
+    let hold = -1;
+    for(let i=0; i<a*a; i++) {
+      if(i%a===0) {
+        doit = true;
+      }
+      for(let j=0; j<displacement+1; j++) {
+        if(i>=(a*j) && i<=(a*j+a*b)) {
+          if((i-a*j)%b === 0) {
+            doit = true;
+          }   
+        }
+      }
+
+      if(doit) {
+        if(hold === -1) {
+          hold = 1;
+        } else {
+          tempArr.push(hold);
+          tempArr.push('+');
+          hold = 1;
+        }
+        doit = false;
+      } else {
+        hold++;
+      }
+    }
+    tempArr.push(hold);
+    outArr.push(tempArr);
     
-    //initialize arrays as needed
-
     if(measure) {
-        //handle c1
-        for(let i=0; i<a; i++) {
-          for(let j=0; j<a; j++) {
-            outArr[0].push(1);
-            outArr[0].push('+');
-          }
-          outArr[0].pop();
-          outArr[0].push('|');
-          
-        }
-
-        //handle c2 and a
-        for(let i=0; i<a; i++) {
-            outArr[1].push(a);
-            outArr[1].push('-');
-            outArr[1].push('|');
-
-            outArr[2].push(a);
-            outArr[2].push('|');
-        }
-        outArr[1].pop();
-        outArr[1].pop();
-        outArr[1].push('|');
-
-        //handle b1 and b2
-        let countMeasure = a;
-
-        for(let i=0; i<(displacement/a); i++) {
-          outArr[4].push('Z');
-          outArr[4].push(a);
-          outArr[4].push('|');
-        }
-
-        for(let i=0; i<a; i++) {
-            if(b < countMeasure) {
-                outArr[3].push(b);
-                outArr[4].push(b);
-                outArr[3].push('+');
-                outArr[4].push('+');
-                countMeasure-=b;
-            } else if(b === countMeasure) {
-                outArr[3].push(b);
-                outArr[4].push(b);
-                outArr[3].push('|');
-                outArr[4].push('|');
-                countMeasure=a;
-            } else {
-                outArr[3].push(countMeasure);
-                outArr[4].push(countMeasure);
-                outArr[3].push('-');
-                outArr[4].push('-');
-                outArr[3].push('|');
-                outArr[4].push('|');
-                outArr[3].push(b - countMeasure);
-                outArr[4].push(b - countMeasure);
-                outArr[3].push('+');
-                outArr[4].push('+');
-                countMeasure = a - (b - countMeasure);
-            }
-        }
-        for(let i=0; i<(displacement/a); i++) {
-          outArr[3].push('Z');
-          outArr[3].push(a);
-          outArr[3].push('|');
-        }
-
-        //handle r_
-        let doit=false;
-        let held = -1;
-
-        for(let i=0; i<a*a; i++) {
-          if(i%a===0) {
-            doit = true;
-          }
-          if(i>displacement) {
-            if((i-displacement)%b===0) {
-              doit = true;
-            }
-          }
-          if(i<(a*a-displacement)) {
-            if(i%b===0) {
-              doit = true;
-            }
-          }
-          if(doit) {
-            if(held===-1){
-              held=1;
-            } else {
-              outArr[5].push(held);
-              outArr[5].push('+');
-              held=1;
-            }
-            doit=false;
-          } else {
-            held++;
-          }
-          
-        }
-        
-        outArr[5].push(b);
-        outArr[5] = insertMeasures(outArr[5],a);
-
-    } else { //these are much simpler, in general.
-        //handle c1
-        for(let i=0; i<a*a; i++) {
-            outArr[0].push(1);
-            outArr[0].push('+');
-        }
-        outArr[0].pop();
-
-        //handle c2
-        outArr[1].push(a*a);
-
-        //handle a
-        for(let i=0; i<a; i++) {
-            outArr[2].push(a);
-            outArr[2].push('+');
-        }
-        outArr[2].pop();
-
-        //handle b1
-        for(let i=0; i<a; i++) {
-            outArr[3].push(b);
-            outArr[3].push('+');
-        }
-        outArr[3].push('Z');
-        outArr[3].push(a);
-
-        //handle b2
-        outArr[4].push('Z');
-        outArr[4].push(a);
-        outArr[4].push('+');
-        for(let i=0; i<a; i++) {
-            outArr[4].push(b);
-            outArr[4].push('+');
-        }
-        outArr[4].pop();
-        
-        //handle r
-        let doit=false;
-        let held = -1;
-
-        for(let i=0; i<a*a; i++) {
-          if(i%a===0) {
-            doit = true;
-          }
-          if(i>displacement) {
-            if((i-displacement)%b===0) {
-              doit = true;
-            }
-          }
-          if(i<(a*a-displacement)) {
-            if(i%b===0) {
-              doit = true;
-            }
-          }
-          if(doit) {
-            if(held===-1){
-              held=1;
-            } else {
-              outArr[5].push(held);
-              outArr[5].push('+');
-              held=1;
-            }
-            doit=false;
-          } else {
-            held++;
-          }
-          
-        }
-        outArr[5].push(b);
+      for(let i in outArr) {
+        outArr[i] = insertMeasures(outArr[i],a);
+      }
     }
 
     if(mode === "all") {
         return outArr;
     } else {
-        return outArr[5];
+        return outArr[4+displacement];
     }
 }
 
@@ -856,6 +750,9 @@ function insertMeasures(inArr, measure) {
       case 'N':
         break;
       case 'L':
+        break;
+      case 'Z'||'z':
+        outArr.push(n);
         break;
       default:
         if(n>m) { //split
