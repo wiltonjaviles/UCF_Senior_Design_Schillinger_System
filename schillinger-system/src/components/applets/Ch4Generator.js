@@ -82,10 +82,10 @@ function Ch4Generator() {
     
     if(state.showing === 'Show All') {
       outArr = r_(vA,vB,true,'all');
-      abc = 'X:1\nK:C\n';
-      for(let i=1; i<outArr.length+1; i++) {
+      abc = 'X:1\nK:C\nV';
+      /*for(let i=1; i<outArr.length+1; i++) {
         abc = abc + 'V: V'+i+' clef=treble\n';
-      }
+      }*/
       abc = abc+'\n[V: V1]"C1"'+toABC(outArr[0]).join("");
       abc = abc+'\n[V: V2]"C2"'+toABC(outArr[1]).join("");
       abc = abc+'\n[V: V3]"A"'+toABC(outArr[2]).join("");
