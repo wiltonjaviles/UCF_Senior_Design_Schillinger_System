@@ -2,6 +2,9 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 
+
+// this applet looks like a huge mess, partly because it was one of the first applets we implemented. 
+// if anyone has questions or needs help cleaning this all up pls contact kathryn
 function Ch12Generator() {
   // Dynamic link/button based on whether app is in chapter page or new tab
   var pageLink = "";
