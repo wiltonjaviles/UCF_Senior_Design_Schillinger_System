@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from 'abcjs';
 import Playback from '../Playback';
-import {balance,expand,contract,toABC} from '../functions/generators';
+import {r,r_,toABC} from '../functions/./generators';
 
 function Ch5Generator() {
 
@@ -77,22 +77,29 @@ function Ch5Generator() {
     const vV = String(state.variant);
 
     let outArr = [];
+    let abcOut = "";
     
     switch(vV) {
       case 'Balance':
-        outArr = balance(vA,vB);
+         for(let i=0; i<(vA-vB); i++) {
+          outArr.push(vA);
+          outArr.push('-');
+          outArr.push('|');
+        }
+        outArr.pop();
+        outArr.pop();
+        outArr.push('|');
+
+        abcOut = 'X:1\nK:C\n"r_"'+toABC(r_(vA,vB,true)).join("")+'"r"'+toABC(r(vA,vB,vA)).join("")+toABC(outArr).join("");
         break;
       case 'Contract':
-        outArr = contract(vA,vB);
+        abcOut = 'X:1\nK:C\n"r"'+toABC(r(vA,vB,vA)).join("")+'"r_"'+toABC(r_(vA,vB,true)).join("");
         break;
       case 'Expand':
-        outArr = expand(vA,vB);
+        abcOut = 'X:1\nK:C\n"r_"'+toABC(r_(vA,vB,true)).join("")+'"r"'+toABC(r(vA,vB,vA)).join("");
         break;
       default: break;
     }
-    
-    outArr = toABC(outArr);
-    let abcOut = "X:1\nK:C\n"+outArr.join("")+"\n";
 
     abcjs.renderAbc("output", abcOut, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 });
 
