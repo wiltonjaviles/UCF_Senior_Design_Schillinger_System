@@ -157,6 +157,7 @@ function Book1Ch8() {
           <Row className="justify-content-center">
           <Col className="col-7"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img2.png" alt="book1ch8img2"></img></Col>
           </Row>
+          <br />
           <Playback abc={toABC(r(3,2),['c','_d','c','E','F'],true)} />
           <p class="equation"><em>Third Case:</em> <sup>a<sub>a</sub></sup>/<sub>a<sub>T</sub></sub> = <sup>a<sub>a'</sub></sup>/<sub>a<sub>T'</sub></sub>&emsp;i.e., a reducible fraction</p>
           <p class="equation">A = a<sub>T</sub>&#183;a<sub>a</sub></p>
@@ -168,6 +169,7 @@ function Book1Ch8() {
           <Row className="justify-content-center">
           <Col className="col-8"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img3.png" alt="book1ch8img3"></img></Col>
           </Row>
+          <br />
           <Playback abc={toABC(r(3,2),['c','_d','=d','e','f','_B'],true)} />
           <br /> 
           <Ch8Generator />
@@ -186,6 +188,7 @@ function Book1Ch8() {
           <Row className="justify-content-center">
           <Col className="col-8"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img5.png" alt="book1ch8img5"></img></Col>
           </Row>
+          <br />
           <Playback abc={toABC(r(3,2,3),['c','B','A','G','c','B','A','G','c','B','A','G','c','B','A','G','c','B','A','G'],true)} />
           <p class="equation"><em>Third Case:</em> <sup>T'</sup>/<sub>T''</sub> = <sup>T<sub>'</sub></sup>/<sub>T<sub>''</sub></sub></p>
           <p class="equation">N<sub>T''</sub> = T<sub>'</sub></p>
@@ -213,6 +216,7 @@ function Book1Ch8() {
           <Row className="justify-content-center">
           <Col className="col-8"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img9.png" alt="book1ch8img9"></img></Col>
           </Row>
+          <br />
           <Playback abc={toABC(r(3,2,3),['c','_e','d','^E','G'],true)+toABC(r(3,2,3),['c','_e','d','^E','G'],true)+toABC(r(3,2,3),['c','_e','d','^E','G'],true)} />
           <br /> <br />
         <a className="chapter-section-link" href="/book1ch8#1.8.d" id="1.8.d"><h5>D. Synchronization of an Instrumental Group</h5></a> 
@@ -231,7 +235,6 @@ function Book1Ch8() {
           </Row>
           <p class="bookText">Example of composition of the resultant of instrumental interference</p>
         <br /> 
-        
         <br /> 
         <Row>
           <Col><Link to="/book1ch7" className="content-links"><h5>Previous Chapter</h5></Link></Col>

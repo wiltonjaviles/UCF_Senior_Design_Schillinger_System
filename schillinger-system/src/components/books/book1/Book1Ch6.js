@@ -70,7 +70,9 @@ function Book1Ch6() {
           <Row className="justify-content-center">
           <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch6/img2.png" alt="book1ch7img2"></img></Col>
           </Row>
+          <br />
           <Playback abc={toABC(r3(2,3,5))} />
+          <br />
           <p className="bookText">In figure 48, no more rhythmically suitable counterthemes can be devised. The theme makes three recurrences while the countertheme makes continuous changes in longer values. This allows the listener to hear both themes together. All resultants from three or more generators are characterized by these recurrences and variations.</p>
         <br />
         <br />
