@@ -18,6 +18,7 @@ function Ch4Generator() {
   // Define the variables to be used for applet history and dynamic applet input
   var tempA = 3;
   var tempB = 2;
+  var tempShow = 'Show All';
 
   // grab the current array sitting in local storage
   var old_data = JSON.parse(localStorage.getItem('schillArr'));
@@ -27,6 +28,7 @@ function Ch4Generator() {
     if (old_data[i].id === "book1ch4" ) {
       tempA = old_data[i].a;
       tempB = old_data[i].b;
+      tempShow = old_data[i].showing;
       break;
     }
   }
@@ -35,9 +37,9 @@ function Ch4Generator() {
   console.log(tempB);
 
   const [state , setState] = useState({
-    variableA : 3,
-    variableB : 2,
-    showing : 'Show All',
+    variableA : tempA,
+    variableB : tempB,
+    showing : tempShow,
     testOutput : "",
     abcString: ""
   })
@@ -63,7 +65,7 @@ function Ch4Generator() {
     }
 
      // use unshift to push the new applet ID to the front of the array
-     var book1ch4 = {"id":"book1ch4", "title":"The Techniques of Fractioning", "a":state.variableA, "b":state.variableB}; 
+     var book1ch4 = {"id":"book1ch4", "title":"The Techniques of Fractioning", "a":state.variableA, "b":state.variableB, "showing":state.showing}; 
      old_data.unshift(book1ch4);
 
      // update the schillinger applet array in localStorage

@@ -18,7 +18,8 @@ function Ch2Generator() {
   // Define the variables to be used for applet history and dynamic applet input
   var tempA = 3;
   var tempB = 2;
-  var tempGroup = 'a'
+  var tempGroup = 'a';
+  var tempShow = 'Show All';
 
 
   // grab the current array sitting in local storage
@@ -30,6 +31,7 @@ function Ch2Generator() {
       tempA = old_data[i].a;
       tempB = old_data[i].b;
       tempGroup = old_data[i].groupBy;
+      tempShow = old_data[i].showing;
       break;
     }
   }
@@ -38,7 +40,7 @@ function Ch2Generator() {
     variableA : tempA,
     variableB : tempB,
     groupBy : tempGroup,
-    showing : 'Show All',
+    showing : tempShow,
     testOutput : '',
     abcString: ""
   })
@@ -64,7 +66,7 @@ function Ch2Generator() {
     }
 
      // use unshift to push the new applet ID to the front of the array
-     var book1ch2 = {"id":"book1ch2", "title": "Interferences of Periodicities", "a":state.variableA, "b":state.variableB, "groupBy":state.groupBy}; 
+     var book1ch2 = {"id":"book1ch2", "title": "Interferences of Periodicities", "a":state.variableA, "b":state.variableB, "groupBy":state.groupBy, "showing":state.showing}; 
      old_data.unshift(book1ch2);
 
      // update the schillinger applet array in localStorage
