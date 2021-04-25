@@ -97,10 +97,10 @@ function Book1Ch2() {
           <img className="img-fluid img-thumbnail" src="images/book1/ch2/img2.png" alt="book1ch2img2"></img>
           
           <p class="bookText">The resultant differs from b with respect to the accent in r (because both generators had an attack there). </p>
-          <p class="bookText">This establishes a bar with a numerator of 2 i.e. 2/2, 2/4, etc. When the bar is 2/2, 1/2 = 𝅗𝅥, when the bar is 2/4, 1/2 = ♩. </p>
+          <p class="bookText">This establishes a bar with a numerator of 2 i.e. 2/2, 2/4, etc. When the bar is 2/2, 1/2 = half note, when the bar is 2/4, 1/2 = quarter note. </p>
           <p class="bookText">Another example:</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch2/img3.png" alt="book1ch2img3"></img>
-          <p class="bookText">This case shows musical bars with 3 as a numerator. I.e.: </p>
+          <p class="bookText">This case shows musical bars with 3 as a numerator: </p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch2/img4.png" alt="book1ch2img4"></img>
           <p class="bookText">A third example:</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch2/img5.png" alt="book1ch2img5"></img>
@@ -135,7 +135,7 @@ function Book1Ch2() {
           <p class="bookText">All the necessary generators are:</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch2/img13.png" alt="book1ch2img13"></img>
           <p class="bookText">When c.p. is greater than 15, use a or b superimposition only.</p>
-          <p class="bookText">When the numbers get large, a musical eight note (♪) is the best denominator. All reducible fractions have been excluded from the above chart.</p>
+          <p class="bookText">When the numbers get large, a musical eighth note (♪) is the best denominator. All reducible fractions have been excluded from the above chart.</p>
           <p class="bookText">The a and b components show how ‘cross-rhythms’ should be performed. Beating a and be with both hands, listen to the resultant.</p>
           <br />
         <br />

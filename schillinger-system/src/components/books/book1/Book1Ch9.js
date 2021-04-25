@@ -43,10 +43,8 @@ function Book1Ch9() {
         <p class="bookText">Circular permutations are formed by arranging the elements of a rhythm into a circle, then starting with the first element, build a rhythm by going about the circle once. Then move to the next element and go about the circle again; do this for each element.</p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch9/img1.png" alt="book1ch9img1"></img>
         <p class="bookText">This circle of three elements forms the permutation | a + b + c | b + c + a | c + a + b |.</p>
-        <h3>TODO</h3>
         <img className="img-fluid img-thumbnail" src="images/book1/ch9/img2.png" alt="book1ch9img2"></img>
         <p class="bookText">You can spin the circle in either direction. Counterclockwise, it would form the permutation<br/>| a + c + b | c + b + a | b + a + c |</p>
-        <h3>TODO</h3>
         <p class="bookText">This circle can be used for more than rhythm patterns. A rest can be rotated this way:</p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch9/img3.png" alt="book1ch9img3"></img>
         <p class="bookText">or an accent:</p>

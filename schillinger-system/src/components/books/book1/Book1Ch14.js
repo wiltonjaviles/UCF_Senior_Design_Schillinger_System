@@ -88,13 +88,16 @@ function Book1Ch14() {
         <img className="img-fluid img-thumbnail" src="images/book1/ch14/img1.png" alt="book1ch14img1"></img>
         <p class="bookText"><b>Rubato</b></p>
         <p class="bookText">Within the Schillinger system, the definition of rubato is made narrow. Rubato is any case where a pair of notes is brought either closer or further from balance, changing its complexity. This is accomplished by taking a unit of deviation from one of the notes and adding it to the other. It is easier to see this in an example:</p>
-        <h4>example</h4>
+        <img className="img-fluid img-thumbnail" src="images/book1/ch14/small-img3.png" alt="book1ch14smallimg3"></img>
         <p class="bookText">In the above, the first pair of notes may be unbalanced by taking a sixteenth from one of the notes and adding it to the other note, with the result:</p>
-        <h4>example</h4>
-        <p class="bookText">Expressed mathematically, this is *image*, where the unit of deviation tau is equal to 1 over 4.</p>
-        <p class="bookText">A second example: in a fox-trot, the pair *image* is frequently performed as *image*. If we take this figure as belonging to the 8 8 series, then they would be expressed as 8/8 = 4/8 + 4/8. A denominator of 8 means that the unit of deviation tau = 1/8. This results in the math (4/8 + 1/8) + (4/8 - 1/8) = 5/8 + 3/8.</p>
+        <img className="img-fluid img-thumbnail" src="images/book1/ch14/small-img4.png" alt="book1ch14smallimg4"></img>
+        <br />
+        <br />
+        <img className="img-fluid img-thumbnail" src="images/book1/ch14/img5.png" alt="book1ch14img5"></img>
+        <p class="bookText">The above, expressed mathematically, is where the unit of deviation tau is equal to 1 over 4.</p>
+        <p class="bookText">A second example: in a fox-trot, the pair <img className="img-fluid img-thumbnail" src="images/book1/ch14/small-img5.png" alt="book1ch14smallimg5"></img> is frequently performed as <img className="img-fluid img-thumbnail" src="images/book1/ch14/small-img6.png" alt="book1ch14smallimg6"></img>. If we take this figure as belonging to the 8 8 series, then they would be expressed as 8/8 = 4/8 + 4/8. A denominator of 8 means that the unit of deviation tau = 1/8. This results in the math (4/8 + 1/8) + (4/8 - 1/8) = 5/8 + 3/8.</p>
         <p class="bookText">In both of these examples, the unbalancing can be done in reverse, so 3/4 + 1/4 becomes 1/4 + 3/4.</p>
-        <p class="bookText">Bringing a pair of notes closer to balance is frequently seen in the case where *image* is made into *image*; in this case, the 3 + 1 figure is made into the closer ratio of 2 + 1.</p>
+        <p class="bookText">Bringing a pair of notes closer to balance is frequently seen in the case where <img className="img-fluid img-thumbnail" src="images/book1/ch14/small-img7.png" alt="book1ch14smallimg7"></img> is made into <img className="img-fluid img-thumbnail" src="images/book1/ch14/small-img8.png" alt="book1ch14smallimg8"></img>; in this case, the 3 + 1 figure is made into the closer ratio of 2 + 1.</p>
         <p class="bookText">In the Schillinger system, anything else which would be described as rubato is converted into systems of acceleration and deceleration, or is a fermata.</p>
         <p class="bookText"><b>Fermata</b></p>
         <p class="bookText">Schillinger provides two methods for quantifying fermata. The first is simply to multiply or add up the preceding notes.  This is typically done when the fermata represents a full stop, ending, or transition of a piece.  The effect is to end the fermata in time with the meter of the music, or in other words to recognize that even if the fermata notation has “stopped” the rhythm pattern, the listener will still notice when that pattern is broken.</p>

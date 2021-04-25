@@ -61,7 +61,7 @@ function Book1Ch3() {
           <p class="bookText">ie. grouping by ab produces one T with abt</p>
           <p class="bookText">Example:</p>
           <p class="bookText">3 ÷ 2              <sup>ab</sup>/<sub>ab</sub>=<sup>6</sup>/<sub>6</sub> T, one measure with 6t.</p>
-          <p class="bookText">6t can be represented as any measure with 6 single units. For instance, <sup>3</sup>/<sub>4</sub> time where t = ♪, or <sup>6</sup>/<sub>4</sub> time where t = ♩, or <sup>6</sup>/<sub>8</sub> time where t = ♪</p>
+          <p class="bookText">6t can be represented as any measure with 6 single units. For instance, <sup>3</sup>/<sub>4</sub> time where t = eighth note, or <sup>6</sup>/<sub>4</sub> time where t = quarter note, or <sup>6</sup>/<sub>8</sub> time where t = eighth note</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch3/img1.png" alt="book1ch3img1"></img>
           <p class="bookText">Grouping by a:       <sup>ab</sup>/<sub>a</sub> = bT  (2)</p>
           <p class="bookText">3 ÷ 2      <sup>3*2</sup>/<sub>3</sub>=<sup>3*2</sup>/<sub>2</sub>=2T     ie two measures with 3t.</p>

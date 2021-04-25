@@ -84,7 +84,7 @@ function Book1Ch1() {
           <p class="bookText">Where each horizontal segment in the wave represents a time unit</p>
           <p class="bookText">When the unit is defined, the values of units in different periodicities will be:</p>
           <img className="img-fluid img-thumbnail" src="images/book1/ch1/img5.png" alt="book1image5"></img>
-          <p class="bookText">Musical notation will be the final form of number and graph expressions, where 1 = ♩, 2 = 𝅗𝅥, 3 = 𝅗𝅥., 4 = 𝅝, etc.</p>
+          <p class="bookText">Musical notation will be the final form of number and graph expressions, where 1 = quarter note, 2 = half note, 3 = dotted half note, 4 = whole note, etc.</p>
         <br />
         <Row>
           <Col><Link to="/book1" className="content-links"><h5>Previous Chapter</h5></Link></Col>

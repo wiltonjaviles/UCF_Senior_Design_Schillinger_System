@@ -38,7 +38,7 @@ function Book1Ch11() {
           <li>Method two is to divide the group by measures, and to then rotate.</li>
           <li>Method three is to divide the group by all of its attacks.</li>
         </ol>
-        <h4>examples with r<sub>4%3</sub></h4>
+        
         <p class="bookText">To apply the first method to r<sub>4%3</sub>, start by observing that the number of measures is an even number, meaning that the simplest divisor is 2.  r<sub>4%3</sub> contains 4 measures, and so in this method is split into groups of 2, which are then subjected to a simple rotation.</p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch11/img1.png" alt="book1ch11img1"></img>
         <h4>playable example?</h4>
@@ -54,7 +54,7 @@ function Book1Ch11() {
         <br /> <br />
         <p class="bookText">This method can rapidly produce far more permutations and concurrent sound than any human ear could hope to hear, where even a single circular permutation creates a wall of notes.</p>
         <img className="img-fluid img-thumbnail" src="images/book1/ch11/img4.png" alt="book1ch11img4"></img>
-        <h4>playable example?</h4>
+        
         <p class="bookText">Were this to be fully expanded with general permutations, there would be 3,628,800 permutations with a total of 145,152,000 bars over 10 parts.</p>
         <br />
         <br />
