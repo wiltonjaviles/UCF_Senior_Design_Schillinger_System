@@ -104,11 +104,11 @@ It is recommended you use Visual Studio Code as a team to streamline the work an
 
 Visual Studio Code supports:
 
-Live, collaborative, environments via Live Share that will allow your team to work together in real-time.
+1. Live, collaborative, environments via Live Share that will allow your team to work together in real-time.
 
-Version Control (git) built-in to handles diffs, staging files, commits, etc. 
+2. Version Control (git) built-in to handles diffs, staging files, commits, etc. 
 
-An integrated terminal.
+3. An integrated terminal.
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [VSCode Live Share](https://code.visualstudio.com/learn/collaboration/live-share)
