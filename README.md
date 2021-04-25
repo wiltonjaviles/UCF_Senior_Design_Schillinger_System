@@ -57,7 +57,7 @@
       <ul>
         <li><a href="#running-local-development">Running Local Development</a></li>
         <li><a href="#deploying-changes-to-the-web-server">Deploying Changes to the Web server</a></li>
-        <li><a href="#nginx">Nginx Web Service Commands</a></li>
+        <li><a href="#nginx">Nginx</a></li>
       </ul>
     </li>
     <li>
