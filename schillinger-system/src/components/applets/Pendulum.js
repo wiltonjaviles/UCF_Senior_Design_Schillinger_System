@@ -1,6 +1,5 @@
 import {Container, Row, Col, Card, Form} from 'react-bootstrap';
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
 import anime from "animejs";
 import '../.././Style.css';
 
@@ -12,7 +11,7 @@ function Pendulum() {
   // Dynamic link/button based on whether app is in chapter page or new tab
   var pageLink = "";
   if (window.location.href.includes("book1")) {
-    pageLink = <a href="/ch1pendulum" target="_blank">Open Applet in New Tab</a>;
+    pageLink = <a href="/ch1pendulum" target="_blank" rel="noopener noreferrer">Open Applet in New Tab</a>;
   } else {
     pageLink = <button onClick={window.close}>Close Window</button>
   }

@@ -19,8 +19,8 @@ function Home() {
         />
         <br />
         <h2>Introduction</h2>
-        <p>The <b>Schillinger System of Musical Composition</b>, named after Joseph Schillinger, is a method of musical composition based on mathematical processes. It comprises theories of rhythm, harmony, melody, counterpoint, form and semantics (emotional meaning, as in movie music). It offers a systematic and non-genre approach to music analysis and composition, a descriptive rather than prescriptive grammar of music. The Schillinger System might have served as a road map for many later developments in music theory and composition. Instead, it languished in relative obscurity <a href="https://en.wikipedia.org/wiki/Schillinger_System">(source)</a>.</p>
-        <p><b>Joseph Moiseyevich Schillinger</b> (1895-1943), was a composer, music theorist, and composition teacher; he was born in Kharkiv, in the Kharkov Governorate of the Russian Empire (present-day Ukraine) and died in New York City <a href="https://en.wikipedia.org/wiki/Joseph_Schillinger">(source)</a>.</p>
+        <p>The <b>Schillinger System of Musical Composition</b>, named after Joseph Schillinger, is a method of musical composition based on mathematical processes. It comprises theories of rhythm, harmony, melody, counterpoint, form and semantics (emotional meaning, as in movie music). It offers a systematic and non-genre approach to music analysis and composition, a descriptive rather than prescriptive grammar of music. The Schillinger System might have served as a road map for many later developments in music theory and composition. Instead, it languished in relative obscurity <a href="https://en.wikipedia.org/wiki/Schillinger_System" target="_blank" rel="noopener noreferrer">(source)</a>.</p>
+        <p><b>Joseph Moiseyevich Schillinger</b> (1895-1943), was a composer, music theorist, and composition teacher; he was born in Kharkiv, in the Kharkov Governorate of the Russian Empire (present-day Ukraine) and died in New York City <a href="https://en.wikipedia.org/wiki/Joseph_Schillinger" target="_blank" rel="noopener noreferrer">(source)</a>.</p>
         <Row>
           <Col></Col>
           <Col><img className="img-fluid img-thumbnail" src="images/schillinger/JosephSchillinger.png" alt="SchillingerPhoto"></img></Col>
@@ -65,7 +65,7 @@ function Home() {
           <Col>
             <p className="bookText">
               Michael Alaniz is a Computer Science graduate from UCF, Spring 2021, and was a member of the first team to work on the Learn Schillinger project. He was in charge of the Web Server implementation, management, and a Full-Stack float.
-              Michael enjoys playing the piano, music production, machine learning, and deep learning. <a href="https://www.linkedin.com/in/michael-alaniz-825393136/" target="_blank">LinkedIn</a>
+              Michael enjoys playing the piano, music production, machine learning, and deep learning. <a href="https://www.linkedin.com/in/michael-alaniz-825393136/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
             </p>
           </Col>
           <Col className="col-1"></Col>
@@ -82,7 +82,7 @@ function Home() {
             <p className="bookText">
               Wilton Aviles is a Computer Science graduate from the University of Central Florida, Spring 2021, and was a member of the first team to work on this project. He was the project manager and was in charge of filling website, delegating tasks, design decisions, and making sure the team was prompt and completing tasks in a timely manner.
               He has enjoyed music since an early age, and has produced music for various musicians throughout his time in college. He enjoys coding, music, video games, basketball, and being a student of life.
-              Wilton was involved with the Engineering Leadership and Innovation Institute at UCF (eli<sup>2</sup>) as a Student Leader and Project Lead. <a href="https://www.linkedin.com/in/wilton-jose-aviles/" target="_blank">LinkedIn</a>
+              Wilton was involved with the Engineering Leadership and Innovation Institute at UCF (eli<sup>2</sup>) as a Student Leader and Project Lead. <a href="https://www.linkedin.com/in/wilton-jose-aviles/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
             </p>
           </Col>
           <Col className="col-1"></Col>
