@@ -34,6 +34,7 @@ function AppletHistory() {
             <br />
             <p>Applet History saves previous versions of your executed applets. These actions are ordered from most recent to least recent.</p>
             <p>Hover the buttons below to see the book, chapter, and chapter title that each button corresponds to.</p>
+            <p>Once you click a button it will take you back to that book/chapter while reloading your saved input so that you may run it again and receive the same output.</p>
             <br />
 
             <Button variant="success" onClick={clearStorage}>
