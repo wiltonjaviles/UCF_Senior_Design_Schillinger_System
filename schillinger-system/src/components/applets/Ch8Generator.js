@@ -2,40 +2,52 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from 'abcjs';
-import Playback from '../applets/Playback';
+import Playback from '../Playback';
+import {r,r_,toABC} from '../functions/generators';
 
 function Ch8Generator() {
+    // Dynamic link/button based on whether app is in chapter page or new tab
+    var pageLink = "";
+    if (window.location.href.includes("book1")) {
+      pageLink = <a href="/ch8generator" target="_blank" rel="noopener noreferrer">Open Applet in New Tab</a>;
+    } else {
+      pageLink = <button className="btn btn-light" onClick={window.close}>Close Window</button>
+    }
+
+    var tempR1 = 3;
+    var tempR2 = 2;
+    var tempCType = 'R';
+    var tempA_A = 1;
+    var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+    // If there is already a saved state of the applet we overwrite the default values
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch8" ) {
+        tempR1 = old_data[i].c_r1;
+        tempR2 = old_data[i].c_r2;
+        tempCType = old_data[i].c_type;
+        tempA_A = old_data[i].c_a_a
+        break;
+      }
+    }
+
     const [state , setState] = useState({
-        v_r1 : 3,
-        v_r2 : 2,
-        v_rOut : '',
-        v_pli : 1,
-        v_pla : 1,
-        v_a_a : 1,
-        v_PL : '',
-        v_A : '',
-        v_A1 : '',
-        v_a_T : '',
-        v_T : '',
-        v_T1 : '',
-        v_T2 : 4,
-        v_N_T2 :'',
+        c_r1 : tempR1,
+        c_r2 : tempR2,
+        c_type : tempCType,
+        c_rOut : '',
+        c_pli : 1,
+        c_pla : 1,
+        c_a_a : tempA_A,
+        c_PL : '',
+        c_a_T : '',
+        c_T1 : '',
+        c_T2 : 4,
+        c_N_T2 :'',
         abcString: "X:1\nK:C\nV: V1 clef=treble\nV: V2 clef=bass\n"
       })
 
-        //v_r1 by v_r2
-        let rAttacksArray = [
-            [0,0,0, 0, 0, 0, 0, 0,  0],
-            [0,0,0, 0, 0, 0, 0, 0,  0],
-            [0,0,0, 0, 0, 0, 0, 0,  0],
-            [0,0,4, 3, 6, 7, 6, 9, 10],
-            [0,0,4, 6, 4, 8, 8, 10, 8],
-            [0,0,6, 7, 8, 5, 10,11,12],
-            [0,0,6, 6, 8, 10,6, 12,12],
-            [0,0,8, 9, 10,11,12,7, 14],
-            [0,0,8, 10,8, 12,12,14, 8],
-            [0,0,10,9, 12,13,12,15,16]
-        ];
+        
         //a_a
         let melodiesArray = [
             ['A'],
@@ -44,34 +56,20 @@ function Ch8Generator() {
             ['c','E','F'],
             ['c','d','E','F'],
             ['c','A','d','E','F'],
-            ['c','A','d','C','E','F']
+            ['c','A','d','c','E','F'],
+            ['c','A','d','c','C','E','F'],
+            ['c','A','d','e','c','C','E','F'],
+            ['c','A','d','e','c','G','C','E','F'],
+            ['c','A','d','e','c','G','E','C','E','F']
         ];
-        //a_T by a_a
-        //This gives you the number of times you repeat r based on 
-        //the relationship between a_T and a_a
-        let ratiosArray = [
-            [-1,-1,-1,-1,-1,-1],
-            [],
-            [],
-            [0,1,2,1,4,5,2],
-            [0,1,1,3,1,5,3],
-            [0,1,2,3,4,1,6],
-            [0,1,1,1,2,5,1],
-            [0,1,2,3,4,5,6],
-            [0,1,1,3,1,5,3],
-            [0,1,2,1,4,5,2],
-            [0,1,1,3,2,1,3],
-            [0,1,2,3,4,5,6],
-            [0,1,1,1,1,60,1],
-            [0,1,2,3,4,5,6],
-            [0,1,1,3,2,5,3],
-            [0,1,2,1,4,1,2],
-            [0,1,1,3,1,5,3]
-        ];
-
-        let a_T = 4;
-        let T = 6;
         
+        let baseR = [];
+        let outArrR = [];
+        let outArrMelody = [];
+        let outArrSynced = [];
+        let v_T = 0;
+        let v_A = 0;
+        let v_A1 = 0;
     
       const handleSelect = (e) => {
         const {id , value} = e.target   
@@ -84,35 +82,64 @@ function Ch8Generator() {
       const generateR = event => {
         event.preventDefault();    
 
-        a_T = rAttacksArray[state.v_r1][state.v_r2];
-        T = state.v_r1 * state.v_r2;
-        //is T2 user defined?
+        // need to remove previous version of ch3 history if it exists
+        for (let i in old_data) {
+          if (old_data[i].id === "book1ch8" ) {
+            old_data.splice(i, 1)
+            break;
+          }
+        }        
 
-        let PL = state.v_pli / state.v_pla;
-        let A = state.v_a_a / state.v_pli;
-        let A1 = A / a_T;
-        let T1 = A1 * T;
-        let NT2 = T1 / state.v_T2;
+        // use unshift to push the new applet ID to the front of the array
+        var book1ch8 = {"id":"book1ch8", "title": "Coordination of Time Structures", "c_r1":state.c_r1, "c_r2":state.c_r2, "c_type": state.c_type, "c_a_a": state.c_a_a}; 
+        old_data.unshift(book1ch8);
 
+        // update the schillinger applet array in localStorage
+        localStorage.setItem('schillArr', JSON.stringify(old_data));
         
+        if(state.c_type==='R') {
+            baseR = r(state.c_r1,state.c_r2,state.c_r1);
+        } else {
+            baseR = r_(state.c_r1,state.c_r2,true);
+        }
+        v_T = 0;
+        for(let i in baseR) {
+            if(baseR[i] > 0) {
+                v_T++;
+            }
+            if(baseR[i] === '-') {
+                v_T--;
+            }
+        }
 
-        let outArr = simpleToABC(sMakeR(state.v_r1,state.v_r2),state.v_r1);
-        let abcOut = outArr[4];
-        abcOut = embedMelody(abcOut, melodiesArray[state.v_a_a], ratiosArray[a_T][state.v_a_a]);
-        
+        v_A = v_T*state.c_a_a;
 
-        abcjs.renderAbc("outputMusic", "X:1\nK:C\n"+abcOut.join("")+"\n");
+        outArrR = toABC(baseR);
+        outArrMelody = melodiesArray[state.c_a_a];
+        outArrSynced = toABC(baseR,melodiesArray[state.c_a_a],true);
+
+        v_A1 = 0;
+        for(let i in outArrSynced) {
+            if(outArrSynced[i] > 0) {
+                v_A1++;
+            }
+            if(outArrSynced[i] === '-') {
+                v_A1--;
+            }
+        }
+
+        abcjs.renderAbc("outputR", 'X:1\nK:C\n"R"'+outArrR.join("")+"\n");
+        abcjs.renderAbc("outputMelody", 'X:1\nK:C\n"a_a='+state.c_a_a+'"'+outArrMelody.join("")+"\n");
+
+        if(v_A===v_A1) {
+            abcjs.renderAbc("outputSynced", 'X:1\nK:C\n"T’='+v_A+'"'+outArrSynced.join("")+"\n");
+        } else {
+            abcjs.renderAbc("outputSynced", 'X:1\nK:C\n"T’='+v_A+', A1='+v_A1+'"'+outArrSynced.join("")+"\n");
+        }
         
     
         setState(prevState => ({
-            ...prevState,
-            v_PL : PL,
-            v_A : A,
-            v_A1 : A1,
-            v_a_T : a_T,
-            v_T : T,
-            v_T1 : T1,
-            v_N_T2 : NT2
+            ...prevState
           }))
       }
     
@@ -125,7 +152,7 @@ function Ch8Generator() {
                   <h1>Formula</h1>
                   <h3>Instructions</h3>
                   <p>
-                    Define T, pli, pla, a_a, and a_T
+                    Select a resultant for T. Then select the number of attacks (a<sub>a</sub>). Click generate to see how the resultant and attacks are synchronized.
                   </p>
                   <br />
                     <Row className="form-row justify-content-md-center">
@@ -133,8 +160,8 @@ function Ch8Generator() {
                             <h2>T = </h2>
                         </Col>
                         <Col className="col-2">
-                            <Form.Group controlId="v_r1">
-                            <Form.Control as="select" defaultValue="3" value={state.v_r1} onChange={handleSelect}>
+                            <Form.Group controlId="c_r1">
+                            <Form.Control as="select" value={state.c_r1} onChange={handleSelect}>
                                 <option>3</option>
                                 <option>4</option>
                                 <option>5</option>
@@ -142,6 +169,7 @@ function Ch8Generator() {
                                 <option>7</option>
                                 <option>8</option>
                                 <option>9</option>
+                                <option>10</option>
                             </Form.Control>
                             </Form.Group>
                         </Col>
@@ -149,8 +177,8 @@ function Ch8Generator() {
                             <h2>÷</h2>
                         </Col>
                         <Col className="col-2">              
-                            <Form.Group controlId="v_r2">
-                            <Form.Control as="select" defaultValue="2" value={state.v_r2} onChange={handleSelect}>
+                            <Form.Group controlId="c_r2">
+                            <Form.Control as="select" value={state.c_r2} onChange={handleSelect}>
                                 <option>2</option>
                                 <option>3</option>
                                 <option>4</option>
@@ -158,133 +186,62 @@ function Ch8Generator() {
                                 <option>6</option>
                                 <option>7</option>
                                 <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
                             </Form.Control>
                             </Form.Group>
                         </Col>
-                        
-                        
-                    </Row>
-                      
-                    <Row className="form-row justify-content-md-center">
-                        <Col className="col-3">
-                            <h2>pli: </h2>
+                        <Col className="col-1">
+                            <h4>R:</h4>
                         </Col>
                         <Col className="col-2">              
-                            <Form.Group controlId="v_pli">
-                                <Form.Control as="select" defaultValue="1" value={state.v_pli} onChange={handleSelect}>
+                            <Form.Group controlId="c_type">
+                            <Form.Control as="select" value={state.c_type} onChange={handleSelect}>
+                                <option>R</option>
+                                <option>R_</option>
+                            </Form.Control>
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                    <Row className="form-row justify-content-md-center">
+                        <Col className="col-1">
+                            <h4>a<sub>a</sub></h4>
+                        </Col>
+                        <Col className="col-1">
+                            <Form.Group controlId="c_a_a">
+                                <Form.Control as="select" value={state.c_a_a} onChange={handleSelect}>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
                                 <option>4</option>
                                 <option>5</option>
                                 <option>6</option>
-                                </Form.Control>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </Form.Control>
                             </Form.Group>
                         </Col>
-                        <Col className="col-3">
-                            <h2>pla: </h2>
-                        </Col>
-                        <Col className="col-2">              
-                            <Form.Group controlId="v_pla">
-                                <Form.Control as="select" defaultValue="1" value={state.v_pla} onChange={handleSelect}>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                </Form.Control>
-                            </Form.Group>
-                        </Col>
-                    </Row>
-                    <Row className="form-row justify-content-md-center">
-                        <Col className="col-3">
-                            <h2>a_a: </h2>
-                        </Col>
-                        <Col className="col-2">              
-                            <Form.Group controlId="v_a_a">
-                                <Form.Control as="select" defaultValue="1" value={state.v_a_a} onChange={handleSelect}>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                </Form.Control>
-                            </Form.Group>
-                        </Col>
-                        <Col className="col-3">
-                            <h4>a_T: </h4>
-                            <h4>{state.v_a_T}</h4>
-                        </Col>
-                        <Col className="col-8">
-                            
-                        </Col>
-                        
-                    </Row>
-                    
-                    
-                    <br />
-                    <Row className="justify-content-md-center">
-                        <Col className="col-3">
-                            <h4>A: </h4>
-                        </Col>
-                        <Col className="col-8">
-                            <h4>{state.v_A}</h4>
-                        </Col>
-                
-                        <Col className="col-3">
-                            <h4>A1: </h4>
-                        </Col>
-                        <Col className="col-8">
-                            <h4>{state.v_A1}</h4>
-                        </Col>
-                    </Row>
-                    <Row className="justify-content-md-center">
-                        <Col className="col-3">
-                            <h4>T1: </h4>
-                        </Col>
-                        <Col className="col-8">
-                            <h4>{state.v_T1}</h4>
-                        </Col>
-                    
-                        <Col className="col-3">
-                            <h4>T2: </h4>
-                        </Col>
-                        <Col className="col-8">
-                            <h4>{state.v_T2}</h4>
-                        </Col>
-                    </Row>
-                    <Row className="justify-content-md-center">
-                        <Col className="col-3">
-                            <h4>PL: </h4>
-                        </Col>
-                        <Col className="col-8">
-                            <h4>{state.v_PL}</h4>
-                        </Col>
-                    
-                        <Col className="col-3">
-                            <h4>NT2: </h4>
-                        </Col>
-                        <Col className="col-8">
-                            <h4>{state.v_N_T2}</h4>
-                        </Col>
-                    </Row>
-
-                    <Row className="form-row justify-content-md-center">
                         <Col className="col-3 text-center ml-4">
                             <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                         </Col>
                     </Row>
                     <Row className="form-row justify-content-md-center">
-                        <div id="outputMusic"></div>
+                        <div id="outputR"></div>
                     </Row>
-
-
-                    <Playback abc = {state.abcString}/>
+                    <hr />
+                    <Row className="form-row justify-content-md-center">
+                        <div id="outputMelody"></div>
+                    </Row>
+                    <hr />
+                  <Row className="form-row justify-content-md-center">
+                    <div id="outputSynced"></div>
+                  </Row>
+                  <Playback abc = {state.abcString}/>
                 </Form>
-                
-                
+                <br />
+                {pageLink}
               </Card.Body>
             </Card>
             <br />
@@ -294,134 +251,3 @@ function Ch8Generator() {
     }
 
 export default Ch8Generator;
-
-function sMakeR(a,b) {
-    let arr = [];
-    for(let i=0; i<5; i++) {
-        arr[i] = [];
-      }
-
-    for(let i=0; i<a*b; i++) {
-        arr[0].push(1);
-    }
-    arr[1].push(a*b);
-    for(let i=1; i<a*b; i++) {
-        arr[1].push('');
-    }
-    for(let i=0; i<b; i++) {
-        arr[2].push(a);
-        for(let j=1; j<a; j++) {
-            arr[2].push('');
-        }
-    }
-    for(let i=0; i<a; i++) {
-        arr[3].push(b);
-        for(let j=1; j<b; j++) {
-            arr[3].push('');
-        }
-    }
-    let j=1;
-    for(let i=a*b-1; i>-1; i--) {
-        
-        if(arr[2][i] !== '' || arr[3][i] !== '') {
-            arr[4][i] = j;
-            j=1;
-        } else {j++; arr[4][i]='';}
-    }
-
-    return arr;
-}
-
-function simpleToABC(arrIn, measureLength) {
-  let measure = Number(0);
-  let longNote = Number(0);
-    
-    
-    let arrOut = [];
-    for(let i=0; i<arrIn.length; i++) {
-        arrOut[i] = [];
-    }
-
-    for(let i=0; i<arrIn.length; i++) {
-        measure = measureLength;
-        for(let j=0; j<arrIn[i].length; j++) {
-          
-          if(arrIn[i][j] !== ''){
-            if(arrIn[i][j] <= measure) {
-              arrOut[i].push(pushNote(arrIn[i][j]));
-              measure = measure - arrIn[i][j];
-            } else if(arrIn[i][j] > measure) {
-                if(arrIn[i][j] >= measureLength) {
-                  
-                  arrOut[i].push(pushNote(measure)+'-|');
-                  longNote = arrIn[i][j] - measure;
-                  for(longNote; longNote > 0; longNote=longNote-measureLength) {
-                    arrOut[i].push(pushNote(measureLength)+'-|');
-                  }
-                  if(longNote > 0) {
-                    arrOut[i].push(pushNote(longNote));
-                  } else {
-                    arrOut[i].pop();
-                    arrOut[i].push(pushNote(measureLength)+'|');
-                  }
-                  measure = measureLength - longNote;
-                } else {
-                  arrOut[i].push(pushNote(measure)+'-|'+pushNote(arrIn[i][j]-measure));
-                  measure = measureLength - (arrIn[i][j]-measure);
-                }
-            }
-            
-            if(measure === 0) {
-              arrOut[i].push('|');
-              measure = measureLength;
-            }
-
-          }
-        }
-    }
-    return arrOut;
-}
-
-function pushNote(a) {
-  if(a === 5) {
-    return 'A4-A1';
-  } else if(a > 8) {
-    let output = new Array(['A8-']);
-    let count = a-8;
-    while(count > 8) {
-      output.push('A8-');
-      count = count-8;
-    }
-    output.push('A'+count);
-    return output.toString();
-  } else {return 'A'+a;}
-}
-
-/*
-    take in array that has the r output.
-    ratio of r output to melody, repeat r 
-    as needed to embed the melody into r.
- */
-
-function embedMelody(arrIn, melodyArray, repeatR) {
-    let arrOut = [];
-    
-    let n=0;
-    for(let i=0; i<repeatR; i++) {
-        for(let j in arrIn) {
-            
-            if(arrIn[j].includes("A")) {
-                arrOut.push(arrIn[j].replace('A',melodyArray[n%melodyArray.length]));
-                n++
-            } else {
-                arrOut.push(arrIn[j]);
-            }
-        }
-    }
-
-    return arrOut;
-}
-
-function feed(melodyArray, n) {
-    return melodyArray[n%melodyArray.length];
-}

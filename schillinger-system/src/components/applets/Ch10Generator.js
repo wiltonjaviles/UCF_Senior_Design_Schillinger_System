@@ -2,13 +2,36 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import abcjs from "abcjs";
 import '../.././Style.css';
-import Playback from './Playback';
+import Playback from '../Playback';
 
 function Ch10Generator() {
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch10generator" target="_blank" rel="noopener noreferrer">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button className="btn btn-light" onClick={window.close}>Close Window</button>
+  }
+
+  var tempA = "4";
+  var tempB = "4";
+  var tempC = "4";
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch10" ) {
+      tempA = old_data[i].a;
+      tempB = old_data[i].b;
+      tempC = old_data[i].c;
+      break;
+    }
+  }
+
   const [state , setState] = useState({
-    variableA : "4",
-    variableB : "4",
-    variableC: "4",
+    variableA : tempA,
+    variableB : tempB,
+    variableC: tempC,
     outputSteps: "",
     outputStepsG2: "",
     outputStepsB2: "",
@@ -30,6 +53,22 @@ function Ch10Generator() {
 
   const doAction = event => {
     event.preventDefault();
+
+    // need to remove previous version of ch5 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch10" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch10 = {"id":"book1ch10","title": "Generalization of Variation Techniques", "a":state.variableA, "b":state.variableB, "c": state.variableC}; 
+    old_data.unshift(book1ch10);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));
+
     if(state.variableA === -1 || state.variableB === -1 || state.variableC === -1) {
       alert("please fill out all of the fields!");
       return;
@@ -250,6 +289,8 @@ function Ch10Generator() {
             <Row>
               <Playback abc={state.abc}/>
             </Row>
+            <br />
+            {pageLink}
           </Card.Body>
         </Card>
         <br />

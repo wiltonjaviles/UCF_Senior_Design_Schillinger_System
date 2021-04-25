@@ -3,6 +3,24 @@ import React, { useState } from 'react';
 import '../.././Style.css';
 
 function Ch12Generator() {
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch12generator" target="_blank" rel="noopener noreferrer">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button className="btn btn-light" onClick={window.close}>Close Window</button>
+  }
+
+  var tempInput = "";
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch12" ) {
+      tempInput = old_data[i].input;
+      break;
+    }
+  }
 
   var  factF = "";
   var  factP = "";
@@ -16,7 +34,7 @@ function Ch12Generator() {
   
   const [state , setState] = useState({
     warning: "",
-    input : "",
+    input : tempInput,
     factorialFormula: "",
     factorialPlugIn: "",
     synchronizedFactorialFormula: "",
@@ -348,7 +366,24 @@ function Ch12Generator() {
   }
 
   const doAction = event => {
+
     event.preventDefault();
+
+    // need to remove previous version of ch3 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch12" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch12 = {"id":"book1ch12", "title":"Distributive Powers", "input": state.input}; 
+    old_data.unshift(book1ch12);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));
+
     var f = String(state.input);
     var n = 1;
     if (!f.includes("^")) {
@@ -449,6 +484,8 @@ function Ch12Generator() {
             <Row className="justify-content-md-center">
               <Button variant="secondary" onClick={clearResults}>Clear</Button>
             </Row>
+            <br />
+            {pageLink}
           </Card.Body>
         </Card>
         <br />

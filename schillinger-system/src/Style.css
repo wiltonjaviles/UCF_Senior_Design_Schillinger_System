@@ -39,6 +39,19 @@ nav {
   text-align: justify;
 }
 
+.bookTextTable{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+
+td {
+  padding: 8px;
+}
+
 .content-links {
   color: black;
   text-decoration: none;
@@ -62,6 +75,7 @@ nav {
 
 .equation{
   text-align: center;
+  font-weight: bold;
 }
 
 .generator-dropdown-menu {
@@ -162,4 +176,12 @@ nav {
 
 .progress-indicator {
   left: 0px;
+}
+
+.playback-card {
+  width: 25%
+}
+
+li {
+  text-align: justify;
 }

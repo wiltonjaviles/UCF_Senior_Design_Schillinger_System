@@ -2,12 +2,35 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
-import Playback from '../applets/Playback';
+import Playback from '../Playback';
 
 function Ch11Generator() {
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch11generator" target="_blank" rel="noopener noreferrer">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button className="btn btn-light" onClick={window.close}>Close Window</button>
+  }
+
+  var tempA = 3;
+  var tempB = 2;
+  
+   // grab the current array sitting in local storage
+   var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+   // If there is already a saved state of the applet we overwrite the default values
+   for (let i in old_data) {
+     if (old_data[i].id === "book1ch11" ) {
+       tempA = old_data[i].a;
+       tempB = old_data[i].b;
+       break;
+     }
+   }
+
   const [state , setState] = useState({
-    variableA : 3,
-    variableB : 2,
+    variableA : tempA,
+    variableB : tempB,
     rType : 'r by a',
     permuteBy : 'least common',
     OutputR : '',
@@ -28,7 +51,24 @@ function Ch11Generator() {
   }
 
   const generateR = event => {
+
     event.preventDefault();    
+    
+    // need to remove previous version of ch2 applet history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch11" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+     // use unshift to push the new applet ID to the front of the array
+     var book1ch11 = {"id":"book1ch11", "title": "Composition of Homogeneous Rhythmic Continuity", "a":state.variableA, "b":state.variableB}; 
+     old_data.unshift(book1ch11);
+
+     // update the schillinger applet array in localStorage
+     localStorage.setItem('schillArr', JSON.stringify(old_data));
+    
     const vA = Number(state.variableA);
     const vB = Number(state.variableB);
     var v = -1;
@@ -58,10 +98,10 @@ function Ch11Generator() {
       outStr = outStr.slice(0, -1);
     }
 
+    var threshold = 321;
+
     var outStrLC = rotateLeast(outStr.split("|"), v);
     var abcOutLC = "X:1\nK:C\n"+outStrLC+"\n";
-    
-    var threshold = 400;
     
     if(abcOutLC.length > threshold) {
       LCTooBig = true;
@@ -130,8 +170,8 @@ function Ch11Generator() {
               <h1>Rotate Generator</h1>
               <h3>Instructions</h3>
               <p>
-                Select a and b, and the type of resultant to make, then press submit to see one rotation of each method of rotation in this
-                chapter.
+                Select a and b, then press submit to see one rotation of the resultant by each method of rotation in this
+                chapter. Some methods produce so much music for the higher resultants are too big to display on the page.
               </p>
               <br />
               <Form.Row className="align-items-bottom justify-content-md-center">
@@ -172,24 +212,34 @@ function Ch11Generator() {
               </Form.Row>
               <br />
               <Row className="justify-content-md-center">
-                <h4>Result: </h4>
+                <h4>Rotate by Least Common Divisor: </h4>
               </Row>
               <Row className="justify-content-md-center">
                 <div id="outputLC"></div>
               </Row>
               <Row className="justify-content-center"><p>{state.LCTooBig}</p></Row>
-              <Playback abc = {state.abcStringLC}/> 
+              <Playback abc = {state.abcStringLC}/>
+              <hr />
+              <Row className="justify-content-md-center">
+                <h4>Rotate by Measures: </h4>
+              </Row>
               <Row className="justify-content-md-center">
                 <div id="outputM"></div>
               </Row>
               <Row className="justify-content-center"><p>{state.MTooBig}</p></Row>
-              <Playback abc = {state.abcStringM}/> 
+              <Playback abc = {state.abcStringM}/>
+              <hr />
+              <Row className="justify-content-md-center">
+                <h4>Rotate by Attacks: </h4>
+              </Row>
               <Row className="justify-content-md-center">
                 <div id="outputA"></div>
               </Row>
               <Row className="justify-content-center"><p>{state.ATooBig}</p></Row>
               <Playback abc = {state.abcStringA}/>
             </Form>
+            <br />
+            {pageLink}
           </Card.Body>
         </Card>
         <br />

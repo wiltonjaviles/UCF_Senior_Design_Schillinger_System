@@ -4,25 +4,68 @@ import '../.././Style.css';
 import abcjs from "abcjs";
 
 function Ch9Generator() {
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch9generator" target="_blank" rel="noopener noreferrer">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button className="btn btn-light" onClick={window.close}>Close Window</button>
+  }
+
+  var tempA = '1';
+  var tempSuppA = '';
+  var tempB = '1';
+  var tempSuppB = '';
+  var tempC = '1';
+  var tempSuppC = '';
+  var tempD = '1';
+  var tempSuppD = '';
+  var tempPoly1 = 'a';
+  var tempPoly2 = 'a';
+  var tempPoly3 = '';
+  var tempPoly4 = '';
+  var tempDirection = 'Clockwise';
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch9" ) {
+      tempA = old_data[i].a;
+      tempSuppA = old_data[i].aSupp;
+      tempB = old_data[i].b;
+      tempSuppB = old_data[i].bSupp;
+      tempC = old_data[i].c;
+      tempSuppC = old_data[i].cSupp;
+      tempD = old_data[i].d
+      tempSuppD = old_data[i].dSupp;
+      tempPoly1 = old_data[i].poly1;
+      tempPoly2 = old_data[i].poly2;
+      tempPoly3 = old_data[i].poly3;
+      tempPoly4 = old_data[i].poly4;
+      tempDirection = old_data[i].direction;
+      break;
+    }
+  }
+
   const [state , setState] = useState({
-    variableA : '1',
-    supplementA : '',
-    variableB : '1',
-    supplementB : '',
-    variableC : '1',
-    supplementC : '',
-    variableD : '1',
-    supplementD : '',
-    poly1 : 'a',
-    poly2 : 'a',
-    poly3 : '',
-    poly4 : '',
+    variableA : tempA,
+    supplementA : tempSuppA,
+    variableB : tempB,
+    supplementB : tempSuppB,
+    variableC : tempC,
+    supplementC : tempSuppC,
+    variableD : tempD,
+    supplementD : tempSuppD,
+    poly1 : tempPoly1,
+    poly2 : tempPoly2,
+    poly3 : tempPoly3,
+    poly4 : tempPoly4,
     Polynomial : '',
     DefineA : '',
     DefineB : '',
     DefineC : '',
     DefineD : '',
-    direction : 'Clockwise',
+    direction : tempDirection,
     Result : ''
   })
 
@@ -35,7 +78,40 @@ function Ch9Generator() {
   }
 
   const generateR = event => {
-    event.preventDefault();    
+
+    event.preventDefault();
+    
+    // need to remove previous version of ch7 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch9" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+    
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch9 = {
+      "id": "book1ch9", 
+      "a": state.variableA, 
+      "aSupp": state.supplementA, 
+      "b": state.variableB, 
+      "bSupp": state.supplementB,
+      "c": state.variableC,
+      "cSupp": state.supplementC,
+      "d": state.variableD,
+      "dSupp": state.supplementD,
+      "poly1": state.poly1,
+      "poly2": state.poly2,
+      "poly3": state.poly3,
+      "poly4": state.poly4,
+      "direction": state.direction,
+      "title": "Homogeneous Simultaneity and Continuity (Variations)"
+    }
+    old_data.unshift(book1ch9);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));    
+
     let a = defineVariable(state.variableA,state.supplementA);
     let b = defineVariable(state.variableB,state.supplementB);
     let c = defineVariable(state.variableC,state.supplementC);
@@ -235,15 +311,6 @@ function Ch9Generator() {
                     <Button variant="secondary" type="submit" className="float-right" onClick={generateR}>Generate</Button>
                   </Col>
                 </Row>
-
-                <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>Polynomial: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.Polynomial}</h4>
-                    </Col>
-                </Row>
                 <Row className="justify-content-md-center">
                     <Col className="col-3">
                         <h4>A: </h4>
@@ -271,17 +338,11 @@ function Ch9Generator() {
                     </Col>
                 </Row>
                 <Row className="justify-content-md-center">
-                    <Col className="col-3">
-                        <h4>Result: </h4>
-                    </Col>
-                    <Col className="col-2">
-                        <h4>{state.Result}</h4>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
                   <div id="abcoutput"></div>
                 </Row>
             </Form>
+            <br />
+            {pageLink}
           </Card.Body>
         </Card>
         <br />
@@ -392,25 +453,25 @@ function definePolynomial(a,b,c,d,p1,p2,p3,p4) {
 }
 
 
-function measureNumbersInString(stringIn) {
-  let n=0;
+// function measureNumbersInString(stringIn) {
+//   let n=0;
 
-  for(let i in stringIn) {
-    if(stringIn[i] === '1') {
-      n+=1;
-    } else if(stringIn[i] === '2') {
-      n+=2;
-    } else if(stringIn[i] === '3') {
-      n+=3;
-    } else if(stringIn[i] === '4') {
-      n+=4;
-    } else if(stringIn[i] === '5') {
-      n+=5;
-    }
-  }
+//   for(let i in stringIn) {
+//     if(stringIn[i] === '1') {
+//       n+=1;
+//     } else if(stringIn[i] === '2') {
+//       n+=2;
+//     } else if(stringIn[i] === '3') {
+//       n+=3;
+//     } else if(stringIn[i] === '4') {
+//       n+=4;
+//     } else if(stringIn[i] === '5') {
+//       n+=5;
+//     }
+//   }
 
-  return n;
-}
+//   return n;
+// }
 
 function rotate(arrIn, direction) {
   let arrOut = [];

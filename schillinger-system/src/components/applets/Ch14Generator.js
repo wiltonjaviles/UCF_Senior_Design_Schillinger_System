@@ -2,13 +2,32 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import abcjs from "abcjs";
 import '../.././Style.css';
-import Playback from './Playback';
+import Playback from '../Playback';
 
 function Ch14Generator() {
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch14generator" target="_blank" rel="noopener noreferrer">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button className="btn btn-light" onClick={window.close}>Close Window</button>
+  }
+
+  var tempVSeries = "";
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch14" ) {
+      tempVSeries = old_data[i].vSeries;
+      break;
+    }
+  }
+
   const [state , setState] = useState({
     vElement : "",
     vMeasure : "",
-    vSeries : "",
+    vSeries : tempVSeries,
     resultArray: "",
     reverseResultArray: "",
     ABC: "",
@@ -41,12 +60,24 @@ function Ch14Generator() {
 
   const createAcceleration = event => {
     event.preventDefault();
-    var inputSeries = String(state.vSeries);
-    if(inputSeries === "Select Series") {
-      alert("Please select a series!");
-      clearResults();
-      return;
+
+    // need to remove previous version of ch3 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch14" ) {
+        old_data.splice(i, 1)
+        break;
+      }
     }
+
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch14 = {"id":"book1ch14", "title":"Rhythms of Variable Velocities", "vSeries":state.vSeries}; 
+    old_data.unshift(book1ch14);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));
+
+    var inputSeries = String(state.vSeries);
+    
     var seriesArray = [];
     var reverseSeriesArray = [];
     var seriesSum = -1;
@@ -128,7 +159,7 @@ function Ch14Generator() {
               <h1>Chapter 14 Accelerator</h1>
               <h3>Instructions</h3>
               <p>
-                Select a series from the dropdown and view the acceleration, decceleration, and resultant for that series.
+                Select a series from the dropdown and view the rallentando, accelerando, and resultant of both for that series.
               </p>
               <br />
               <Form.Row className="justify-content-center">
@@ -137,8 +168,7 @@ function Ch14Generator() {
                 </Col>
                 <Col className="col-3">
                   <Form.Group controlId="vSeries">
-                    <Form.Control as="select" defaultValue="" value={state.vSeries} onChange={handleSelect}>
-                      <option>Select Series</option>
+                    <Form.Control as="select" value={state.vSeries} onChange={handleSelect}>
                       <option>Natural Harmonic Series</option>
                       <option>Arithmetical Progression</option>
                       <option>Geometrical Progression</option>
@@ -161,6 +191,8 @@ function Ch14Generator() {
               <div id="outputC1"></div>
             </Row>
             <Playback abc={state.abcString} />
+            <br />
+            {pageLink}
           </Card.Body>
         </Card>
         <br />

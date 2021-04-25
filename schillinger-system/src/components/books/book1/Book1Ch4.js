@@ -2,8 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
 import Ch4Generator from '../../applets/Ch4Generator';
-import Speech from 'react-speech';
-import TextToSpeech from '../../applets/TextToSpeech';
+import TextToSpeech from '../../TextToSpeech';
 
 function Book1Ch4() {
   return (
@@ -17,17 +16,17 @@ function Book1Ch4() {
           text="
           Chapter 4. The Techniques of Fractioning.
 
-          The first process to generate rhythmic resultants is not going to work for all musical purposes as it is too “rich” in its variety for all uses. The following second process helps this issue by providing a higher degree of uniformity.
+          The first process to generate rhythmic resultants is not going to work for all musical purposes as it is too “rich” in its variety for all uses. The following, second, process helps this issue by providing a higher degree of uniformity.
           The groups derived from the second process are referred to as “rhythmic resultants with fractioning around the axis of symmetry.”
-          Symbols: a ÷ b and r ā ÷ b. note the underline.
+          Symbols: a ÷ b and r ae ÷ b. note the underline.
           The process of synchronization is:
-          1. Take the product of ā by ā (ie ā 2 ). ā becomes its own complementary factor.
+          1. Take the product of ae by ae (ie ae squared ). ae becomes its own complementary factor.
           2. Use a as a complementary factor of b. (ie b appears a times)
-          3. The minor generator completes itself before the major generator. Lets call the first group of the minor generator b1. Start b1 at the beginning of the first phase of ā . Start b2 at the beginning of the second phase of a. And repeat this process until both generators complete at the same time.
+          3. The minor generator completes itself before the major generator. Lets call the first group of the minor generator b1. Start b1 at the beginning of the first phase of ae . Start b2 at the beginning of the second phase of a. And repeat this process until both generators complete at the same time.
           To find the total number of b groups:
-          Nb=ā minus b+1
+          Nb=ae minus b+1
           
-          (Fig. 26) Note the alignment of the b groups to the waveform of ā. This is what step 3 means when you “start b2 at the beginning of the second phase of a”, with the second phase being the change in the waveform. (I’m using waveform informally here).
+          (Fig. 26) Note the alignment of the b groups to the waveform of ae. This is what step 3 means when you “start b2 at the beginning of the second phase of a”, with the second phase being the change in the waveform. (I’m using waveform informally here).
           
           (Fig. 27) This is a musical note representation of Figure 26.
           
@@ -37,7 +36,8 @@ function Book1Ch4() {
           This will give us the number of bars the resultant will have. It will always have a remainder. The denominator of the remainder will tell us how many times the resultant will have to be repeated.
           " 
         />
-          <p class="bookText">The first process to generate rhythmic resultants is not going to work for all musical purposes as it is too “rich” in its variety for all uses. The following second process helps this issue by providing a higher degree of uniformity.</p>
+          <br />
+          <p class="bookText">The first process to generate rhythmic resultants is not going to work for all musical purposes as it is too “rich” in its variety for all uses. The following, second, process helps this issue by providing a higher degree of uniformity.</p>
           <p class="bookText">The groups derived from the second process are referred to as “rhythmic resultants with fractioning around the axis of symmetry.”</p>
           <p class="bookText">Symbols:   <u>a ÷ b</u> and r<sub><u>a ÷ b</u></sub> note the underline.</p>
           <p class="bookText">The process of synchronization is:</p>
@@ -48,43 +48,57 @@ function Book1Ch4() {
           </ol>
           <p class="bookText">To find the total number of b groups:</p>
           <p class="bookText">         N<sub>b</sub>=a-b+1</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img1.png" alt="book1ch4img1"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img1.png" alt="book1ch4img1"></img></Col>
+          </Row>
           <br />
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img2.png" alt="book1ch4img2"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img2.png" alt="book1ch4img2"></img></Col>
+          </Row>
           <p class="bookText">(Fig. 26) Note the alignment of the b groups to the waveform of a. This is what step 3 means when you “start b<sub>2</sub> at the beginning of the second phase of a", with the second phase being the change in the waveform. (I’m using waveform informally here).</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img3.png" alt="book1ch4img3"></img>
+          <br />
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img3.png" alt="book1ch4img3"></img></Col>
+          </Row>
           <p class="bookText">(Fig. 27) This is a musical note representation of Figure 26.</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img4.png" alt="book1ch4img4"></img>
           <br />
-          <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img5.png" alt="book1ch4img5"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img4.png" alt="book1ch4img4"></img></Col>
+          </Row>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img5.png" alt="book1ch4img5"></img></Col>
+          </Row>
           <p class="bookText">Grouping by b produces syncopated rhythms. The resultant and the bar do not close at the same time during the first run of the resultant. This means the resultant needs to be repeated so they stop at the same time.</p>
           <p class="bookText">We can find when they will align from the following:</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img6.png" alt="book1ch4img6"></img>
+          <Row className="justify-content-center">
+          <Col className="col-4"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img6.png" alt="book1ch4img6"></img></Col>
+          </Row>
           <p class="bookText">This will give us the number of bars the resultant will have. It will always have a remainder. The denominator of the remainder will tell us how many times the resultant will have to be repeated.</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img7.png" alt="book1ch4img7"></img>
-          <br />
-          <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img8.png" alt="book1ch4img8"></img>
-          <br />
-          <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img9.png" alt="book1ch4img9"></img>
-          <br />
-          <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img10.png" alt="book1ch4img10"></img>
-          <br />
-          <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img11.png" alt="book1ch4img11"></img>
-          <br />
-          <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img12.png" alt="book1ch4img12"></img>
-          <br />
-          <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img13.png" alt="book1ch4img13"></img>
-          <br />
-          <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img14.png" alt="book1ch4img14"></img>
+          <Row className="justify-content-center">
+          <Col className="col-4"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img7.png" alt="book1ch4img7"></img></Col>
+          </Row>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img8.png" alt="book1ch4img8"></img></Col>
+          </Row>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img9.png" alt="book1ch4img9"></img></Col>
+          </Row>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img10.png" alt="book1ch4img10"></img></Col>
+          </Row>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img11.png" alt="book1ch4img11"></img></Col>
+          </Row>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img12.png" alt="book1ch4img12"></img></Col>
+          </Row>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img13.png" alt="book1ch4img13"></img></Col>
+          </Row>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img14.png" alt="book1ch4img14"></img></Col>
+          </Row>
           <br />
           <br />
           <Ch4Generator />      

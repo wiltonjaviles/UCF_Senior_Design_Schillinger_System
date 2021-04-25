@@ -2,13 +2,37 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
-import Playback from '../applets/Playback';
+import Playback from '../Playback';
 
 function Ch7Generator() {
+
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch7generator" target="_blank" rel="noopener noreferrer">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button className="btn btn-light" onClick={window.close}>Close Window</button>
+  }
+
+  var tempA = 3;
+  var tempB = 2;
+  var tempAttacks = 2;
+  var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+  // If there is already a saved state of the applet we overwrite the default values
+  for (let i in old_data) {
+    if (old_data[i].id === "book1ch7" ) {
+      tempA = old_data[i].a;
+      tempB = old_data[i].b;
+      tempAttacks = old_data[i].attacks;
+      break;
+    }
+  }
+
   const [state , setState] = useState({
-    variableA : '3',
-    variableB : '2',
-    attacks : '2',
+    variableA : tempA,
+    variableB : tempB,
+    attacks : tempAttacks,
     r: "",
     abcString: ""
   })
@@ -22,7 +46,24 @@ function Ch7Generator() {
   }
 
   const generateR = event => {
-    event.preventDefault();    
+    
+    event.preventDefault();   
+    
+    // need to remove previous version of ch7 history if it exists
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch7" ) {
+        old_data.splice(i, 1)
+        break;
+      }
+    }
+
+    // use unshift to push the new applet ID to the front of the array
+    var book1ch7 = {"id":"book1ch7", "title":"Resultants Applied to Instrumental Forms", "a":state.variableA, "b":state.variableB, "attacks": state.attacks}; 
+    old_data.unshift(book1ch7);
+
+    // update the schillinger applet array in localStorage
+    localStorage.setItem('schillArr', JSON.stringify(old_data));
+
     var a = Number(state.variableA);
     var b = Number(state.variableB);
     var attacks = Number(state.attacks);
@@ -68,7 +109,7 @@ function Ch7Generator() {
               <h1>Waltz Walker</h1>
               <h3>Instructions</h3>
               <p>
-                Enter generator a and b, select number of attacks and the base.
+                Enter generator a and b, select number of attacks and the base to see how the resultant is synchronized with the instrumental group.
               </p>
               <br />
                 <Row className="form-row justify-content-md-center">
@@ -137,6 +178,8 @@ function Ch7Generator() {
               <div id="outputC2"></div>
             </Row>
             <Playback abc={state.abcString}/>
+            <br />
+            {pageLink}
           </Card.Body>
         </Card>
         <br />
