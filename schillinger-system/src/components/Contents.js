@@ -14,9 +14,9 @@ function Contents() {
           <Col className="col-6">
             <h1>Table of Contents</h1>
             <hr />
-            <Link to="/overture" className="content-links"><h5 className="text-justify">Overture</h5></Link>
+            <Link to="/overture" className="content-links"><h5 className="text-justify"><strong>Overture</strong></h5></Link>
             <hr />
-            <Link to="/intro" className="content-links"><h5 className="text-justify">Introduction</h5></Link>
+            <Link to="/intro" className="content-links"><h5 className="text-justify"><strong>Introduction</strong></h5></Link>
             <hr />
             <Link to="/book1" className="content-links"><h5 className="text-justify"><strong>Book One:</strong> Theory of Rhythm</h5></Link>
             <hr />
