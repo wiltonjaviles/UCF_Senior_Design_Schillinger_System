@@ -6,6 +6,14 @@ import Playback from '../applets/Playback';
 
 function Ch7Generator() {
 
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch7generator" target="_blank">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button onClick={window.close}>Close Window</button>
+  }
+
   var tempA = 3;
   var tempB = 2;
   var tempAttacks = 2;
@@ -170,6 +178,8 @@ function Ch7Generator() {
               <div id="outputC2"></div>
             </Row>
             <Playback abc={state.abcString}/>
+            <br />
+            {pageLink}
           </Card.Body>
         </Card>
         <br />

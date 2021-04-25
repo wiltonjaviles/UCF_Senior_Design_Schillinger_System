@@ -5,6 +5,13 @@ import abcjs from "abcjs";
 import Playback from '../applets/Playback';
 
 function Ch11Generator() {
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch11generator" target="_blank">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button onClick={window.close}>Close Window</button>
+  }
 
   var tempA = 3;
   var tempB = 2;
@@ -231,6 +238,8 @@ function Ch11Generator() {
               <Row className="justify-content-center"><p>{state.ATooBig}</p></Row>
               <Playback abc = {state.abcStringA}/>
             </Form>
+            <br />
+            {pageLink}
           </Card.Body>
         </Card>
         <br />

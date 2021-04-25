@@ -4,6 +4,14 @@ import '../.././Style.css';
 
 function Ch3Generator() {
 
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch3generator" target="_blank">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button onClick={window.close}>Close Window</button>
+  }
+
   // Define the variables to be used for applet history and dynamic applet input
   var tempFormA = 'a';
   var tempFormB = 'b';
@@ -228,6 +236,8 @@ function Ch3Generator() {
                 <h4>{state.resultB}</h4>
               </Col>
             </Row>
+            <br />
+            {pageLink}
           </Card.Body>
         </Card>
         <br />

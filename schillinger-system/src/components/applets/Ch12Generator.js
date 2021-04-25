@@ -3,6 +3,13 @@ import React, { useState } from 'react';
 import '../.././Style.css';
 
 function Ch12Generator() {
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch12generator" target="_blank">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button onClick={window.close}>Close Window</button>
+  }
 
   var tempInput = "";
   var old_data = JSON.parse(localStorage.getItem('schillArr'));
@@ -477,6 +484,8 @@ function Ch12Generator() {
             <Row className="justify-content-md-center">
               <Button variant="secondary" onClick={clearResults}>Clear</Button>
             </Row>
+            <br />
+            {pageLink}
           </Card.Body>
         </Card>
         <br />

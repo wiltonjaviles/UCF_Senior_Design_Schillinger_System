@@ -5,6 +5,13 @@ import '../.././Style.css';
 import Playback from './Playback';
 
 function Ch14Generator() {
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch14generator" target="_blank">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button onClick={window.close}>Close Window</button>
+  }
 
   var tempVSeries = "";
   var old_data = JSON.parse(localStorage.getItem('schillArr'));
@@ -184,6 +191,8 @@ function Ch14Generator() {
               <div id="outputC1"></div>
             </Row>
             <Playback abc={state.abcString} />
+            <br />
+            {pageLink}
           </Card.Body>
         </Card>
         <br />

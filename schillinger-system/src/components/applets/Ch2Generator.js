@@ -6,11 +6,20 @@ import Playback from '../applets/Playback';
 import {r,toABC} from '../functions/./generators';
 
 function Ch2Generator() {
+  
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch2generator" target="_blank">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button onClick={window.close}>Close Window</button>
+  }
 
   // Define the variables to be used for applet history and dynamic applet input
   var tempA = 3;
   var tempB = 2;
   var tempGroup = 'a'
+
 
   // grab the current array sitting in local storage
   var old_data = JSON.parse(localStorage.getItem('schillArr'));
@@ -187,6 +196,8 @@ function Ch2Generator() {
               </Row>
               <Playback abc = {state.abcString}/>
             </Form>
+            <br/>
+            {pageLink}
           </Card.Body>
         </Card>
         <br />

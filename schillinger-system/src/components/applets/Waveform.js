@@ -5,6 +5,14 @@ import JXGBoard from 'jsxgraph-react-js'
 
 function Waveform() {
 
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch1waveform" target="_blank">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button onClick={window.close}>Close Window</button>
+  }
+
   var logicJS = (brd) => {
     brd.suspendUpdate();
     var a = brd.create('slider', [[-5.5, 5], [-3.5, 5], [0, 1, 10]], { name: 'amplitude' });
@@ -46,6 +54,7 @@ function Waveform() {
                   <p>Drag the point along the wave to see the exact coordinates of the point. </p>
               </Col>
             </Row>
+            {pageLink}
           </Card.Body>
         </Card>
       </Container>

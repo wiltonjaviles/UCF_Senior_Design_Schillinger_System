@@ -8,6 +8,15 @@ function Pendulum() {
 
   var angle = 60;
   var duration = 3000;
+
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch1pendulum" target="_blank">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button onClick={window.close}>Close Window</button>
+  }
+
   const [state , setState] = useState({
     angle : 60,
     duration : 3000,
@@ -75,7 +84,7 @@ function Pendulum() {
             Use the sliders to adjust the starting angle of the pendulum and the length of the period 
             of the pendulum. Observe how both affect the speed of the pendulum's movement!
           </p>
-          <Link to="/ch1pendulum"> Open Applet</Link>
+          {pageLink}
         </Card.Body>
       </Card>
       <br />

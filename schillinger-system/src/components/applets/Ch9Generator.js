@@ -4,6 +4,13 @@ import '../.././Style.css';
 import abcjs from "abcjs";
 
 function Ch9Generator() {
+  // Dynamic link/button based on whether app is in chapter page or new tab
+  var pageLink = "";
+  if (window.location.href.includes("book1")) {
+    pageLink = <a href="/ch9generator" target="_blank">Open Applet in New Tab</a>;
+  } else {
+    pageLink = <button onClick={window.close}>Close Window</button>
+  }
 
   var tempA = '1';
   var tempSuppA = '';
@@ -351,6 +358,8 @@ function Ch9Generator() {
                   <div id="abcoutput"></div>
                 </Row>
             </Form>
+            <br />
+            {pageLink}
           </Card.Body>
         </Card>
         <br />
