@@ -112,7 +112,11 @@ function Home() {
         <Row>
           <Col className="col-1"></Col>
           <Col className="col-3"><img className="img-fluid img-thumbnail" src="images/teamphotos/MichaelDuke.png" alt="DukePhoto"></img><h5>Document Lead, Applet Design</h5></Col>
-          <Col><p className="bookText">Stuff about Duke</p></Col>
+          <Col>
+            <p className="bookText">
+            Michael Duke is a computer science student from Orlando. He also has a vocal performance bachelors, and has a wife and also a son, who at the time of writing is reasonably small.  Duke uses his free time studying foreign languages and playing games.
+            </p>
+          </Col>
           <Col className="col-1"></Col>
         </Row>
         <br />
