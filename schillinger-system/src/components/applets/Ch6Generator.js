@@ -20,6 +20,7 @@ function Ch6Generator() {
   var tempB = 3;
   var tempC = 4;
   var tempGroup = 'a';
+  var tempShow = 'Show Rs';
   var old_data = JSON.parse(localStorage.getItem('schillArr'));
 
 
@@ -29,7 +30,8 @@ function Ch6Generator() {
       tempA = old_data[i].a;
       tempB = old_data[i].b;
       tempC = old_data[i].c;
-      tempGroup = old_data[i].groupBy
+      tempGroup = old_data[i].groupBy;
+      tempShow = old_data[i].showing;
       break;
     }
   }
@@ -40,11 +42,11 @@ function Ch6Generator() {
   console.log(tempGroup);
 
   const [state , setState] = useState({
-    variableA : 2,
-    variableB : 3,
-    variableC : 5,
-    groupBy : 'ab',
-    showing : 'Show Rs',
+    variableA : tempA,
+    variableB : tempB,
+    variableC : tempC,
+    groupBy : tempGroup,
+    showing : tempShow,
     OutputABC : '',
     abcString: ""
   })
@@ -71,7 +73,7 @@ function Ch6Generator() {
     }
 
      // use unshift to push the new applet ID to the front of the array
-     var book1ch6 = {"id":"book1ch6", "title":"Utilization of Three or More Generators", "a":state.variableA, "b":state.variableB, "c": state.variableC, 'groupBy': state.groupBy}; 
+     var book1ch6 = {"id":"book1ch6", "title":"Utilization of Three or More Generators", "a":state.variableA, "b":state.variableB, "c": state.variableC, 'groupBy': state.groupBy, "showing":state.showing}; 
      old_data.unshift(book1ch6);
  
      // update the schillinger applet array in localStorage
