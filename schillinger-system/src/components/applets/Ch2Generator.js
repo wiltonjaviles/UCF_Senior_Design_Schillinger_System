@@ -12,7 +12,7 @@ function Ch2Generator() {
   if (window.location.href.includes("book1")) {
     pageLink = <a href="/ch2generator" target="_blank" rel="noopener noreferrer">Open Applet in New Tab</a>;
   } else {
-    pageLink = <button onClick={window.close}>Close Window</button>
+    pageLink = <button className="btn btn-light" onClick={window.close}>Close Window</button>
   }
 
   // Define the variables to be used for applet history and dynamic applet input
