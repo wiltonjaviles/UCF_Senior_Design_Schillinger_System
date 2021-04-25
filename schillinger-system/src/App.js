@@ -64,6 +64,14 @@ import Ch13Generator from './components/applets/Ch13Generator';
 import Ch14Generator from './components/applets/Ch14Generator';
 
 function App() {
+
+  if (localStorage.getItem("schillArr") === null) {
+
+    // make a new array to hold our schillinger applet history, place it in localStorage
+    return localStorage.setItem('schillArr', '["empty","empty","empty","empty","empty","empty","empty","empty","empty","empty"]');
+  
+  }
+
   return (
     <div className="App">
       <Router>
