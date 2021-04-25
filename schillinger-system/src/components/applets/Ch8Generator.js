@@ -6,14 +6,32 @@ import Playback from '../applets/Playback';
 import {r,r_,toABC} from '../functions/./generators';
 
 function Ch8Generator() {
+
+    var tempR1 = 3;
+    var tempR2 = 2;
+    var tempCType = 'R';
+    var tempA_A = 1;
+    var old_data = JSON.parse(localStorage.getItem('schillArr'));
+
+    // If there is already a saved state of the applet we overwrite the default values
+    for (let i in old_data) {
+      if (old_data[i].id === "book1ch8" ) {
+        tempR1 = old_data[i].c_r1;
+        tempR2 = old_data[i].c_r2;
+        tempCType = old_data[i].c_type;
+        tempA_A = old_data[i].c_a_a
+        break;
+      }
+    }
+
     const [state , setState] = useState({
-        c_r1 : 3,
-        c_r2 : 2,
-        c_type : 'R',
+        c_r1 : tempR1,
+        c_r2 : tempR2,
+        c_type : tempCType,
         c_rOut : '',
         c_pli : 1,
         c_pla : 1,
-        c_a_a : 1,
+        c_a_a : tempA_A,
         c_PL : '',
         c_a_T : '',
         c_T1 : '',
@@ -57,7 +75,20 @@ function Ch8Generator() {
       const generateR = event => {
         event.preventDefault();    
 
-        
+        // need to remove previous version of ch3 history if it exists
+        for (let i in old_data) {
+          if (old_data[i].id === "book1ch8" ) {
+            old_data.splice(i, 1)
+            break;
+          }
+        }        
+
+        // use unshift to push the new applet ID to the front of the array
+        var book1ch8 = {"id":"book1ch8", "title": "Coordination of Time Structures", "c_r1":state.c_r1, "c_r2":state.c_r2, "c_type": state.c_type, "c_a_a": state.c_a_a}; 
+        old_data.unshift(book1ch8);
+
+        // update the schillinger applet array in localStorage
+        localStorage.setItem('schillArr', JSON.stringify(old_data));
         
         if(state.c_type==='R') {
             baseR = r(state.c_r1,state.c_r2,state.c_r1);
