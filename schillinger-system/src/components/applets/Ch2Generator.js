@@ -2,8 +2,8 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
-import Playback from '../applets/Playback';
-import {r,toABC} from '../functions/./generators';
+import Playback from '../Playback';
+import {r,toABC} from '../functions/generators';
 
 function Ch2Generator() {
   

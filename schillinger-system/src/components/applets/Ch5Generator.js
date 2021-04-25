@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from 'abcjs';
 import Playback from '../Playback';
-import {balance,expand,contract,toABC} from '../functions/./generators';
+import {balance,expand,contract,toABC} from '../functions/generators';
 
 function Ch5Generator() {
 

@@ -1,5 +1,5 @@
 import {Container, Card, Row, Button, ButtonToolbar, ButtonGroup} from 'react-bootstrap' 
-import '../.././Style.css';
+import '.././Style.css';
 
 function TextToSpeech(props) {
   var isPlaying = false;

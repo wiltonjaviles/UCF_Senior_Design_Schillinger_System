@@ -2,7 +2,7 @@ import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
 import abcjs from "abcjs";
-import Playback from '../applets/Playback';
+import Playback from '../Playback';
 
 function Ch11Generator() {
   // Dynamic link/button based on whether app is in chapter page or new tab

@@ -2,8 +2,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
 import Ch6Generator from '../../applets/Ch6Generator';
-import TextToSpeech from '../../applets/TextToSpeech';
-import Playback from '../../applets/Playback';
+import TextToSpeech from '../../TextToSpeech';
+import Playback from '../../Playback';
 import {r3,toABC} from '../../functions/generators';
 
 

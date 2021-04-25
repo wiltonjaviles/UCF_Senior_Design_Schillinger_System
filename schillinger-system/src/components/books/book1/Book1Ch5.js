@@ -2,8 +2,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../../.././Style.css';
 import Ch5Generator from '../../applets/Ch5Generator';
-import TextToSpeech from '../../applets/TextToSpeech';
-import Playback from '../../applets/Playback';
+import TextToSpeech from '../../TextToSpeech';
+import Playback from '../../Playback';
 import {balance, expand, contract, toABC} from '../../functions/generators';
 
 function Book1Ch5() {

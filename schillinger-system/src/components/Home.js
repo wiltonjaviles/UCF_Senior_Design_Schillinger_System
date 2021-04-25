@@ -2,7 +2,7 @@ import '.././Style.css';
 // import isAuthenticated from '.././components/authUser';
 import React from 'react';
 import { Container, Row, Col} from 'react-bootstrap';
-import TextToSpeech from "./applets/TextToSpeech";
+import TextToSpeech from "./TextToSpeech";
 
 function Home() {
   return (
