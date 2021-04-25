@@ -48,49 +48,77 @@ function Book1Ch4() {
           </ol>
           <p class="bookText">To find the total number of b groups:</p>
           <p class="bookText">         N<sub>b</sub>=a-b+1</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img1.png" alt="book1ch4img1"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img1.png" alt="book1ch4img1"></img></Col>
+          </Row>
           <br />
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img2.png" alt="book1ch4img2"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img2.png" alt="book1ch4img2"></img></Col>
+          </Row>
           <p class="bookText">(Fig. 26) Note the alignment of the b groups to the waveform of a. This is what step 3 means when you “start b<sub>2</sub> at the beginning of the second phase of a", with the second phase being the change in the waveform. (I’m using waveform informally here).</p>
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img3.png" alt="book1ch4img3"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img3.png" alt="book1ch4img3"></img></Col>
+          </Row>
           <p class="bookText">(Fig. 27) This is a musical note representation of Figure 26.</p>
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img4.png" alt="book1ch4img4"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img4.png" alt="book1ch4img4"></img></Col>
+          </Row>
           <br />
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img5.png" alt="book1ch4img5"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img5.png" alt="book1ch4img5"></img></Col>
+          </Row>
           <br />
           <br />
           <p class="bookText">Grouping by b produces syncopated rhythms. The resultant and the bar do not close at the same time during the first run of the resultant. This means the resultant needs to be repeated so they stop at the same time.</p>
           <p class="bookText">We can find when they will align from the following:</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img6.png" alt="book1ch4img6"></img>
+          <Row className="justify-content-center">
+          <Col className="col-4"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img6.png" alt="book1ch4img6"></img></Col>
+          </Row>
           <br />
           <br />
           <p class="bookText">This will give us the number of bars the resultant will have. It will always have a remainder. The denominator of the remainder will tell us how many times the resultant will have to be repeated.</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img7.png" alt="book1ch4img7"></img>
+          <Row className="justify-content-center">
+          <Col className="col-4"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img7.png" alt="book1ch4img7"></img></Col>
+          </Row>
           <br />
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img8.png" alt="book1ch4img8"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img8.png" alt="book1ch4img8"></img></Col>
+          </Row>
           <br />
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img9.png" alt="book1ch4img9"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img9.png" alt="book1ch4img9"></img></Col>
+          </Row>
           <br />
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img10.png" alt="book1ch4img10"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img10.png" alt="book1ch4img10"></img></Col>
+          </Row>
           <br />
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img11.png" alt="book1ch4img11"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img11.png" alt="book1ch4img11"></img></Col>
+          </Row>
           <br />
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img12.png" alt="book1ch4img12"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img12.png" alt="book1ch4img12"></img></Col>
+          </Row>
           <br />
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img13.png" alt="book1ch4img13"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img13.png" alt="book1ch4img13"></img></Col>
+          </Row>
           <br />
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch4/img14.png" alt="book1ch4img14"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch4/img14.png" alt="book1ch4img14"></img></Col>
+          </Row>
           <br />
           <br />
           <Ch4Generator />      

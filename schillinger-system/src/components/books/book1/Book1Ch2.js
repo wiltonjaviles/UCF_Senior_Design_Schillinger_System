@@ -91,36 +91,57 @@ function Book1Ch2() {
           <p class="bookText">T=r<sub>a ÷ 1</sub></p>
           <p class="bookText">(the musical bar (T) is the resultant of a to one)</p>
           <p class="bookText">Example:</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img1.png" alt="book1ch2img1"></img>
+          <Row className="justify-content-center"><Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img1.png" alt="book1ch2img1"></img></Col></Row>
           <p class="bookText">*note: sometimes Schillinger uses ÷ to indicate the a and b relationship, but also sometimes uses : to indicate the relationship instead. These both mean <em>interference</em></p>
           <p class="bookText">Here is the example in numbers, graph, and musical notation:</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img2.png" alt="book1ch2img2"></img>
-          
+          <Row className="justify-content-center">
+            <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img2.png" alt="book1ch2img2"></img></Col>
+          </Row>
           <p class="bookText">The resultant differs from b with respect to the accent in r (because both generators had an attack there). </p>
           <p class="bookText">This establishes a bar with a numerator of 2 i.e. 2/2, 2/4, etc. When the bar is 2/2, 1/2 = 𝅗𝅥, when the bar is 2/4, 1/2 = ♩. </p>
           <p class="bookText">Another example:</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img3.png" alt="book1ch2img3"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img3.png" alt="book1ch2img3"></img></Col>
+          </Row>
           <p class="bookText">This case shows musical bars with 3 as a numerator. I.e.: </p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img4.png" alt="book1ch2img4"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img4.png" alt="book1ch2img4"></img></Col>
+          </Row>
           <p class="bookText">A third example:</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img5.png" alt="book1ch2img5"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img5.png" alt="book1ch2img5"></img></Col>
+          </Row>
           <p class="bookText">The importance of this is that even the most noted composers do not seem to know that an accent should not be forced but should result from the superimposition of a on b.</p>
           <p class="bookText">When it comes to the application of higher numerators (5, 7, 11, etc), the music becomes incomprehensible to the average listener and the composer is the one to blame. When it comes to the shifting of accents which aren’t correctly expressed (through a and b), the performance suffers and listeners are confused.</p>
           <p class="bookText">Non-uniform rhythmic resultants occur when b ≠ 1. With the procedure we described above, you can find all rhythmic patterns used in the past, present, and future.</p>
           <p class="bookText">Example:</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img6.png" alt="book1ch2img6"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img6.png" alt="book1ch2img6"></img></Col>
+          </Row>
         <a className="chapter-section-link" href="/book1ch2#1.2.b" id="1.2.b"><h5>B. Grouping</h5></a>
           <p class="bookText">There are three forms of grouping:</p>
           <p class="bookText">1. <b>Grouping by c.p.</b> In this case, c.p. = 6</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img7.png" alt="book1ch2img7"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img7.png" alt="book1ch2img7"></img></Col>
+          </Row>
           <p class="bookText">2. <b>Superimposition of a</b> a = 3. In this case, c.p. is excluded and b becomes merely an optional component.</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img8.png" alt="book1ch2img8"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img8.png" alt="book1ch2img8"></img></Col>
+          </Row>
           <p class="bookText">3. <b>Superimposition of b.</b> b = 2. c.p. is excluded; a becomes optional</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img9.png" alt="book1ch2img9"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img9.png" alt="book1ch2img9"></img></Col>
+          </Row>
           <p class="bookText">Another Example:</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img10.png" alt="book1ch2img10"></img>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img11.png" alt="book1ch2img11"></img>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img12.png" alt="book1ch2img12"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img10.png" alt="book1ch2img10"></img></Col>
+          </Row>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img11.png" alt="book1ch2img11"></img></Col>
+          </Row>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img12.png" alt="book1ch2img12"></img></Col>
+          </Row>
           <p class="bookText">These show the natural nucleus of a musical score, in which c.d. Units are arpeggio or obligato figures, a and b are chords, r rhythms of the theme, and c.p. Sustained tones (“pedla point”).</p>
           <p class="bookText">Resultants have the following characteristics:</p>
           <ol>
@@ -133,7 +154,9 @@ function Book1Ch2() {
           <p class="bookText">All rhythmic patterns in music are either complete or incomplete resultants.</p>
           <p class="bookText">When all of the resultants up to a = 9 have been found, you can create all rhythm patterns in the past, present, and even the future.</p>
           <p class="bookText">All the necessary generators are:</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch2/img13.png" alt="book1ch2img13"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch2/img13.png" alt="book1ch2img13"></img></Col>
+          </Row>
           <p class="bookText">When c.p. is greater than 15, use a or b superimposition only.</p>
           <p class="bookText">When the numbers get large, a musical eight note (♪) is the best denominator. All reducible fractions have been excluded from the above chart.</p>
           <p class="bookText">The a and b components show how ‘cross-rhythms’ should be performed. Beating a and be with both hands, listen to the resultant.</p>

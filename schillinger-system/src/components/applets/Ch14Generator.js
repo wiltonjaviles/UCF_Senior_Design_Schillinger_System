@@ -70,11 +70,7 @@ function Ch14Generator() {
     localStorage.setItem('schillArr', JSON.stringify(old_data));
 
     var inputSeries = String(state.vSeries);
-    if(inputSeries === "Select Series") {
-      alert("Please select a series!");
-      clearResults();
-      return;
-    }
+    
     var seriesArray = [];
     var reverseSeriesArray = [];
     var seriesSum = -1;
@@ -165,8 +161,7 @@ function Ch14Generator() {
                 </Col>
                 <Col className="col-3">
                   <Form.Group controlId="vSeries">
-                    <Form.Control as="select" defaultValue="" value={state.vSeries} onChange={handleSelect}>
-                      <option>Select Series</option>
+                    <Form.Control as="select" value={state.vSeries} onChange={handleSelect}>
                       <option>Natural Harmonic Series</option>
                       <option>Arithmetical Progression</option>
                       <option>Geometrical Progression</option>

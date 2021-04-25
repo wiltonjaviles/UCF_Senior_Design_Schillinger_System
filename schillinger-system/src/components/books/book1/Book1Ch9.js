@@ -41,16 +41,24 @@ function Book1Ch9() {
         <p class="bookText">3 + 2 + 1;&emsp;3 + 1 + 2;&emsp;2 + 3 + 1;&emsp;2 + 1 + 3;&emsp;1 + 2 + 3;&emsp;1 + 3 + 2</p>
         <p class="bookText">As the complexity of a rhythm increases, the number of available permutations increases dramatically.  While this can be useful in filling large volumes of time with similar-but-different variations, it is often preferable to have a smaller, more controlled set of permutations. This can be accomplished with circular permutations.</p>
         <p class="bookText">Circular permutations are formed by arranging the elements of a rhythm into a circle, then starting with the first element, build a rhythm by going about the circle once. Then move to the next element and go about the circle again; do this for each element.</p>
-        <img className="img-fluid img-thumbnail" src="images/book1/ch9/img1.png" alt="book1ch9img1"></img>
+        <Row className="justify-content-center">
+        <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch9/img1.png" alt="book1ch9img1"></img></Col>
+        </Row>
         <p class="bookText">This circle of three elements forms the permutation | a + b + c | b + c + a | c + a + b |.</p>
-        <h3>TODO</h3>
-        <img className="img-fluid img-thumbnail" src="images/book1/ch9/img2.png" alt="book1ch9img2"></img>
+        
+        <Row className="justify-content-center">
+        <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch9/img2.png" alt="book1ch9img2"></img></Col>
+        </Row>
         <p class="bookText">You can spin the circle in either direction. Counterclockwise, it would form the permutation<br/>| a + c + b | c + b + a | b + a + c |</p>
-        <h3>TODO</h3>
+        
         <p class="bookText">This circle can be used for more than rhythm patterns. A rest can be rotated this way:</p>
-        <img className="img-fluid img-thumbnail" src="images/book1/ch9/img3.png" alt="book1ch9img3"></img>
+        <Row className="justify-content-center">
+        <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch9/img3.png" alt="book1ch9img3"></img></Col>
+        </Row>
         <p class="bookText">or an accent:</p>
-        <img className="img-fluid img-thumbnail" src="images/book1/ch9/img4.png" alt="book1ch9img4"></img>
+        <Row className="justify-content-center">
+        <Col className="col-10"><img className="img-fluid img-thumbnail" src="images/book1/ch9/img4.png" alt="book1ch9img4"></img></Col>
+        </Row>
         <br /> 
         <br /> 
         <Ch9Generator />

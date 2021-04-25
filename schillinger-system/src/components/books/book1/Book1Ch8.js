@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import '../../.././Style.css';
 import Ch8Generator from '../../applets/Ch8Generator';
 import TextToSpeech from '../../applets/TextToSpeech';
+import Playback from '../../applets/Playback';
+import {r_,r,toABC} from '../../functions/generators';
 
 
 function Book1Ch8() {
@@ -142,7 +144,9 @@ function Book1Ch8() {
           <p class="bookText">Example: a<sub>a</sub> = 4a; T = r<sub>3&#247;2</sub> = 6t; a<sub>T</sub> = 4a</p>
           <p class="equation">A = 4a</p>
           <p class="equation">T' = 6t</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img1.png" alt="book1ch8img1"></img>
+          <Row className="justify-content-center">
+          <Col className="col-7"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img1.png" alt="book1ch8img1"></img></Col>
+          </Row>
           <p class="equation"><em>Second Case:</em> <sup>a<sub>a</sub></sup>/<sub>a<sub>T</sub></sub> &#8800; 1</p>
           <p class="equation">A = a<sub>T</sub>&#183;a<sub>a</sub></p>
           <p class="equation">T' = T&#183;a<sub>a</sub></p>
@@ -150,7 +154,10 @@ function Book1Ch8() {
           <p class="bookText"><sup>5</sup>/<sub>4</sub></p>
           <p class="equation">A = 5a&#183;4 = 20a</p>
           <p class="equation">T' = 6t&#183;5 = 30t</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img2.png" alt="book1ch8img2"></img>
+          <Row className="justify-content-center">
+          <Col className="col-7"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img2.png" alt="book1ch8img2"></img></Col>
+          </Row>
+          <Playback abc={toABC(r(3,2),['c','_d','c','E','F'],true)} />
           <p class="equation"><em>Third Case:</em> <sup>a<sub>a</sub></sup>/<sub>a<sub>T</sub></sub> = <sup>a<sub>a'</sub></sup>/<sub>a<sub>T'</sub></sub>&emsp;i.e., a reducible fraction</p>
           <p class="equation">A = a<sub>T</sub>&#183;a<sub>a</sub></p>
           <p class="equation">T' = T&#183;a<sub>a'</sub></p>
@@ -158,49 +165,73 @@ function Book1Ch8() {
           <p class="equation"><sup>6</sup>/<sub>4</sub> = <sup>3</sup>/<sub>2</sub></p>
           <p class="equation">A = 4a&#183;a3 = 12a</p>
           <p class="equation">T' = 6t&#183;3 = 18t</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img3.png" alt="book1ch8img3"></img>
+          <Row className="justify-content-center">
+          <Col className="col-8"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img3.png" alt="book1ch8img3"></img></Col>
+          </Row>
+          <Playback abc={toABC(r(3,2),['c','_d','=d','e','f','_B'],true)} />
+          <br /> 
+          <Ch8Generator />
           <br /> <br />
         <a className="chapter-section-link" href="/book1ch8#1.8.c" id="1.8.c"><h5>C. Distribution of a Synchronized Duration-Group</h5></a>
           <p class="equation"><em>First Case:</em> <sup>T'</sup>/<sub>T''</sub> = 1</p>
           <p class="equation">T'' = T'</p>
           <p class="bookText">Example: T' = 6t;&emsp;T'' = 6t</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img4.png" alt="book1ch8img4"></img>
+          <Row className="justify-content-center">
+          <Col className="col-6"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img4.png" alt="book1ch8img4"></img></Col>
+          </Row>
           <p class="equation"><em>Second Case:</em> <sup>T'</sup>/<sub>T''</sub> &#8800; 1</p>
           <p class="equation">N<sub>T''</sub> = T'</p>
           <p class="bookText">Example: T' = 6t;&emsp;T'' = 5t</p>
           <p class="equation">N<sub>5t</sub> = 6</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img5.png" alt="book1ch8img5"></img>
+          <Row className="justify-content-center">
+          <Col className="col-8"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img5.png" alt="book1ch8img5"></img></Col>
+          </Row>
+          <Playback abc={toABC(r(3,2,3),['c','B','A','G','c','B','A','G','c','B','A','G','c','B','A','G','c','B','A','G'],true)} />
           <p class="equation"><em>Third Case:</em> <sup>T'</sup>/<sub>T''</sub> = <sup>T<sub>'</sub></sup>/<sub>T<sub>''</sub></sub></p>
           <p class="equation">N<sub>T''</sub> = T<sub>'</sub></p>
           <p class="bookText">Example: T' = 6t;&emsp;T'' = 4t</p>
           <p class="equation"><sup>6</sup>/<sub>4</sub> = <sup>3</sup>/<sub>2</sub></p>
           <p class="equation">N<sub>4t</sub> = 3</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img6.png" alt="book1ch8img6"></img>
+          <Row className="justify-content-center">
+          <Col className="col-8"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img6.png" alt="book1ch8img6"></img></Col>
+          </Row>
           <p class="bookText">Example: a<sub>a</sub> = 5a;&emsp;t = r<sub>5&#247;2</sub> = 10t;&emsp;a<sub>T</sub> = 6a</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img7.png" alt="book1ch8img7"></img>
+          <Row className="justify-content-center">
+          <Col className="col-8"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img7.png" alt="book1ch8img7"></img></Col>
+          </Row>
           <p class="bookText">1.</p>
           <p class="equation"><sup>6</sup>/<sub>5</sub>    <sup>5 (6)</sup> <sub>6 (5)</sub></p>
           <p class="bookText">2.</p>
           <p class="equation">10t is equivalent to 6 attacks; 10t X 5 = 50t</p>
           <p class="bookText">3.</p>
           <p class="equation">When T'' = <sup>8</sup>/<sub>8</sub>, <sup>50t</sup>/<sub>8</sub> = <sup>25&#183;4</sup>/<sub>4</sub> = 25T''</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img8.png" alt="book1ch8img8"></img>
+          <Row className="justify-content-center">
+          <Col className="col-8"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img8.png" alt="book1ch8img8"></img></Col>
+          </Row>
           <br />
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img9.png" alt="book1ch8img9"></img>
+          <Row className="justify-content-center">
+          <Col className="col-8"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img9.png" alt="book1ch8img9"></img></Col>
+          </Row>
+          <Playback abc={toABC(r(3,2,3),['c','_e','d','^E','G'],true)+toABC(r(3,2,3),['c','_e','d','^E','G'],true)+toABC(r(3,2,3),['c','_e','d','^E','G'],true)} />
           <br /> <br />
         <a className="chapter-section-link" href="/book1ch8#1.8.d" id="1.8.d"><h5>D. Synchronization of an Instrumental Group</h5></a> 
           <p class="bookText">Example: pli = 4;&emsp;pla = 3;&emsp;a<sub>a</sub> = 3+2+3 = 8;&emsp;T = r<sub>5&#247;2</sub> = 10t;&emsp;6a</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img10.png" alt="book1ch8img10"></img>
+          <Row className="justify-content-center">
+          <Col className="col-7"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img10.png" alt="book1ch8img10"></img></Col>
+          </Row>
           <br />
           <br />
-          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img11.png" alt="book1ch8img11"></img>
+          <Row className="justify-content-center">
+          <Col className="col-8"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img11.png" alt="book1ch8img11"></img></Col>
+          </Row>
           <p class="bookText">Example: pli = 3;&emsp;pla = 3;&emsp;a<sub>a</sub> = 3+2+2+3=10;&emsp;T = r<sub><u>4&#247;3</u></sub> = 16t;&emsp;10a&emsp;T'' = 8t</p>
-          <img className="img-fluid img-thumbnail" src="images/book1/ch8/img12.png" alt="book1ch8img12"></img>
+          <Row className="justify-content-center">
+          <Col className="col-7"><img className="img-fluid img-thumbnail" src="images/book1/ch8/img12.png" alt="book1ch8img12"></img></Col>
+          </Row>
           <p class="bookText">Example of composition of the resultant of instrumental interference</p>
         <br /> 
-        <br /> 
-        <Ch8Generator />
+        
         <br /> 
         <Row>
           <Col><Link to="/book1ch7" className="content-links"><h5>Previous Chapter</h5></Link></Col>
