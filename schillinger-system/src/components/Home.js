@@ -14,6 +14,23 @@ function Home() {
         <br />
         <TextToSpeech 
           text="Welcome to the Schillinger System of Musical Composition!
+          Introduction.
+          The Schillinger System of Musical Composition, named after Joseph Schillinger, is a method of musical composition based on mathematical processes. 
+          It comprises theories of rhythm, harmony, melody, counterpoint, form and semantics (emotional meaning, as in movie music). 
+          It offers a systematic and non-genre approach to music analysis and composition, a descriptive rather than prescriptive grammar of music. 
+          The Schillinger System might have served as a road map for many later developments in music theory and composition. 
+          Instead, it languished in relative obscurity .
+          Joseph Moiseyevich Schillinger (1895-1943), was a composer, music theorist, and composition teacher; he was born in Kharkiv, in the Kharkov Governorate of the Russian Empire (present-day Ukraine) and died in New York City .
+          his website was created as a senior design project for University of Central Florida's computer science program. Our team is Michael Alaniz, Wilton Aviles, Michael Duke, and Kathryn Wyrick. Our sponsor is Dr. Richard Leinecker.
+          This project, once completed, will provide a comprehensive Schillinger System learning tool for musicians and software developers that can be used to create computer-assisted musical composition software. Since Schillinger never finished refining his ideas for the System it fell into obscurity after his death. This project aims bring his system back to the forefront of musical composition. It could also provide substantial guidance for composers and software developers to implement Schillinger’s ideas, which has never been done before.
+          In addition to the applications in composition software, this project will provide easy access to Schillinger’s system for people who simply want to learn music theory. Since it is more math-based than the traditional system, Schillinger’s System may be easier for some people to understand.
+          There is also a chance that our project revives interest in Schillinger’s System of Musical Composition and in time it could replace the existing system of composing music. A clear understanding of his ideas could result in a shift in how music is written to his system.
+          Meet the Team:
+          Dr. Richard Leinecker
+          Sponsor
+          Rick has worked on a wide variety of projects as lead software engineer. 
+          This includes enterprise-level applications as well as kernel-level security applications as senior software engineer at MCI.
+          Rick started life as a musician, playing in the Miami philharmonic. Beginning as an undergraduate, he has written hundreds of fine pieces of music for large orchestra, small ensemble, and soloists. Rick does research on a regular basis. Much of it is within the area of data compression. He also researches computer assisted music composition, and is currently writing about Hindemith music composition and the Schillinger system of musical composition.
           
           "
         />
