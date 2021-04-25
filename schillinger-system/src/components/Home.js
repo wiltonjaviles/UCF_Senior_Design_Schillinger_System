@@ -31,7 +31,20 @@ function Home() {
           Rick has worked on a wide variety of projects as lead software engineer. 
           This includes enterprise-level applications as well as kernel-level security applications as senior software engineer at MCI.
           Rick started life as a musician, playing in the Miami philharmonic. Beginning as an undergraduate, he has written hundreds of fine pieces of music for large orchestra, small ensemble, and soloists. Rick does research on a regular basis. Much of it is within the area of data compression. He also researches computer assisted music composition, and is currently writing about Hindemith music composition and the Schillinger system of musical composition.
-          
+          Michael Alaniz
+          Full Stack Float
+          Michael Alaniz is a Computer Science graduate from UCF, Spring 2021, and was a member of the first team to work on the Learn Schillinger project. He was in charge of the Web Server implementation, management, and a Full-Stack float. Michael enjoys playing the piano, music production, machine learning, and deep learning. LinkedIn
+          Wilton Aviles
+          Project Manager
+          Wilton Aviles is a Computer Science graduate from the University of Central Florida, Spring 2021, and was a member of the first team to work on this project. He was the project manager and was in charge of filling the website, delegating tasks, design decisions, and making sure the team was prompt and completing tasks in a timely manner. He has enjoyed music since an early age, and has produced music for various musicians throughout his time in college.
+          He enjoys coding, music, video games, basketball, and being a student of life. Wilton was involved with the Engineering Leadership and Innovation Institute at UCF (eli2) as a Student Leader and Project Lead. LinkedIn
+          Michael Duke
+          Document Lead, Applet Design
+          Michael Duke is a computer science student from Orlando. He also has a vocal performance bachelors, and has a wife and also a son, who at the time of writing is reasonably small. Duke uses his free time studying foreign languages and playing games.
+          Kathryn Wyrick
+          Front End, Applet Design
+          Kathryn is a senior graduating in the class of Spring 2021 (woo!) and was a member of the first team to work on this project. She majored in Computer Science and minored in Mathematics. She was in charge of the initial website setup, including creating a skeleton of all the pages for the project, designing the navigation and routing, and creating some general-use components such as the text-to-speech, music playback, and templates for the other applets.
+          She also designed and implemented the waveform and pendulum applets and implemented several of the applets in Book 1. She has been interested in music her whole life and can play (with varying degrees of success) the violin, piano, ukulele, ocarina, melodica, and trumpet. Her cat's name is Mochi! After graduating, she has accepted a position with Lockheed Martin and will start working there in June 2021.
           "
         />
         <br />
@@ -97,7 +110,7 @@ function Home() {
           <Col className="col-3"><img className="img-fluid img-thumbnail" src="images/teamphotos/WiltonAviles.png" alt="AvilesPhoto"></img><h5>Project Manager</h5></Col>
           <Col>
             <p className="bookText">
-              Wilton Aviles is a Computer Science graduate from the University of Central Florida, Spring 2021, and was a member of the first team to work on this project. He was the project manager and was in charge of filling website, delegating tasks, design decisions, and making sure the team was prompt and completing tasks in a timely manner.
+              Wilton Aviles is a Computer Science graduate from the University of Central Florida, Spring 2021, and was a member of the first team to work on this project. He was the project manager and was in charge of filling the website, delegating tasks, design decisions, and making sure the team was prompt and completing tasks in a timely manner.
               He has enjoyed music since an early age, and has produced music for various musicians throughout his time in college. He enjoys coding, music, video games, basketball, and being a student of life.
               Wilton was involved with the Engineering Leadership and Innovation Institute at UCF (eli<sup>2</sup>) as a Student Leader and Project Lead. <a href="https://www.linkedin.com/in/wilton-jose-aviles/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
             </p>
