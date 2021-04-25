@@ -4,7 +4,7 @@ import '../../.././Style.css';
 import Ch8Generator from '../../applets/Ch8Generator';
 import TextToSpeech from '../../applets/TextToSpeech';
 import Playback from '../../applets/Playback';
-import {r_,r,toABC} from '../../functions/generators';
+import {r, toABC} from '../../functions/generators';
 
 
 function Book1Ch8() {
