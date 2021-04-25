@@ -98,6 +98,20 @@ This section should list any major frameworks that you built your project using.
 
 To get a local copy up and running follow these simple example steps.
 
+### Prerequisites
+
+It is recommended you use Visual Studio Code as a team to streamline the work and have access to a built-in terminal.
+
+Visual Studio Code supports:
+* Live, collaborative, environments via Live Share that will allow your team to work together in real-time.
+* Git commands built-in to handles diffs, staging files, commits, etc. 
+* An integrated Terminal
+
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [VSCode Live Share](https://code.visualstudio.com/learn/collaboration/live-share)
+* [VSCode Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
+* [VSCode Version Control - Git](https://code.visualstudio.com/docs/editor/versioncontrol)
+
 ### Installation
 
 1. Clone the repo
