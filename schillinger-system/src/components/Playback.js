@@ -1,6 +1,6 @@
 import {Container, Row, Button, ButtonGroup, ButtonToolbar} from 'react-bootstrap';
 import React from 'react';
-import '../.././Style.css';
+import '.././Style.css';
 // import abcjs from 'abcjs';
 import abcjs from 'abcjs/midi';
 

@@ -1,9 +1,9 @@
 import {Container, Row, Col, Form, Card, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../.././Style.css';
-import {generator_R,toABC}from'../functions/./generators.js';
+import {generator_R,toABC}from'../functions/generators.js';
 import abcjs from "abcjs";
-import Playback from '../applets/Playback';
+import Playback from '../Playback';
 
 function BasicTemplate() {
   

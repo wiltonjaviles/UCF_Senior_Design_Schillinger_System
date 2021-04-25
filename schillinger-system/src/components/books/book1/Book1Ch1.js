@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import Waveform from '../../applets/Waveform';
 import Pendulum from '../../applets/Pendulum';
 import '../../.././Style.css';
-import TextToSpeech from '../../applets/TextToSpeech';
+import TextToSpeech from '../../TextToSpeech';
 
 function Book1Ch1() {
   return (
