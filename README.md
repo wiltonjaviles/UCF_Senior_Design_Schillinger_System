@@ -122,7 +122,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-### Running Local Development
+### Running Local Development - In the root folder: "UCF_Senior_Design_Schillinger_System"
 
 1. Launch the Client && the Server - Front-End on port 3000 | Back-End on port 5000.
   ```sh
