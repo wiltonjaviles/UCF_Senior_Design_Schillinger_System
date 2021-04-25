@@ -452,27 +452,6 @@ function definePolynomial(a,b,c,d,p1,p2,p3,p4) {
   return output;
 }
 
-
-// function measureNumbersInString(stringIn) {
-//   let n=0;
-
-//   for(let i in stringIn) {
-//     if(stringIn[i] === '1') {
-//       n+=1;
-//     } else if(stringIn[i] === '2') {
-//       n+=2;
-//     } else if(stringIn[i] === '3') {
-//       n+=3;
-//     } else if(stringIn[i] === '4') {
-//       n+=4;
-//     } else if(stringIn[i] === '5') {
-//       n+=5;
-//     }
-//   }
-
-//   return n;
-// }
-
 function rotate(arrIn, direction) {
   let arrOut = [];
 
@@ -512,20 +491,3 @@ function toAbc(arrIn) {
 
   return arrOut;
 }
-
-/*
-function isWorth(n) {
-  switch(n) {
-    case '1': return 1;
-    case '2': return 2;
-    case '3': return 3;
-    case '4': return 4;
-    case '+1': return 1;
-    case '+2': return 2;
-    case '+3': return 3;
-    case '+4': return 4;
-    default: return 0;
-  }
-}
-*/
-
