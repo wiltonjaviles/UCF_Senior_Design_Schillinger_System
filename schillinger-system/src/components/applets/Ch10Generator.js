@@ -161,17 +161,17 @@ function Ch10Generator() {
     }
     
     // var abc1 = a1+"|"+b1+"|"+c1+"|";
-    var a2 = a1+"|"+b1+"|"+c1+"|";
+    var a2 = '"a2"'+a1+"|"+b1+"|"+c1+"|";
     var outputStepsG2 = "a2 = a1+b1+c1\n";
-    var b2 = a1+"|"+c1+"|"+b1+"|";
+    var b2 = '"b2"'+a1+"|"+c1+"|"+b1+"|";
     var outputStepsB2 = "b2 = a1+c1+b1\n";
-    var c2 = b1+"|"+a1+"|"+c1+"|";
+    var c2 = '"c2"'+b1+"|"+a1+"|"+c1+"|";
     var outputStepsC2 = "c2 = b1+a1+c1\n";
-    var d2 = c1+"|"+a1+"|"+b1+"|";
+    var d2 = '"d2"'+c1+"|"+a1+"|"+b1+"|";
     var outputStepsD2 = "d2 = c1+a1+c1\n";
-    var e2 = b1+"|"+c1+"|"+a1+"|";
+    var e2 = '"e2"'+b1+"|"+c1+"|"+a1+"|";
     var outputStepsE2 = "e2 = b1+c1+a1\n";
-    var f2 = c1+"|"+b1+"|"+a1+"|";
+    var f2 = '"f2"'+c1+"|"+b1+"|"+a1+"|";
     var outputStepsF2 = "f2 = c1+b1+a1\n";
     var abc = a2+b2+c2+d2+e2+f2;
     var outPutStepsABC = "abc = a2+b2+c2+d2+e2+f2";
