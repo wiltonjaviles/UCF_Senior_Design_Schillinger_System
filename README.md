@@ -87,7 +87,6 @@ There is also a small chance that because our project revives interest in Schill
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [React](https://reactjs.org/)
 * [React-Bootstrap](https://react-bootstrap.github.io/)
 * [React-Router-DOM](https://reactrouter.com/web/guides/quick-start)
