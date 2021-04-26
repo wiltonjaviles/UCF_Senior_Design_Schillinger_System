@@ -130,6 +130,10 @@ Visual Studio Code supports:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+### How to Access Digital Ocean & Setup SSH
+
+Please refer to Section 6 in the the Team 1 Final Design Document. This section details how to setup access to the Digital Ocean Droplet both via browser and SSH, Droplet Functionality, and the file structure of the API.
+
 ### Running Local Development - In the root folder: "UCF_Senior_Design_Schillinger_System"
 
 1. Launch the Client && the Server - Front-End on port 3000 | Back-End on port 5000.
