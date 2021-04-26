@@ -263,7 +263,7 @@ Michael Alaniz - [@mikey_alaniz](https://twitter.com/mikey_alaniz) - michael.yea
 
 Wilton Aviles - wiltonjaviles@gmail.com
 
-Michael Duke - luckystarnova@gmail.com
+Michael Duke - luckystarnova@gmail.com. Check src/components/functions/generators.js for more.
 
 Kathryn Wyrick - kathryn.m.wyrick@gmail.com
 
