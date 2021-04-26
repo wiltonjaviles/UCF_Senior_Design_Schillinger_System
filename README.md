@@ -276,8 +276,8 @@ Kathryn Wyrick - kathryn.m.wyrick@gmail.com
 * [anime.js](https://animejs.com/)
 * [JSXGraph](https://jsxgraph.uni-bayreuth.de/wp/index.html)
 * [SpeechSynthesis API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis)
-* [abcjs] (https://www.abcjs.net/)
-* [abc] (http://abcnotation.com/wiki/abc:standard:v2.1)
+* [abcjs](https://www.abcjs.net/)
+* [abc](http://abcnotation.com/wiki/abc:standard:v2.1)
 
 
 
