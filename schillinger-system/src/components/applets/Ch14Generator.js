@@ -13,7 +13,7 @@ function Ch14Generator() {
     pageLink = <button className="btn btn-light" onClick={window.close}>Close Window</button>
   }
 
-  var tempVSeries = "";
+  var tempVSeries = "Natural Harmonic Series";
   var old_data = JSON.parse(localStorage.getItem('schillArr'));
 
   // If there is already a saved state of the applet we overwrite the default values
