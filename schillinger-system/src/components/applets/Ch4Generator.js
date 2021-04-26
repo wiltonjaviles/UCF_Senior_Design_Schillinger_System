@@ -89,22 +89,24 @@ function Ch4Generator() {
       abc = abc+'\n[V: V1]"C1"'+toABC(outArr[0]).join("");
       abc = abc+'\n[V: V2]"C2"'+toABC(outArr[1]).join("");
       abc = abc+'\n[V: V3]"A"'+toABC(outArr[2]).join("");
+      var abcOut = ""
       for(let i=1; i<outArr.length-3; i++) {
         let j = i+3
         abc = abc+'\n[V: V'+j+']"B'+i+'"'+toABC(outArr[i+2]).join("");
       }
       abc = abc+'\n[V: V'+outArr.length+']"R"'+toABC(outArr[outArr.length-1]).join("");
-        
+      abcOut = 'X:1\nK:C\nV\n'+toABC(outArr[outArr.length-1]).join("");
       abcjs.renderAbc("outputR_", abc, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 });
     } else {
       outArr = r_(vA,vB,true);
       abc = 'X:1\nK:C\n"R"' + toABC(outArr).join("");
+      abcOut = abc;
       abcjs.renderAbc("outputR_",abc, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 });
     }
 
     setState(prevState => ({
         ...prevState,
-        abcString : abc
+        abcString : abcOut
       }))
   }
 
