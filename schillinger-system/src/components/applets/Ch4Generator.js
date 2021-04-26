@@ -104,8 +104,7 @@ function Ch4Generator() {
 
     setState(prevState => ({
         ...prevState,
-        abcString : abc,
-        testOutput : abc
+        abcString : abc
       }))
   }
 
@@ -163,10 +162,6 @@ function Ch4Generator() {
                   <Button variant="secondary" type="submit" className="float-right" onClick={generateR_}>Generate</Button>
                 </Col>
               </Row>
-
-              <Row className="justify-content-md-center">
-              <p>{state.testOutput}</p>
-            </Row>
               
               <Row className="justify-content-md-center">
                 <div id="outputR_"></div>
