@@ -95,11 +95,11 @@ function Ch4Generator() {
       }
       abc = abc+'\n[V: V'+outArr.length+']"R"'+toABC(outArr[outArr.length-1]).join("");
         
-      abcjs.renderAbc("outputR_", abc);
+      abcjs.renderAbc("outputR_", abc, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 });
     } else {
       outArr = r_(vA,vB,true);
       abc = 'X:1\nK:C\n"R"' + toABC(outArr).join("");
-      abcjs.renderAbc("outputR_",abc);
+      abcjs.renderAbc("outputR_",abc, { wrap: { preferredMeasuresPerLine: 25 }, staffwidth: 1000 });
     }
 
     setState(prevState => ({
