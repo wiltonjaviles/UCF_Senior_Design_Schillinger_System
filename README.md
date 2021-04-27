@@ -130,7 +130,13 @@ Visual Studio Code supports:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-### Running Local Development - In the root folder: "UCF_Senior_Design_Schillinger_System"
+### How to Access Digital Ocean & Setup SSH
+
+Please refer to Section 6 in the the Team 1 Final Design Document. This section details how to setup access to the Digital Ocean Droplet both via browser and SSH, Droplet Functionality, and the file structure of the API.
+
+### Running Local Development 
+
+Use these commands in the root folder: "UCF_Senior_Design_Schillinger_System"
 
 1. Launch the Client && the Server - Front-End on port 3000 | Back-End on port 5000.
   ```sh
@@ -257,7 +263,7 @@ Michael Alaniz - [@mikey_alaniz](https://twitter.com/mikey_alaniz) - michael.yea
 
 Wilton Aviles - wiltonjaviles@gmail.com
 
-Michael Duke - luckystarnova@gmail.com
+Michael Duke - luckystarnova@gmail.com.
 
 Kathryn Wyrick - kathryn.m.wyrick@gmail.com
 
@@ -270,7 +276,8 @@ Kathryn Wyrick - kathryn.m.wyrick@gmail.com
 * [anime.js](https://animejs.com/)
 * [JSXGraph](https://jsxgraph.uni-bayreuth.de/wp/index.html)
 * [SpeechSynthesis API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis)
-
+* [abcjs](https://www.abcjs.net/)
+* [abc](http://abcnotation.com/wiki/abc:standard:v2.1)
 
 
 

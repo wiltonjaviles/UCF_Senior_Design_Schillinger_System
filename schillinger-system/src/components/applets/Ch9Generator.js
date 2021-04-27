@@ -147,6 +147,9 @@ function Ch9Generator() {
               </p>
               <br />
               <Row className="align-items-bottom justify-content-md-center">
+                  <Col className="col-1">
+                    <h4>A</h4>
+                  </Col>
                   <Col className="col-2">
                     <Form.Group controlId="variableA">
                       <Form.Control as="select" value={state.variableA} onChange={handleSelect}>
@@ -170,8 +173,14 @@ function Ch9Generator() {
                       </Form.Control>
                     </Form.Group>
                   </Col>
+                  <Col className="col-1">
+                    {/*Placeholder to center columns*/}
+                  </Col>
                 </Row>
                 <Row className="align-items-bottom justify-content-md-center">
+                  <Col className="col-1">
+                    <h4>B</h4>
+                  </Col>
                   <Col className="col-2">
                     <Form.Group controlId="variableB">
                       <Form.Control as="select" value={state.variableB} onChange={handleSelect}>
@@ -195,8 +204,14 @@ function Ch9Generator() {
                       </Form.Control>
                     </Form.Group>
                   </Col>
+                  <Col className="col-1">
+                    {/*Placeholder to center columns*/}
+                  </Col>
                 </Row>
                 <Row className="align-items-bottom justify-content-md-center">
+                  <Col className="col-1">
+                    <h4>C</h4>
+                  </Col>
                   <Col className="col-2">
                     <Form.Group controlId="variableC">
                       <Form.Control as="select" value={state.variableC} onChange={handleSelect}>
@@ -220,8 +235,14 @@ function Ch9Generator() {
                       </Form.Control>
                     </Form.Group>
                   </Col>
+                  <Col className="col-1">
+                    {/*Placeholder to center columns*/}
+                  </Col>
                 </Row>
                 <Row className="align-items-bottom justify-content-md-center">
+                  <Col className="col-1">
+                    <h4>D</h4>
+                  </Col>
                   <Col className="col-2">
                     <Form.Group controlId="variableD">
                       <Form.Control as="select" value={state.variableD} onChange={handleSelect}>
@@ -244,6 +265,14 @@ function Ch9Generator() {
                         <option>accent</option>
                       </Form.Control>
                     </Form.Group>
+                  </Col>
+                  <Col className="col-1">
+                    {/*Placeholder to center columns*/}
+                  </Col>
+                </Row>
+                <Row className="align-items-bottom justify-content-md-center">
+                  <Col className="col-4">
+                    <h5>Polynomial Structure:</h5>
                   </Col>
                 </Row>
                 <Row className="align-items-bottom justify-content-md-center">

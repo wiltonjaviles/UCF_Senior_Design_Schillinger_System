@@ -1,6 +1,15 @@
 /*
-Michael Duke
-luckystarnova@gmail.com
+  If you have questions or just need to know who to complain to, contact:
+  Michael Duke
+  luckystarnova@gmail.com
+
+  For ABC notation stuff: http://abcnotation.com/wiki/abc:standard:v2.1
+
+  Schillinger notation: the generators output as an array of chars and numbers. Typically this
+  will be just numbers and plus signs, for example r(3,2) will output [2,'+',1,'+',1,'+',2]
+  Rests are notated with an 'X' before the number.
+  Measure lines are denoted with '|'.
+  Ties are denoted with '-'.
 */
 
 /**
