@@ -130,16 +130,19 @@ function Ch8Generator() {
 
         abcjs.renderAbc("outputR", 'X:1\nK:C\n"R"'+outArrR.join("")+"\n");
         abcjs.renderAbc("outputMelody", 'X:1\nK:C\n"a_a='+state.c_a_a+'"'+outArrMelody.join("")+"\n");
-
+        var abcOut = "";
         if(v_A===v_A1) {
             abcjs.renderAbc("outputSynced", 'X:1\nK:C\n"T’='+v_A+'"'+outArrSynced.join("")+"\n");
+            abcOut = 'X:1\nK:C\n"T’='+v_A+'"'+outArrSynced.join("")+"\n";
         } else {
             abcjs.renderAbc("outputSynced", 'X:1\nK:C\n"T’='+v_A+', A1='+v_A1+'"'+outArrSynced.join("")+"\n");
+            abcOut = 'X:1\nK:C\n"T’='+v_A+', A1='+v_A1+'"'+outArrSynced.join("")+"\n";
         }
         
     
         setState(prevState => ({
-            ...prevState
+            ...prevState,
+            abcString: abcOut
           }))
       }
     
